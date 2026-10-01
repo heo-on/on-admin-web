@@ -7,17 +7,31 @@
     <meta name="robots" content="noindex, nofollow">
     <title>공인번역일반 행정사사무소 온:ON | Certified Public Translation & Administrative Attorneys Office ON</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0020A0', // 로고 상징 시그니처 딥 블루
+                            hover: '#001880',
+                            light: '#EEF2FF',
+                            dark: '#081136'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
     <!-- 1. 상단 헤더 & 네비게이션 -->
-    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
-            <!-- 로고 영역 -->
-            <div class="flex items-center gap-3 w-full md:w-auto">
-                <div class="w-10 h-10 bg-slate-900 text-white rounded-lg flex items-center justify-center font-bold text-sm tracking-widest flex-shrink-0">
-                    온:ON
-                </div>
+    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <!-- 헤더 로고 영역 -->
+            <div class="flex items-center gap-3.5 w-full md:w-auto">
+                <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
                     <span class="text-base font-bold text-slate-900 block leading-none">공인번역일반 행정사사무소 온:ON</span>
                     <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON</span>
@@ -25,12 +39,12 @@
             </div>
 
             <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
-                <!-- 네비게이션 메뉴 (데스크톱) -->
+                <!-- 네비게이션 메뉴 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
-                    <a href="#about" class="hover:text-emerald-600 transition">사무소 소개</a>
-                    <a href="#services" class="hover:text-emerald-600 transition">전문 분야</a>
-                    <a href="#process" class="hover:text-emerald-600 transition">업무 절차</a>
-                    <a href="#contact" class="hover:text-emerald-600 transition">상담 문의</a>
+                    <a href="#about" class="hover:text-brand transition">사무소 소개</a>
+                    <a href="#services" class="hover:text-brand transition">전문 분야</a>
+                    <a href="#process" class="hover:text-brand transition">업무 절차</a>
+                    <a href="#contact" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
                 <!-- 다국어 선택 (KR / EN / ZH / JA) -->
@@ -45,25 +59,25 @@
     </header>
 
     <!-- 2. 히어로 (메인 비주얼) 섹션 -->
-    <section class="relative bg-slate-900 text-white py-24 md:py-32 px-6 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 opacity-90"></div>
+    <section class="relative bg-brand-dark text-white py-24 md:py-32 px-6 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#081136] via-[#0020A0] to-slate-900 opacity-90"></div>
         <div class="relative max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+            <span class="inline-block bg-white/10 border border-white/20 text-blue-200 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
                 Certified Public Translation & Administrative Attorneys Office ON
             </span>
             <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
                 당신의 권익과 성공적인 글로벌 비즈니스를 지키는<br class="hidden md:block"> 
-                <span class="text-emerald-400">신뢰의 법률 행정 파트너</span>
+                <span class="text-blue-300">신뢰의 법률 행정 파트너</span>
             </h1>
-            <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                복잡한 인허가, 출입국 비자, 군 행정구제부터 공인 번역확인증명서 발급까지.<br>
-                대표 행정사가 책임감을 가지고 1:1 맞춤 솔루션을 제공합니다.
+            <p class="text-slate-200 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                외국인 비자·출입국, 의료기기 인허가, 군인 징계·항고·행정심판부터<br class="hidden md:block">
+                외국어 번역·공증촉탁·아포스티유 대행까지 전문 행정사가 책임지고 수행합니다.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-7 py-3.5 rounded-lg shadow-lg transition text-center">
+                <a href="#contact" class="bg-white text-brand hover:bg-blue-50 font-bold px-7 py-3.5 rounded-lg shadow-lg transition text-center">
                     빠른 상담 신청하기
                 </a>
-                <a href="#services" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-7 py-3.5 rounded-lg transition text-center">
+                <a href="#services" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-7 py-3.5 rounded-lg backdrop-blur-sm transition text-center">
                     주요 업무 둘러보기
                 </a>
             </div>
@@ -78,35 +92,39 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition duration-300">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">01</div>
+            <!-- 카테고리 01 -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">외국인 비자 · 출입국</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
-                    취업, 투자, 체류자격 변경 및 연장, 영주권, 국적 취득 등 외국인 및 기업을 위한 전문 출입국 대행 서비스를 제공합니다.
+                    취업, 투자, 체류자격 변경 및 연장, 영주권, 국적 취득 등 외국인 및 국내외 기업을 위한 전문 출입국 대행 서비스를 제공합니다.
                 </p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition duration-300">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">02</div>
+            <!-- 카테고리 02 -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">의료기기 · 인허가</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
                     의료기기 제조/수입 업허가, 품목신고 및 인증, 해외 제조소 등록 등 까다로운 인허가 절차를 신속하고 정확하게 지원합니다.
                 </p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition duration-300">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">03</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">군인 징계 · 항고</h3>
+            <!-- 카테고리 03 (수정) -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">군인 징계 · 항고 · 행정심판</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
-                    군 징계 처분, 항고 심사, 국가유공자 신청 및 각종 행정심판을 통해 의뢰인의 정당한 권익을 구제합니다.
+                    군 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처분에 대한 각종 행정심판을 통해 의뢰인의 법적 권익을 구제합니다.
                 </p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition duration-300">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-xl mb-6">04</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">공인 외국어 번역</h3>
+            <!-- 카테고리 04 (수정) -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">외국어 번역 · 공증촉탁 · 아포스티유 대행</h3>
                 <p class="text-slate-600 text-sm leading-relaxed">
-                    법률, 공문서, 기업서류의 공인 외국어 번역 및 행정사법에 따른 번역확인증명서를 직접 발급하여 법적 효력을 부여합니다.
+                    공인 외국어 번역확인증명서 발급부터 공증촉탁대행, 외교부 아포스티유 및 영사확인 인증 수속을 원스톱으로 처리합니다.
                 </p>
             </div>
         </div>
@@ -115,30 +133,34 @@
     <!-- 4. 대표 행정사 소개 섹션 -->
     <section id="about" class="bg-white py-20 px-6 border-y border-slate-200">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <!-- 프로필 사진 영역 (profile.jpg 업로드 시 표시) -->
             <div class="md:col-span-5 flex justify-center">
-                <div class="w-full max-w-sm h-96 bg-slate-100 rounded-2xl border border-slate-200 flex flex-col items-center justify-center text-slate-400 p-6 text-center">
-                    <span class="text-sm font-semibold mb-2">[ 대표 프로필 사진 영역 ]</span>
-                    <span class="text-xs">마곡 사무소 프로필 컷 삽입 예정</span>
+                <div class="w-full max-w-sm h-96 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center">
+                    <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 대표 프로필 사진 영역 ]</span><span class=\'text-xs\'>profile.jpg 업로드 시 즉시 표시됩니다</span></div>';">
                 </div>
             </div>
             <div class="md:col-span-7">
-                <span class="text-emerald-600 font-bold text-sm tracking-widest uppercase">About Representative</span>
+                <span class="text-brand font-bold text-sm tracking-widest uppercase">About Representative</span>
                 <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-6">대표 행정사 허온 (Judy Heo)</h2>
                 <p class="text-slate-600 leading-relaxed mb-6">
                     공인번역 및 일반행정 자격을 모두 갖춘 전문가로서, 의뢰인 한 분 한 분의 사안을 깊이 있게 분석하고 가장 현실적이고 확실한 법률 행정 솔루션을 제시합니다.
                 </p>
                 <div class="space-y-3 font-medium text-slate-700 text-sm">
                     <div class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                        <span class="w-2 h-2 bg-brand rounded-full"></span>
                         <span>공인번역 & 일반행정 자격 동시 보유</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                        <span class="w-2 h-2 bg-brand rounded-full"></span>
                         <span>외국인 출입국 · 비자 수임 전문</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                        <span class="w-2 h-2 bg-brand rounded-full"></span>
                         <span>의료기기 인허가 및 해외 제조소 등록 완수</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-brand rounded-full"></span>
+                        <span>공증촉탁 대행 및 외교부 아포스티유 수속 전문</span>
                     </div>
                 </div>
             </div>
@@ -153,22 +175,22 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
-                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">STEP 01</span>
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 심층 상담</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">사안 검토 및 수임 가능성 정밀 분석</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
-                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">STEP 02</span>
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">맞춤 전략 수립</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">필요 서류 안내 및 입증 자료 확보</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
-                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">STEP 03</span>
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">서류 작성 및 접수</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">주관 관청 및 기관 정식 안건 접수</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
-                <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">STEP 04</span>
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">결과 도출 및 사후관리</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
             </div>
@@ -176,11 +198,12 @@
     </section>
 
     <!-- 6. 푸터 & 하단 정보 -->
-    <footer id="contact" class="bg-slate-900 text-slate-400 py-16 px-6 border-t border-slate-800">
+    <footer id="contact" class="bg-brand-dark text-slate-400 py-16 px-6 border-t border-slate-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-8 h-8 bg-emerald-600 text-white rounded flex items-center justify-center font-bold text-xs tracking-wider">온:ON</div>
+                <!-- 푸터 로고 영역 -->
+                <div class="flex items-center gap-3.5 mb-4">
+                    <img src="logo.png" alt="행정사사무소 온 로고" class="h-9 w-auto rounded bg-white p-0.5 object-contain">
                     <span class="text-lg font-bold text-white">공인번역일반 행정사사무소 온:ON</span>
                 </div>
                 <p class="text-sm text-slate-400 leading-relaxed mb-6">
@@ -191,11 +214,12 @@
                     &copy; Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.
                 </p>
             </div>
-            <div class="space-y-2 text-sm">
+            <div class="space-y-2.5 text-sm">
                 <h4 class="text-white font-semibold mb-3">사무실 안내</h4>
-                <p>위치: 서울특별시 강서구 마곡중앙로 (마곡지구)</p>
-                <p>대표 행정사: 허온 (Judy Heo)</p>
-                <p>주요 업무: 외국인 비자 · 의료기기 인허가 · 군 징계 · 번역확인증명서</p>
+                <!-- 상세 주소 변경 -->
+                <p class="text-slate-300"><strong class="text-white">위치:</strong> 서울특별시 강서구 공항대로168, 8층 813호(마곡747타워, 마곡역 6번 출구)</p>
+                <p class="text-slate-300"><strong class="text-white">대표 행정사:</strong> 허온 </p>
+                <p class="text-slate-300"><strong class="text-white">주요 업무:</strong> 외국인 비자 · 의료기기 인허가 · 군인 징계·항고·행정심판 · 번역·공증촉탁·아포스티유</p>
             </div>
         </div>
     </footer>

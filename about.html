@@ -53,6 +53,76 @@
                 return;
             }
             const select = document.querySelector('.goog-te-combo');
+            if (select)네, 답답했던 줄바꿈 문제를 완벽하게 해결하기 위해 레이아웃 구조를 뜯어고쳤습니다!
+
+### 💡 변경된 레이아웃 구조
+1. **상단 (프로필 사진 + 인사말):** 사진과 인사말만 기존처럼 좌우로 깔끔하게 배치했습니다.
+2. **하단 (경력 박스 + 분야 박스):** 사진 우측 공간에 억지로 구겨 넣었던 두 박스를 완전히 빼서, **인사말 아래의 전체 가로 영역을 50:50으로 시원하게 나눠 쓰도록 독립된 영역으로 분리**했습니다.
+
+이제 박스들이 가로 폭을 엄청나게 넓게 쓰기 때문에 글자가 어색하게 뚝뚝 떨어지는 일 없이 한 줄로 예쁘게 쭉 뻗을 것입니다.
+
+아래 코드를 복사해서 `about.html`에 덮어씌워 주세요!
+
+---
+
+### 📄 `about.html` 전체 코드 (박스 하단 분리 독립 레이아웃)
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>사무소 소개 | 공인번역&일반 행정사사무소 온:ON</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0020A0',
+                            hover: '#001670',
+                            light: '#EEF2FF',
+                            dark: '#0A122A',
+                            footer: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 구글 웹사이트 번역 스크립트 (완벽 패치) -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ko',
+                includedLanguages: 'en,zh-CN,ja,ko',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function updateButtonStyles(activeLang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === activeLang) {
+                    btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
+                } else {
+                    btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
+                }
+            });
+        }
+
+        function changeLanguage(langCode) {
+            if (langCode === 'ko') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+                return;
+            }
+            const select = document.querySelector('.goog-te-combo');
             if (select) {
                 select.value = langCode;
                 select.dispatchEvent(new Event('change'));
@@ -69,9 +139,9 @@
             updateButtonStyles(currentLang);
         });
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="//[translate.google.com/translate_a/element.js?cb=googleTranslateElementInit](https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit)"></script>
 
-    <!-- 🟢 구글 번역 상단 바 완벽 숨김 스타일 -->
+    <!-- 구글 번역 상단 바 완벽 숨김 스타일 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -108,7 +178,6 @@
                     <a href="contact.html" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
-                <!-- 다국어 선택 버튼 -->
                 <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                     <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
                     <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
@@ -130,20 +199,18 @@
         </div>
     </section>
 
-    <!-- 3. 대표 인사말 및 이력 (레이아웃 3:9 로 최적화) -->
+    <!-- 3. 대표 인사말 및 이력 -->
     <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100">
         <div class="text-center mb-12">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">대표 행정사 인사말 및 약력</h2>
         </div>
 
-        <!-- 🟢 레이아웃 비율 변경 (gap-12 -> gap-8), (col-span-4 -> col-span-3), (col-span-8 -> col-span-9) -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start px-4 md:px-6">
-            
-            <!-- 왼쪽: 프로필 사진 영역 (여백/크기 최적화) -->
-            <div class="md:col-span-3 flex flex-col items-center">
-                <!-- max-w 280px -> 240px 로 줄여서 스마트하게 배치 -->
-                <div class="w-full max-w-[240px] h-[300px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
+        <!-- 🟢 1부: 프로필 사진 & 인사말 (좌우 배치, 박스는 이 밑으로 빠짐) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center px-4 md:px-6 mb-12">
+            <!-- 왼쪽: 프로필 사진 -->
+            <div class="md:col-span-4 flex flex-col items-center">
+                <div class="w-full max-w-[260px] h-[320px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
                     <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 프로필 사진 영역 ]</span><span class=\'text-xs\'>profile.jpg로 맞추세요</span></div>';">
                 </div>
                 <div class="w-full text-center">
@@ -152,43 +219,44 @@
                 </div>
             </div>
 
-            <!-- 오른쪽: 텍스트 및 박스 영역 (더 넓게 확보) -->
-            <div class="md:col-span-9">
+            <!-- 오른쪽: 인사말 본문 -->
+            <div class="md:col-span-8">
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
                     "복잡한 법률·행정 절차,<br>
                     가장 <span class="text-brand">명쾌하고 확실한 솔루션</span>을 제시합니다."
                 </h3>
-                <div class="text-slate-600 leading-relaxed mb-8 space-y-4 text-sm md:text-base">
+                <div class="text-slate-600 leading-relaxed space-y-4 text-sm md:text-base">
                     <p>안녕하십니까, 공인번역&일반 행정사사무소 온:ON 대표 허온입니다.</p>
                     <p>글로벌 비즈니스의 성공은 첫 단추인 '적법한 행정 절차와 완벽한 문서 준비'에서 시작됩니다. 법무부 등록 대행기관으로서 외국인 투자 및 출입국 비자, 수입·국내해썹 및 각종 인허가, 그리고 공증촉탁 대행과 아포스티유 인증까지 신속 정확하게 처리합니다.</p>
                     <p>특히 부당한 행정처분이나 징계에 맞서는 구제 절차는 정교한 법리 해석과 논리적인 의견서 작성이 핵심입니다. 육군 중대장 및 육군사관학교 인사장교를 역임하며 쌓아온 <strong>철저한 규정 해석과 인사·행정 실무 노하우</strong>를 바탕으로 의뢰인의 권익을 지키는 최선의 대안을 제시하겠습니다.</p>
                 </div>
+            </div>
+        </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- 학력 및 주요 경력 상자 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-slate-900 mb-3 border-b border-slate-200 pb-2 text-sm text-brand">주요 경력 및 학력</h4>
-                        <ul class="space-y-2 text-xs md:text-[13px] lg:text-sm text-slate-600">
-                            <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>(현) 대한행정사회 정회원</strong></li>
-                            <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>(현) 법무부 등록 출입국민원 대행기관</strong></li>
-                            <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> (전) 육군 제55보병사단 중대장 및 인사과장</li>
-                            <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> (전) 육군사관학교 생도대 인사장교</li>
-                            <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> (전) 육군 제22보병사단 소대장 및 교관</li>
-                            <li class="flex items-start gap-2 pt-1 border-t border-slate-200/60 mt-2"><span class="text-slate-400 mt-0.5">🎓</span> <span>경남대학교 체육교육 학사</span></li>
-                        </ul>
-                    </div>
+        <!-- 🟢 2부: 주요 경력 & 전문 분야 박스 (인사말 아래에서 가로 폭을 전체 다 사용) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-6 border-t border-slate-100 pt-10">
+            <!-- 학력 및 주요 경력 상자 -->
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">주요 경력 및 학력</h4>
+                <ul class="space-y-3 text-sm lg:text-base text-slate-600">
+                    <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>(현) 대한행정사회 정회원</strong></li>
+                    <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>(현) 법무부 등록 출입국민원 대행기관</strong></li>
+                    <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> (전) 육군 제55보병사단 중대장 및 인사과장</li>
+                    <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> (전) 육군사관학교 생도대 인사장교</li>
+                    <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> (전) 육군 제22보병사단 소대장 및 교관</li>
+                    <li class="flex items-start gap-2 pt-2 border-t border-slate-200/60 mt-3"><span class="text-slate-400 mt-0.5">🎓</span> <span>경남대학교 체육교육 학사</span></li>
+                </ul>
+            </div>
 
-                    <!-- 핵심 전문 수임 분야 상자 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-slate-900 mb-3 border-b border-slate-200 pb-2 text-sm text-brand">핵심 전문 수임 분야</h4>
-                        <ul class="space-y-2 text-xs md:text-[13px] lg:text-sm text-slate-600">
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>외국인 투자법인·비자:</strong> FDI 투자, E-7/D-8 비자, 출입국 대행</li>
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>의료분야·각종 인허가:</strong> 의료기기 인허가, 수입·국내해썹, KGMP</li>
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>행정처분·군인징계:</strong> 행정심판, 군인 징계항고, 소청, 의견서</li>
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>법률번역·아포스티유:</strong> 번역확인증명서, 공증촉탁, 아포스티유</li>
-                        </ul>
-                    </div>
-                </div>
+            <!-- 핵심 전문 수임 분야 상자 -->
+            <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">핵심 전문 수임 분야</h4>
+                <ul class="space-y-3 text-sm lg:text-base text-slate-600">
+                    <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>외국인 투자법인·비자:</strong> FDI 투자, E-7/D-8 비자, 출입국 대행</li>
+                    <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>의료분야·각종 인허가:</strong> 의료기기 인허가, 수입·국내해썹, KGMP</li>
+                    <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>행정처분·군인징계:</strong> 행정심판, 군인 징계항고, 소청, 의견서</li>
+                    <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>법률번역·아포스티유:</strong> 번역확인증명서, 공증촉탁, 아포스티유</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -202,7 +270,7 @@
 
         <div class="space-y-8 px-2 md:px-6">
             <div class="w-full h-80 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
-                <iframe src="https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=ko&z=17&output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="[https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=ko&z=17&output=embed](https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=ko&z=17&output=embed)" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -262,7 +330,7 @@
                 <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
-                <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
+                <a href="[https://blog.naver.com/juuudy](https://blog.naver.com/juuudy)_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
                     블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>

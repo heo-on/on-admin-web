@@ -24,7 +24,7 @@
         }
     </script>
     
-    <!-- 🟢 구글 웹사이트 번역 스크립트 (완벽 패치 버전) -->
+    <!-- 🟢 구글 웹사이트 번역 스크립트 (완벽 패치) -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -34,7 +34,7 @@
             }, 'google_translate_element');
         }
 
-        // 언어 버튼 색상 업데이트 함수
+        // 언어 버튼 활성화 스타일 제어
         function updateButtonStyles(activeLang) {
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
@@ -72,7 +72,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
-    <!-- 🟢 구글 번역 상단 바 숨김 스타일 -->
+    <!-- 🟢 구글 번역 상단 바 완벽 숨김 스타일 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -109,7 +109,7 @@
                     <a href="contact.html" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
-                <!-- 🟢 다국어 선택 버튼 (이벤트 적용) -->
+                <!-- 다국어 선택 버튼 -->
                 <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                     <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
                     <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
@@ -184,7 +184,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요 업무 사례 섹션 (각 분야별 가장 최근 사례 1개씩 총 4개 노출) -->
+    <!-- 5. 주요 업무 사례 섹션 (4개 분야별 가장 최근 사례 1개씩 총 4개 노출) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -192,7 +192,7 @@
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Case Studies</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">분야별 최신 업무 사례</h2>
                 </div>
-                <p class="text-slate-500 text-sm mt-2 md:mt-0">각 분야별 가장 최근에 수임 완료된 실제 사례입니다.</p>
+                <p class="text-slate-500 text-sm mt-2 md:mt-0">4개 대표 분야별 가장 최근에 완료된 수임 사례입니다.</p>
             </div>
 
             <!-- 블로그 포스팅 동적 자동 삽입 컨테이너 -->
@@ -263,7 +263,7 @@
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
                 <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
-                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
@@ -276,17 +276,17 @@
         </div>
     </footer>
 
-    <!-- 🟢 네이버 블로그 분야별 최신 1개씩 추출 스크립트 -->
+    <!-- 🟢 네이버 블로그 중복 방지 & 정밀 분야별 최신 1개 추출 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
-            // 4개 분야별 키워드 및 식별 라벨 정의
+            // 4대 분야별 정밀 키워드 세팅
             const categories = [
-                { id: 'cat1', label: '투자·비자', keywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "출입국"] },
-                { id: 'cat2', label: '의료·인허가', keywords: ["환자", "의료", "법인", "기업", "인허가", "등록", "신고", "비영리"] },
-                { id: 'cat3', label: '행정심판·군인징계', keywords: ["처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", "구제"] },
+                { id: 'cat1', label: '외국인 투자·비자', keywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "출입국"] },
+                { id: 'cat2', label: '의료분야·인허가', keywords: ["의료", "수입", "공장", "식품", "단체", "환자", "기기", "여성", "연구소", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가"] },
+                { id: 'cat3', label: '행정처분·군인징계', keywords: ["처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", "구제"] },
                 { id: 'cat4', label: '법률번역·인증', keywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"] }
             ];
 
@@ -302,17 +302,20 @@
                         return;
                     }
 
-                    // 각 카테고리별로 가장 최근(첫 번째로 매칭되는) 포스트 1개씩만 추출
                     const selectedPosts = [];
-                    
+                    const usedLinks = new Set(); // 중복 선택 방지 집합
+
                     categories.forEach(category => {
                         const matchedPost = data.items.find(post => {
+                            // 이미 다른 카테고리에 할당된 글은 건너뜀
+                            if (usedLinks.has(post.link)) return false;
+
                             const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
                             return category.keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                         });
                         
                         if (matchedPost) {
-                            // 화면에 표시될 커스텀 카테고리 라벨 주입
+                            usedLinks.add(matchedPost.link);
                             matchedPost.customLabel = category.label;
                             selectedPosts.push(matchedPost);
                         }
@@ -323,7 +326,6 @@
                         return;
                     }
 
-                    // 찾은 포스트들을 화면에 그리기
                     selectedPosts.forEach((post) => {
                         let tmp = document.createElement("DIV");
                         tmp.innerHTML = post.description;
@@ -338,7 +340,7 @@
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${post.customLabel} 분야 완료사례</span>
+                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${post.customLabel} 분야 사례</span>
                                     <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
                                 </div>
                                 

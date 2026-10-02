@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 정식 오픈 전 검색 노출 차단 (비공개) -->
     <meta name="robots" content="noindex, nofollow">
-    <title>사무소 소개 | 행정사사무소 온:ON</title>
+    <title>공인번역&일반 행정사사무소 온:ON | Certified Public Translation & Administrative Attorneys Office ON</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,7 +17,7 @@
                             hover: '#001670',
                             light: '#EEF2FF',
                             dark: '#0A122A',
-                            footer: '#F8FAFC'
+                            footer: '#F8FAFC' // 이음 스타일의 밝은 회색 푸터 배경
                         }
                     }
                 }
@@ -29,20 +30,22 @@
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-90 transition">
+            <!-- 헤더 로고 영역 -->
+            <div class="flex items-center gap-3.5 w-full md:w-auto">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
                     <span class="text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
                     <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON</span>
                 </div>
-            </a>
+            </div>
 
             <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
+                <!-- 🌟 [수정됨] 사무소 소개는 추후 만들 about.html로 연결 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
-                    <a href="about.html" class="text-brand font-bold">사무소 소개</a>
-                    <a href="index.html#services" class="hover:text-brand transition">전문 분야</a>
-                    <a href="index.html#cases" class="hover:text-brand transition">업무 사례</a>
-                    <a href="index.html#guide" class="hover:text-brand transition">이용 안내</a>
+                    <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
+                    <a href="#services" class="hover:text-brand transition">전문 분야</a>
+                    <a href="#cases" class="hover:text-brand transition">업무 사례</a>
+                    <a href="#guide" class="hover:text-brand transition">이용 안내</a>
                     <a href="#contact" class="hover:text-brand transition">고객센터</a>
                 </nav>
 
@@ -56,119 +59,175 @@
         </div>
     </header>
 
-    <!-- 2. 서브페이지 타이틀 헤더 -->
-    <section class="bg-brand-dark py-16 px-6 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-white/10 text-brand-light text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest">ABOUT US</span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4">사무소 소개</h1>
-            <p class="text-slate-300 text-sm md:text-base font-light">
-                글로벌 비즈니스의 든든한 파트너, 행정사사무소 온:ON을 소개합니다.
+    <!-- 2. 히어로 (비즈니스 배경 이미지 & 원라인 카피) -->
+    <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
+        <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
+        
+        <div class="relative max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6">
+                Certified Public Translation & Administrative Attorneys Office ON
+            </span>
+            
+            <!-- 🌟 [수정됨] 압도적인 가독성의 원라인(One-line) 타이틀 -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
+                성공적인 글로벌 비즈니스 <span class="text-brand">ON</span>
+            </h1>
+            
+            <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                외국인 투자법인·비자, 의료분야·각종 인허가, 군인 행정구제부터<br class="hidden md:block">
+                법률·행정서류 번역·인증·아포스티유 대행까지 전문 행정사가 수행합니다.
             </p>
-        </div>
-    </section>
-
-    <!-- 3. [사무소 소개 Part 1] 대표 행정사 인사말 & 프로필 -->
-    <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100">
-        <div class="text-center mb-12">
-            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">대표 행정사 인사말</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start px-4 md:px-6">
-            <!-- 프로필 사진 -->
-            <div class="md:col-span-5 flex flex-col items-center">
-                <div class="w-full max-w-sm h-[420px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
-                    <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 프로필 사진 영역 ]</span></div>';">
-                </div>
-                <div class="w-full text-center md:text-left">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-1">허온 <span class="text-base text-slate-500 font-normal ml-1">Heo On</span></h3>
-                    <p class="text-brand font-semibold text-sm mb-4">대표 행정사</p>
-                </div>
-            </div>
-
-            <!-- 인사말 및 이력 -->
-            <div class="md:col-span-7">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
-                    "복잡한 법률·행정 절차,<br>
-                    가장 <span class="text-brand">명쾌하고 확실한 솔루션</span>을 제시합니다."
-                </h3>
-                <div class="text-slate-600 leading-relaxed mb-8 space-y-4 text-sm md:text-base">
-                    <p>
-                        안녕하십니까, 공인번역&일반 행정사사무소 온:ON 대표 허온입니다.
-                    </p>
-                    <p>
-                        글로벌 비즈니스의 성공은 첫 단추인 '적법한 행정 절차와 완벽한 문서 준비'에서 시작됩니다. 외국인 투자 및 비자, 까다로운 인허가, 그리고 국가 간 오가는 공문서의 번역과 인증 등은 작은 실수 하나로도 비즈니스의 골든타임을 놓치게 만들 수 있습니다.
-                    </p>
-                    <p>
-                        온:ON은 <strong>공인번역행정사와 일반행정사 자격을 동시에 보유</strong>한 전문성을 바탕으로, 의뢰인의 상황을 다각도로 분석하여 한 치의 오차도 없는 원스톱(One-Stop) 서비스를 제공합니다. 당신의 권익과 성공을 켜는(ON) 든든한 파트너가 되겠습니다.
-                    </p>
-                </div>
-
-                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <h4 class="font-bold text-slate-900 mb-3 border-b border-slate-200 pb-2 text-sm">자격 및 전문 분야</h4>
-                    <ul class="space-y-2.5 text-xs md:text-sm text-slate-600">
-                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국어번역행정사 및 일반행정사 자격 동시 보유</li>
-                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국인 투자법인 설립 및 출입국·비자 수임 전문</li>
-                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 의료기기 인허가 및 해외 제조소 등록 전문</li>
-                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 행정사법에 따른 공인 번역확인증명서 발급</li>
-                    </ul>
-                </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">
+                    빠른 상담 신청하기
+                </a>
+                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">
+                    주요 업무 둘러보기
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 4. [사무소 소개 Part 2] 오시는 길 & 주차 안내 -->
-    <section class="py-16 px-6 max-w-5xl mx-auto bg-white mb-16 rounded-2xl shadow-sm border border-slate-100">
-        <div class="text-center mb-10">
-            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">오시는 길 및 주차 안내</h2>
+    <!-- 3. 핵심 전문 분야 섹션 -->
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">전문 분야</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">공인번역&일반 행정사사무소 온:ON이 제공하는 핵심 법률 행정 서비스입니다.</p>
         </div>
 
-        <div class="space-y-8 px-2 md:px-6">
-            <!-- 지도 영역 (네이비/카카오 지도 연결 가능) -->
-            <div class="w-full h-80 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
-                <!-- 네이버/카카오 지도 연결용 지도 미니 박스 -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.278385250371!2d126.823611!3d37.558056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzc1MycyOS4wIk4gMTI2NDknMjUuMCJF!5e0!3m2!1sko!2skr!4v1620000000000!5m2!1sko!2skr" class="w-full h-full border-0 filter grayscale contrast-125" allowfullscreen="" loading="lazy"></iframe>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">외국인 투자법인 · 비자</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    외국인 투자법인 설립, 취업 및 투자 비자, 체류자격 변경/연장, 영주권 및 국적 취득 대행 서비스를 제공합니다.
+                </p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </div>
 
-            <!-- 상세 안내 카드 3종 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- 주소 -->
-                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">📍</div>
-                    <h4 class="font-bold text-slate-900 mb-1 text-base">사무실 위치</h4>
-                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
-                        서울특별시 강서구 공항대로168, 8층 813호<br>
-                        <strong>(마곡동, 마곡747타워)</strong>
-                    </p>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">의료분야 · 각종 인허가</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    의료기기 제조 및 수입 업허가, 품목 등록 및 신고, 해외 제조소 등록 등 까다로운 인허가 절차를 지원합니다.
+                </p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">군인 행정구제</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처분에 대한 각종 행정심판을 통해 권익을 구제합니다.
+                </p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">법률번역 · 인증 · 아포스티유</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    법률·행정서류 공인번역 및 인증, 공증촉탁 대행, 외교부 아포스티유 및 영사확인 수속을 원스톱으로 처리합니다.
+                </p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 주요 업무 사례 섹션 -->
+    <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand font-bold text-sm tracking-widest uppercase">Case Studies</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">주요 업무 사례</h2>
+                </div>
+                <p class="text-slate-500 text-sm mt-2 md:mt-0">행정사사무소 온:ON이 해결한 실제 성공 사례입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded">번역 · 아포스티유</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">해외 진출 기업 공문서 번역확인증명서 발급 및 인증 대행</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-6">국내 기업의 해외 법인 설립 및 기관 제출을 위한 정관, 사업자등록증 등의 공인 번역 및 아포스티유 수속을 완수하였습니다.</p>
+                    </div>
+                    <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
+                        <span>블로그에서 자세히 보기</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
                 </div>
 
-                <!-- 지하철 -->
-                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🚇</div>
-                    <h4 class="font-bold text-slate-900 mb-1 text-base">지하철 이용 시</h4>
-                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
-                        <strong>5호선 마곡역 6번 출구</strong> 바로 앞<br>
-                        (출구 나온 후 도보 1분 거리)
-                    </p>
+                <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded">비자 · 출입국</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">외국인 전문인력(E-7) 비자 체류자격 변경 및 최종 승인</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-6">복잡한 고용사유서 작성과 입증 서류 보완을 통해 해외 우수 인재의 국내 정착 및 체류자격 변경을 성공적으로 지원했습니다.</p>
+                    </div>
+                    <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
+                        <span>블로그에서 자세히 보기</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
                 </div>
 
-                <!-- 주차 -->
-                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🅿️</div>
-                    <h4 class="font-bold text-slate-900 mb-1 text-base">주차 안내</h4>
-                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
-                        마곡747타워 건물 내 <strong>지하 주차장</strong> 이용 가능<br>
-                        (방문 상담 시 무료 주차 등록 지원)
-                    </p>
+                <div class="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded">의료분야 인허가</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">의료기기 제조·수입 업허가 및 해외 제조소 정식 등록</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-6">식약처 가이드라인에 맞춘 철저한 사전 준비로 해외 제조소 등록 및 수입 인허가 절차를 차질 없이 완수했습니다.</p>
+                    </div>
+                    <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
+                        <span>블로그에서 자세히 보기</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. 푸터 -->
+    <!-- 🌟 [삭제됨] 메인 화면의 대표 소개(About) 섹션 삭제 완료 -->
+
+    <!-- 5. 이용 안내 (업무 절차) 섹션 -->
+    <section id="guide" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Guide</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">이용 안내 (업무 절차)</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">투명하고 신속한 단계를 거쳐 최선의 결과를 이끌어냅니다.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 심층 상담</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">사안 검토 및 수임 가능성 정밀 분석</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">맞춤 전략 수립</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">필요 서류 안내 및 입증 자료 확보</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">서류 작성 및 접수</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">주관 관청 및 기관 정식 안건 접수</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">결과 도출 및 사후관리</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 이음 스타일의 가로형 푸터 & 하단 고객센터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
+            
             <div class="mb-8">
                 <h2 class="text-xl font-bold text-slate-900 mb-4">공인번역&일반 행정사사무소 온:ON</h2>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
@@ -192,6 +251,9 @@
                 <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
+                <a href="#" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
+                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
@@ -201,6 +263,7 @@
                     <a href="#" class="hover:text-slate-600">이용약관</a>
                 </div>
             </div>
+
         </div>
     </footer>
 

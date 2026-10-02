@@ -26,7 +26,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- 1. 상단 헤더 (클릭 시 메인 홈 이동) -->
+    <!-- 1. 상단 헤더 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
@@ -56,11 +56,10 @@
         </div>
     </header>
 
-    <!-- 🌟 2. 전문분야 상단 이동 탭 (요청하신 '전체 전문분야 보기' 딥블루 고대비 강조 버튼) -->
+    <!-- 2. 전문분야 상단 이동 탭 -->
     <div class="bg-white border-b border-slate-200 sticky top-[65px] z-40 shadow-sm">
         <div class="max-w-5xl mx-auto px-6 flex items-center gap-2 overflow-x-auto text-xs md:text-sm font-bold py-2.5">
-            <!-- 고대비 딥블루 포인트 버튼 -->
-            <a href="index.html#services" class="py-2 px-3.5 rounded-lg bg-[#0020A0] text-white hover:bg-[#001670] shadow-md transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
+            <a href="index.html#services" class="py-2 px-3.5 rounded-lg bg-brand text-white hover:bg-brand-hover shadow-sm transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
                 <svg class="w-4 h-4 stroke-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 <span>전체 전문분야 보기</span>
             </a>
@@ -72,19 +71,19 @@
         </div>
     </div>
 
-    <!-- 3. 서브페이지 타이틀 헤더 (기존 원본 대형 네이비 배너 유지) -->
-    <section class="bg-brand-dark py-14 px-6 border-b border-slate-200">
+    <!-- 3. 서브페이지 타이틀 헤더 (오리지널 블루 #0020A0 적용) -->
+    <section class="bg-brand py-14 px-6 border-b border-slate-200">
         <div class="max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-white/10 text-brand-light text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
+            <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">법률번역 · 인증 · 아포스티유</h1>
-            <p class="text-slate-300 text-sm md:text-base font-light">
+            <p class="text-blue-100 text-sm md:text-base font-light">
                 외국어번역행정사가 직접 정밀 번역하고 공인 인증 및 아포스티유 수속을 원스톱으로 제공합니다.
             </p>
         </div>
     </section>
 
-    <!-- 4. 핵심 업무 내용 2가지 -->
-    <section class="py-12 px-6 max-w-5xl mx-auto bg-white my-8 rounded-2xl shadow-sm border border-slate-100">
+    <!-- 4. 상세 업무 내용 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-8 rounded-2xl shadow-sm border border-slate-100">
         <div class="space-y-12">
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
@@ -130,7 +129,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요 취급 서류 4종 (이음 벤치마킹) -->
+    <!-- 5. 주요 취급 서류 4종 -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="text-center mb-10">
             <span class="text-brand font-bold text-xs uppercase tracking-widest bg-brand-light px-3 py-1 rounded-full">Document Capabilities</span>
@@ -195,7 +194,7 @@
         </div>
     </section>
 
-    <!-- 6. 번역확인증명서 vs 번역공증 vs 아포스티유 비교표 & 가이드 -->
+    <!-- 6. 번역확인증명서 vs 번역공증 vs 아포스티유 비교표 -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm mb-8">
             <div class="text-center mb-8">
@@ -255,28 +254,11 @@
                     <span class="font-bold text-slate-800">대만 제출인데 아포스티유 요구</span>
                     <span class="text-slate-600 sm:text-right">&rarr; 대만은 비협약국이므로 영사확인(대사관 인증)으로 진행합니다.</span>
                 </div>
-                <div class="p-3.5 bg-slate-50 rounded-lg border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <span class="font-bold text-slate-800">안내문이 없거나 문구가 모호함</span>
-                    <span class="text-slate-600 sm:text-right">&rarr; 서류 사진과 제출처를 알려주시면 1:1로 확인해 드립니다.</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. 법적 유의사항 배너 (하단 자연스러운 위치 배치) -->
-    <section class="py-6 px-6 max-w-5xl mx-auto">
-        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 shadow-sm">
-            <div class="flex items-center gap-2 mb-2 text-amber-900 font-bold text-sm">
-                <span class="bg-amber-500 text-white px-2 py-0.5 rounded text-xs">법률 안내</span>
-                <span>행정기관 제출 서류, 공인 외국어번역행정사의 법적 역할</span>
-            </div>
-            <p class="text-slate-700 text-xs md:text-sm leading-relaxed mb-3">
-                행정사법 제2조 및 행정안전부 지침(행정제도과-2715)에 의거, 행정기관 제출용 서류의 번역 및 제출 대행은 국가공인 외국어번역행정사 고유 업무입니다. 무자격자의 번역 서류는 행정기관에서 정식 반려될 수 있습니다.
-            </p>
-        </div>
-    </section>
-
-    <!-- 8. 번역인증 최근 사례 3선 (blog.naver.com 카테고리 46 연결) -->
+    <!-- 7. 최근 사례 -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -324,7 +306,7 @@
         </div>
     </section>
 
-    <!-- 9. 푸터 -->
+    <!-- 8. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -336,7 +318,7 @@
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>사업자등록번호 : 889-22-02024</p>
                     <span class="hidden md:inline text-slate-300">|</span>
-                    <p>주소 : 서울특별시 강서구 공항대로168, 8층 813호 (마곡747타워)</p>
+                    <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 (우편번호: 07807)</p>
                 </div>
                 <div class="mt-2 text-sm text-slate-600">
                     <p>이메일 : heo.on2506@gmail.com</p>

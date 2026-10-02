@@ -34,7 +34,6 @@
             }, 'google_translate_element');
         }
 
-        // 언어 버튼 활성화 스타일 제어
         function updateButtonStyles(activeLang) {
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
@@ -120,7 +119,7 @@
         </div>
     </header>
 
-    <!-- 2. 서브페이지 타이틀 배너 (선명한 브랜드 파란색 #0020A0) -->
+    <!-- 2. 서브페이지 타이틀 배너 -->
     <section class="bg-brand py-14 px-6 border-b border-slate-200">
         <div class="max-w-5xl mx-auto text-center">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">ABOUT US</span>
@@ -131,17 +130,21 @@
         </div>
     </section>
 
-    <!-- 3. 대표 인사말 및 이력 (요청사항 반영) -->
+    <!-- 3. 대표 인사말 및 이력 (레이아웃 3:9 로 최적화) -->
     <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100">
         <div class="text-center mb-12">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">대표 행정사 인사말 및 약력</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start px-4 md:px-6">
-            <div class="md:col-span-4 flex flex-col items-center">
-                <div class="w-full max-w-[280px] h-[340px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
-                    <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 프로필 사진 영역 ]</span><span class=\'text-xs\'>profile.jpg로 파일명을 맞추세요</span></div>';">
+        <!-- 🟢 레이아웃 비율 변경 (gap-12 -> gap-8), (col-span-4 -> col-span-3), (col-span-8 -> col-span-9) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start px-4 md:px-6">
+            
+            <!-- 왼쪽: 프로필 사진 영역 (여백/크기 최적화) -->
+            <div class="md:col-span-3 flex flex-col items-center">
+                <!-- max-w 280px -> 240px 로 줄여서 스마트하게 배치 -->
+                <div class="w-full max-w-[240px] h-[300px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
+                    <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 프로필 사진 영역 ]</span><span class=\'text-xs\'>profile.jpg로 맞추세요</span></div>';">
                 </div>
                 <div class="w-full text-center">
                     <h3 class="text-2xl font-bold text-slate-900 mb-1">허온 <span class="text-base text-slate-500 font-normal ml-1">Judy Heo</span></h3>
@@ -149,7 +152,8 @@
                 </div>
             </div>
 
-            <div class="md:col-span-8">
+            <!-- 오른쪽: 텍스트 및 박스 영역 (더 넓게 확보) -->
+            <div class="md:col-span-9">
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
                     "복잡한 법률·행정 절차,<br>
                     가장 <span class="text-brand">명쾌하고 확실한 솔루션</span>을 제시합니다."
@@ -161,10 +165,10 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- 학력 및 주요 경력 상자 (현 직함 최상단 / 학력 최하단) -->
+                    <!-- 학력 및 주요 경력 상자 -->
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
                         <h4 class="font-bold text-slate-900 mb-3 border-b border-slate-200 pb-2 text-sm text-brand">주요 경력 및 학력</h4>
-                        <ul class="space-y-2 text-xs md:text-sm text-slate-600">
+                        <ul class="space-y-2 text-xs md:text-[13px] lg:text-sm text-slate-600">
                             <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>(현) 대한행정사회 정회원</strong></li>
                             <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>(현) 법무부 등록 출입국민원 대행기관</strong></li>
                             <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> (전) 육군 제55보병사단 중대장 및 인사과장</li>
@@ -174,14 +178,14 @@
                         </ul>
                     </div>
 
-                    <!-- 핵심 전문 수임 분야 상자 (수정 요구사항 적용) -->
+                    <!-- 핵심 전문 수임 분야 상자 -->
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
                         <h4 class="font-bold text-slate-900 mb-3 border-b border-slate-200 pb-2 text-sm text-brand">핵심 전문 수임 분야</h4>
-                        <ul class="space-y-2 text-xs md:text-sm text-slate-600">
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>외국인 투자법인·비자:</strong> FDI 투자, E-7/D-8 비자, 법무부 등록 출입국 대행</li>
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>의료분야·각종 인허가:</strong> 의료기기 인허가, 수입해썹, 국내해썹, KGMP</li>
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>행정처분·군인징계구제:</strong> 행정심판, 군인 징계항고, 소청, 의견서 작성</li>
-                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>법률번역·아포스티유:</strong> 번역확인증명서, 공증촉탁 및 아포스티유 대행</li>
+                        <ul class="space-y-2 text-xs md:text-[13px] lg:text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>외국인 투자법인·비자:</strong> FDI 투자, E-7/D-8 비자, 출입국 대행</li>
+                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>의료분야·각종 인허가:</strong> 의료기기 인허가, 수입·국내해썹, KGMP</li>
+                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>행정처분·군인징계:</strong> 행정심판, 군인 징계항고, 소청, 의견서</li>
+                            <li class="flex items-start gap-2"><span class="text-brand mt-0.5">✔</span> <strong>법률번역·아포스티유:</strong> 번역확인증명서, 공증촉탁, 아포스티유</li>
                         </ul>
                     </div>
                 </div>
@@ -210,7 +214,6 @@
                         <strong>(마곡동 798-3, 마곡747타워) [07807]</strong>
                     </p>
                 </div>
-
                 <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
                     <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🚇</div>
                     <h4 class="font-bold text-slate-900 mb-1 text-base">지하철 이용 시</h4>
@@ -219,7 +222,6 @@
                         (출구 나온 후 도보 1분 거리)
                     </p>
                 </div>
-
                 <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
                     <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🅿️</div>
                     <h4 class="font-bold text-slate-900 mb-1 text-base">주차 안내</h4>

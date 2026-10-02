@@ -71,7 +71,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- 구글 번역 상단 바 숨김 및 중앙 정렬 패치 -->
+    <!-- 구글 번역 상단 바 숨김 및 다국어 중앙 정렬 패치 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -228,7 +228,7 @@
         </div>
     </section>
 
-    <!-- 5. 최근 사례 -->
+    <!-- 5. 최근 사례 (블로그 연동) -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -341,7 +341,7 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 (연락처 추가 및 주소 업데이트) -->
+    <!-- 7. 푸터 (전화/팩스 번호 추가 및 주소 업데이트) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -355,7 +355,7 @@
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
                 </div>
-                <!-- 연락처(이메일, 전화, 팩스) -->
+                <!-- 연락처(이메일, 전화, 팩스) 추가 영역 -->
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
                     <p>이메일 : on@koreabiz24.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -365,7 +365,6 @@
                 </div>
             </div>
 
-            <!-- 신규 푸터 태그 조합 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -393,14 +392,14 @@
         </div>
     </footer>
 
-    <!-- 🟢 1차: 카테고리(방) 고정, 2차: 확장 키워드 이중 필터링 적용 블로그 스크립트 -->
+    <!-- 🟢 50개 탐색 + 이중 필터링 적용 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // 핵심 수정: API 파라미터에 &count=50 을 강제 추가하여 깊이 파서 검색함
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=50`;
             
-            // 02번 분야(의료분야·각종 인허가)
-            // roomKeywords: 의료/인허가 카테고리 필수 조건 (타 카테고리 포스팅 절대 유입 방지)
+            // 02번 분야 전용 이중 필터 객체
             const categoryObj = { 
                 roomKeywords: ["의료", "인허가", "식품", "해썹", "제조업"],
                 expandedKeywords: ["의료", "수입", "수출", "공장", "식품", "단체", "환자", "유치", "기기", "여성", "연구소", "연구", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가", "해썹", "등록", "신고", "법인", "허가", "신청", "인증", "장기요양"] 
@@ -419,15 +418,15 @@
                     }
 
                     const filteredPosts = data.items.filter(post => {
-                        // 1. 카테고리(방)가 맞는지 1차 검사 (타 분야 절대 금지)
+                        // 1차 방어막: 타 카테고리(비자, 번역 등)의 글은 무조건 컷!
                         const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
                         const isCorrectRoom = categoryObj.roomKeywords.some(kw => catName.includes(kw));
                         if (!isCorrectRoom) return false;
 
-                        // 2. 제목+카테고리명 내에서 27개 확장 키워드가 있는지 2차 검사
+                        // 2차 추출: 지정된 방 안에서, 27개의 실무 키워드가 포함된 글 낚아채기
                         const targetText = (post.title + " " + catName).toLowerCase();
                         return categoryObj.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
-                    }).slice(0, 3); // 최대 3개까지만
+                    }).slice(0, 3); // 무조건 최신 3개만 추출
 
                     if (filteredPosts.length === 0) {
                         container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">해당 분야의 최신 수임 사례가 없습니다.</p>';

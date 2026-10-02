@@ -87,6 +87,15 @@
             display: block !important;
             width: 100% !important;
         }
+
+        /* 공식 영문 상호명 통일 패치 */
+        html.translated-ltr .kr-title,
+        html.translated-ltr .sub-title {
+            display: none !important;
+        }
+        html.translated-ltr .en-title {
+            display: block !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -99,8 +108,11 @@
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <!-- 나중에 싹 뜯어고칠 임시 구조입니다 (일단 기존과 동일하게 유지) -->
+                    <!-- 한국어 기본 상호명 -->
                     <span class="kr-title text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
+                    <!-- 영문 번역(EN) 시 나타날 공식 영문 상호명 -->
+                    <span class="en-title notranslate text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office:ON</span>
+                    <!-- 한국어 모드 하단 영문 서브타이틀 -->
                     <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office:ON</span>
                 </div>
             </a>
@@ -180,7 +192,7 @@
                         <p class="text-red-500 font-medium">휴무 <span class="text-xs text-slate-400 ml-1">(사전 예약 시 상담 가능)</span></p>
                     </div>
                     <p class="text-xs text-slate-500 mt-4 bg-white p-3 rounded-lg border border-slate-200">
-                        ※ 업무 시간 외 긴급 상담은 카카오톡 채널이나 이메일을 남겨주시면 확인 후 신속히 연락드리겠습니다.
+                        ※ 업무 시간 외 긴급 상담은 카카오 채널이나 이메일을 남겨주시면 확인 후 신속히 연락드리겠습니다.
                     </p>
                 </div>
             </div>
@@ -195,22 +207,22 @@
                     <div class="w-11 h-11 bg-white text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition shadow-sm flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의 폼</span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
                 </a>
                 
-                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_&ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-white text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition shadow-sm font-black text-lg flex-shrink-0">N</div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
                 </a>
 
-                <a href="https://pf.kakao.com/_bcHxln" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition shadow-sm flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오톡 상담</span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오 채널</span>
                 </a>
 
-                <a href="https://open.kakao.com/o/stQfvTDh" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
+                <a href="https://open.kakao.com/o/stQfvTDh?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
                     <div class="absolute top-0 w-full h-1 bg-brand"></div>
                     <div class="w-11 h-11 bg-white text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition shadow-sm flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
@@ -243,16 +255,20 @@
             </div>
         </div>
 
-        <!-- 💡 4. 이메일 문의 폼 (Form) 섹션 추가 -->
-        <!-- Formspree(무료 이메일 폼 서비스) 등을 연결할 수 있는 구조입니다. -->
-        <div id="inquiry-form" class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden">
+        <!-- 💡 4. 이메일 문의 폼 (스크롤 위치 보정 `scroll-mt-24` 적용) -->
+        <div id="inquiry-form" class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden scroll-mt-24">
             <div class="absolute top-0 left-0 w-full h-1.5 bg-brand"></div>
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">1:1 이메일 온라인 상담</h3>
             <p class="text-sm text-slate-500 mb-8">상세한 내용을 남겨주시면 확인 후 가장 신속하게 회신해 드립니다.</p>
 
-            <!-- action 주소에 Formspree 주소를 넣으면 메일이 바로 전송됩니다 -->
-            <form action="https://formspree.io/f/your_formspree_id" method="POST" class="space-y-5">
+            <!-- 💡 Formspree 고유 ID 적용 완료 -->
+            <form action="https://formspree.io/f/xjykqarw" method="POST" class="space-y-5">
                 
+                <!-- 💡 웹사이트 문의 트래킹용 숨김 태그 -->
+                <input type="hidden" name="문의_출처" value="[공식 웹사이트 1:1 이메일 폼]">
+                <!-- 💡 대표님 수신 메일함에서 볼 이메일 제목 강제 고정 -->
+                <input type="hidden" name="_subject" value="[웹사이트 접수] 새로운 상담 신청 내역입니다.">
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <!-- 이름/기업명 -->
                     <div>
@@ -260,9 +276,9 @@
                         <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition text-sm text-slate-800" placeholder="홍길동 / (주)온비즈">
                     </div>
                     
-                    <!-- 국적 (다국어 대응 핵심 항목) -->
+                    <!-- 국적 (영문 표기 삭제) -->
                     <div>
-                        <label for="nationality" class="block text-sm font-bold text-slate-700 mb-1.5">국적 (Nationality) <span class="text-red-500">*</span></label>
+                        <label for="nationality" class="block text-sm font-bold text-slate-700 mb-1.5">국적 <span class="text-red-500">*</span></label>
                         <input type="text" id="nationality" name="nationality" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition text-sm text-slate-800" placeholder="대한민국 (South Korea)">
                     </div>
                 </div>
@@ -296,8 +312,8 @@
 
                 <!-- 문의 제목 -->
                 <div>
-                    <label for="subject" class="block text-sm font-bold text-slate-700 mb-1.5">문의 제목 <span class="text-red-500">*</span></label>
-                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition text-sm text-slate-800" placeholder="상담을 원하시는 핵심 주제를 적어주세요.">
+                    <label for="title_user" class="block text-sm font-bold text-slate-700 mb-1.5">문의 제목 <span class="text-red-500">*</span></label>
+                    <input type="text" id="title_user" name="title_user" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition text-sm text-slate-800" placeholder="상담을 원하시는 핵심 주제를 적어주세요.">
                 </div>
 
                 <!-- 문의 상세 내용 -->
@@ -411,6 +427,7 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
+                <!-- 공식 영문명 방어막 유지 -->
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="#" class="hover:text-slate-600">개인정보처리방침</a>

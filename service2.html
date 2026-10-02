@@ -341,7 +341,7 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 (전화/팩스 번호 추가 및 주소 업데이트) -->
+    <!-- 7. 푸터 (연락처 추가 및 주소 업데이트) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -355,7 +355,7 @@
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
                 </div>
-                <!-- 연락처(이메일, 전화, 팩스) 추가 영역 -->
+                <!-- 연락처(이메일, 전화, 팩스) -->
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
                     <p>이메일 : on@koreabiz24.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -365,6 +365,7 @@
                 </div>
             </div>
 
+            <!-- 신규 푸터 태그 조합 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -392,41 +393,75 @@
         </div>
     </footer>
 
-    <!-- 🟢 50개 탐색 + 이중 필터링 적용 스크립트 -->
+    <!-- 🟢 DOMParser 방식 적용: 네이버 블로그 최신 XML 직접 파싱 (유료 API 제한 해결) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 핵심 수정: API 파라미터에 &count=50 을 강제 추가하여 깊이 파서 검색함
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=50`;
+            // CORS 우회 프록시로 원본 XML 요청
+            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
             
-            // 02번 분야 전용 이중 필터 객체
+            // 02번 분야(의료분야·각종 인허가) 정밀 필터 객체
             const categoryObj = { 
                 roomKeywords: ["의료", "인허가", "식품", "해썹", "제조업"],
                 expandedKeywords: ["의료", "수입", "수출", "공장", "식품", "단체", "환자", "유치", "기기", "여성", "연구소", "연구", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가", "해썹", "등록", "신고", "법인", "허가", "신청", "인증", "장기요양"] 
             };
 
-            fetch(apiUrl)
-                .then(response => response.json())
+            fetch(proxyUrl)
+                .then(response => {
+                    if (response.ok) return response.json();
+                    throw new Error('네트워크 응답 오류');
+                })
                 .then(data => {
                     const container = document.getElementById('service2-posts-container');
                     if (!container) return;
                     container.innerHTML = '';
 
-                    if (!data.items || data.items.length === 0) {
+                    // 브라우저 XML 파서 활성화
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+                    const items = Array.from(xmlDoc.querySelectorAll("item"));
+
+                    if (!items || items.length === 0) {
                         container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">최신 사례를 불러올 수 없습니다.</p>';
                         return;
                     }
 
-                    const filteredPosts = data.items.filter(post => {
-                        // 1차 방어막: 타 카테고리(비자, 번역 등)의 글은 무조건 컷!
-                        const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
-                        const isCorrectRoom = categoryObj.roomKeywords.some(kw => catName.includes(kw));
-                        if (!isCorrectRoom) return false;
+                    const filteredPosts = [];
 
-                        // 2차 추출: 지정된 방 안에서, 27개의 실무 키워드가 포함된 글 낚아채기
-                        const targetText = (post.title + " " + catName).toLowerCase();
-                        return categoryObj.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
-                    }).slice(0, 3); // 무조건 최신 3개만 추출
+                    for (let item of items) {
+                        const title = item.querySelector("title") ? item.querySelector("title").textContent : "";
+                        const link = item.querySelector("link") ? item.querySelector("link").textContent : "";
+                        const description = item.querySelector("description") ? item.querySelector("description").textContent : "";
+                        const pubDateRaw = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : "";
+                        
+                        // 네이버 RSS 내부 카테고리 추출
+                        const categoryElements = item.querySelectorAll("category");
+                        let categories = [];
+                        categoryElements.forEach(cat => categories.push(cat.textContent));
+                        const catName = categories.join(" ").toLowerCase();
+
+                        // 1차 방어막: 타 분야 포스팅 금지
+                        const isCorrectRoom = categoryObj.roomKeywords.some(kw => catName.includes(kw.toLowerCase()));
+                        if (!isCorrectRoom) continue;
+
+                        // 2차 추출: 27개 키워드 매칭
+                        const targetText = (title + " " + catName).toLowerCase();
+                        const isMatched = categoryObj.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
+
+                        if (isMatched) {
+                            let pubDateFormatted = pubDateRaw ? new Date(pubDateRaw).toISOString().split('T')[0] : '';
+                            filteredPosts.push({
+                                title,
+                                link,
+                                description,
+                                pubDate: pubDateFormatted,
+                                categoryName: "의료·인허가 사례"
+                            });
+                        }
+
+                        // 최신 순으로 3개가 모이면 즉시 탐색 중단
+                        if (filteredPosts.length >= 3) break;
+                    }
 
                     if (filteredPosts.length === 0) {
                         container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">해당 분야의 최신 수임 사례가 없습니다.</p>';
@@ -442,14 +477,11 @@
                             summary = summary.substring(0, 320) + "...";
                         }
 
-                        let categoryName = "의료·인허가 사례";
-                        let pubDate = post.pubDate ? post.pubDate.split(' ')[0] : '';
-
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${categoryName}</span>
-                                    <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
+                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${post.categoryName}</span>
+                                    <span class="text-xs text-slate-400 font-medium">${post.pubDate}</span>
                                 </div>
                                 
                                 <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>

@@ -26,16 +26,16 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- 1. 상단 헤더 -->
+    <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <div class="flex items-center gap-3.5 w-full md:w-auto">
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
                     <span class="text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
                     <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON</span>
                 </div>
-            </div>
+            </a>
 
             <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
@@ -84,7 +84,41 @@
         </div>
     </section>
 
-    <!-- 3. 핵심 전문 분야 섹션 -->
+    <!-- 🌟 3. [신규 추가] 행정안전부 공문 근거 법적 안내 배너 -->
+    <section class="py-12 px-6 max-w-7xl mx-auto -mb-10">
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8 md:p-10 shadow-lg relative overflow-hidden border border-slate-700">
+            <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-brand/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-between relative z-10">
+                <div class="space-y-3 lg:max-w-2xl">
+                    <div class="inline-flex items-center gap-2 bg-brand/30 border border-brand/40 px-3 py-1 rounded-full text-xs font-bold text-brand-light">
+                        <span>⚖ 법률 상식</span>
+                        <span class="text-slate-400">|</span>
+                        <span>행정안전부 공문 지침 (행정제도과-2715)</span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold leading-snug">
+                        행정기관 민원 신청 및 인·허가 대리, 왜 <span class="text-blue-400">국가공인 행정사</span>여야 할까요?[cite: 7]
+                    </h3>
+                    <p class="text-slate-300 text-xs md:text-sm leading-relaxed">
+                        행정사법 제2조에 따라 행정기관 제출 서류 작성·번역 및 인·허가 신청 대리는 국가공인 행정사만의 독점 권한입니다[cite: 7, 8]. 무자격 컨설팅 및 여행사 등의 위법 대행 서류는 <strong class="text-amber-300 font-semibold">행정기관에서 정식 접수가 반려</strong>될 수 있습니다[cite: 7, 8].
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full lg:w-auto text-xs font-semibold">
+                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                        <div class="text-blue-400 text-base mb-1">✔ 법적 대리 권한[cite: 7]</div>
+                        <p class="text-slate-300 text-[11px] font-normal">합법적 인·허가 및 비자 대리[cite: 7]</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+                        <div class="text-amber-400 text-base mb-1">🛡 반려 리스크 차단[cite: 7, 8]</div>
+                        <p class="text-slate-300 text-[11px] font-normal">무자격자 대행 서류 반려 방지[cite: 7, 8]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 핵심 전문 분야 섹션 -->
     <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">전문 분야</h2>
@@ -130,7 +164,7 @@
         </div>
     </section>
 
-    <!-- 4. 주요 업무 사례 섹션 (해당 블로그 카테고리 URL 개별 적용) -->
+    <!-- 5. 주요 업무 사례 섹션 -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -142,7 +176,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- 01 사례 -> 출입국비자 카테고리(56) -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">01. 비자 · 투자</span>
@@ -154,7 +187,6 @@
                     </a>
                 </div>
 
-                <!-- 02 사례 -> 인허가 카테고리(67) -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">02. 의료 · 인허가</span>
@@ -166,7 +198,6 @@
                     </a>
                 </div>
 
-                <!-- 03 사례 -> 행정심판 카테고리(59) -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">03. 기업처분 · 군인구제</span>
@@ -178,7 +209,6 @@
                     </a>
                 </div>
 
-                <!-- 04 사례 -> 번역인증 카테고리(46) -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                     <div>
                         <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">04. 번역 · 아포스티유</span>
@@ -193,7 +223,7 @@
         </div>
     </section>
 
-    <!-- 5. 이용 안내 -->
+    <!-- 6. 이용 안내 -->
     <section id="guide" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Guide</span>
@@ -224,11 +254,13 @@
         </div>
     </section>
 
-    <!-- 6. 푸터 -->
+    <!-- 7. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
-                <h2 class="text-xl font-bold text-slate-900 mb-4">공인번역&일반 행정사사무소 온:ON</h2>
+                <a href="index.html" class="inline-block hover:opacity-80 transition">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4">공인번역&일반 행정사사무소 온:ON</h2>
+                </a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
                     <p>대표 행정사 : 허온(Heo On)</p>
                     <span class="hidden md:inline text-slate-300">|</span>

@@ -41,10 +41,30 @@
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- 🟢 구글 번역 상단 바 완벽 숨김 스타일 -->
     <style>
-        .goog-te-banner-frame { display: none !important; }
-        body { top: 0px !important; }
-        #google_translate_element { display: none; }
+        .goog-te-banner-frame,
+        iframe.goog-te-banner-frame,
+        .VIpgJd-Z31SFb-M3B12d-sm2Cdf,
+        iframe.skiptranslate {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        body { 
+            top: 0px !important; 
+            position: static !important;
+        }
+        #google_translate_element { 
+            display: none !important; 
+        }
+        #goog-gt-tt, .goog-te-balloon-frame {
+            display: none !important;
+        }
+        .goog-text-highlight {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -254,7 +274,7 @@
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
                 <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
-                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
 
@@ -268,7 +288,7 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 최신 글 자동 로드 스크립트 (이음 스타일: 가로 카드 + 본문 길게 추출) -->
+    <!-- 네이버 블로그 최신 글 자동 로드 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
@@ -290,7 +310,6 @@
                     const posts = data.items.slice(0, 3);
 
                     posts.forEach((post, index) => {
-                        // HTML 태그 제거 및 텍스트 요약 (다국어 번역을 위해 ~320자 내외로 길게 추출)
                         let tmp = document.createElement("DIV");
                         tmp.innerHTML = post.description;
                         let summary = tmp.textContent || tmp.innerText || "";
@@ -302,7 +321,6 @@
                         let categoryName = (post.categories && post.categories.length > 0 && post.categories[0]) ? post.categories[0] : "업무 사례";
                         let pubDate = post.pubDate ? post.pubDate.split(' ')[0] : '';
 
-                        // 이음 형태의 넓은 가로 레이아웃 생성
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">

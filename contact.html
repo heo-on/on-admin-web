@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>문의하기 및 오시는 길 | 행정사사무소 온:ON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0020A0',
+                            hover: '#001670',
+                            light: '#EEF2FF',
+                            dark: '#0A122A',
+                            footer: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 구글 웹사이트 번역 스크립트 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ko',
+                includedLanguages: 'en,zh-CN,ja,ko',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
 
+        function updateButtonStyles(activeLang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === activeLang) {
+                    btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
+                } else {
+                    btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
+                }
+            });
+        }
+
+        function changeLanguage(langCode) {
+            if (langCode === 'ko') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+                return;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+            updateButtonStyles(langCode);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'ko';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateButtonStyles(currentLang);
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+        .goog-te-banner-frame, iframe.goog-te-banner-frame,
+        .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        body { top: 0px !important; position: static !important; }
+        #google_translate_element { display: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+        
+        .channel-card font, .channel-card span {
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <div id="google_translate_element"></div>
+
+    <!-- 1. 상단 헤더 & 네비게이션 -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+                <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+                <div>
+                    <span class="text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
+                    <!-- 💡 핵심 수정: notranslate 클래스 추가하여 구글 번역기가 이 영문을 절대 건드리지 못하게 방어 -->
+                    <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block notranslate">Certified Public Translation & Administrative Attorneys Office ON</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
+                    <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
+                    <a href="index.html#services" class="hover:text-brand transition">전문 분야</a>
+                    <a href="cases.html" class="hover:text-brand transition">업무 사례</a>
+                    <a href="contact.html" class="text-brand font-bold">Contact & Guide</a>
+                </nav>
+
+                <div class="flex items-center gap-2.5">
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                    </div>
+
+                    <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        문의하기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 서브페이지 타이틀 배너 -->
+    <section class="bg-brand py-14 px-6 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">CONTACT US</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">상담 문의 및 오시는 길</h1>
+            <p class="text-blue-100 text-sm md:text-base font-light">
+                의뢰인의 권익 보호를 위해 가장 빠르고 정확한 소통 채널을 운영하고 있습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. 연락처 및 7대 소통 채널 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        
+        <!-- 상단: 기본 연락처 정보 & 업무시간 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="text-brand">📞</span> 대표 연락처
+                </h3>
+                <div class="space-y-4 text-sm md:text-base text-slate-600">
+                    <div class="flex items-start gap-3">
+                        <strong class="text-slate-900 w-16">전화</strong>
+                        <p class="font-medium text-brand">010-7905-2506</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <strong class="text-slate-900 w-16">팩스</strong>
+                        <p>050-4414-2506</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <strong class="text-slate-900 w-16">이메일</strong>
+                        <p>on@koreabiz24.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-inner flex flex-col justify-center">
+                <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span class="text-brand">⏰</span> 상담 및 업무 시간
+                </h3>
+                <div class="space-y-4 text-sm md:text-base text-slate-600">
+                    <div class="flex items-start gap-3">
+                        <strong class="text-slate-900 w-16">평일</strong>
+                        <p>09:00 - 18:00 <span class="text-xs text-slate-400 ml-1">(점심시간 12:00 - 13:00)</span></p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <strong class="text-slate-900 w-16">주말/공휴일</strong>
+                        <p class="text-red-500 font-medium">휴무 <span class="text-xs text-slate-400 ml-1">(사전 예약 시 상담 가능)</span></p>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4 bg-white p-3 rounded-lg border border-slate-200">
+                        ※ 업무 시간 외 긴급 상담은 하단의 **카카오톡 채널**이나 **이메일**을 남겨주시면 확인 후 신속히 연락드리겠습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 하단: 7개 상담 채널 (4:3 정렬 완전 동일 적용) -->
+        <div class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-8 text-center border-b border-slate-100 pb-6">빠르고 편리한 1:1 다이렉트 소통 채널</h3>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 max-w-4xl mx-auto">
+                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-white text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition shadow-sm flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
+                </a>
+                
+                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-white text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition shadow-sm font-black text-lg flex-shrink-0">N</div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
+                </a>
+
+                <a href="https://pf.kakao.com/_bcHxln" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition shadow-sm flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오톡 상담</span>
+                </a>
+
+                <a href="https://open.kakao.com/o/stQfvTDh" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
+                    <div class="absolute top-0 w-full h-1 bg-brand"></div>
+                    <div class="w-11 h-11 bg-white text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition shadow-sm flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-brand leading-tight text-center block w-full">군인 전용 익명 상담</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-white text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition shadow-sm flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">유튜브 쇼츠</span>
+                </a>
+
+                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-white text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition shadow-sm flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">인스타그램</span>
+                </a>
+
+                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-white text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition shadow-sm flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 오시는 길 (지도) -->
+    <section class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="text-center mb-10">
+            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">오시는 길 및 주차 안내</h2>
+        </div>
+
+        <div class="space-y-8">
+            <div class="w-full h-96 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
+                <iframe src="https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=ko&z=17&output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center md:text-left">
+                    <div class="w-10 h-10 bg-brand-light text-brand rounded-full flex items-center justify-center font-bold mb-4 mx-auto md:mx-0 text-lg">📍</div>
+                    <h4 class="font-bold text-slate-900 mb-2 text-base">사무실 위치</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        서울특별시 강서구 공항대로 168<br>
+                        8층 813호 <strong>(마곡 747타워)</strong><br>
+                        <span class="text-xs text-slate-400">우편번호: 07807</span>
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center md:text-left">
+                    <div class="w-10 h-10 bg-brand-light text-brand rounded-full flex items-center justify-center font-bold mb-4 mx-auto md:mx-0 text-lg">🚇</div>
+                    <h4 class="font-bold text-slate-900 mb-2 text-base">지하철 이용 시</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <strong>지하철 5호선 마곡역 6번 출구</strong> 바로 앞<br>
+                        <span class="text-xs text-slate-400">출구에서 도보 1분 거리 위치</span>
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center md:text-left">
+                    <div class="w-10 h-10 bg-brand-light text-brand rounded-full flex items-center justify-center font-bold mb-4 mx-auto md:mx-0 text-lg">🅿️</div>
+                    <h4 class="font-bold text-slate-900 mb-2 text-base">주차 안내</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        마곡 747타워 건물 내 <strong>지하 주차장</strong> 이용<br>
+                        <span class="text-xs text-slate-400">방문 상담 시 무료 주차 등록 지원</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 푸터 -->
+    <footer id="contact-footer" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <a href="index.html" class="inline-block hover:opacity-80 transition">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4">공인번역&일반 행정사사무소 온:ON</h2>
+                </a>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+                    <p>대표 행정사 : 허온(Heo On)</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>사업자등록번호 : 889-22-02024</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
+                </div>
+                <!-- 연락처(이메일, 전화, 팩스) -->
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
+                    <p>이메일 : on@koreabiz24.com</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>전화 : 010-7905-2506</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>팩스 : 050-4414-2506</p>
+                </div>
+            </div>
+
+            <!-- 신규 푸터 태그 조합 -->
+            <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
+                <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
+                <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
+                <span class="hover:text-brand cursor-pointer">영주권·국적 취득 대행</span>
+                <span class="hover:text-brand cursor-pointer">의료기기 수입/제조업</span>
+                <span class="hover:text-brand cursor-pointer">수입·국내 HACCP 인증</span>
+                <span class="hover:text-brand cursor-pointer">비영리 사단·재단법인 설립</span>
+                <span class="hover:text-brand cursor-pointer">영업정지·과징금 행정심판</span>
+                <span class="hover:text-brand cursor-pointer">행정처분·군인징계구제</span>
+                <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
+                <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
+                <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
+                <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
+                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
+                <!-- 💡 푸터 영문명에도 notranslate 방어막 적용 -->
+                <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-600">개인정보처리방침</a>
+                    <a href="#" class="hover:text-slate-600">이용약관</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

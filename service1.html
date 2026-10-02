@@ -24,7 +24,7 @@
         }
     </script>
     
-    <!-- 🟢 구글 웹사이트 번역 스크립트 (완벽 패치) -->
+    <!-- 구글 웹사이트 번역 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -71,7 +71,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- 🟢 구글 번역 상단 바 완벽 숨김 스타일 -->
+    <!-- 구글 번역 상단 바 완벽 숨김 스타일 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -99,20 +99,28 @@
                 </div>
             </a>
 
-            <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
-                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
                     <a href="index.html#services" class="text-brand font-bold">전문 분야</a>
                     <a href="index.html#cases" class="hover:text-brand transition">업무 사례</a>
                     <a href="index.html#guide" class="hover:text-brand transition">이용 안내</a>
-                    <a href="contact.html" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
-                <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                    <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
-                    <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
-                    <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
-                    <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                <div class="flex items-center gap-2.5">
+                    <!-- 다국어 선택 버튼 -->
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                    </div>
+
+                    <!-- 헤더 전용 '문의하기' CTA 버튼 -->
+                    <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        문의하기
+                    </a>
                 </div>
             </div>
         </div>
@@ -215,7 +223,7 @@
         </div>
     </section>
 
-    <!-- 5. 최근 사례 (이음 스타일: 가로형 1열 박스 포맷 & ~320자 길이 추출) -->
+    <!-- 5. 최근 사례 -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -283,12 +291,11 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 스크립트 (가로형 리스트 + 320자 추출) -->
+    <!-- 네이버 블로그 자동 추출 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            // 투자/비자 특화 키워드
             const keywords = ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "출입국"];
 
             fetch(apiUrl)
@@ -306,7 +313,7 @@
                     const filteredPosts = data.items.filter(post => {
                         const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
                         return keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
-                    }).slice(0, 3); // 최대 3개 노출
+                    }).slice(0, 3);
 
                     if (filteredPosts.length === 0) {
                         container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">해당 분야의 최신 수임 사례가 없습니다.</p>';
@@ -318,7 +325,6 @@
                         tmp.innerHTML = post.description;
                         let summary = tmp.textContent || tmp.innerText || "";
                         summary = summary.replace(/\s+/g, ' ').trim();
-                        // 320자 추출
                         if (summary.length > 320) {
                             summary = summary.substring(0, 320) + "...";
                         }

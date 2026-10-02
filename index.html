@@ -17,6 +17,13 @@
                             light: '#EEF2FF',
                             dark: '#0A122A',
                             footer: '#F8FAFC'
+                        },
+                        social: {
+                            naver: '#03C75A',
+                            kakao: '#FEE500',
+                            youtube: '#FF0000',
+                            insta: '#E1306C',
+                            tiktok: '#000000'
                         }
                     }
                 }
@@ -24,7 +31,7 @@
         }
     </script>
     
-    <!-- 구글 웹사이트 번역 스크립트 (완벽 패치) -->
+    <!-- 구글 웹사이트 번역 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -116,8 +123,7 @@
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
-
-                    <!-- 헤더 '문의하기' 버튼 -->
+                    <!-- 문의하기 버튼 -->
                     <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         문의하기
@@ -191,7 +197,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요 업무 사례 섹션 (각 분야별 1개씩 총 4개 노출) -->
+    <!-- 5. 주요 업무 사례 섹션 -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -210,38 +216,103 @@
         </div>
     </section>
 
-    <!-- 6. 이용 안내 -->
+    <!-- 6. 개편된 CONTACT & GUIDE (업무 절차 및 상담 채널) -->
     <section id="guide" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <span class="text-brand font-bold text-sm tracking-widest uppercase">Guide</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">이용 안내 (업무 절차)</h2>
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">상담 채널 및 업무 절차</h2>
             <p class="text-slate-600 mt-2 text-sm md:text-base">투명하고 신속한 단계를 거쳐 최선의 결과를 이끌어냅니다.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+        
+        <!-- 상단: 4단계 업무 절차 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 심층 상담</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">사안 검토 및 수임 가능성 정밀 분석</p>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">맞춤 전략 수립</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">필요 서류 안내 및 입증 자료 확보</p>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">서류 작성 및 접수</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">주관 관청 및 기관 정식 안건 접수</p>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">결과 도출 및 사후관리</h4>
                 <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
             </div>
         </div>
+
+        <!-- 하단: 7개 상담 및 SNS 채널 -->
+        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg font-bold text-slate-900 mb-6 text-center">빠르고 편리한 소통 채널</h3>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- 이메일 -->
+                <a href="mailto:on@koreabiz24.com" class="flex flex-col items-center justify-center bg-white border border-slate-200 hover:border-brand w-36 h-32 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-700">이메일 문의</span>
+                </a>
+                
+                <!-- 네이버 톡톡 -->
+                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_" target="_blank" class="flex flex-col items-center justify-center bg-white border border-slate-200 hover:border-[#03C75A] w-36 h-32 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition font-black text-xl">N</div>
+                    <span class="text-sm font-bold text-slate-700">네이버 톡톡</span>
+                </a>
+
+                <!-- 카카오톡 일반 -->
+                <a href="https://pf.kakao.com/_bcHxln" target="_blank" class="flex flex-col items-center justify-center bg-white border border-slate-200 hover:border-[#FEE500] w-36 h-32 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-slate-100 text-slate-900 rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FEE500] transition">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-700">카카오톡 상담</span>
+                </a>
+
+                <!-- 군인 전용 카카오톡 -->
+                <a href="https://open.kakao.com/o/stQfvTDh" target="_blank" class="flex flex-col items-center justify-center bg-brand-light border border-brand/20 hover:border-brand w-48 h-32 rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden">
+                    <div class="absolute top-0 w-full h-1 bg-brand"></div>
+                    <div class="w-12 h-12 bg-white text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-brand">군인 전용 익명 상담</span>
+                    <span class="text-[10px] text-brand/70 mt-0.5">(징계·행정처분)</span>
+                </a>
+
+                <!-- 유튜브 쇼츠 -->
+                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="flex flex-col items-center justify-center bg-white border border-slate-200 hover:border-[#FF0000] w-36 h-32 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-700">유튜브 쇼츠</span>
+                </a>
+
+                <!-- 인스타그램 -->
+                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="flex flex-col items-center justify-center bg-white border border-slate-200 hover:border-[#E1306C] w-36 h-32 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-700">인스타그램</span>
+                </a>
+
+                <!-- 틱톡 -->
+                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="flex flex-col items-center justify-center bg-white border border-slate-200 hover:border-[#000000] w-36 h-32 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-700">TikTok</span>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- 7. 푸터 (수정된 키워드 태그 목록 적용) -->
+    <!-- 7. 푸터 (11개 태그 완벽 적용) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -288,33 +359,37 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 확장 키워드 기반 정밀 필터링 스크립트 -->
+    <!-- 🟢 네이버 블로그 이중 필터링 (카테고리 방어막 + 확장 실무 키워드 싹쓸이) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
-            // 대표님이 지정해주신 확장 키워드 반영
+            // 1차 필터(room)로 남의 카테고리 침범 차단, 2차 필터(keywords)로 글 낚아채기
             const categories = [
                 { 
                     id: 'cat1', 
                     label: '외국인 투자·비자', 
-                    keywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "D-9", "출입국"] 
+                    roomKeywords: ["투자", "비자", "외국인", "출입국"], // 카테고리 이름에 이 단어가 있어야만 입장 통과
+                    expandedKeywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "D-9", "출입국"] 
                 },
                 { 
                     id: 'cat2', 
                     label: '의료분야·각종 인허가', 
-                    keywords: ["의료", "수입", "수출", "공장", "식품", "단체", "환자", "유치", "기기", "여성", "연구소", "연구", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가", "해썹", "등록", "신고", "법인", "허가", "신청", "인증", "장기요양"] 
+                    roomKeywords: ["의료", "인허가", "식품", "해썹", "제조업"],
+                    expandedKeywords: ["의료", "수입", "수출", "공장", "식품", "단체", "환자", "유치", "기기", "여성", "연구소", "연구", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가", "해썹", "등록", "신고", "법인", "허가", "신청", "인증", "장기요양"] 
                 },
                 { 
                     id: 'cat3', 
                     label: '행정처분·군인징계', 
-                    keywords: ["처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", "구제", "의견", "사전통지", "통지", "기각", "인용", "사보행", "투폰", "음주", "적법성", "양정", "기준"] 
+                    roomKeywords: ["처분", "징계", "행정심판", "구제", "항고"],
+                    expandedKeywords: ["처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", "구제", "의견", "사전통지", "통지", "기각", "인용", "사보행", "투폰", "음주", "적법성", "양정", "기준"] 
                 },
                 { 
                     id: 'cat4', 
                     label: '행정·법률 번역·인증', 
-                    keywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"] 
+                    roomKeywords: ["번역", "인증", "아포스티유", "공증"],
+                    expandedKeywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"] 
                 }
             ];
 
@@ -337,9 +412,14 @@
                         const matchedPost = data.items.find(post => {
                             if (usedLinks.has(post.link)) return false;
                             
-                            // 카테고리명 및 포스팅 제목에서 키워드 검사
-                            const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
-                            return category.keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
+                            // 1차 방어막: 카테고리 이름 검사 (다른 방 글이면 무조건 탈락)
+                            const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
+                            const isCorrectRoom = category.roomKeywords.some(kw => catName.includes(kw));
+                            if (!isCorrectRoom) return false;
+
+                            // 2차 검색망: 통과한 글 안에서 대표님이 주신 실무 키워드 싹쓸이 검색
+                            const targetText = (post.title + " " + catName).toLowerCase();
+                            return category.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                         });
                         
                         if (matchedPost) {
@@ -382,7 +462,7 @@
                                     <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
                                     <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
                                         <span>블로그에서 전체 내용 보기</span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                     </a>
                                 </div>
                             </article>

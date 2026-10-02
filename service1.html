@@ -26,7 +26,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- 1. 상단 헤더 & 네비게이션 -->
+    <!-- 1. 상단 헤더 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-90 transition">
@@ -56,22 +56,30 @@
         </div>
     </header>
 
-    <!-- 2. 서브페이지 타이틀 헤더 -->
-    <section class="bg-brand-dark py-16 px-6 border-b border-slate-200">
+    <!-- 🌟 2. 전문분야 상단 이동 탭 (01, 02, 03, 04 바로가기) -->
+    <div class="bg-white border-b border-slate-200 sticky top-[65px] z-40 shadow-sm">
+        <div class="max-w-5xl mx-auto px-6 flex overflow-x-auto text-xs md:text-sm font-bold">
+            <a href="service1.html" class="py-3.5 px-5 border-b-2 border-brand text-brand whitespace-nowrap bg-brand-light/40">01. 외국인 투자법인·비자</a>
+            <a href="service2.html" class="py-3.5 px-5 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap">02. 의료분야·인허가</a>
+            <a href="service3.html" class="py-3.5 px-5 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap">03. 기업처분·군인구제</a>
+            <a href="service4.html" class="py-3.5 px-5 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap">04. 법률번역·아포스티유</a>
+        </div>
+    </div>
+
+    <!-- 3. 서브페이지 타이틀 헤더 -->
+    <section class="bg-brand-dark py-14 px-6 border-b border-slate-200">
         <div class="max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-white/10 text-brand-light text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest">SERVICES 01</span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4">외국인 투자법인 · 비자</h1>
+            <span class="inline-block bg-white/10 text-brand-light text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 01</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">외국인 투자법인 · 비자</h1>
             <p class="text-slate-300 text-sm md:text-base font-light">
                 성공적인 국내 비즈니스 안착을 위한 법인 설립부터 체류 자격(비자) 발급까지 원스톱 솔루션을 제공합니다.
             </p>
         </div>
     </section>
 
-    <!-- 3. 상세 업무 내용 섹션 -->
-    <section class="py-20 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100">
-        <div class="space-y-16">
-            
-            <!-- 업무 01 -->
+    <!-- 4. 상세 업무 내용 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-8 rounded-2xl shadow-sm border border-slate-100">
+        <div class="space-y-12">
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
                     <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">01</div>
@@ -79,14 +87,14 @@
                 </div>
                 <div class="md:w-2/3">
                     <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
-                        외국인투자촉진법 및 외국환거래법에 기반한 전문적인 투자 자문을 바탕으로, 외국 자본의 국내 유입 신고부터 투자기업 정식 등록까지 전 과정을 신속하게 대행합니다.
+                        외국인투자촉진법 및 외국환거래법에 기반한 전문 투자 자문을 바탕으로 외국 자본의 국내 유입 신고부터 투자기업 정식 등록까지 신속하게 대행합니다.
                     </p>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-slate-900 text-xs mb-3 text-brand">주요 지원 항목</h4>
-                        <ul class="space-y-2 text-xs md:text-sm text-slate-600">
+                        <h4 class="font-bold text-xs mb-2 text-brand">주요 지원 항목</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국인투자 사전 신고 및 외환 송금 계좌 개설 자문</li>
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 대한민국 법인설립 등기 및 사업자등록 수속</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국인투자기업(Foreign-Invested Company) 정식 등록증 발급</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국인투자기업 정식 등록증 발급</li>
                         </ul>
                     </div>
                 </div>
@@ -94,7 +102,6 @@
 
             <hr class="border-slate-100">
 
-            <!-- 업무 02 -->
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
                     <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">02</div>
@@ -102,11 +109,11 @@
                 </div>
                 <div class="md:w-2/3">
                     <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
-                        투자법인의 경영진 및 필수 인력이 안정적으로 국내에 체류할 수 있도록 까다로운 심사 기준에 맞춘 입증 서류와 사업계획서를 철저히 준비하여 승인을 이끌어냅니다.
+                        투자법인의 경영진 및 필수 인력이 안정적으로 국내에 체류할 수 있도록 심사 기준에 맞춘 입증 서류와 사업계획서를 준비하여 승인을 이끌어냅니다.
                     </p>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-slate-900 text-xs mb-3 text-brand">주요 지원 항목</h4>
-                        <ul class="space-y-2 text-xs md:text-sm text-slate-600">
+                        <h4 class="font-bold text-xs mb-2 text-brand">주요 지원 항목</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> D-8(기업투자) 및 D-9(무역경영) 사증발급인정서 신청</li>
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 출입국 심사용 맞춤형 국·영문 사업계획서 작성</li>
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 체류자격 변경, 체류기간 연장 및 동반가족(F-3) 초청</li>
@@ -117,7 +124,6 @@
 
             <hr class="border-slate-100">
 
-            <!-- 업무 03 -->
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
                     <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">03</div>
@@ -125,32 +131,70 @@
                 </div>
                 <div class="md:w-2/3">
                     <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
-                        국내 기업이 해외의 우수한 전문 기술 인력을 도입할 때 요구되는 고용 필요성 입증 자료를 논리적으로 구성하여, 허가율이 까다로운 E-7 비자 발급을 지원합니다.
+                        국내 기업이 해외 우수 전문 기술 인력을 도입할 때 요구되는 고용 필요성 입증 자료를 논리적으로 구성하여 E-7 비자 발급을 지원합니다.
                     </p>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
-                        <h4 class="font-bold text-slate-900 text-xs mb-3 text-brand">주요 지원 항목</h4>
-                        <ul class="space-y-2 text-xs md:text-sm text-slate-600">
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> E-7 직종별 자격 요건 정밀 심사 및 사전 가이드 제공</li>
+                        <h4 class="font-bold text-xs mb-2 text-brand">주요 지원 항목</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> E-7 직종별 자격 요건 정밀 심사 및 가이드 제공</li>
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 고용사유서, 국민고용 보호 소명서 작성</li>
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국인 유학생 국내 취업 자격 변경 수속</li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- 🌟 5. [신규 추가] 외국인 비자/투자 관련 최근 업무 사례 3선 -->
+    <section class="py-12 px-6 max-w-5xl mx-auto">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">외국인 투자 · 비자 최근 사례</h3>
+            </div>
+            <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 전체보기 &rarr;</a>
         </div>
 
-        <!-- 하단 문의 안내 배너 -->
-        <div class="mt-16 bg-slate-50 rounded-xl p-8 text-center border border-slate-200">
-            <h4 class="text-lg font-bold text-slate-900 mb-2">외국인 법인설립 및 비자 신청, 전문가와 사전 상담하세요.</h4>
-            <p class="text-sm text-slate-500 mb-6">초기 단계부터 법적 요건을 정밀하게 검토하여 불허 위험을 최소화합니다.</p>
-            <a href="index.html#contact" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-3 rounded-lg shadow transition">
-                상담 문의하기
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="bg-blue-100 text-brand text-[11px] font-bold px-2 py-0.5 rounded inline-block mb-2">E-7 비자</span>
+                    <h4 class="text-sm font-bold text-slate-900 mb-2 leading-snug">IT 개발자 외국인 전문인력 E-7 체류자격 변경 성공</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">고용사유서 완벽 준비로 2주 만에 비자 변경 허가를 도출한 사례입니다.</p>
+                </div>
+                <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-xs font-bold text-brand hover:underline pt-2 border-t border-slate-100">블로그에서 자세히 보기 &rarr;</a>
+            </div>
+
+            <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="bg-blue-100 text-brand text-[11px] font-bold px-2 py-0.5 rounded inline-block mb-2">D-8 투자</span>
+                    <h4 class="text-sm font-bold text-slate-900 mb-2 leading-snug">외국인 투자법인 FDI 신고 및 D-8 투자비자 통합 발급</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">투자금 송금부터 사업자등록 및 투자비자까지 원스톱 완수 사례입니다.</p>
+                </div>
+                <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-xs font-bold text-brand hover:underline pt-2 border-t border-slate-100">블로그에서 자세히 보기 &rarr;</a>
+            </div>
+
+            <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="bg-blue-100 text-brand text-[11px] font-bold px-2 py-0.5 rounded inline-block mb-2">영주권 F-5</span>
+                    <h4 class="text-sm font-bold text-slate-900 mb-2 leading-snug">국내 전문직 체류 외국인의 영주권(F-5) 체류자격 변경</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">소득 요건 및 생계유지능력 보완을 통해 최종 영주권 승인을 받았습니다.</p>
+                </div>
+                <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-xs font-bold text-brand hover:underline pt-2 border-t border-slate-100">블로그에서 자세히 보기 &rarr;</a>
+            </div>
+        </div>
+
+        <div class="mt-12 bg-slate-100/80 rounded-xl p-8 text-center border border-slate-200">
+            <h4 class="text-base font-bold text-slate-900 mb-1">외국인 법인설립 및 비자 신청, 전문가와 상담하세요.</h4>
+            <p class="text-xs text-slate-500 mb-5">사전 요건 검토를 통해 불허 위험을 최소화합니다.</p>
+            <a href="index.html#contact" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-7 py-2.5 rounded-lg text-sm shadow transition">
+                1:1 상담 신청하기
             </a>
         </div>
     </section>
 
-    <!-- 4. 푸터 (사업자번호, 이메일, 블로그 링크 업데이트) -->
+    <!-- 6. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">

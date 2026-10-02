@@ -249,7 +249,7 @@
         </div>
     </section>
 
-    <!-- 6. 푸터 -->
+    <!-- 6. 푸터 (11개 정제 태그 목록 적용) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -271,8 +271,11 @@
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
-                <span class="hover:text-brand cursor-pointer">의료기기 인허가</span>
-                <span class="hover:text-brand cursor-pointer">해외 제조소 등록</span>
+                <span class="hover:text-brand cursor-pointer">영주권·국적 취득 대행</span>
+                <span class="hover:text-brand cursor-pointer">의료기기 수입/제조업</span>
+                <span class="hover:text-brand cursor-pointer">수입·국내 HACCP 인증</span>
+                <span class="hover:text-brand cursor-pointer">비영리 사단·재단법인 설립</span>
+                <span class="hover:text-brand cursor-pointer">영업정지·과징금 행정심판</span>
                 <span class="hover:text-brand cursor-pointer">행정처분·군인징계구제</span>
                 <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
@@ -292,14 +295,14 @@
         </div>
     </footer>
 
-    <!-- 🟢 네이버 블로그 추출 스크립트 (카테고리명 고정 검색 필터링) -->
+    <!-- 네이버 블로그 추출 스크립트 (확장 키워드 정밀 필터링) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
             
-            // 01번 카테고리(외국인 투자·비자) 전용 키워드
-            const catKeywords = ["비자", "투자", "외국인", "출입국", "D-8", "E-7"];
+            // 01번 분야(외국인 투자·비자) 전용 키워드
+            const keywords = ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "D-9", "출입국"];
 
             fetch(apiUrl)
                 .then(response => response.json())
@@ -313,13 +316,9 @@
                         return;
                     }
 
-                    // 카테고리 이름 안에 catKeywords 단어가 있는 글만 최대 3개 통과
                     const filteredPosts = data.items.filter(post => {
-                        if (post.categories && post.categories.length > 0) {
-                            const catName = post.categories.join(" ").toLowerCase();
-                            return catKeywords.some(keyword => catName.includes(keyword.toLowerCase()));
-                        }
-                        return false;
+                        const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
+                        return keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                     }).slice(0, 3);
 
                     if (filteredPosts.length === 0) {
@@ -356,7 +355,7 @@
                                     <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
                                     <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
                                         <span>블로그에서 전체 내용 보기</span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                     </a>
                                 </div>
                             </article>

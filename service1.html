@@ -99,6 +99,7 @@
                 </div>
             </a>
 
+            <!-- 우측 메뉴 및 버튼 영역 -->
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
@@ -291,12 +292,14 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 자동 추출 스크립트 -->
+    <!-- 🟢 네이버 블로그 추출 스크립트 (카테고리명 고정 검색 필터링) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            const keywords = ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "출입국"];
+            
+            // 01번 카테고리(외국인 투자·비자) 전용 키워드
+            const catKeywords = ["비자", "투자", "외국인", "출입국", "D-8", "E-7"];
 
             fetch(apiUrl)
                 .then(response => response.json())
@@ -310,9 +313,13 @@
                         return;
                     }
 
+                    // 카테고리 이름 안에 catKeywords 단어가 있는 글만 최대 3개 통과
                     const filteredPosts = data.items.filter(post => {
-                        const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
-                        return keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
+                        if (post.categories && post.categories.length > 0) {
+                            const catName = post.categories.join(" ").toLowerCase();
+                            return catKeywords.some(keyword => catName.includes(keyword.toLowerCase()));
+                        }
+                        return false;
                     }).slice(0, 3);
 
                     if (filteredPosts.length === 0) {

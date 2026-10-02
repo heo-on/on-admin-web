@@ -136,7 +136,7 @@
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">대표 행정사 인사말 및 약력</h2>
         </div>
 
-        <!-- 1부: 프로필 사진 & 인사말 (인사말 문구 수정 적용) -->
+        <!-- 1부: 프로필 사진 & 인사말 -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center px-4 md:px-6 mb-12">
             <div class="md:col-span-4 flex flex-col items-center">
                 <div class="w-full max-w-[260px] h-[320px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
@@ -161,7 +161,7 @@
             </div>
         </div>
 
-        <!-- 2부: 주요 경력 & 전문 분야 박스 (5:6 비율 및 텍스트 수정/줄바꿈 방지 적용) -->
+        <!-- 2부: 주요 경력 & 전문 분야 박스 -->
         <div class="grid grid-cols-1 md:grid-cols-11 gap-6 px-4 md:px-6 border-t border-slate-100 pt-10">
             
             <!-- 왼쪽 박스 (비율 5칸) -->
@@ -177,26 +177,25 @@
                 </ul>
             </div>
 
-            <!-- 오른쪽 박스 (비율 6칸) -->
+            <!-- 오른쪽 박스 (비율 6칸) / 🟢 겹침 영구 방지 (grid-cols-[auto_1fr]) 🟢 -->
             <div class="md:col-span-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">핵심 전문 수임 분야</h4>
-                <!-- 항목명이 줄바꿈되지 않도록 grid-cols-[150px_1fr]과 whitespace-nowrap 적용 -->
                 <ul class="space-y-4 text-sm lg:text-base text-slate-600">
-                    <li class="grid grid-cols-[150px_1fr] gap-2 items-start">
-                        <div class="flex items-center gap-2 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 외국인 투자·비자:</div>
-                        <div class="leading-relaxed break-keep">FDI 투자, D-8·D-9, E-7 비자</div>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 외국인 투자·비자:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">FDI 투자, D-8·D-9, E-7 비자</div>
                     </li>
-                    <li class="grid grid-cols-[150px_1fr] gap-2 items-start">
-                        <div class="flex items-center gap-2 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 의료분야·인허가:</div>
-                        <div class="leading-relaxed break-keep">의료기기 수입·제조업, 수입·국내해썹</div>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 의료분야·각종 인허가:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">의료기기 수입·제조업, 수입·국내해썹</div>
                     </li>
-                    <li class="grid grid-cols-[150px_1fr] gap-2 items-start">
-                        <div class="flex items-center gap-2 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 행정처분·군인징계:</div>
-                        <div class="leading-relaxed break-keep">행정심판, 군인 항고, 소청, 의견서</div>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 행정처분·군인징계:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">행정심판, 군인 항고, 소청, 의견서</div>
                     </li>
-                    <li class="grid grid-cols-[150px_1fr] gap-2 items-start">
-                        <div class="flex items-center gap-2 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 번역인증·공증:</div>
-                        <div class="leading-relaxed break-keep">번역확인증명서, 공증촉탁·아포스티유 대행</div>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> 행정·법률 번역·인증:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">번역확인증명서, 공증촉탁·아포스티유 대행</div>
                     </li>
                 </ul>
             </div>

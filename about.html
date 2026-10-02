@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>사무소 소개 | 행정사사무소 온:ON</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0020A0',
+                            hover: '#001670',
+                            light: '#EEF2FF',
+                            dark: '#0A122A',
+                            footer: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
+    <!-- 1. 상단 헤더 & 네비게이션 -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <!-- 로고 클릭 시 메인(index.html)으로 이동 -->
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-90 transition">
+                <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+                <div>
+                    <span class="text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
+                    <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+                    <a href="about.html" class="text-brand font-bold">사무소 소개</a>
+                    <a href="index.html#services" class="hover:text-brand transition">전문 분야</a>
+                    <a href="index.html#cases" class="hover:text-brand transition">업무 사례</a>
+                    <a href="index.html#guide" class="hover:text-brand transition">이용 안내</a>
+                    <a href="#contact" class="hover:text-brand transition">고객센터</a>
+                </nav>
+
+                <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                    <span class="bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm">KR</span>
+                    <span class="text-slate-400 hover:text-slate-700 px-2 py-1 cursor-pointer transition">EN</span>
+                    <span class="text-slate-400 hover:text-slate-700 px-2 py-1 cursor-pointer transition">ZH</span>
+                    <span class="text-slate-400 hover:text-slate-700 px-2 py-1 cursor-pointer transition">JA</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 서브페이지 타이틀 헤더 -->
+    <section class="bg-brand-dark py-16 px-6 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-white/10 text-brand-light text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest">ABOUT US</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4">사무소 소개</h1>
+            <p class="text-slate-300 text-sm md:text-base font-light">
+                글로벌 비즈니스의 든든한 파트너, 행정사사무소 온:ON을 소개합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. 대표 행정사 프로필 & 인사말 섹션 -->
+    <section class="py-20 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start px-4 md:px-10">
+            
+            <!-- 왼쪽: 프로필 사진 -->
+            <div class="md:col-span-5 flex flex-col items-center">
+                <div class="w-full max-w-sm h-[450px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-6">
+                    <!-- 이미 올려두신 profile.jpg가 여기에 뜹니다 -->
+                    <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 프로필 사진 영역 ]</span></div>';">
+                </div>
+                <div class="w-full text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1">허온 <span class="text-base text-slate-500 font-normal ml-1">Heo On</span></h3>
+                    <p class="text-brand font-semibold text-sm mb-4">대표 행정사</p>
+                </div>
+            </div>
+
+            <!-- 오른쪽: 인사말 및 이력 -->
+            <div class="md:col-span-7 pt-4">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">
+                    "복잡한 법률·행정 절차,<br>
+                    가장 <span class="text-brand">명쾌하고 확실한 솔루션</span>을 제시합니다."
+                </h2>
+                <div class="text-slate-600 leading-relaxed mb-10 space-y-4 text-sm md:text-base">
+                    <p>
+                        안녕하십니까, 공인번역&일반 행정사사무소 온:ON 대표 허온입니다.
+                    </p>
+                    <p>
+                        글로벌 비즈니스의 성공은 첫 단추인 '적법한 행정 절차와 완벽한 문서 준비'에서 시작됩니다. 외국인 투자 및 비자, 까다로운 인허가, 그리고 국가 간 오가는 공문서의 번역과 인증 등은 작은 실수 하나로도 비즈니스의 골든타임을 놓치게 만들 수 있습니다.
+                    </p>
+                    <p>
+                        온:ON은 <strong>공인번역행정사와 일반행정사 자격을 동시에 보유</strong>한 전문성을 바탕으로, 의뢰인의 상황을 다각도로 분석하여 한 치의 오차도 없는 원스톱(One-Stop) 서비스를 제공합니다. 당신의 권익과 성공을 켜는(ON) 든든한 파트너가 되겠습니다.
+                    </p>
+                </div>
+
+                <!-- 자격 및 주요 이력 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                    <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">자격 및 전문 분야</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <span class="text-brand mt-0.5">✔</span> 
+                            <span>외국어번역행정사 및 일반행정사 자격 동시 보유</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-brand mt-0.5">✔</span> 
+                            <span>외국인 투자법인 설립 및 출입국·비자 수임 전문</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-brand mt-0.5">✔</span> 
+                            <span>의료기기 인허가 및 해외 제조소 등록 전문</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-brand mt-0.5">✔</span> 
+                            <span>행정사법에 따른 공인 번역확인증명서 직접 발급</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 푸터 (가로형 정렬) -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <h2 class="text-xl font-bold text-slate-900 mb-4">공인번역&일반 행정사사무소 온:ON</h2>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+                    <p>대표 행정사 : 허온(Heo On)</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>사업자등록번호 : (추후 입력)</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>주소 : 서울특별시 강서구 공항대로168, 8층 813호 (마곡747타워)</p>
+                </div>
+                <div class="mt-2 text-sm text-slate-600">
+                    <p>이메일 : (추후 입력)</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
+                <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
+                <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
+                <span class="hover:text-brand cursor-pointer">의료기기 인허가</span>
+                <span class="hover:text-brand cursor-pointer">해외 제조소 등록</span>
+                <span class="hover:text-brand cursor-pointer">군인 징계 항고</span>
+                <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
+                <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
+                <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
+                <p>&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-600">개인정보처리방침</a>
+                    <a href="#" class="hover:text-slate-600">이용약관</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

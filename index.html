@@ -24,7 +24,7 @@
         }
     </script>
     
-    <!-- 🟢 구글 웹사이트 번역 스크립트 (완벽 패치) -->
+    <!-- 구글 웹사이트 번역 스크립트 (완벽 패치) -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -34,7 +34,6 @@
             }, 'google_translate_element');
         }
 
-        // 언어 버튼 활성화 스타일 제어
         function updateButtonStyles(activeLang) {
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
@@ -72,7 +71,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
-    <!-- 🟢 구글 번역 상단 바 완벽 숨김 스타일 -->
+    <!-- 구글 번역 상단 바 완벽 숨김 스타일 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -100,21 +99,29 @@
                 </div>
             </a>
 
-            <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
-                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+            <!-- 우측 메뉴 및 버튼 영역 -->
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
                     <a href="#services" class="hover:text-brand transition">전문 분야</a>
                     <a href="#cases" class="hover:text-brand transition">업무 사례</a>
                     <a href="#guide" class="hover:text-brand transition">이용 안내</a>
-                    <a href="contact.html" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
-                <!-- 다국어 선택 버튼 -->
-                <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                    <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
-                    <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
-                    <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
-                    <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                <div class="flex items-center gap-2.5">
+                    <!-- 다국어 선택 버튼 -->
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                    </div>
+                    
+                    <!-- 🟢 헤더 전용 '문의하기' CTA 버튼 추가 -->
+                    <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        문의하기
+                    </a>
                 </div>
             </div>
         </div>
@@ -171,13 +178,13 @@
             </a>
             <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">행정처분 · 군인징계구제</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처원에 대한 각종 행정심판을 통해 권익을 구제합니다.</p>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">행정처분 · 군인징계</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처분에 대한 각종 행정심판을 통해 권익을 구제합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
             <a href="service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">법률번역 · 인증 · 아포스티유</h3>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">행정·법률 번역·인증</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">법률·행정서류 공인번역 및 인증, 공증촉탁 대행, 외교부 아포스티유 및 영사확인 수속을 원스톱으로 처리합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
@@ -195,7 +202,6 @@
                 <p class="text-slate-500 text-sm mt-2 md:mt-0">4개 대표 분야별 가장 최근에 완료된 수임 사례입니다.</p>
             </div>
 
-            <!-- 블로그 포스팅 동적 자동 삽입 컨테이너 -->
             <div id="blog-posts-container" class="space-y-6">
                 <div class="bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
                     네이버 블로그에서 분야별 최신 수임 사례를 불러오는 중입니다...
@@ -276,18 +282,17 @@
         </div>
     </footer>
 
-    <!-- 🟢 네이버 블로그 중복 방지 & 정밀 분야별 최신 1개 추출 스크립트 -->
+    <!-- 네이버 블로그 중복 방지 & 정밀 분야별 최신 1개 추출 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
-            // 4대 분야별 정밀 키워드 세팅
             const categories = [
                 { id: 'cat1', label: '외국인 투자·비자', keywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "출입국"] },
-                { id: 'cat2', label: '의료분야·인허가', keywords: ["의료", "수입", "공장", "식품", "단체", "환자", "기기", "여성", "연구소", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가"] },
+                { id: 'cat2', label: '의료분야·각종 인허가', keywords: ["의료", "수입", "공장", "식품", "단체", "환자", "기기", "여성", "연구소", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가"] },
                 { id: 'cat3', label: '행정처분·군인징계', keywords: ["처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", "구제"] },
-                { id: 'cat4', label: '법률번역·인증', keywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"] }
+                { id: 'cat4', label: '행정·법률 번역·인증', keywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"] }
             ];
 
             fetch(apiUrl)
@@ -303,13 +308,11 @@
                     }
 
                     const selectedPosts = [];
-                    const usedLinks = new Set(); // 중복 선택 방지 집합
+                    const usedLinks = new Set(); 
 
                     categories.forEach(category => {
                         const matchedPost = data.items.find(post => {
-                            // 이미 다른 카테고리에 할당된 글은 건너뜀
                             if (usedLinks.has(post.link)) return false;
-
                             const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
                             return category.keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                         });
@@ -340,7 +343,7 @@
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${post.customLabel} 분야 사례</span>
+                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${post.customLabel} 사례</span>
                                     <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
                                 </div>
                                 

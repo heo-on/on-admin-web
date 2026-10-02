@@ -29,7 +29,6 @@
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <!-- 로고 클릭 시 메인(index.html)으로 이동 -->
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-90 transition">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
@@ -68,14 +67,17 @@
         </div>
     </section>
 
-    <!-- 3. 대표 행정사 프로필 & 인사말 섹션 -->
-    <section class="py-20 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start px-4 md:px-10">
-            
-            <!-- 왼쪽: 프로필 사진 -->
+    <!-- 3. [사무소 소개 Part 1] 대표 행정사 인사말 & 프로필 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100">
+        <div class="text-center mb-12">
+            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">대표 행정사 인사말</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start px-4 md:px-6">
+            <!-- 프로필 사진 -->
             <div class="md:col-span-5 flex flex-col items-center">
-                <div class="w-full max-w-sm h-[450px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-6">
-                    <!-- 이미 올려두신 profile.jpg가 여기에 뜹니다 -->
+                <div class="w-full max-w-sm h-[420px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
                     <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 프로필 사진 영역 ]</span></div>';">
                 </div>
                 <div class="w-full text-center md:text-left">
@@ -84,13 +86,13 @@
                 </div>
             </div>
 
-            <!-- 오른쪽: 인사말 및 이력 -->
-            <div class="md:col-span-7 pt-4">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 leading-snug">
+            <!-- 인사말 및 이력 -->
+            <div class="md:col-span-7">
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
                     "복잡한 법률·행정 절차,<br>
                     가장 <span class="text-brand">명쾌하고 확실한 솔루션</span>을 제시합니다."
-                </h2>
-                <div class="text-slate-600 leading-relaxed mb-10 space-y-4 text-sm md:text-base">
+                </h3>
+                <div class="text-slate-600 leading-relaxed mb-8 space-y-4 text-sm md:text-base">
                     <p>
                         안녕하십니까, 공인번역&일반 행정사사무소 온:ON 대표 허온입니다.
                     </p>
@@ -102,33 +104,69 @@
                     </p>
                 </div>
 
-                <!-- 자격 및 주요 이력 -->
-                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
-                    <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">자격 및 전문 분야</h4>
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand mt-0.5">✔</span> 
-                            <span>외국어번역행정사 및 일반행정사 자격 동시 보유</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand mt-0.5">✔</span> 
-                            <span>외국인 투자법인 설립 및 출입국·비자 수임 전문</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand mt-0.5">✔</span> 
-                            <span>의료기기 인허가 및 해외 제조소 등록 전문</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-brand mt-0.5">✔</span> 
-                            <span>행정사법에 따른 공인 번역확인증명서 직접 발급</span>
-                        </li>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-3 border-b border-slate-200 pb-2 text-sm">자격 및 전문 분야</h4>
+                    <ul class="space-y-2.5 text-xs md:text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국어번역행정사 및 일반행정사 자격 동시 보유</li>
+                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 외국인 투자법인 설립 및 출입국·비자 수임 전문</li>
+                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 의료기기 인허가 및 해외 제조소 등록 전문</li>
+                        <li class="flex items-center gap-2"><span class="text-brand">✔</span> 행정사법에 따른 공인 번역확인증명서 발급</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. 푸터 (가로형 정렬) -->
+    <!-- 4. [사무소 소개 Part 2] 오시는 길 & 주차 안내 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto bg-white mb-16 rounded-2xl shadow-sm border border-slate-100">
+        <div class="text-center mb-10">
+            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">오시는 길 및 주차 안내</h2>
+        </div>
+
+        <div class="space-y-8 px-2 md:px-6">
+            <!-- 지도 영역 (네이비/카카오 지도 연결 가능) -->
+            <div class="w-full h-80 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
+                <!-- 네이버/카카오 지도 연결용 지도 미니 박스 -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.278385250371!2d126.823611!3d37.558056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzc1MycyOS4wIk4gMTI2NDknMjUuMCJF!5e0!3m2!1sko!2skr!4v1620000000000!5m2!1sko!2skr" class="w-full h-full border-0 filter grayscale contrast-125" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- 상세 안내 카드 3종 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 주소 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">📍</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">사무실 위치</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        서울특별시 강서구 공항대로168, 8층 813호<br>
+                        <strong>(마곡동, 마곡747타워)</strong>
+                    </p>
+                </div>
+
+                <!-- 지하철 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🚇</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">지하철 이용 시</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        <strong>5호선 마곡역 6번 출구</strong> 바로 앞<br>
+                        (출구 나온 후 도보 1분 거리)
+                    </p>
+                </div>
+
+                <!-- 주차 -->
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🅿️</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">주차 안내</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        마곡747타워 건물 내 <strong>지하 주차장</strong> 이용 가능<br>
+                        (방문 상담 시 무료 주차 등록 지원)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">

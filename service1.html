@@ -71,7 +71,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- 구글 번역 상단 바 완벽 숨김 스타일 -->
+    <!-- 구글 번역 상단 바 숨김 및 중앙 정렬 패치 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -82,6 +82,12 @@
         #google_translate_element { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+        
+        .channel-card font, .channel-card span {
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -105,11 +111,10 @@
                     <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
                     <a href="index.html#services" class="text-brand font-bold">전문 분야</a>
                     <a href="index.html#cases" class="hover:text-brand transition">업무 사례</a>
-                    <a href="index.html#guide" class="hover:text-brand transition">이용 안내</a>
+                    <a href="index.html#guide" class="hover:text-brand transition">Contact & Guide</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
-                    <!-- 다국어 선택 버튼 -->
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
                         <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
@@ -117,7 +122,6 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
 
-                    <!-- 헤더 전용 '문의하기' CTA 버튼 -->
                     <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         문의하기
@@ -243,13 +247,101 @@
         <div class="mt-12 bg-slate-100/80 rounded-xl p-8 text-center border border-slate-200">
             <h4 class="text-base font-bold text-slate-900 mb-1">외국인 법인설립 및 비자 신청, 전문가와 상담하세요.</h4>
             <p class="text-xs text-slate-500 mb-5">사전 요건 검토를 통해 불허 위험을 최소화합니다.</p>
-            <a href="contact.html" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-7 py-2.5 rounded-lg text-sm shadow transition">
+            <a href="#guide" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-7 py-2.5 rounded-lg text-sm shadow transition">
                 1:1 상담 신청하기
             </a>
         </div>
     </section>
 
-    <!-- 6. 푸터 (11개 정제 태그 목록 적용) -->
+    <!-- 6. CONTACT & GUIDE (업무 절차 및 상담 채널) -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10">
+        <div class="text-center mb-16">
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">상담 채널 및 업무 절차</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">투명하고 신속한 단계를 거쳐 최선의 결과를 이끌어냅니다.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 심층 상담</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">사안 검토 및 수임 가능성 정밀 분석</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">맞춤 전략 수립</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">필요 서류 안내 및 입증 자료 확보</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">서류 작성 및 접수</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">주관 관청 및 기관 정식 안건 접수</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">결과 도출 및 사후관리</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 max-w-4xl mx-auto">
+                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
+                </a>
+                
+                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition font-black text-lg flex-shrink-0">N</div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
+                </a>
+
+                <a href="https://pf.kakao.com/_bcHxln" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오톡 상담</span>
+                </a>
+
+                <a href="https://open.kakao.com/o/stQfvTDh" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
+                    <div class="absolute top-0 w-full h-1 bg-brand"></div>
+                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-brand leading-tight text-center block w-full">군인 전용 익명 상담</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">유튜브 쇼츠</span>
+                </a>
+
+                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">인스타그램</span>
+                </a>
+
+                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 푸터 (연락처 추가 및 주소 업데이트) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -261,13 +353,19 @@
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>사업자등록번호 : 889-22-02024</p>
                     <span class="hidden md:inline text-slate-300">|</span>
-                    <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 (우편번호: 07807)</p>
+                    <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
                 </div>
-                <div class="mt-2 text-sm text-slate-600">
+                <!-- 연락처(이메일, 전화, 팩스) -->
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
                     <p>이메일 : on@koreabiz24.com</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>전화 : 010-7905-2506</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>팩스 : 050-4414-2506</p>
                 </div>
             </div>
 
+            <!-- 신규 푸터 태그 조합 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -295,14 +393,18 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 추출 스크립트 (확장 키워드 정밀 필터링) -->
+    <!-- 🟢 1차: 카테고리(방) 고정, 2차: 확장 키워드 이중 필터링 적용 블로그 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
             
-            // 01번 분야(외국인 투자·비자) 전용 키워드
-            const keywords = ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "D-9", "출입국"];
+            // 01번 분야(외국인 투자·비자) 
+            // roomKeywords: 카테고리명 필수 조건 / expandedKeywords: 추출을 위한 확장 단어망
+            const categoryObj = { 
+                roomKeywords: ["투자", "비자", "외국인", "출입국"],
+                expandedKeywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "D-9", "출입국"] 
+            };
 
             fetch(apiUrl)
                 .then(response => response.json())
@@ -317,9 +419,15 @@
                     }
 
                     const filteredPosts = data.items.filter(post => {
-                        const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
-                        return keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
-                    }).slice(0, 3);
+                        // 1. 카테고리(방)가 맞는지 1차 검사 (타 분야 절대 금지)
+                        const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
+                        const isCorrectRoom = categoryObj.roomKeywords.some(kw => catName.includes(kw));
+                        if (!isCorrectRoom) return false;
+
+                        // 2. 제목+카테고리명 내에서 확장 키워드가 있는지 2차 검사
+                        const targetText = (post.title + " " + catName).toLowerCase();
+                        return categoryObj.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
+                    }).slice(0, 3); // 최대 3개까지만
 
                     if (filteredPosts.length === 0) {
                         container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">해당 분야의 최신 수임 사례가 없습니다.</p>';
@@ -355,7 +463,7 @@
                                     <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
                                     <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
                                         <span>블로그에서 전체 내용 보기</span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                     </a>
                                 </div>
                             </article>

@@ -99,20 +99,28 @@
                 </div>
             </a>
 
-            <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
-                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="about.html" class="text-brand font-bold">사무소 소개</a>
                     <a href="index.html#services" class="hover:text-brand transition">전문 분야</a>
                     <a href="index.html#cases" class="hover:text-brand transition">업무 사례</a>
                     <a href="index.html#guide" class="hover:text-brand transition">이용 안내</a>
-                    <a href="contact.html" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
-                <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                    <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
-                    <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
-                    <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
-                    <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                <div class="flex items-center gap-2.5">
+                    <!-- 다국어 선택 버튼 -->
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                    </div>
+
+                    <!-- 헤더 전용 '문의하기' CTA 버튼 -->
+                    <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        문의하기
+                    </a>
                 </div>
             </div>
         </div>
@@ -161,10 +169,10 @@
             </div>
         </div>
 
-        <!-- 2부: 주요 경력 & 전문 분야 박스 -->
+        <!-- 2부: 주요 경력 & 전문 분야 박스 (5:6 커스텀 비율 및 겹침 방지 적용) -->
         <div class="grid grid-cols-1 md:grid-cols-11 gap-6 px-4 md:px-6 border-t border-slate-100 pt-10">
             
-            <!-- 왼쪽 박스 (비율 5칸) -->
+            <!-- 왼쪽 박스 (비율 5) -->
             <div class="md:col-span-5 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">주요 경력 및 학력</h4>
                 <ul class="space-y-3 text-sm lg:text-base text-slate-600">
@@ -177,7 +185,7 @@
                 </ul>
             </div>
 
-            <!-- 오른쪽 박스 (비율 6칸) / 🟢 겹침 영구 방지 (grid-cols-[auto_1fr]) 🟢 -->
+            <!-- 오른쪽 박스 (비율 6) -->
             <div class="md:col-span-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">핵심 전문 수임 분야</h4>
                 <ul class="space-y-4 text-sm lg:text-base text-slate-600">

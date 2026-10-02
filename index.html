@@ -17,7 +17,7 @@
                             hover: '#001670',
                             light: '#EEF2FF',
                             dark: '#0A122A',
-                            footer: '#F8FAFC' // 이음 스타일의 밝은 회색 푸터 배경
+                            footer: '#F8FAFC'
                         }
                     }
                 }
@@ -30,7 +30,6 @@
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <!-- 헤더 로고 영역 -->
             <div class="flex items-center gap-3.5 w-full md:w-auto">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
@@ -40,7 +39,6 @@
             </div>
 
             <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
-                <!-- 🌟 [수정됨] 사무소 소개는 추후 만들 about.html로 연결 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
                     <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
                     <a href="#services" class="hover:text-brand transition">전문 분야</a>
@@ -59,7 +57,7 @@
         </div>
     </header>
 
-    <!-- 2. 히어로 (비즈니스 배경 이미지 & 원라인 카피) -->
+    <!-- 2. 히어로 섹션 -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
         
@@ -68,13 +66,12 @@
                 Certified Public Translation & Administrative Attorneys Office ON
             </span>
             
-            <!-- 🌟 [수정됨] 압도적인 가독성의 원라인(One-line) 타이틀 -->
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
                 성공적인 글로벌 비즈니스 <span class="text-brand">ON</span>
             </h1>
             
             <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-                외국인 투자법인·비자, 의료분야·각종 인허가, 군인 행정구제부터<br class="hidden md:block">
+                외국인 투자법인·비자, 의료분야·각종 인허가, 기업 행정심판 및 군인 행정구제부터<br class="hidden md:block">
                 법률·행정서류 번역·인증·아포스티유 대행까지 전문 행정사가 수행합니다.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -88,7 +85,7 @@
         </div>
     </section>
 
-    <!-- 3. 핵심 전문 분야 섹션 -->
+    <!-- 3. 핵심 전문 분야 섹션 (각 상세 페이지 링크 연결) -->
     <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">전문 분야</h2>
@@ -96,45 +93,49 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            <!-- 01 카드 -> service1.html -->
+            <a href="service1.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">외국인 투자법인 · 비자</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">
                     외국인 투자법인 설립, 취업 및 투자 비자, 체류자격 변경/연장, 영주권 및 국적 취득 대행 서비스를 제공합니다.
                 </p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
-            </div>
+            </a>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            <!-- 02 카드 -> service2.html -->
+            <a href="service2.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">의료분야 · 각종 인허가</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">
                     의료기기 제조 및 수입 업허가, 품목 등록 및 신고, 해외 제조소 등록 등 까다로운 인허가 절차를 지원합니다.
                 </p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
-            </div>
+            </a>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            <!-- 03 카드 -> service3.html -->
+            <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">군인 행정구제</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                    군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처분에 대한 각종 행정심판을 통해 권익을 구제합니다.
+                    기업 행정 처분, 군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처분에 대한 각종 행정심판을 통해 권익을 구제합니다.
                 </p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
-            </div>
+            </a>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            <!-- 04 카드 -> service4.html -->
+            <a href="service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">법률번역 · 인증 · 아포스티유</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">
                     법률·행정서류 공인번역 및 인증, 공증촉탁 대행, 외교부 아포스티유 및 영사확인 수속을 원스톱으로 처리합니다.
                 </p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
-            </div>
+            </a>
         </div>
     </section>
 
-    <!-- 4. 주요 업무 사례 섹션 -->
+    <!-- 4. 주요 업무 사례 섹션 (네이버 블로그 링크 연결) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -154,7 +155,7 @@
                         <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">해외 진출 기업 공문서 번역확인증명서 발급 및 인증 대행</h3>
                         <p class="text-slate-600 text-xs leading-relaxed mb-6">국내 기업의 해외 법인 설립 및 기관 제출을 위한 정관, 사업자등록증 등의 공인 번역 및 아포스티유 수속을 완수하였습니다.</p>
                     </div>
-                    <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
+                    <a href="https://blog.naver.com/juuudy_" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
                         <span>블로그에서 자세히 보기</span>
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -168,7 +169,7 @@
                         <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">외국인 전문인력(E-7) 비자 체류자격 변경 및 최종 승인</h3>
                         <p class="text-slate-600 text-xs leading-relaxed mb-6">복잡한 고용사유서 작성과 입증 서류 보완을 통해 해외 우수 인재의 국내 정착 및 체류자격 변경을 성공적으로 지원했습니다.</p>
                     </div>
-                    <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
+                    <a href="https://blog.naver.com/juuudy_" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
                         <span>블로그에서 자세히 보기</span>
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -182,7 +183,7 @@
                         <h3 class="text-lg font-bold text-slate-900 mb-3 leading-snug">의료기기 제조·수입 업허가 및 해외 제조소 정식 등록</h3>
                         <p class="text-slate-600 text-xs leading-relaxed mb-6">식약처 가이드라인에 맞춘 철저한 사전 준비로 해외 제조소 등록 및 수입 인허가 절차를 차질 없이 완수했습니다.</p>
                     </div>
-                    <a href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
+                    <a href="https://blog.naver.com/juuudy_" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:text-brand-hover transition pt-4 border-t border-slate-100">
                         <span>블로그에서 자세히 보기</span>
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
@@ -190,8 +191,6 @@
             </div>
         </div>
     </section>
-
-    <!-- 🌟 [삭제됨] 메인 화면의 대표 소개(About) 섹션 삭제 완료 -->
 
     <!-- 5. 이용 안내 (업무 절차) 섹션 -->
     <section id="guide" class="py-20 px-6 max-w-7xl mx-auto">
@@ -224,7 +223,7 @@
         </div>
     </section>
 
-    <!-- 6. 이음 스타일의 가로형 푸터 & 하단 고객센터 -->
+    <!-- 6. 하단 푸터 (사업자번호, 이메일, 네이버 블로그 URL 완벽 연결) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             
@@ -247,11 +246,11 @@
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
                 <span class="hover:text-brand cursor-pointer">의료기기 인허가</span>
                 <span class="hover:text-brand cursor-pointer">해외 제조소 등록</span>
-                <span class="hover:text-brand cursor-pointer">군인 징계 항고</span>
+                <span class="hover:text-brand cursor-pointer">기업처분·군인징계 구제</span>
                 <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
-                <a href="#" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
+                <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
                     블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>

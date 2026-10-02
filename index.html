@@ -40,8 +40,9 @@
             </div>
 
             <div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
+                <!-- 🌟 [수정됨] 사무소 소개는 추후 만들 about.html로 연결 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
-                    <a href="#about" class="hover:text-brand transition">사무소 소개</a>
+                    <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
                     <a href="#services" class="hover:text-brand transition">전문 분야</a>
                     <a href="#cases" class="hover:text-brand transition">업무 사례</a>
                     <a href="#guide" class="hover:text-brand transition">이용 안내</a>
@@ -58,7 +59,7 @@
         </div>
     </header>
 
-    <!-- 2. 히어로 (비즈니스 배경 이미지) -->
+    <!-- 2. 히어로 (비즈니스 배경 이미지 & 원라인 카피) -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
         
@@ -67,10 +68,9 @@
                 Certified Public Translation & Administrative Attorneys Office ON
             </span>
             
-            <!-- 🌟 [수정됨] 타이틀 줄간격(leading-loose) 확대 및 텍스트 수정 -->
-            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-loose text-slate-900 mb-8">
-                성공적인 글로벌 비즈니스를 지키는<br class="hidden md:block"> 
-                <span class="text-brand">신뢰의 법률·행정 파트너</span>
+            <!-- 🌟 [수정됨] 압도적인 가독성의 원라인(One-line) 타이틀 -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
+                성공적인 글로벌 비즈니스 <span class="text-brand">ON</span>
             </h1>
             
             <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
@@ -191,39 +191,9 @@
         </div>
     </section>
 
-    <!-- 5. 대표 행정사 소개 섹션 -->
-    <section id="about" class="bg-white py-20 px-6 border-b border-slate-200">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-5 flex justify-center">
-                <div class="w-full max-w-sm h-96 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center">
-                    <img src="profile.jpg" alt="대표 행정사 허온" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ 대표 프로필 사진 영역 ]</span></div>';">
-                </div>
-            </div>
-            <div class="md:col-span-7">
-                <span class="text-brand font-bold text-sm tracking-widest uppercase">About Representative</span>
-                <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-6">대표 행정사 허온(Heo On)</h2>
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    공인번역 및 일반행정 자격을 모두 갖춘 전문가로서, 의뢰인 한 분 한 분의 사안을 깊이 있게 분석하고 가장 현실적이고 확실한 법률 행정 솔루션을 제시합니다.
-                </p>
-                <div class="space-y-3 font-medium text-slate-700 text-sm">
-                    <div class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-brand rounded-full"></span><span>공인번역 & 일반행정 자격 동시 보유</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-brand rounded-full"></span><span>외국인 출입국 · 비자 수임 전문</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-brand rounded-full"></span><span>의료기기 인허가 및 해외 제조소 등록 완수</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="w-2 h-2 bg-brand rounded-full"></span><span>공증촉탁 대행 및 외교부 아포스티유 수속 전문</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- 🌟 [삭제됨] 메인 화면의 대표 소개(About) 섹션 삭제 완료 -->
 
-    <!-- 6. 이용 안내 (업무 절차) 섹션 -->
+    <!-- 5. 이용 안내 (업무 절차) 섹션 -->
     <section id="guide" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Guide</span>
@@ -254,11 +224,10 @@
         </div>
     </section>
 
-    <!-- 7. 🌟 [수정됨] 이음 스타일의 가로형 푸터 & 하단 고객센터 -->
+    <!-- 6. 이음 스타일의 가로형 푸터 & 하단 고객센터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             
-            <!-- 상단: 로고 및 기본 정보 (가로 나열) -->
             <div class="mb-8">
                 <h2 class="text-xl font-bold text-slate-900 mb-4">공인번역&일반 행정사사무소 온:ON</h2>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
@@ -273,7 +242,6 @@
                 </div>
             </div>
 
-            <!-- 중단: 세부 업무 키워드 태그 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -288,7 +256,6 @@
                 </a>
             </div>
 
-            <!-- 하단: 카피라이트 및 약관 -->
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p>&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">

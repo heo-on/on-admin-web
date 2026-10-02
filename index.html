@@ -24,7 +24,7 @@
         }
     </script>
     
-    <!-- 구글 웹사이트 번역 스크립트 (완벽 패치) -->
+    <!-- 구글 웹사이트 번역 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -109,15 +109,13 @@
                 </nav>
 
                 <div class="flex items-center gap-2.5">
-                    <!-- 다국어 선택 버튼 -->
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
                         <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
-                    
-                    <!-- 🟢 헤더 전용 '문의하기' CTA 버튼 추가 -->
+                    <!-- 문의하기 버튼 -->
                     <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         문의하기
@@ -191,7 +189,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요 업무 사례 섹션 (4개 분야별 가장 최근 사례 1개씩 총 4개 노출) -->
+    <!-- 5. 주요 업무 사례 섹션 -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -259,6 +257,7 @@
                     <p>이메일 : on@koreabiz24.com</p>
                 </div>
             </div>
+
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -272,6 +271,7 @@
                     블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
+
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p>&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
@@ -282,17 +282,18 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 중복 방지 & 정밀 분야별 최신 1개 추출 스크립트 -->
+    <!-- 🟢 네이버 블로그 카테고리 명칭 기반 절대 필터링 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
+            // 본문 내용이 아니라, 블로그의 "카테고리 이름" 자체를 검사하도록 설정
             const categories = [
-                { id: 'cat1', label: '외국인 투자·비자', keywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "출입국"] },
-                { id: 'cat2', label: '의료분야·각종 인허가', keywords: ["의료", "수입", "공장", "식품", "단체", "환자", "기기", "여성", "연구소", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가"] },
-                { id: 'cat3', label: '행정처분·군인징계', keywords: ["처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", "구제"] },
-                { id: 'cat4', label: '행정·법률 번역·인증', keywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"] }
+                { id: 'cat1', label: '외국인 투자·비자', catKeywords: ["비자", "투자", "외국인", "출입국", "D-8", "E-7"] },
+                { id: 'cat2', label: '의료분야·각종 인허가', catKeywords: ["의료", "인허가", "해썹", "식품", "제조업"] },
+                { id: 'cat3', label: '행정처분·군인징계', catKeywords: ["처분", "징계", "행정심판", "항고", "소청"] },
+                { id: 'cat4', label: '행정·법률 번역·인증', catKeywords: ["번역", "인증", "아포스티유", "공증"] }
             ];
 
             fetch(apiUrl)
@@ -313,8 +314,13 @@
                     categories.forEach(category => {
                         const matchedPost = data.items.find(post => {
                             if (usedLinks.has(post.link)) return false;
-                            const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
-                            return category.keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
+                            
+                            // 🟢 핵심 로직: post.categories (블로그 카테고리명) 속에서만 키워드를 찾습니다.
+                            if (post.categories && post.categories.length > 0) {
+                                const catName = post.categories.join(" ").toLowerCase();
+                                return category.catKeywords.some(keyword => catName.includes(keyword.toLowerCase()));
+                            }
+                            return false;
                         });
                         
                         if (matchedPost) {

@@ -23,7 +23,7 @@
             }
         }
     </script>
-    <!-- 구글 웹사이트 번역 스크립트 연동 -->
+    <!-- 구글 웹사이트 번역 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -42,7 +42,6 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
-        /* 구글 번역 상단 위젯 바 숨김 처리 */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0px !important; }
         #google_translate_element { display: none; }
@@ -70,10 +69,10 @@
                     <a href="#services" class="hover:text-brand transition">전문 분야</a>
                     <a href="#cases" class="hover:text-brand transition">업무 사례</a>
                     <a href="#guide" class="hover:text-brand transition">이용 안내</a>
-                    <a href="#contact" class="hover:text-brand transition">고객센터</a>
+                    <a href="contact.html" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
-                <!-- 다국어 선택 버튼 (클릭 시 전체 페이지 번역) -->
+                <!-- 다국어 선택 버튼 -->
                 <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                     <button onclick="changeLanguage('ko')" class="bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm hover:bg-slate-50 transition">KR</button>
                     <button onclick="changeLanguage('en')" class="text-slate-500 hover:text-slate-900 px-2 py-1 transition">EN</button>
@@ -98,11 +97,11 @@
             </h1>
             
             <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-                외국인 투자법인·비자, 의료분야·각종 인허가, 기업 행정심판 및 군인 행정구제부터<br class="hidden md:block">
+                외국인 투자법인·비자, 의료분야·각종 인허가, 행정처분 및 군인징계구제부터<br class="hidden md:block">
                 법률·행정서류 번역·인증·아포스티유 대행까지 전문 행정사가 수행합니다.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">
+                <a href="contact.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">
                     빠른 상담 신청하기
                 </a>
                 <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">
@@ -157,7 +156,7 @@
 
             <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">기업처분 · 군인 행정구제</h3>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">행정처분 · 군인징계구제</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">
                     기업 행정 처분, 군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처원에 대한 각종 행정심판을 통해 권익을 구제합니다.
                 </p>
@@ -175,7 +174,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요 업무 사례 섹션 (네이버 블로그 RSS 실시간 자동 연동) -->
+    <!-- 5. 주요 업무 사례 섹션 (네이버 블로그 RSS 자동 연동) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -241,7 +240,7 @@
                     <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 (우편번호: 07807)</p>
                 </div>
                 <div class="mt-2 text-sm text-slate-600">
-                    <p>이메일 : heo.on2506@gmail.com</p>
+                    <p>이메일 : on@koreabiz24.com</p>
                 </div>
             </div>
 
@@ -250,7 +249,7 @@
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
                 <span class="hover:text-brand cursor-pointer">의료기기 인허가</span>
                 <span class="hover:text-brand cursor-pointer">해외 제조소 등록</span>
-                <span class="hover:text-brand cursor-pointer">기업처분·군인징계 구제</span>
+                <span class="hover:text-brand cursor-pointer">행정처분·군인징계구제</span>
                 <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
@@ -287,11 +286,9 @@
                         return;
                     }
 
-                    // 최신 4개 포스팅 추출
                     const posts = data.items.slice(0, 4);
 
                     posts.forEach((post, index) => {
-                        // HTML 태그 제거 및 텍스트 요약 (65자)
                         let tmp = document.createElement("DIV");
                         tmp.innerHTML = post.description;
                         let summary = tmp.textContent || tmp.innerText || "";

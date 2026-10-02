@@ -109,6 +109,7 @@
                 </nav>
 
                 <div class="flex items-center gap-2.5">
+                    <!-- 다국어 선택 버튼 -->
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
                         <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
@@ -116,6 +117,7 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
 
+                    <!-- 헤더 전용 '문의하기' CTA 버튼 -->
                     <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         문의하기
@@ -247,7 +249,7 @@
         </div>
     </section>
 
-    <!-- 6. 푸터 -->
+    <!-- 6. 푸터 (11개 태그 목록 적용) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -269,8 +271,11 @@
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
-                <span class="hover:text-brand cursor-pointer">의료기기 인허가</span>
-                <span class="hover:text-brand cursor-pointer">해외 제조소 등록</span>
+                <span class="hover:text-brand cursor-pointer">영주권·국적 취득 대행</span>
+                <span class="hover:text-brand cursor-pointer">의료기기 수입/제조업</span>
+                <span class="hover:text-brand cursor-pointer">수입·국내 HACCP 인증</span>
+                <span class="hover:text-brand cursor-pointer">비영리 사단·재단법인 설립</span>
+                <span class="hover:text-brand cursor-pointer">영업정지·과징금 행정심판</span>
                 <span class="hover:text-brand cursor-pointer">행정처분·군인징계구제</span>
                 <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
@@ -290,13 +295,14 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 스크립트 (의료/인허가 카테고리 필터링 적용) -->
+    <!-- 네이버 블로그 확장 키워드 기반 정밀 필터링 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            // 02번 의료/인허가 전용 카테고리 키워드
-            const catKeywords = ["의료", "인허가", "해썹", "식품", "제조업"];
+            
+            // 02번 분야(의료/인허가) 전용 확장 키워드
+            const keywords = ["의료", "수입", "수출", "공장", "식품", "단체", "환자", "유치", "기기", "여성", "연구소", "연구", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가", "해썹", "등록", "신고", "법인", "허가", "신청", "인증", "장기요양"];
 
             fetch(apiUrl)
                 .then(response => response.json())
@@ -311,11 +317,8 @@
                     }
 
                     const filteredPosts = data.items.filter(post => {
-                        if (post.categories && post.categories.length > 0) {
-                            const catName = post.categories.join(" ").toLowerCase();
-                            return catKeywords.some(keyword => catName.includes(keyword.toLowerCase()));
-                        }
-                        return false;
+                        const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
+                        return keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                     }).slice(0, 3);
 
                     if (filteredPosts.length === 0) {
@@ -352,7 +355,7 @@
                                     <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
                                     <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
                                         <span>블로그에서 전체 내용 보기</span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                     </a>
                                 </div>
                             </article>

@@ -23,10 +23,37 @@
             }
         }
     </script>
+    <!-- 구글 웹사이트 번역 스크립트 연동 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ko',
+                includedLanguages: 'en,zh-CN,ja,ko',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+        function changeLanguage(langCode) {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* 구글 번역 상단 위젯 바 숨김 처리 */
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- 1. 상단 헤더 & 네비게이션 (클릭 시 메인 홈 이동) -->
+    <!-- 구글 번역용 숨김 엘리먼트 -->
+    <div id="google_translate_element"></div>
+
+    <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
@@ -46,11 +73,12 @@
                     <a href="#contact" class="hover:text-brand transition">고객센터</a>
                 </nav>
 
+                <!-- 다국어 선택 버튼 (클릭 시 전체 페이지 번역) -->
                 <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                    <span class="bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm">KR</span>
-                    <span class="text-slate-400 hover:text-slate-700 px-2 py-1 cursor-pointer transition">EN</span>
-                    <span class="text-slate-400 hover:text-slate-700 px-2 py-1 cursor-pointer transition">ZH</span>
-                    <span class="text-slate-400 hover:text-slate-700 px-2 py-1 cursor-pointer transition">JA</span>
+                    <button onclick="changeLanguage('ko')" class="bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm hover:bg-slate-50 transition">KR</button>
+                    <button onclick="changeLanguage('en')" class="text-slate-500 hover:text-slate-900 px-2 py-1 transition">EN</button>
+                    <button onclick="changeLanguage('zh-CN')" class="text-slate-500 hover:text-slate-900 px-2 py-1 transition">ZH</button>
+                    <button onclick="changeLanguage('ja')" class="text-slate-500 hover:text-slate-900 px-2 py-1 transition">JA</button>
                 </div>
             </div>
         </div>
@@ -147,7 +175,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요 업무 사례 섹션 -->
+    <!-- 5. 주요 업무 사례 섹션 (네이버 블로그 RSS 실시간 자동 연동) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -155,52 +183,13 @@
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Case Studies</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">분야별 최신 업무 사례</h2>
                 </div>
-                <p class="text-slate-500 text-sm mt-2 md:mt-0">행정사사무소 온:ON의 대표 수임 및 성공 사례입니다.</p>
+                <p class="text-slate-500 text-sm mt-2 md:mt-0">행정사사무소 온:ON 네이버 블로그의 최신 포스팅입니다.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">01. 비자 · 투자</span>
-                        <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">외국인 IT 전문인력 E-7 비자 체류자격 변경 승인</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">고용사유서 정밀 작성 및 보완을 통해 해외 우수 인재의 국내 정착 및 체류 자격 변경을 달성했습니다.</p>
-                    </div>
-                    <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=56" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-brand hover:underline pt-3 border-t border-slate-100">
-                        <span>블로그에서 보기</span> &rarr;
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">02. 의료 · 인허가</span>
-                        <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">의료기기 수입 업허가 및 해외 제조소 정식 등록</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">식약처 가이드라인에 따른 서류 정비로 해외 제조소 등록 및 수입 인허가 절차를 차질 없이 완수했습니다.</p>
-                    </div>
-                    <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=67" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-brand hover:underline pt-3 border-t border-slate-100">
-                        <span>블로그에서 보기</span> &rarr;
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">03. 기업처분 · 군인구제</span>
-                        <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">기업 영업정지 집행정지 및 군인 징계 항고 구제</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">행정청의 부당한 처원에 맞서 신속한 집행정지와 논리적 항고로 의뢰인의 실질적 권익을 구제했습니다.</p>
-                    </div>
-                    <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=59" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-brand hover:underline pt-3 border-t border-slate-100">
-                        <span>블로그에서 보기</span> &rarr;
-                    </a>
-                </div>
-
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <span class="bg-blue-100 text-brand text-xs font-bold px-2.5 py-1 rounded inline-block mb-3">04. 번역 · 아포스티유</span>
-                        <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug">해외 진출 기업 공문서 번역확인증명서 및 아포스티유</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">국내 기업 해외 진출용 정관, 계약서의 공인 번역 및 외교부 아포스티유 수속을 원스톱으로 처리했습니다.</p>
-                    </div>
-                    <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=46" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-brand hover:underline pt-3 border-t border-slate-100">
-                        <span>블로그에서 보기</span> &rarr;
-                    </a>
+            <!-- 블로그 포스팅 동적 자동 삽입 컨테이너 -->
+            <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="col-span-full text-center py-12 text-slate-400 font-medium text-sm">
+                    네이버 블로그에서 최신 수임 사례를 불러오는 중입니다...
                 </div>
             </div>
         </div>
@@ -280,5 +269,63 @@
         </div>
     </footer>
 
+    <!-- 네이버 블로그 최신 글 자동 로드 스크립트 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
+            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('blog-posts-container');
+                    if (!container) return;
+                    container.innerHTML = '';
+
+                    if (!data.items || data.items.length === 0) {
+                        container.innerHTML = '<p class="text-slate-500 text-sm col-span-full text-center py-10">최신 사례를 불러올 수 없습니다. 블로그에서 직접 확인해주세요.</p>';
+                        return;
+                    }
+
+                    // 최신 4개 포스팅 추출
+                    const posts = data.items.slice(0, 4);
+
+                    posts.forEach((post, index) => {
+                        // HTML 태그 제거 및 텍스트 요약 (65자)
+                        let tmp = document.createElement("DIV");
+                        tmp.innerHTML = post.description;
+                        let summary = tmp.textContent || tmp.innerText || "";
+                        summary = summary.replace(/\s+/g, ' ').trim();
+                        if (summary.length > 65) {
+                            summary = summary.substring(0, 65) + "...";
+                        }
+
+                        let num = String(index + 1).padStart(2, '0');
+                        let categoryName = (post.categories && post.categories.length > 0 && post.categories[0]) ? post.categories[0] : "최신 사례";
+
+                        const cardHtml = `
+                            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                                <div>
+                                    <span class="bg-blue-100 text-brand text-[11px] font-bold px-2 py-0.5 rounded inline-block mb-3">${num}. ${categoryName}</span>
+                                    <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug break-keep line-clamp-2">${post.title}</h3>
+                                    <p class="text-slate-600 text-xs leading-relaxed mb-4 break-keep line-clamp-3">${summary}</p>
+                                </div>
+                                <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-brand hover:underline pt-3 border-t border-slate-100 mt-auto">
+                                    <span>블로그에서 원문 보기</span> &rarr;
+                                </a>
+                            </div>
+                        `;
+                        container.innerHTML += cardHtml;
+                    });
+                })
+                .catch(error => {
+                    console.error('블로그 데이터를 불러오는 중 오류 발생:', error);
+                    const container = document.getElementById('blog-posts-container');
+                    if (container) {
+                        container.innerHTML = '<p class="text-slate-500 text-sm col-span-full text-center py-10">최신 사례를 불러올 수 없습니다. 블로그에서 직접 확인해주세요.</p>';
+                    }
+                });
+        });
+    </script>
 </body>
 </html>

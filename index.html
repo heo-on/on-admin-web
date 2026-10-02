@@ -23,7 +23,8 @@
             }
         }
     </script>
-    <!-- 구글 웹사이트 번역 스크립트 -->
+    
+    <!-- 🟢 구글 웹사이트 번역 스크립트 (완벽 패치 버전) -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -32,44 +33,60 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
+
+        // 언어 버튼 색상 업데이트 함수
+        function updateButtonStyles(activeLang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === activeLang) {
+                    btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
+                } else {
+                    btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
+                }
+            });
+        }
+
         function changeLanguage(langCode) {
+            if (langCode === 'ko') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+                return;
+            }
             const select = document.querySelector('.goog-te-combo');
             if (select) {
                 select.value = langCode;
                 select.dispatchEvent(new Event('change'));
             }
+            updateButtonStyles(langCode);
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'ko';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateButtonStyles(currentLang);
+        });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
-    <!-- 🟢 구글 번역 상단 바 완벽 숨김 스타일 -->
+    <!-- 🟢 구글 번역 상단 바 숨김 스타일 -->
     <style>
-        .goog-te-banner-frame,
-        iframe.goog-te-banner-frame,
-        .VIpgJd-Z31SFb-M3B12d-sm2Cdf,
-        iframe.skiptranslate {
+        .goog-te-banner-frame, iframe.goog-te-banner-frame,
+        .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
             display: none !important;
             visibility: hidden !important;
         }
-        body { 
-            top: 0px !important; 
-            position: static !important;
-        }
-        #google_translate_element { 
-            display: none !important; 
-        }
-        #goog-gt-tt, .goog-te-balloon-frame {
-            display: none !important;
-        }
-        .goog-text-highlight {
-            background-color: transparent !important;
-            box-shadow: none !important;
-        }
+        body { top: 0px !important; position: static !important; }
+        #google_translate_element { display: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <!-- 구글 번역용 숨김 엘리먼트 -->
     <div id="google_translate_element"></div>
 
     <!-- 1. 상단 헤더 & 네비게이션 -->
@@ -92,12 +109,12 @@
                     <a href="contact.html" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
-                <!-- 다국어 선택 버튼 -->
+                <!-- 🟢 다국어 선택 버튼 (이벤트 적용) -->
                 <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                    <button onclick="changeLanguage('ko')" class="bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm hover:bg-slate-50 transition">KR</button>
-                    <button onclick="changeLanguage('en')" class="text-slate-500 hover:text-slate-900 px-2 py-1 transition">EN</button>
-                    <button onclick="changeLanguage('zh-CN')" class="text-slate-500 hover:text-slate-900 px-2 py-1 transition">ZH</button>
-                    <button onclick="changeLanguage('ja')" class="text-slate-500 hover:text-slate-900 px-2 py-1 transition">JA</button>
+                    <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
+                    <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
+                    <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
+                    <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                 </div>
             </div>
         </div>
@@ -106,27 +123,16 @@
     <!-- 2. 히어로 섹션 -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
-        
         <div class="relative max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6">
-                Certified Public Translation & Administrative Attorneys Office ON
-            </span>
-            
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
-                성공적인 글로벌 비즈니스 <span class="text-brand">ON</span>
-            </h1>
-            
+            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6">Certified Public Translation & Administrative Attorneys Office ON</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">성공적인 글로벌 비즈니스 <span class="text-brand">ON</span></h1>
             <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
                 외국인 투자법인·비자, 의료분야·각종 인허가, 행정처분 및 군인징계구제부터<br class="hidden md:block">
                 법률·행정서류 번역·인증·아포스티유 대행까지 전문 행정사가 수행합니다.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">
-                    빠른 상담 신청하기
-                </a>
-                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">
-                    주요 업무 둘러보기
-                </a>
+                <a href="contact.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">빠른 상담 신청하기</a>
+                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">주요 업무 둘러보기</a>
             </div>
         </div>
     </section>
@@ -137,12 +143,8 @@
             <div class="flex items-start gap-4">
                 <div class="p-2.5 bg-brand text-white rounded-xl font-bold text-lg flex-shrink-0 mt-0.5 shadow-sm">⚖️</div>
                 <div>
-                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">
-                        "행정기관 제출용 번역·서류 작성 및 대행은 '행정사'만 가능합니다."
-                    </h3>
-                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
-                        관련 법률(행정사법)에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.
-                    </p>
+                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">"행정기관 제출용 번역·서류 작성 및 대행은 '행정사'만 가능합니다."</h3>
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">관련 법률(행정사법)에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
                 </div>
             </div>
         </div>
@@ -154,47 +156,35 @@
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">전문 분야</h2>
             <p class="text-slate-600 mt-2 text-sm md:text-base">공인번역&일반 행정사사무소 온:ON이 제공하는 핵심 법률 행정 서비스입니다.</p>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <a href="service1.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">외국인 투자법인 · 비자</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                    외국인 투자법인 설립, 취업 및 투자 비자, 체류자격 변경/연장, 영주권 및 국적 취득 대행 서비스를 제공합니다.
-                </p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">외국인 투자법인 설립, 취업 및 투자 비자, 체류자격 변경/연장, 영주권 및 국적 취득 대행 서비스를 제공합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
-
             <a href="service2.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">의료분야 · 각종 인허가</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                    의료기기 제조 및 수입 업허가, 품목 등록 및 신고, 해외 제조소 등록 등 까다로운 인허가 절차를 지원합니다.
-                </p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">의료기기 제조 및 수입 업허가, 품목 등록 및 신고, 해외 제조소 등록 등 까다로운 인허가 절차를 지원합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
-
             <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">행정처분 · 군인징계구제</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                    기업 행정 처분, 군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처원에 대한 각종 행정심판을 통해 권익을 구제합니다.
-                </p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 국가유공자 신청 및 부당한 처원에 대한 각종 행정심판을 통해 권익을 구제합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
-
             <a href="service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">법률번역 · 인증 · 아포스티유</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                    법률·행정서류 공인번역 및 인증, 공증촉탁 대행, 외교부 아포스티유 및 영사확인 수속을 원스톱으로 처리합니다.
-                </p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">법률·행정서류 공인번역 및 인증, 공증촉탁 대행, 외교부 아포스티유 및 영사확인 수속을 원스톱으로 처리합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
         </div>
     </section>
 
-    <!-- 5. 주요 업무 사례 섹션 (이음 스타일: 가로형 넓은 포맷 & 길어진 요약본) -->
+    <!-- 5. 주요 업무 사례 섹션 (각 분야별 가장 최근 사례 1개씩 총 4개 노출) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -202,13 +192,13 @@
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Case Studies</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">분야별 최신 업무 사례</h2>
                 </div>
-                <p class="text-slate-500 text-sm mt-2 md:mt-0">행정사사무소 온:ON 네이버 블로그의 실제 수임 및 구제 사례입니다.</p>
+                <p class="text-slate-500 text-sm mt-2 md:mt-0">각 분야별 가장 최근에 수임 완료된 실제 사례입니다.</p>
             </div>
 
-            <!-- 블로그 포스팅 동적 자동 삽입 컨테이너 (가로 1열배치) -->
+            <!-- 블로그 포스팅 동적 자동 삽입 컨테이너 -->
             <div id="blog-posts-container" class="space-y-6">
                 <div class="bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
-                    네이버 블로그에서 최신 수임 사례를 불러오는 중입니다...
+                    네이버 블로그에서 분야별 최신 수임 사례를 불러오는 중입니다...
                 </div>
             </div>
         </div>
@@ -263,7 +253,6 @@
                     <p>이메일 : on@koreabiz24.com</p>
                 </div>
             </div>
-
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -277,7 +266,6 @@
                     블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
-
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p>&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
@@ -288,11 +276,19 @@
         </div>
     </footer>
 
-    <!-- 네이버 블로그 최신 글 자동 로드 스크립트 -->
+    <!-- 🟢 네이버 블로그 분야별 최신 1개씩 추출 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+            // 4개 분야별 키워드 및 식별 라벨 정의
+            const categories = [
+                { id: 'cat1', label: '투자·비자', keywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "출입국"] },
+                { id: 'cat2', label: '의료·인허가', keywords: ["환자", "의료", "법인", "기업", "인허가", "등록", "신고", "비영리"] },
+                { id: 'cat3', label: '행정심판·군인징계', keywords: ["처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", "구제"] },
+                { id: 'cat4', label: '법률번역·인증', keywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"] }
+            ];
 
             fetch(apiUrl)
                 .then(response => response.json())
@@ -306,10 +302,29 @@
                         return;
                     }
 
-                    // 최신 3개 포스팅 추출 (가로형 포맷)
-                    const posts = data.items.slice(0, 3);
+                    // 각 카테고리별로 가장 최근(첫 번째로 매칭되는) 포스트 1개씩만 추출
+                    const selectedPosts = [];
+                    
+                    categories.forEach(category => {
+                        const matchedPost = data.items.find(post => {
+                            const targetText = (post.title + " " + (post.categories ? post.categories.join(" ") : "")).toLowerCase();
+                            return category.keywords.some(keyword => targetText.includes(keyword.toLowerCase()));
+                        });
+                        
+                        if (matchedPost) {
+                            // 화면에 표시될 커스텀 카테고리 라벨 주입
+                            matchedPost.customLabel = category.label;
+                            selectedPosts.push(matchedPost);
+                        }
+                    });
 
-                    posts.forEach((post, index) => {
+                    if (selectedPosts.length === 0) {
+                        container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">최신 수임 사례가 없습니다.</p>';
+                        return;
+                    }
+
+                    // 찾은 포스트들을 화면에 그리기
+                    selectedPosts.forEach((post) => {
                         let tmp = document.createElement("DIV");
                         tmp.innerHTML = post.description;
                         let summary = tmp.textContent || tmp.innerText || "";
@@ -318,13 +333,12 @@
                             summary = summary.substring(0, 320) + "...";
                         }
 
-                        let categoryName = (post.categories && post.categories.length > 0 && post.categories[0]) ? post.categories[0] : "업무 사례";
                         let pubDate = post.pubDate ? post.pubDate.split(' ')[0] : '';
 
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${categoryName}</span>
+                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${post.customLabel} 분야 완료사례</span>
                                     <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
                                 </div>
                                 
@@ -350,7 +364,7 @@
                     console.error('블로그 데이터를 불러오는 중 오류 발생:', error);
                     const container = document.getElementById('blog-posts-container');
                     if (container) {
-                        container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">최신 사례를 불러올 수 없습니다. 네이버 블로그에서 확인해주세요.</p>';
+                        container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">사례를 불러오는 중 오류가 발생했습니다.</p>';
                     }
                 });
         });

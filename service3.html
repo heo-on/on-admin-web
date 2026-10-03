@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>행정처분 · 군인징계 | 행정사사무소 온:ON</title>
+    <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 (화면상 숨김) -->
+    <meta name="description" content="육군 인사과장 출신 전문 행정사 직접 수행. 군인·공무원 징계(항고, 소청, 의견서 작성) 및 기업 행정처분(영업정지, 과징금, 행정심판, 집행정지) 구제, 읜견제출서, 반성문, 탄원서, 사전통지의견제출, 사전통지, 출석통지서, 적법성심사, 투폰, 상병전역, 진급누락, 군기교육, 강등, 휴가단축, 의무위반, 이의신청, 국가유공자·보훈보상대상자 등록 대행 전문 행정사사무소 온:ON.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -34,10 +36,12 @@
             }, 'google_translate_element');
         }
 
-        function updateButtonStyles(activeLang) {
+        // 언어 상태 업데이트 및 동적 CSS 제어
+        function updateLanguageState(langCode) {
+            document.documentElement.setAttribute('data-lang', langCode);
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
-                if (btn.getAttribute('data-lang') === activeLang) {
+                if (btn.getAttribute('data-lang') === langCode) {
                     btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
                 } else {
                     btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
@@ -57,7 +61,7 @@
                 select.value = langCode;
                 select.dispatchEvent(new Event('change'));
             }
-            updateButtonStyles(langCode);
+            updateLanguageState(langCode);
         }
 
         document.addEventListener("DOMContentLoaded", function() {
@@ -66,7 +70,7 @@
             if (match) {
                 currentLang = match[1];
             }
-            updateButtonStyles(currentLang);
+            updateLanguageState(currentLang);
         });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -88,6 +92,20 @@
             display: block !important;
             width: 100% !important;
         }
+
+        /* 💡 언어별 정밀 스위칭 로직 */
+        [data-lang="en"] .kr-title,
+        [data-lang="en"] .sub-title {
+            display: none !important;
+        }
+        [data-lang="en"] .en-title {
+            display: block !important;
+        }
+        [data-lang="ko"] .en-title,
+        [data-lang="zh-CN"] .en-title,
+        [data-lang="ja"] .en-title {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -100,8 +118,10 @@
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <span class="text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
-                    <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON</span>
+                    <!-- 💡 헤더 영문 상호명 스위칭 적용 -->
+                    <span class="kr-title text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
+                    <span class="en-title notranslate text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                    <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
@@ -122,7 +142,7 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
 
-                    <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                    <a href="contact.html#inquiry-form" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         문의하기
                     </a>
@@ -247,14 +267,14 @@
         <div class="mt-12 bg-slate-100/80 rounded-xl p-8 text-center border border-slate-200">
             <h4 class="text-base font-bold text-slate-900 mb-1">처분통지서를 받으셨다면, 골든타임을 놓치지 마세요.</h4>
             <p class="text-xs text-slate-500 mb-5">징계 및 행정처분은 초기 대응 의견서 작성이 결과를 좌우합니다.</p>
-            <a href="#guide" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-7 py-2.5 rounded-lg text-sm shadow transition">
+            <a href="contact.html#inquiry-form" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-7 py-2.5 rounded-lg text-sm shadow transition">
                 징계/처분 1:1 상담 신청하기
             </a>
         </div>
     </section>
 
-    <!-- 6. CONTACT & GUIDE (업무 절차 및 상담 채널) -->
-    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10">
+    <!-- 6. CONTACT & GUIDE (업무 절차 및 상담 채널) - 💡 scroll-mt-32 적용 -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 scroll-mt-32">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">상담 채널 및 업무 절차</h2>
@@ -288,26 +308,30 @@
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 max-w-4xl mx-auto">
-                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <!-- 💡 이메일 문의 폼 이동 연결 -->
+                <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
                 </a>
                 
-                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <!-- 💡 네이버 톡톡 트래킹 적용 -->
+                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_&ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition font-black text-lg flex-shrink-0">N</div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
                 </a>
 
-                <a href="https://pf.kakao.com/_bcHxln" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <!-- 💡 카카오 채널 명칭 수정 및 트래킹 적용 -->
+                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오톡 상담</span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오 채널</span>
                 </a>
 
-                <a href="https://open.kakao.com/o/stQfvTDh" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
+                <!-- 💡 군인 전용 익명 상담 트래킹 적용 -->
+                <a href="https://open.kakao.com/o/stQfvTDh?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
                     <div class="absolute top-0 w-full h-1 bg-brand"></div>
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
@@ -341,8 +365,8 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 (연락처 추가 및 주소 업데이트) -->
-    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+    <!-- 7. 푸터 - 💡 scroll-mt-32 적용 -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200 scroll-mt-32">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
                 <a href="index.html" class="inline-block hover:opacity-80 transition">
@@ -355,7 +379,6 @@
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
                 </div>
-                <!-- 연락처(이메일, 전화, 팩스) -->
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
                     <p>이메일 : on@koreabiz24.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -365,7 +388,6 @@
                 </div>
             </div>
 
-            <!-- 신규 푸터 태그 조합 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -384,7 +406,8 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
-                <p>&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.</p>
+                <!-- 💡 푸터 영문 상호명 통일 방어막 적용 -->
+                <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="#" class="hover:text-slate-600">개인정보처리방침</a>
                     <a href="#" class="hover:text-slate-600">이용약관</a>
@@ -393,17 +416,14 @@
         </div>
     </footer>
 
-    <!-- 🟢 1차: 카테고리(방) 고정, 2차: 39개 키워드 매칭(기존+징계 정밀 추가) 블로그 스크립트 -->
+    <!-- 🟢 1차: 카테고리(방) 고정, 2차: 39개 키워드 매칭 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 가장 안정적인 원본 rss2json 호출 방식
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
             
-            // 1차 방어용: 행정처분·군인징계 분야 카테고리 고정
             const roomKeywords = ["처분", "징계", "행정심판", "구제", "항고"];
             
-            // 2차 추출용 정밀 키워드 (기존 + 추가 요청된 징계 관련 17개 실무 단어 총 39개)
             const expandedKeywords = [
                 "처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", 
                 "구제", "의견", "사전통지", "통지", "기각", "인용", "사보행", "투폰", "음주", "적법성", "양정", "기준",
@@ -424,15 +444,13 @@
                     }
 
                     const filteredPosts = data.items.filter(post => {
-                        // 1차: 카테고리(방) 일치 여부 확인
                         const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
                         const isCorrectRoom = roomKeywords.some(kw => catName.includes(kw.toLowerCase()));
                         if (!isCorrectRoom) return false;
 
-                        // 2차: 39개 정밀 키워드 매칭
                         const targetText = (post.title + " " + catName).toLowerCase();
                         return expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
-                    }).slice(0, 3); // 최대 3개까지만
+                    }).slice(0, 3);
 
                     if (filteredPosts.length === 0) {
                         container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">해당 분야의 최신 수임 사례가 없습니다.</p>';
@@ -468,7 +486,7 @@
                                     <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
                                     <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
                                         <span>블로그에서 전체 내용 보기</span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                     </a>
                                 </div>
                             </article>

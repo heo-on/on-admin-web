@@ -93,7 +93,7 @@
             width: 100% !important;
         }
 
-        /* 💡 언어별 정밀 스위칭 로직 */
+        /* 언어별 정밀 스위칭 로직 */
         [data-lang="en"] .kr-title,
         [data-lang="en"] .sub-title {
             display: none !important;
@@ -118,7 +118,7 @@
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <!-- 💡 헤더 영문 상호명 스위칭 적용 -->
+                    <!-- 헤더 영문 상호명 스위칭 적용 -->
                     <span class="kr-title text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
                     <span class="en-title notranslate text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                     <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
@@ -273,8 +273,8 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT & GUIDE (업무 절차 및 상담 채널) -->
-    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10">
+    <!-- 6. CONTACT & GUIDE (업무 절차 및 상담 채널) - 💡 scroll-mt-24 적용 완료 -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 scroll-mt-24">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">상담 채널 및 업무 절차</h2>
@@ -308,7 +308,7 @@
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 max-w-4xl mx-auto">
-                <!-- 💡 이메일 문의 폼 이동 연결 -->
+                <!-- 이메일 문의 폼 이동 연결 -->
                 <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -362,8 +362,8 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 -->
-    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+    <!-- 7. 푸터 - 💡 scroll-mt-24 적용 완료 -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200 scroll-mt-24">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
                 <a href="index.html" class="inline-block hover:opacity-80 transition">
@@ -403,7 +403,7 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
-                <!-- 💡 푸터 영문 상호명 통일 방어막 적용 -->
+                <!-- 푸터 영문 상호명 통일 방어막 적용 -->
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="#" class="hover:text-slate-600">개인정보처리방침</a>
@@ -420,7 +420,6 @@
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
             
             // 01번 분야(외국인 투자·비자) 
-            // roomKeywords: 카테고리명 필수 조건 / expandedKeywords: 추출을 위한 확장 단어망
             const categoryObj = { 
                 roomKeywords: ["투자", "비자", "외국인", "출입국"],
                 expandedKeywords: ["비자", "투자", "외국인", "영주권", "국적", "E-7", "D-8", "D-9", "출입국"] 
@@ -439,12 +438,10 @@
                     }
 
                     const filteredPosts = data.items.filter(post => {
-                        // 1. 카테고리(방)가 맞는지 1차 검사 (타 분야 절대 금지)
                         const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
                         const isCorrectRoom = categoryObj.roomKeywords.some(kw => catName.includes(kw));
                         if (!isCorrectRoom) return false;
 
-                        // 2. 제목+카테고리명 내에서 확장 키워드가 있는지 2차 검사
                         const targetText = (post.title + " " + catName).toLowerCase();
                         return categoryObj.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                     }).slice(0, 3); // 최대 3개까지만 제한

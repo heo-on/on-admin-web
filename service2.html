@@ -243,14 +243,14 @@
         </div>
     </section>
 
-    <!-- 5. 최근 사례 (블로그 연동 구역) -->
+    <!-- 5. 최근 사례 (🔥 Vercel 백엔드 API 완벽 연동 구역) -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="flex justify-between items-end mb-8">
             <div>
                 <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">의료분야 · 인허가 최근 사례</h3>
             </div>
-            <!-- 💡 블로그 67번 카테고리(의료분야)로 다이렉트 고정 연결 -->
+            <!-- 💡 블로그 67번(의료인허가) 카테고리 고정 연결 -->
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=67" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
         </div>
 
@@ -269,7 +269,7 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT & GUIDE (업무 절차 및 미디어 채널 UI 개편) -->
+    <!-- 6. CONTACT & GUIDE (🔥 UI 전면 개편 - 문의 집중 + 미디어 채널 독립 배치) -->
     <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 scroll-mt-32">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
@@ -300,7 +300,7 @@
             </div>
         </div>
 
-        <!-- 💡 1. 상담 집중 구역 (이메일/톡톡/카톡/익명상담) -->
+        <!-- 💡 1. 상담 집중 구역 (이메일/톡톡/카톡/익명상담 4개만 남김) -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -330,7 +330,7 @@
             </div>
         </div>
 
-        <!-- 💡 2. 미디어 독립 구역 신설 (유튜브/인스타/틱톡 대형 카드) -->
+        <!-- 💡 2. 미디어 채널 독립 배치 (유튜브/인스타/틱톡 대형 카드) -->
         <div class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-sm">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
             <p class="text-xs md:text-sm text-slate-500 text-center mb-8">행정사사무소 온:ON의 생생한 업무 현장과 최신 소식을 영상으로 만나보세요.</p>
@@ -409,66 +409,41 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 100% 무결점 필터링 적용 블로그 스크립트 -->
+    <!-- 🟢 💡 [혁신] Vercel 자체 백엔드 API 직접 호출 스크립트 (코드가 확 가벼워졌습니다) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 💡 에러 없는 순정 URL (가장 확실하게 최신 글 호출)
-            const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            
-            // 💡 1. 타 분야 완벽 배제 키워드 (이 단어가 1개라도 있으면 100% 탈락)
-            const excludeKeywords = ["번역", "비자", "아포스티유", "징계", "행정심판", "출입국", "영사확인"];
-            
-            // 💡 2. 67번 & 63번 정밀 키워드 (배제를 통과한 글 중 이 단어가 있어야 합격)
-            const includeKeywords = [
-                "의료기기", "수입식품", "해썹", "haccp", "공장등록", "식품제조", "건강기능식품", 
-                "화장품", "환자유치", "치과", "의료기관", "기업인증", "여성기업", "연구소", 
-                "고유번호증", "임의단체", "비영리", "인허가"
-            ];
+            const container = document.getElementById('service2-posts-container');
+            if (!container) return;
 
-            fetch(apiUrl)
-                .then(response => response.json())
+            // 💡 자체 Vercel 서버리스 함수 호출 (카테고리 67번 지정)
+            fetch('/api/naver-cases?categoryNo=67')
+                .then(response => {
+                    if (!response.ok) throw new Error('API 호출 에러');
+                    return response.json();
+                })
                 .then(data => {
-                    const container = document.getElementById('service2-posts-container');
-                    if (!container) return;
-                    container.innerHTML = '';
+                    container.innerHTML = ''; // 로딩 텍스트 제거
 
-                    // 데이터가 없으면 Fallback
-                    if (!data.items || data.items.length === 0) {
-                        renderFallback(container);
-                        return;
-                    }
-
-                    // 💡 [핵심 해결] 본문(description)은 검사에서 완전히 제외!
-                    const filteredPosts = data.items.filter(post => {
-                        const catName = post.categories ? post.categories.join(" ") : "";
-                        const targetText = (post.title + " " + catName).toLowerCase();
-                        
-                        // 1단계: 배제 단어가 있는지 확인 (있으면 즉시 버림)
+                    // 💡 [이중 방어막] Vercel 서버가 가져온 67번 카테고리 글 중에 
+                    // 타 분야 단어가 들어있으면(예: 번역, 징계) 브라우저단에서 한 번 더 걸러냅니다.
+                    const excludeKeywords = ["번역", "비자", "아포스티유", "징계", "행정심판", "출입국", "영사확인"];
+                    
+                    const safePosts = data.items.filter(post => {
+                        const targetText = post.title.toLowerCase();
                         const isExcluded = excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
-                        if (isExcluded) return false;
-                        
-                        // 2단계: 합격 단어가 있는지 확인 (있으면 채택)
-                        return includeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
-                    }).slice(0, 3);
+                        return !isExcluded;
+                    });
 
-                    // 💡 진짜 67/63번 관련 글만 렌더링. 0개일 경우 67번 카테고리 우아한 안내 상자 노출
-                    if (filteredPosts.length === 0) {
+                    // 걸러진 글이 0개라면 우아한 67번 대체 화면 띄우기
+                    if (!safePosts || safePosts.length === 0) {
                         renderFallback(container);
                         return;
                     }
 
-                    filteredPosts.forEach(post => {
-                        let tmp = document.createElement("DIV");
-                        tmp.innerHTML = post.description;
-                        let summary = tmp.textContent || tmp.innerText || "";
-                        summary = summary.replace(/\s+/g, ' ').trim();
-                        if (summary.length > 320) {
-                            summary = summary.substring(0, 320) + "...";
-                        }
-
+                    // 안전하게 통과된 글들만 예쁘게 화면에 그리기
+                    safePosts.forEach(post => {
                         let categoryName = "의료·인허가 사례";
-                        let pubDate = post.pubDate ? post.pubDate.split(' ')[0] : '';
+                        let pubDate = post.pubDate || '';
 
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
@@ -480,7 +455,7 @@
                                 <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>
                                 
                                 <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6">
-                                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${summary}</p>
+                                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${post.description}</p>
                                 </div>
 
                                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3">
@@ -496,12 +471,11 @@
                     });
                 })
                 .catch(error => {
-                    console.error('블로그 데이터 로딩 실패:', error);
-                    const container = document.getElementById('service2-posts-container');
-                    if (container) renderFallback(container);
+                    console.error('서버 통신 실패:', error);
+                    renderFallback(container);
                 });
 
-            // 💡 [우아한 대체 안내 상자 - 67번 카테고리 다이렉트 안내]
+            // 💡 [우아한 대체 상자 - 67번 카테고리 다이렉트 안내]
             function renderFallback(container) {
                 container.innerHTML = `
                     <div class="bg-brand-light/30 border border-brand-light p-8 md:p-12 rounded-2xl text-center flex flex-col items-center justify-center transition-all hover:shadow-md">

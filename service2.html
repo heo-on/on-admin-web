@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>의료분야 · 각종 인허가 | 행정사사무소 온:ON</title>
-    <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 (화면상 숨김) -->
     <meta name="description" content="의료기기 수입업·제조업 허가, 수입 및 국내 식품 해썹(HACCP) 인증, 인가, 허가, 등록, 신고, 단체, 법인, 비영리, 임의, 신청, 방법, 요건, 서류, 구비서류, 외국인환자, 의료기관, 외국인환자유치사업자, 여성기업, 기업부설연구소, 연구전담부서, 기업인증, 장애인기업, 건강기능식품, 화장품, 비영리법인 설립 등 까다로운 보건·의료 영업 인허가 대행 전문 행정사사무소 온:ON.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,7 +25,6 @@
         }
     </script>
     
-    <!-- 구글 웹사이트 번역 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -243,14 +241,13 @@
         </div>
     </section>
 
-    <!-- 5. 최근 사례 (🔥 Vercel 백엔드 API 완벽 연동 구역) -->
+    <!-- 5. 최근 사례 -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="flex justify-between items-end mb-8">
             <div>
                 <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">의료분야 · 인허가 최근 사례</h3>
             </div>
-            <!-- 💡 블로그 67번(의료인허가) 카테고리 고정 연결 -->
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=67" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
         </div>
 
@@ -269,7 +266,7 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT & GUIDE (🔥 UI 전면 개편 - 문의 집중 + 미디어 채널 독립 배치) -->
+    <!-- 6. CONTACT & GUIDE -->
     <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 scroll-mt-32">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
@@ -300,7 +297,7 @@
             </div>
         </div>
 
-        <!-- 💡 1. 상담 집중 구역 (이메일/톡톡/카톡/익명상담 4개만 남김) -->
+        <!-- 💡 1. 상담 집중 구역 -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -330,8 +327,8 @@
             </div>
         </div>
 
-        <!-- 💡 2. 미디어 채널 독립 배치 (유튜브/인스타/틱톡 대형 카드) -->
-        <div class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-sm">
+        <!-- 💡 2. 미디어 채널 독립 배치 (바탕색을 bg-slate-50 + shadow-inner로 변경하여 완벽한 통일감 연출!) -->
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
             <p class="text-xs md:text-sm text-slate-500 text-center mb-8">행정사사무소 온:ON의 생생한 업무 현장과 최신 소식을 영상으로 만나보세요.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
@@ -409,23 +406,20 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 [혁신] Vercel 자체 백엔드 API 직접 호출 스크립트 (코드가 확 가벼워졌습니다) -->
+    <!-- 🟢 💡 Vercel 서버리스 API 연동 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('service2-posts-container');
             if (!container) return;
 
-            // 💡 자체 Vercel 서버리스 함수 호출 (카테고리 67번 지정)
             fetch('/api/naver-cases?categoryNo=67')
                 .then(response => {
                     if (!response.ok) throw new Error('API 호출 에러');
                     return response.json();
                 })
                 .then(data => {
-                    container.innerHTML = ''; // 로딩 텍스트 제거
+                    container.innerHTML = '';
 
-                    // 💡 [이중 방어막] Vercel 서버가 가져온 67번 카테고리 글 중에 
-                    // 타 분야 단어가 들어있으면(예: 번역, 징계) 브라우저단에서 한 번 더 걸러냅니다.
                     const excludeKeywords = ["번역", "비자", "아포스티유", "징계", "행정심판", "출입국", "영사확인"];
                     
                     const safePosts = data.items.filter(post => {
@@ -434,13 +428,11 @@
                         return !isExcluded;
                     });
 
-                    // 걸러진 글이 0개라면 우아한 67번 대체 화면 띄우기
                     if (!safePosts || safePosts.length === 0) {
                         renderFallback(container);
                         return;
                     }
 
-                    // 안전하게 통과된 글들만 예쁘게 화면에 그리기
                     safePosts.forEach(post => {
                         let categoryName = "의료·인허가 사례";
                         let pubDate = post.pubDate || '';
@@ -475,7 +467,6 @@
                     renderFallback(container);
                 });
 
-            // 💡 [우아한 대체 상자 - 67번 카테고리 다이렉트 안내]
             function renderFallback(container) {
                 container.innerHTML = `
                     <div class="bg-brand-light/30 border border-brand-light p-8 md:p-12 rounded-2xl text-center flex flex-col items-center justify-center transition-all hover:shadow-md">

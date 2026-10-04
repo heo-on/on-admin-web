@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>행정 · 법률 번역 · 인증 | 행정사사무소 온:ON</title>
-    <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 (화면상 숨김) -->
     <meta name="description" content="서울 강서·마곡의 법률·행정서류의 번역 및 공인 인증, 번역자확인서발급, 번역확인증명서발급, 써티발급, 인증서발급, 확인서발급, 공증촉탁 대행부터, 우편 및 온라인을 통한 전국 단위, 국제우편, 미국, 헝가리, 캐나다, 호주, 영국, 중국, 일본, 네팔, 우즈베키스탄, 베트남, 러시아, 한국서류발급 대행부터 번역 국제우편발송, 비대면 아포스티유·영사확인 대행까지 전문 행정사가 책임지고 완수합니다. 가족관계증명서, 기본증명서(출생증명), 혼인관계증명서, 주민등록등·초본, 여권번역, 범죄경력회보서, 생활기록부, 성적증명서, 졸업/재학증명서, 학위증명서, 추천서/자기소개서, 재정보증서, 법인정관, 등기사항전부증명서, 이사회의사록, 사업자등록증, 재무제표증명원, 감사보고서, 각종계약서, 위임장(Power of Attorney), 진술서/약정서, 판결문/소장번역, 특수전문법률서류.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,7 +25,6 @@
         }
     </script>
     
-    <!-- 구글 웹사이트 번역 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -265,6 +263,7 @@
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">완료 서류 발송</h4>
+                <!-- 💡 '및' 중복 제거 완료 -->
                 <p class="text-xs text-slate-500 leading-relaxed">PDF파일 전송, 국내 익일특급 및 해외 국제우편(EMS/DHL)</p>
             </div>
         </div>
@@ -503,7 +502,8 @@
                 <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">행정 · 법률 번역 · 인증 최근 사례</h3>
             </div>
-            <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=66" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
+            <!-- 💡 링크를 46번으로 100% 고정 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=46" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
         </div>
 
         <div id="service4-posts-container" class="space-y-6">
@@ -571,48 +571,54 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 [보정 적용] 안정적인 rss2json + 100% 3개 자동 보충 노출 스크립트 -->
+    <!-- 🟢 💡 엉뚱한 글 차단, 느린 로딩 대안, 46번 링크 조준 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
             
+            // 💡 검색망 확장 (제목에 아래 단어가 들어가면 46번 카테고리가 아니어도 무조건 합격)
             const keywords = ["번역", "인증", "아포스티유", "공증", "영사확인", "서류", "써티", "확인서"];
 
-            fetch(apiUrl)
-                .then(response => response.json())
+            fetch(proxyUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error("네트워크 응답 오류");
+                    return response.text();
+                })
+                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
                 .then(data => {
                     const container = document.getElementById('service4-posts-container');
                     if (!container) return;
                     container.innerHTML = '';
 
-                    if (!data.items || data.items.length === 0) {
+                    const items = Array.from(data.querySelectorAll("item"));
+                    if (items.length === 0) {
                         renderFallback(container);
                         return;
                     }
 
-                    // 1차: 키워드 검색
-                    let targetPosts = data.items.filter(post => {
-                        const catName = post.categories ? post.categories.join(" ") : "";
-                        const fullText = (post.title + " " + catName + " " + post.description).toLowerCase();
+                    // 💡 오직 키워드에 맞는 글만 엄격하게 필터링 (억지로 다른 글 채워넣기 완전 삭제)
+                    const filteredPosts = items.map(item => {
+                        const title = item.querySelector("title") ? item.querySelector("title").textContent : "";
+                        const link = item.querySelector("link") ? item.querySelector("link").textContent : "#";
+                        const description = item.querySelector("description") ? item.querySelector("description").textContent : "";
+                        const pubDateRaw = item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : "";
+                        const category = item.querySelector("category") ? item.querySelector("category").textContent : "";
+                        
+                        return { title, link, description, pubDateRaw, category };
+                    }).filter(post => {
+                        const fullText = (post.title + " " + post.category).toLowerCase();
                         return keywords.some(kw => fullText.includes(kw.toLowerCase()));
-                    });
+                    }).slice(0, 3); // 진짜 번역·인증 글만 최대 3개 자르기
 
-                    // 💡 [핵심 보장 알고리즘] 조건글이 없거나 3개 미만이면 전체 최근 글에서 3개를 자동으로 채워넣음!
-                    if (targetPosts.length === 0) {
-                        targetPosts = data.items.slice(0, 3);
-                    } else if (targetPosts.length < 3) {
-                        const usedLinks = new Set(targetPosts.map(p => p.link));
-                        for (const post of data.items) {
-                            if (targetPosts.length >= 3) break;
-                            if (!usedLinks.has(post.link)) {
-                                targetPosts.push(post);
-                                usedLinks.add(post.link);
-                            }
-                        }
+                    // 💡 50개 중에 관련 사례가 단 1개도 없다면? 우아한 46번 링크 박스 띄우기
+                    if (filteredPosts.length === 0) {
+                        renderFallback(container);
+                        return;
                     }
 
-                    targetPosts.slice(0, 3).forEach(post => {
+                    // 관련 사례가 1~3개 있으면 있는 만큼 예쁘게 렌더링
+                    filteredPosts.forEach(post => {
                         let tmp = document.createElement("DIV");
                         tmp.innerHTML = post.description;
                         let summary = tmp.textContent || tmp.innerText || "";
@@ -622,7 +628,13 @@
                         }
 
                         let categoryName = "번역·인증 사례";
-                        let pubDate = post.pubDate ? post.pubDate.split(' ')[0] : '';
+                        let pubDate = "";
+                        if (post.pubDateRaw) {
+                            const d = new Date(post.pubDateRaw);
+                            if (!isNaN(d.getTime())) {
+                                pubDate = d.toISOString().split('T')[0];
+                            }
+                        }
 
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
@@ -652,9 +664,11 @@
                 .catch(error => {
                     console.error('블로그 데이터 로딩 실패:', error);
                     const container = document.getElementById('service4-posts-container');
+                    // 오류 발생 시에도 우아한 박스 렌더링
                     if (container) renderFallback(container);
                 });
 
+            // 💡 [우아한 대체 화면 (Fallback) - 완벽한 46번 카테고리 링크 연결]
             function renderFallback(container) {
                 container.innerHTML = `
                     <div class="bg-brand-light/30 border border-brand-light p-8 md:p-12 rounded-2xl text-center flex flex-col items-center justify-center transition-all hover:shadow-md">
@@ -664,7 +678,7 @@
                             행정사사무소 온:ON의 다양한 번역·인증 성공 사례와<br class="hidden md:block">
                             생생한 실무 진행 후기를 네이버 블로그에서 직접 확인하실 수 있습니다.
                         </p>
-                        <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=66" target="_blank" class="bg-brand text-white font-bold px-6 py-2.5 rounded-lg shadow-sm hover:bg-brand-hover transition text-sm flex items-center gap-2">
+                        <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=46" target="_blank" class="bg-brand text-white font-bold px-6 py-2.5 rounded-lg shadow-sm hover:bg-brand-hover transition text-sm flex items-center gap-2">
                             블로그 방문하기 
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>행정·법률 번역·인증 | 행정사사무소 온:ON</title>
-    <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 (화면상 숨김) -->
     <meta name="description" content="외국어번역행정사 직접 수행. 행정·법률서류 공인번역 및 번역확인증명서 발급, 공증촉탁 대행, 외교부 아포스티유(Apostille) 및 영사확인, 기업·계약서·정관 전문 번역 원스톱 솔루션 대행 전문 행정사사무소 온:ON.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -76,32 +75,26 @@
 
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
-        .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
-            display: none !important;
-            visibility: hidden !important;
-        }
+        .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate { display: none !important; visibility: hidden !important; }
         body { top: 0px !important; position: static !important; }
         #google_translate_element { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
         
-        .channel-card font, .channel-card span {
-            text-align: center !important;
-            display: block !important;
-            width: 100% !important;
-        }
+        .channel-card font, .channel-card span { text-align: center !important; display: block !important; width: 100% !important; }
 
-        [data-lang="en"] .kr-title,
-        [data-lang="en"] .sub-title {
-            display: none !important;
-        }
-        [data-lang="en"] .en-title {
-            display: block !important;
-        }
-        [data-lang="ko"] .en-title,
-        [data-lang="zh-CN"] .en-title,
-        [data-lang="ja"] .en-title {
-            display: none !important;
+        [data-lang="en"] .kr-title, [data-lang="en"] .sub-title { display: none !important; }
+        [data-lang="en"] .en-title { display: block !important; }
+        [data-lang="ko"] .en-title, [data-lang="zh-CN"] .en-title, [data-lang="ja"] .en-title { display: none !important; }
+
+        /* 블루 포인트 불렛 스타일 */
+        .bullet-point::before {
+            content: "•";
+            color: #0020A0;
+            font-weight: bold;
+            display: inline-block;
+            width: 12px;
+            margin-left: -12px;
         }
     </style>
 </head>
@@ -136,7 +129,6 @@
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
-
                     <a href="contact.html#inquiry-form" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         문의하기
@@ -172,123 +164,142 @@
         </div>
     </section>
 
-    <!-- 4. [섹션 복원] 주요 취급 문서 (4개 박스) -->
-    <section class="py-12 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-            <span class="text-brand font-bold text-xs uppercase tracking-widest">DOCUMENT TYPES</span>
-            <h2 class="text-2xl font-bold text-slate-900 mt-1">주요 취급 문서</h2>
-            <p class="text-xs md:text-sm text-slate-500 mt-1">공공기관, 법원, 학교, 해외 기관 제출을 위한 분야별 전문 번역 대상 문서입니다.</p>
+    <!-- 4. 주요 취급 문서 (블루 포인트 불렛 적용) -->
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">주요 취급 서류</h2>
+            <div class="w-12 h-1 bg-brand/30 mx-auto mt-4 mb-2 rounded-full"></div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                <div class="w-10 h-10 bg-brand-light text-brand rounded-lg flex items-center justify-center mb-4 font-bold text-lg">📄</div>
-                <h3 class="font-bold text-slate-900 mb-2 text-base">개인 · 가족 서류</h3>
-                <ul class="text-xs text-slate-600 space-y-1.5">
-                    <li>• 기본 / 가족관계 / 혼인관계증명서</li>
-                    <li>• 주민등록등·초본 / 제적등본</li>
-                    <li>• 범죄경력회보서 / 운전경력증명서</li>
-                    <li>• 출생 / 사망 / 기본 증명 서류</li>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-lg border-b border-slate-100 pb-3">개인 / 가족</h3>
+                <ul class="text-sm text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">가족관계증명서</li>
+                    <li class="bullet-point">기본증명서 (출생증명)</li>
+                    <li class="bullet-point">혼인관계증명서</li>
+                    <li class="bullet-point">주민등록등초본</li>
+                    <li class="bullet-point">여권 번역</li>
+                    <li class="bullet-point">범죄경력회보서</li>
                 </ul>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                <div class="w-10 h-10 bg-brand-light text-brand rounded-lg flex items-center justify-center mb-4 font-bold text-lg">🎓</div>
-                <h3 class="font-bold text-slate-900 mb-2 text-base">학술 · 유학 서류</h3>
-                <ul class="text-xs text-slate-600 space-y-1.5">
-                    <li>• 생활기록부 / 성적증명서</li>
-                    <li>• 졸업증명서 / 학위기 / 재학증명서</li>
-                    <li>• 교원 자격증 / 생활기록 요약본</li>
-                    <li>• 유학 제출용 에세이 및 추천서</li>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-lg border-b border-slate-100 pb-3">유학 / 이민</h3>
+                <ul class="text-sm text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">생활기록부</li>
+                    <li class="bullet-point">성적증명서</li>
+                    <li class="bullet-point">졸업/재학증명서</li>
+                    <li class="bullet-point">학위증명서</li>
+                    <li class="bullet-point">추천서</li>
+                    <li class="bullet-point">자기소개서</li>
+                    <li class="bullet-point">재정보증서</li>
                 </ul>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                <div class="w-10 h-10 bg-brand-light text-brand rounded-lg flex items-center justify-center mb-4 font-bold text-lg">🏢</div>
-                <h3 class="font-bold text-slate-900 mb-2 text-base">기업 · 법인 서류</h3>
-                <ul class="text-xs text-slate-600 space-y-1.5">
-                    <li>• 법인 정관 / 등기사항전부증명서</li>
-                    <li>• 사업자등록증 / 재무제표</li>
-                    <li>• 감사보고서 / 이사회 의사록</li>
-                    <li>• 영문·한문 계약서 및 협약서</li>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-lg border-b border-slate-100 pb-3">기업 / 비즈니스</h3>
+                <ul class="text-sm text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">법인 정관</li>
+                    <li class="bullet-point">등기사항전부증명서</li>
+                    <li class="bullet-point">주주명부</li>
+                    <li class="bullet-point">이사회 의사록</li>
+                    <li class="bullet-point">사업자등록증</li>
+                    <li class="bullet-point">재무제표증명원</li>
+                    <li class="bullet-point">감사보고서</li>
                 </ul>
             </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                <div class="w-10 h-10 bg-brand-light text-brand rounded-lg flex items-center justify-center mb-4 font-bold text-lg">⚖️</div>
-                <h3 class="font-bold text-slate-900 mb-2 text-base">공증 · 해외 제출 서류</h3>
-                <ul class="text-xs text-slate-600 space-y-1.5">
-                    <li>• 외교부 아포스티유(Apostille)</li>
-                    <li>• 주한 대사관 영사확인 제출 서류</li>
-                    <li>• 법무법인 공증촉탁 대행 문서</li>
-                    <li>• 법원 및 검찰 제출용 소송 서류</li>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-lg border-b border-slate-100 pb-3">법률 / 계약</h3>
+                <ul class="text-sm text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">각종 계약서</li>
+                    <li class="bullet-point">위임장 (Power of Attorney)</li>
+                    <li class="bullet-point">진술서</li>
+                    <li class="bullet-point">약정서</li>
+                    <li class="bullet-point">판결문</li>
+                    <li class="bullet-point">소장 번역</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 5. 번역 전용 4단계 서류 수속 절차 & 소통 채널 (미디어 채널 제외) -->
-    <section id="guide" class="py-12 px-6 max-w-7xl mx-auto scroll-mt-32">
+    <!-- 5. 5단계 이용 안내 & 보조카드 & 소통채널 3개 -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32 bg-slate-50/50 border-y border-slate-100">
         <div class="text-center mb-12">
-            <span class="text-brand font-bold text-sm tracking-widest uppercase">PROCESS</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">번역 및 인증 수속 절차</h2>
-            <p class="text-slate-600 mt-2 text-sm md:text-base">전국 비대면 온라인 접수부터 우편 및 이메일 수령까지 신속하게 진행됩니다.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">이용 안내</h2>
+            <div class="w-12 h-1 bg-brand/30 mx-auto mt-4 mb-2 rounded-full"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <!-- 💡 STEP 01 한 줄 핏(Fit) 수정 -->
+        <!-- 5단계 절차 -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">서류 접수 및 상담</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">원본/사본 서류 전달 (온라인·방문·우편)</p>
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">01</div>
+                <h4 class="font-bold text-slate-900 mb-2">서류 원본/사본 전달</h4>
+                <p class="text-xs text-slate-500 leading-relaxed break-keep">원본·사본 서류 온라인 전송 및 방문·우편 전달</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">전문 번역 수행</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">외국어번역행정사 직접 번역 및 초안 검토</p>
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">02</div>
+                <h4 class="font-bold text-slate-900 mb-2">분석 및 견적 결제</h4>
+                <p class="text-xs text-slate-500 leading-relaxed break-keep">분량 및 난이도 분석 후 비용과 기간 안내</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">증명서 발급 및 인증</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">번역확인증명서 발급 / 아포스티유 수속</p>
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">03</div>
+                <h4 class="font-bold text-slate-900 mb-2">번역 및 감수</h4>
+                <p class="text-xs text-slate-500 leading-relaxed break-keep">외국어번역행정사의 공인 번역 및 감수 진행</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">최종 서류 전달</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">방문 수령, 빠른 등기 우편, 이메일 PDF</p>
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">04</div>
+                <h4 class="font-bold text-slate-900 mb-2">인증 및 발급</h4>
+                <p class="text-xs text-slate-500 leading-relaxed break-keep">번역확인증명서 발급, 공증촉탁 및 아포스티유·영사확인 대행</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">05</div>
+                <h4 class="font-bold text-slate-900 mb-2">완료 서류 발송</h4>
+                <p class="text-xs text-slate-500 leading-relaxed break-keep">PDF 파일(스캔) 발송, 국내 익일특급 · 해외 국제우편 · 방문 수령</p>
             </div>
         </div>
 
-        <!-- 💡 소통 채널 4개만 깔끔하게 유지 -->
-        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
-            <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        <!-- 하단 보조 카드 2개 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-10">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
+                <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">🛡️</div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm">보안 및 기밀유지</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">행정사법 및 개인정보보호법에 의거하여 철저한 비밀 보장 및 일정 기간 후 안전 파기됩니다.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
+                <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">📍</div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm">방문 안내</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">외부 출장이나 업무 집중 수행을 위해 100% 예약제로 운영됩니다. 사전에 연락 부탁드립니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 소통 채널 3개 (군인 채널 제외) -->
+        <div class="max-w-3xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-10 h-10 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-2 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
+                    <span class="text-xs font-bold text-slate-700">이메일 문의</span>
                 </a>
-                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_&ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition font-black text-lg flex-shrink-0">N</div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
+                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_&ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 bg-white border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-10 h-10 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-2 group-hover:bg-[#03C75A] group-hover:text-white transition font-black flex-shrink-0">N</div>
+                    <span class="text-xs font-bold text-slate-700">네이버 톡톡</span>
                 </a>
-                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-10 h-10 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-2 group-hover:opacity-90 transition flex-shrink-0">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오 채널</span>
-                </a>
-                <a href="https://open.kakao.com/o/stQfvTDh?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
-                    <div class="absolute top-0 w-full h-1 bg-brand"></div>
-                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-brand leading-tight text-center block w-full">군인 전용 익명 상담</span>
+                    <span class="text-xs font-bold text-slate-700">카카오 채널</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- 6. 상세 업무 내용 (01~03) & 법적 책임 상자 -->
-    <section class="py-12 px-6 max-w-5xl mx-auto bg-white my-8 rounded-2xl shadow-sm border border-slate-100">
+    <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-8 rounded-2xl shadow-sm border border-slate-100">
         <div class="space-y-12">
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
@@ -355,7 +366,7 @@
             </div>
         </div>
 
-        <!-- 💡 [원물 복원] 번역확인증명서 법적 책임 안내 상자 -->
+        <!-- 💡 법적 책임 안내 상자 문구 수정 -->
         <div class="mt-8 bg-blue-50/70 border border-blue-100 rounded-xl p-6">
             <h4 class="font-bold text-slate-900 mb-2 text-base flex items-center gap-2">
                 <span>📌</span> 번역확인증명서 법적 책임 안내
@@ -368,23 +379,155 @@
                 <li>• 해당 번역 원문의 위조, 변조 및 진위 여부에 대하여 번역자는 책임이 없음을 알려드립니다.</li>
             </ul>
             <p class="text-xs text-slate-500 mt-3">
-                즉, 번역 행정사는 원본 서류의 진위(眞僞) 자체를 판단하는 것이 아니라, <strong class="text-brand">의뢰인께서 제공한 원본 서류와 한글 번역문의 내용이 정확하게 일치하는지 확인하고 증명</strong>하는 역할을 합니다.
+                즉, 번역 행정사는 원본 서류의 진위(眞僞) 자체를 판단하는 것이 아니라, <strong class="text-brand">의뢰인께서 제공한 원문 서류와 번역문의 내용이 정확하게 일치하는지 확인하고 증명</strong>하는 역할을 합니다.
             </p>
         </div>
     </section>
 
-    <!-- 7. 최근 사례 (🔥 Vercel 백엔드 API 46번 5개 무적 연동) -->
+    <!-- 7. 비교표 및 판단 가이드 -->
+    <section class="py-12 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+            <span class="text-brand font-bold text-xs uppercase tracking-widest">WHICH ONE DO I NEED</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">번역확인증명서 · 공증 · 아포스티유 비교</h2>
+            <p class="text-xs md:text-sm text-slate-500 mt-1">셋은 대체재가 아니라 각각 다른 것을 증명합니다. 제출기관의 안내문을 확인하는 것이 가장 빠릅니다.</p>
+        </div>
+
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-10">
+            <table class="w-full text-left text-sm text-slate-600 min-w-[700px]">
+                <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-4 w-1/4">구분</th>
+                        <th class="px-6 py-4 w-1/4">누가 하는가</th>
+                        <th class="px-6 py-4 w-1/4">무엇을 증명하는가</th>
+                        <th class="px-6 py-4 w-1/4">언제 필요한가</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">번역확인증명서</td>
+                        <td class="px-6 py-4">외국어번역행정사</td>
+                        <td class="px-6 py-4">번역문이 원문과 일치한다는 것과 번역자의 자격</td>
+                        <td class="px-6 py-4 text-xs">제출처가 번역자의 자격 확인만 요구할 때</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">번역공증</td>
+                        <td class="px-6 py-4">공증인가 법무법인·공증인</td>
+                        <td class="px-6 py-4">번역문에 대한 공증인의 인증</td>
+                        <td class="px-6 py-4 text-xs">제출처가 'Notarization(공증)'을 명시했을 때</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">아포스티유</td>
+                        <td class="px-6 py-4">외교부·법무부</td>
+                        <td class="px-6 py-4">문서에 찍힌 관인·서명이 진짜라는 것</td>
+                        <td class="px-6 py-4 text-xs">아포스티유 협약 가입국에 제출할 때</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">영사확인 (대사관)</td>
+                        <td class="px-6 py-4">외교부 및 주한 외국 영사관</td>
+                        <td class="px-6 py-4">자국에 제출될 문서의 진위 여부 최종 확인</td>
+                        <td class="px-6 py-4 text-xs">아포스티유 비가입국에 제출할 때</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="font-bold text-slate-900 mb-4 text-lg">제출처 안내문 문구로 판단하기</h3>
+        <div class="space-y-3">
+            <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 shadow-sm">
+                <div class="md:w-1/3 font-bold text-slate-800 text-sm">"Notarized Translation" · "공증받은 번역본"</div>
+                <div class="hidden md:block text-slate-300">→</div>
+                <div class="md:w-2/3 text-sm text-slate-600">번역공증이 필요합니다. 공증사무소 촉탁 대행으로 진행합니다.</div>
+            </div>
+            <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 shadow-sm">
+                <div class="md:w-1/3 font-bold text-slate-800 text-sm">"Certified Translation" · "번역자 확인"</div>
+                <div class="hidden md:block text-brand font-bold">→</div>
+                <div class="md:w-2/3 text-sm text-brand font-medium">번역확인증명서 제출이 가능합니다. 공증 비용을 크게 절감할 수 있습니다.</div>
+            </div>
+            <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 shadow-sm">
+                <div class="md:w-1/3 font-bold text-slate-800 text-sm">"Apostille" · "아포스티유"</div>
+                <div class="hidden md:block text-slate-300">→</div>
+                <div class="md:w-2/3 text-sm text-slate-600">실물 원본 서류에 대한 아포스티유 인증 수속이 필요합니다.</div>
+            </div>
+            <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 shadow-sm">
+                <div class="md:w-1/3 font-bold text-slate-800 text-sm">대만/베트남 등 제출인데 인증 요구</div>
+                <div class="hidden md:block text-slate-300">→</div>
+                <div class="md:w-2/3 text-sm text-slate-600">비협약국이므로 아포스티유가 아닌 대사관 영사확인 절차로 수속을 진행합니다.</div>
+            </div>
+            <div class="bg-white p-4 md:p-5 rounded-xl border border-slate-200 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 shadow-sm bg-slate-50/50">
+                <div class="md:w-1/3 font-bold text-slate-800 text-sm">안내문이 없거나 문구가 모호함</div>
+                <div class="hidden md:block text-slate-300">→</div>
+                <div class="md:w-2/3 text-sm text-slate-600">문서 사진과 제출처를 보내주시면 무료로 확인해 드립니다.</div>
+            </div>
+        </div>
+        <p class="text-xs text-slate-400 mt-4 text-center">※ 아포스티유는 관인이 진짜인지를 확인하는 절차이지 번역의 정확성을 보증하는 뜻이 아닙니다. 번역과 인증 절차는 별개로 진행됩니다.</p>
+    </section>
+
+    <!-- 8. 아포스티유 절차 및 가입국 현황표 -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-100">
+        <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">절차 비교 및 아포스티유 가입국 현황</h3>
+        
+        <!-- 절차 비교표 -->
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-8">
+            <table class="w-full text-left text-sm text-slate-600">
+                <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-4 w-1/2">일반 영사확인 절차 (비협약국)</th>
+                        <th class="px-6 py-4 w-1/2 text-brand">아포스티유 협약 절차 (간소화)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="px-6 py-5 leading-relaxed">공문서 발급 → 외교부 영사확인 → <strong class="text-slate-800">주한 외국 공관(대사관) 확인</strong> → 해당 국가에서 공문서 인정</td>
+                        <td class="px-6 py-5 leading-relaxed font-medium bg-brand-light/20">공문서 발급 → <strong class="text-brand">외교부·법무부 아포스티유 발급</strong> → 가입국에서 즉시 공문서 인정</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 가입국 현황표 -->
+        <div class="flex justify-between items-end mb-3 px-2">
+            <h4 class="font-bold text-slate-800">대륙별 가입국 현황</h4>
+            <span class="text-xs font-bold text-brand bg-brand-light px-2 py-1 rounded">2026. 09. 11 기준 (131개국)</span>
+        </div>
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+            <table class="w-full text-left text-xs md:text-sm text-slate-600 min-w-[700px]">
+                <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 w-[15%] bg-slate-50">아시아 / 대양주</td>
+                        <td class="px-5 py-4 leading-relaxed">뉴질랜드, 니우에, 마샬군도, 모리셔스, 몽골, 바누아투, 바레인, 방글라데시, 베트남, 브루나이, 사모아, 사우디아라비아, 싱가포르, 오만, 오스트레일리아(호주), 우즈베키스탄, 이스라엘, 인도, 인도네시아, 일본, 중국(마카오, 홍콩 포함), 쿡아일랜드, 키르기즈스탄, 타지키스탄, 통가, 파키스탄, 팔라우, 피지, 필리핀, 한국</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">유럽</td>
+                        <td class="px-5 py-4 leading-relaxed">그리스, 네덜란드, 노르웨이, 덴마크, 독일, 러시아, 로마니아, 룩셈부르크, 리투아니아, 모나코, 몰타, 벨기에, 보스니아, 불가리아, 사이프러스, 스웨덴, 스위스, 스페인, 슬로바키아, 아일랜드, 에스토니아, 영국, 오스트리아, 우크라이나, 이탈리아, 조지아, 체코, 코소보, 크로아티아, 튀르키예, 포르투갈, 폴란드, 프랑스, 핀란드, 헝가리 등</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">북미</td>
+                        <td class="px-5 py-4 leading-relaxed">미국(괌, 마우리제도, 사이판, 푸에르토리코 포함), 캐나다</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">중남미</td>
+                        <td class="px-5 py-4 leading-relaxed">가이아나, 과테말라, 그레나다, 니카라과, 도미니카, 멕시코, 바베이도스, 바하마, 베네수엘라, 벨리즈, 볼리비아, 브라질, 수리남, 아르헨티나, 에콰도르, 엘살바도르, 온두라스, 우루과이, 칠레, 코스타리카, 콜롬비아, 트리니다드토바고, 파나마, 페루, 파라과이, 자메이카 등</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">아프리카</td>
+                        <td class="px-5 py-4 leading-relaxed">나미비아, 남아프리카공화국, 라이베리아, 레소토, 말라위, 모로코, 보츠와나, 세네갈, 세이셸, 알제리, 카보베르데, 브룬디, 튀니지, 르완다 등</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 9. 최근 사례 (🔥 Vercel 백엔드 API 46번 5개 연동) -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto scroll-mt-32">
         <div class="flex justify-between items-end mb-8">
             <div>
                 <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">행정 · 법률 번역 · 인증 최근 사례</h3>
             </div>
-            <!-- 💡 블로그 46번(번역·인증) 카테고리 바로가기 연결 -->
+            <!-- 💡 블로그 46번(번역·인증) 카테고리 바로가기 -->
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=46" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
         </div>
 
-        <!-- 💡 중복을 완전히 제거한 유일한 컨테이너! -->
         <div id="service4-posts-container" class="space-y-6">
             <div class="bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
                 관련 최신 수임 사례를 불러오는 중입니다...
@@ -392,7 +535,7 @@
         </div>
     </section>
 
-    <!-- 8. 💡 하단으로 분리된 ON:ON 공식 미디어 채널 -->
+    <!-- 10. 미디어 채널 (하단 독립 배치, 군인 채널 없음) -->
     <section class="py-10 px-6 max-w-7xl mx-auto mb-10">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
@@ -404,14 +547,12 @@
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">유튜브 쇼츠</span>
                 </a>
-
                 <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">인스타그램</span>
                 </a>
-
                 <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
@@ -422,7 +563,7 @@
         </div>
     </section>
 
-    <!-- 9. 푸터 -->
+    <!-- 11. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -486,16 +627,14 @@
                 .then(data => {
                     container.innerHTML = ''; 
 
-                    // 💡 번역 서류에 자주 쓰이는 단어 허용 필터링
+                    // 💡 비자 단어 허용
                     const excludeKeywords = ["의료기기", "해썹", "haccp", "외투법인"];
                     
                     let safePosts = data.items.filter(post => {
                         const targetText = post.title.toLowerCase();
-                        const isExcluded = excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
-                        return !isExcluded;
+                        return !excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
                     });
 
-                    // 최상위 5개 추출
                     safePosts = safePosts.slice(0, 5);
 
                     if (!safePosts || safePosts.length === 0) {

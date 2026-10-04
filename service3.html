@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" data-lang="ko">
+<html lang="ko" data-lang="ko" class="scroll-smooth scroll-pt-24 md:scroll-pt-28">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>행정처분 · 군인징계 | 행정사사무소 온:ON</title>
     <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 (화면상 숨김) -->
-    <meta name="description" content="육군 인사과장 출신 전문 행정사 직접 수행. 군인·공무원 징계(항고, 소청, 의견서 작성) 및 기업 행정처분(영업정지, 과징금, 행정심판, 집행정지) 구제, 읜견제출서, 반성문, 탄원서, 사전통지의견제출, 사전통지, 출석통지서, 적법성심사, 투폰, 상병전역, 진급누락, 군기교육, 강등, 휴가단축, 의무위반, 이의신청, 국가유공자·보훈보상대상자 등록 대행 전문 행정사사무소 온:ON.">
+    <meta name="description" content="육군 인사과장 출신 전문 행정사 직접 수행. 군인·공무원 징계(항고, 소청, 의견서 작성) 및 기업 행정처분(영업정지, 과징금, 행정심판, 집행정지) 구제, 의견제출서, 반성문, 탄원서, 사전통지, 적법성심사, 투폰, 상병전역, 진급누락, 군기교육, 강등, 의무위반, 국가유공자 대행 전문 행정사사무소 온:ON.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,7 +36,6 @@
             }, 'google_translate_element');
         }
 
-        // 언어 상태 업데이트 및 동적 CSS 제어
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
             const buttons = document.querySelectorAll('.lang-btn');
@@ -93,7 +92,6 @@
             width: 100% !important;
         }
 
-        /* 💡 언어별 정밀 스위칭 로직 */
         [data-lang="en"] .kr-title,
         [data-lang="en"] .sub-title {
             display: none !important;
@@ -248,14 +246,15 @@
         </div>
     </section>
 
-    <!-- 5. 최근 사례 (블로그 연동) -->
+    <!-- 5. 최근 사례 (🔥 Vercel 다중 카테고리 5개 호출) -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="flex justify-between items-end mb-8">
             <div>
                 <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">행정처분 · 군인징계 최근 사례</h3>
             </div>
-            <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=65" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
+            <!-- 💡 블로그 58번(행정처분) 카테고리 바로가기로 연결 설정 -->
+            <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=58" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
         </div>
 
         <div id="service3-posts-container" class="space-y-6">
@@ -273,7 +272,7 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT & GUIDE (업무 절차 및 상담 채널) - 💡 scroll-mt-32 적용 -->
+    <!-- 6. CONTACT & GUIDE (💡 scroll-mt-32 헤더 방어막 적용 및 디자인 통일) -->
     <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 scroll-mt-32">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
@@ -304,11 +303,11 @@
             </div>
         </div>
 
-        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+        <!-- 💡 소통 채널 분리 -->
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 max-w-4xl mx-auto">
-                <!-- 💡 이메일 문의 폼 이동 연결 -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -316,13 +315,11 @@
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
                 </a>
                 
-                <!-- 💡 네이버 톡톡 트래킹 적용 -->
                 <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_&ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition font-black text-lg flex-shrink-0">N</div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
                 </a>
 
-                <!-- 💡 카카오 채널 명칭 수정 및 트래킹 적용 -->
                 <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
@@ -330,7 +327,6 @@
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오 채널</span>
                 </a>
 
-                <!-- 💡 군인 전용 익명 상담 트래킹 적용 -->
                 <a href="https://open.kakao.com/o/stQfvTDh?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
                     <div class="absolute top-0 w-full h-1 bg-brand"></div>
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
@@ -339,8 +335,13 @@
                     <span class="text-xs sm:text-sm font-bold text-brand leading-tight text-center block w-full">군인 전용 익명 상담</span>
                 </a>
             </div>
+        </div>
 
-            <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <!-- 💡 미디어 채널 별도 분리 및 디자인 통일(bg-slate-50 + shadow-inner) -->
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
+            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">행정사사무소 온:ON의 생생한 업무 현장과 최신 소식을 영상으로 만나보세요.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -365,8 +366,8 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 - 💡 scroll-mt-32 적용 -->
-    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200 scroll-mt-32">
+    <!-- 7. 푸터 -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
                 <a href="index.html" class="inline-block hover:opacity-80 transition">
@@ -406,7 +407,6 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
-                <!-- 💡 푸터 영문 상호명 통일 방어막 적용 -->
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="#" class="hover:text-slate-600">개인정보처리방침</a>
@@ -416,91 +416,103 @@
         </div>
     </footer>
 
-    <!-- 🟢 1차: 카테고리(방) 고정, 2차: 39개 키워드 매칭 스크립트 -->
+    <!-- 🟢 💡 Vercel 서버리스 API 기반 - 58번, 59번 이중 연동 (최신 5개) 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
-            const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-            
-            const roomKeywords = ["처분", "징계", "행정심판", "구제", "항고"];
-            
-            const expandedKeywords = [
-                "처분", "행정심판", "영업정지", "과징금", "집행정지", "군인", "징계", "항고", "보훈", "유공자", 
-                "구제", "의견", "사전통지", "통지", "기각", "인용", "사보행", "투폰", "음주", "적법성", "양정", "기준",
-                "진급", "누락", "강등", "전역", "불명예", "사고", "성실의무", "복종의무", "위반", "군기교육", 
-                "휴가단축", "근신", "견책", "경고", "파면", "해임", "징역"
-            ];
+            const container = document.getElementById('service3-posts-container');
+            if (!container) return;
 
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById('service3-posts-container');
-                    if (!container) return;
-                    container.innerHTML = '';
+            // 💡 58번(행정처분)과 59번(징계) 두 카테고리의 글을 동시에 요청합니다.
+            Promise.all([
+                fetch('/api/naver-cases?categoryNo=58').then(res => res.ok ? res.json() : { items: [] }),
+                fetch('/api/naver-cases?categoryNo=59').then(res => res.ok ? res.json() : { items: [] })
+            ])
+            .then(results => {
+                container.innerHTML = ''; // 로딩 텍스트 제거
 
-                    if (!data.items || data.items.length === 0) {
-                        container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">최신 사례를 불러올 수 없습니다.</p>';
-                        return;
-                    }
+                // 두 카테고리의 결과물을 하나로 합치기
+                let allPosts = [...results[0].items, ...results[1].items];
+                
+                // 만약 동일한 글이 양쪽 카테고리에 중복으로 있다면 제거
+                const uniquePostsMap = new Map();
+                allPosts.forEach(post => uniquePostsMap.set(post.link, post));
+                let uniquePosts = Array.from(uniquePostsMap.values());
 
-                    const filteredPosts = data.items.filter(post => {
-                        const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
-                        const isCorrectRoom = roomKeywords.some(kw => catName.includes(kw.toLowerCase()));
-                        if (!isCorrectRoom) return false;
-
-                        const targetText = (post.title + " " + catName).toLowerCase();
-                        return expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
-                    }).slice(0, 3);
-
-                    if (filteredPosts.length === 0) {
-                        container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">해당 분야의 최신 수임 사례가 없습니다.</p>';
-                        return;
-                    }
-
-                    filteredPosts.forEach((post) => {
-                        let tmp = document.createElement("DIV");
-                        tmp.innerHTML = post.description;
-                        let summary = tmp.textContent || tmp.innerText || "";
-                        summary = summary.replace(/\s+/g, ' ').trim();
-                        if (summary.length > 320) {
-                            summary = summary.substring(0, 320) + "...";
-                        }
-
-                        let categoryName = "징계·행정처분 사례";
-                        let pubDate = post.pubDate ? post.pubDate.split(' ')[0] : '';
-
-                        const cardHtml = `
-                            <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
-                                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${categoryName}</span>
-                                    <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
-                                </div>
-                                
-                                <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>
-                                
-                                <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6">
-                                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${summary}</p>
-                                </div>
-
-                                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3">
-                                    <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
-                                    <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
-                                        <span>블로그에서 전체 내용 보기</span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                    </a>
-                                </div>
-                            </article>
-                        `;
-                        container.innerHTML += cardHtml;
-                    });
-                })
-                .catch(error => {
-                    console.error('블로그 데이터를 불러오는 중 오류 발생:', error);
-                    const container = document.getElementById('service3-posts-container');
-                    if (container) {
-                        container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">사례를 불러오는 중 오류가 발생했습니다.</p>';
-                    }
+                // 💡 만약 잘못된 분야(번역, 인허가)가 섞여 있다면 배제 필터링
+                const excludeKeywords = ["번역", "인증", "아포스티유", "비자", "의료기기", "해썹", "haccp"];
+                let safePosts = uniquePosts.filter(post => {
+                    const targetText = post.title.toLowerCase();
+                    return !excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
                 });
+
+                // 💡 작성 날짜(pubDate) 최신순으로 내림차순 정렬
+                safePosts.sort((a, b) => {
+                    const dateA = new Date(a.pubDate.replace(/\.\s*/g, '/').replace(/\/$/, ''));
+                    const dateB = new Date(b.pubDate.replace(/\.\s*/g, '/').replace(/\/$/, ''));
+                    return dateB - dateA;
+                });
+
+                // 💡 다른 페이지와 동일하게 최상위 5개만 컷팅
+                safePosts = safePosts.slice(0, 5);
+
+                // 안전하게 거른 글이 0개라면 우아한 58번 대체 안내상자 노출
+                if (!safePosts || safePosts.length === 0) {
+                    renderFallback(container);
+                    return;
+                }
+
+                // 5개 게시물 화면에 그리기
+                safePosts.forEach(post => {
+                    let categoryName = "징계·행정처분 사례";
+                    let pubDate = post.pubDate || '';
+
+                    const cardHtml = `
+                        <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${categoryName}</span>
+                                <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
+                            </div>
+                            
+                            <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>
+                            
+                            <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6">
+                                <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${post.description}</p>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3">
+                                <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
+                                <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
+                                    <span>블로그에서 전체 내용 보기</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                        </article>
+                    `;
+                    container.innerHTML += cardHtml;
+                });
+            })
+            .catch(error => {
+                console.error('서버 통신 실패:', error);
+                renderFallback(container);
+            });
+
+            // 💡 [58번 카테고리 다이렉트 대체 안내 상자]
+            function renderFallback(container) {
+                container.innerHTML = `
+                    <div class="bg-brand-light/30 border border-brand-light p-8 md:p-12 rounded-2xl text-center flex flex-col items-center justify-center transition-all hover:shadow-md">
+                        <span class="text-3xl mb-4">📚</span>
+                        <h4 class="text-brand font-bold text-lg md:text-xl mb-2">더 많은 수임 사례는 공식 블로그에서!</h4>
+                        <p class="text-slate-600 text-xs md:text-sm mb-6 leading-relaxed">
+                            행정사사무소 온:ON의 다양한 징계구제 및 행정처분 성공 사례와<br class="hidden md:block">
+                            생생한 실무 진행 후기를 네이버 블로그에서 직접 확인하실 수 있습니다.
+                        </p>
+                        <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=58" target="_blank" class="bg-brand text-white font-bold px-6 py-2.5 rounded-lg shadow-sm hover:bg-brand-hover transition text-sm flex items-center gap-2">
+                            블로그 방문하기 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                `;
+            }
         });
     </script>
 </body>

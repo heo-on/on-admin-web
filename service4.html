@@ -282,7 +282,8 @@
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 심층 상담</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">사안 검토 및 수임 가능성 정밀 분석</p>
+                <!-- 💡 '정밀' 단어 삭제하여 한 줄로 딱 맞게 핏(Fit) 수정! -->
+                <p class="text-xs text-slate-500 leading-relaxed">사안 검토 및 수임 가능성 분석</p>
             </div>
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
@@ -427,10 +428,10 @@
                     return response.json();
                 })
                 .then(data => {
-                    container.innerHTML = ''; // 로딩 텍스트 제거
+                    container.innerHTML = ''; 
 
-                    // 타 분야 키워드가 실수로 혼입되었을 경우 걸러내는 필터
-                    const excludeKeywords = ["의료기기", "해썹", "haccp", "징계", "행정심판", "비자", "외투법인"];
+                    // 💡 "비자" 단어 필터링 해제 (번역 서류에 비자 단어가 많으므로 노출 허용!)
+                    const excludeKeywords = ["의료기기", "해썹", "haccp", "외투법인"];
                     
                     let safePosts = data.items.filter(post => {
                         const targetText = post.title.toLowerCase();
@@ -480,7 +481,6 @@
                     renderFallback(container);
                 });
 
-            // 💡 [46번 카테고리 다이렉트 대체 안내 상자]
             function renderFallback(container) {
                 container.innerHTML = `
                     <div class="bg-brand-light/30 border border-brand-light p-8 md:p-12 rounded-2xl text-center flex flex-col items-center justify-center transition-all hover:shadow-md">

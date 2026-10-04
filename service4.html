@@ -164,15 +164,14 @@
         </div>
     </section>
 
-    <!-- 4. 주요 취급 문서 (블루 포인트 불렛 적용) -->
+    <!-- 4. 주요 취급 서류 (한 줄 4칸 고정 배치) -->
     <section class="py-16 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-10">
             <h2 class="text-2xl font-bold text-slate-900 mt-1">주요 취급 서류</h2>
             <div class="w-12 h-1 bg-brand/30 mx-auto mt-4 mb-2 rounded-full"></div>
         </div>
 
-        <!-- 💡 여기서 lg:grid-cols-4 로 변경하여 한 줄에 4칸 꽉 차게 배치합니다. -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                 <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">개인 / 가족</h3>
                 <ul class="text-xs text-slate-600 space-y-3 pl-3">
@@ -229,7 +228,6 @@
             <div class="w-12 h-1 bg-brand/30 mx-auto mt-4 mb-2 rounded-full"></div>
         </div>
         
-        <!-- 5단계 절차 -->
         <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">01</div>
@@ -258,7 +256,6 @@
             </div>
         </div>
 
-        <!-- 하단 보조 카드 2개 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-10">
             <div class="bg-white p-6 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
                 <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">🛡️</div>
@@ -276,7 +273,6 @@
             </div>
         </div>
 
-        <!-- 소통 채널 3개 (군인 채널 제외) -->
         <div class="max-w-3xl mx-auto">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
@@ -367,7 +363,6 @@
             </div>
         </div>
 
-        <!-- 💡 법적 책임 안내 상자 문구 수정 -->
         <div class="mt-8 bg-blue-50/70 border border-blue-100 rounded-xl p-6">
             <h4 class="font-bold text-slate-900 mb-2 text-base flex items-center gap-2">
                 <span>📌</span> 번역확인증명서 법적 책임 안내
@@ -385,15 +380,15 @@
         </div>
     </section>
 
-    <!-- 7. 비교표 및 판단 가이드 -->
+    <!-- 7. 비교표 -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="text-center mb-8">
             <span class="text-brand font-bold text-xs uppercase tracking-widest">WHICH ONE DO I NEED</span>
-            <h2 class="text-2xl font-bold text-slate-900 mt-1">번역확인증명서 · 공증 · 아포스티유 · 영사확인 비교</h2>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">번역확인증명서 · 공증 · 아포스티유 비교</h2>
             <p class="text-xs md:text-sm text-slate-500 mt-1">셋은 대체재가 아니라 각각 다른 것을 증명합니다. 제출기관의 안내문을 확인하는 것이 가장 빠릅니다.</p>
         </div>
 
-        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-10">
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
             <table class="w-full text-left text-sm text-slate-600 min-w-[700px]">
                 <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
                     <tr>
@@ -431,12 +426,12 @@
                 </tbody>
             </table>
         </div>
+    </section>
 
     <!-- 8. 아포스티유 절차 및 가입국 현황표 -->
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-100">
         <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">절차 비교 및 아포스티유 가입국 현황</h3>
         
-        <!-- 절차 비교표 -->
         <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-8">
             <table class="w-full text-left text-sm text-slate-600">
                 <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
@@ -454,7 +449,6 @@
             </table>
         </div>
 
-        <!-- 가입국 현황표 -->
         <div class="flex justify-between items-end mb-3 px-2">
             <h4 class="font-bold text-slate-800">대륙별 가입국 현황</h4>
             <span class="text-xs font-bold text-brand bg-brand-light px-2 py-1 rounded">2026. 09. 11 기준 (131개국)</span>
@@ -494,7 +488,6 @@
                 <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">행정 · 법률 번역 · 인증 최근 사례</h3>
             </div>
-            <!-- 💡 블로그 46번(번역·인증) 카테고리 바로가기 -->
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=46" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
         </div>
 
@@ -505,7 +498,7 @@
         </div>
     </section>
 
-    <!-- 10. 미디어 채널 (하단 독립 배치, 군인 채널 없음) -->
+    <!-- 10. 미디어 채널 (하단 독립 배치) -->
     <section class="py-10 px-6 max-w-7xl mx-auto mb-10">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
@@ -533,7 +526,7 @@
         </div>
     </section>
 
-    <!-- 11. 푸터 -->
+    <!-- 11. 💡 푸터 (완벽하게 복원 및about.html과 100% 디자인 통일) -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -556,6 +549,7 @@
                 </div>
             </div>
 
+            <!-- 전문 분야 태그/키워드 링크 줄 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -573,6 +567,7 @@
                 </a>
             </div>
 
+            <!-- 하단 카피라이트 & 약관 줄 -->
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
@@ -597,7 +592,6 @@
                 .then(data => {
                     container.innerHTML = ''; 
 
-                    // 💡 비자 단어 허용
                     const excludeKeywords = ["의료기기", "해썹", "haccp", "외투법인"];
                     
                     let safePosts = data.items.filter(post => {

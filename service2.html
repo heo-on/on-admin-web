@@ -365,8 +365,8 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 -->
-    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200 scroll-mt-32">
+    <!-- 7. 푸터 (연락처 추가 및 주소 업데이트) -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
                 <a href="index.html" class="inline-block hover:opacity-80 transition">
@@ -403,7 +403,7 @@
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
                 <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
-                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
 
@@ -418,24 +418,17 @@
         </div>
     </footer>
 
-    <!-- 🟢 1차: 카테고리(방) 고정, 2차: 45개 키워드 매칭(기존+추가) 블로그 스크립트 -->
+    <!-- 🟢 💡 [보정 적용] 카테고리 유실 대비 통합 감지 및 최신 3개 추출 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 가장 안정적인 원본 rss2json 호출 방식
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
             
-            // 1차 방어용: 타 분야 포스팅 금지용 필수 카테고리 명칭
-            const roomKeywords = ["의료", "인허가", "식품", "해썹", "제조업", "허가", "등록", "신고"];
-            
-            // 2차 추출용 정밀 키워드 (기존 요청 단어 + 추가 30선 결합 총 45개)
-            const expandedKeywords = [
-                "의료", "수입", "수출", "공장", "식품", "단체", "환자", "유치", "기기", "여성", "연구소", 
-                "연구", "비영리", "관광", "여행", "요양", "재가", "복지", "인허가", "해썹", "등록", "신고", 
-                "법인", "허가", "신청", "인증", "장기요양", "의료기기", "품목", "수입업", "제조업", "haccp", 
-                "건강기능식품", "화장품", "의약외품", "사단법인", "재단법인", "영업등록", "영업신고", 
-                "수입식품", "해외제조업소", "위생", "표기준", "소독업", "축산물", "의료법인", "시설요건", 
-                "변경신고", "승인"
+            // 의료분야 · 각종 인허가 핵심 키워드 목록
+            const keywords = [
+                "의료", "인허가", "식품", "해썹", "haccp", "제조업", "수입업", "공장", 
+                "등록", "허가", "신고", "인증", "기업인증", "연구소", "고유번호증", 
+                "비영리", "환자", "치과", "건강기능식품", "화장품"
             ];
 
             fetch(apiUrl)
@@ -450,16 +443,12 @@
                         return;
                     }
 
+                    // 💡 제목과 카테고리를 합친 전체 텍스트에서 키워드 탐색 (카테고리 정보 유실 대비)
                     const filteredPosts = data.items.filter(post => {
-                        // 1차: 카테고리(방) 일치 여부 확인
-                        const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
-                        const isCorrectRoom = roomKeywords.some(kw => catName.includes(kw.toLowerCase()));
-                        if (!isCorrectRoom) return false;
-
-                        // 2차: 45개 키워드 매칭
-                        const targetText = (post.title + " " + catName).toLowerCase();
-                        return expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
-                    }).slice(0, 3); // 최대 3개까지만
+                        const catName = post.categories ? post.categories.join(" ") : "";
+                        const fullText = (post.title + " " + catName).toLowerCase();
+                        return keywords.some(kw => fullText.includes(kw.toLowerCase()));
+                    }).slice(0, 3); // 가장 최근 글 3개만 추출
 
                     if (filteredPosts.length === 0) {
                         container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">해당 분야의 최신 수임 사례가 없습니다.</p>';

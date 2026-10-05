@@ -37,7 +37,7 @@
 
         function changeLanguage(langCode) {
             if (langCode === 'ko') {
-                window.location.href = 'service1.html'; // 한국어 서비스1 페이지로 (나중에 생성 예정)
+                window.location.href = 'service1.html'; 
             } else if (langCode === 'en') {
                 window.location.href = 'service1_en.html';
             } else {
@@ -99,6 +99,21 @@
         </div>
     </header>
 
+    <!-- 💡 서브페이지 상단 카테고리 네비게이션 바 -->
+    <div class="bg-white border-b border-slate-200 sticky top-[65px] z-40 shadow-sm overflow-x-auto">
+        <div class="max-w-7xl mx-auto px-6 py-2.5 flex items-center gap-2 md:gap-4 text-xs md:text-sm whitespace-nowrap">
+            <a href="index_en.html#services" class="bg-brand text-white font-bold px-3 py-1.5 rounded-lg hover:bg-brand-hover transition flex items-center gap-1.5 flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <span>All Services</span>
+            </a>
+            <span class="text-slate-300">|</span>
+            <a href="service1_en.html" class="px-3 py-1.5 rounded-lg transition font-bold bg-brand-light text-brand border-b-2 border-brand">01. Business Setup & FDI</a>
+            <a href="service2_en.html" class="px-3 py-1.5 rounded-lg transition font-medium text-slate-600 hover:text-brand">02. Permits & Licenses</a>
+            <a href="service3_en.html" class="px-3 py-1.5 rounded-lg transition font-medium text-slate-600 hover:text-brand">03. Visa & Immigration</a>
+            <a href="service4_en.html" class="px-3 py-1.5 rounded-lg transition font-medium text-slate-600 hover:text-brand">04. Translation & Apostille</a>
+        </div>
+    </div>
+
     <!-- 2. 서브페이지 히어로 섹션 -->
     <section class="relative py-24 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-900/75 backdrop-blur-[2px]"></div>
@@ -111,7 +126,7 @@
         </div>
     </section>
 
-    <!-- 3. 권위 어필 (법무부 등록 기관) -->
+    <!-- 3. 권위 어필 -->
     <section class="pt-12 px-6 max-w-5xl mx-auto" id="details">
         <div class="bg-brand/5 border border-brand/20 rounded-2xl p-6 md:p-8 shadow-sm text-center">
             <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-4 shadow-md">🏢</div>
@@ -122,7 +137,7 @@
         </div>
     </section>
 
-    <!-- 4. 핵심 서비스 3가지 (FDI, Branch, Visas) -->
+    <!-- 4. 핵심 서비스 3가지 -->
     <section class="py-16 px-6 max-w-5xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Corporate Services</h2>
@@ -130,7 +145,6 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- 1. FDI / Local Corp -->
             <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:border-brand transition group">
                 <div class="w-12 h-12 bg-slate-100 text-brand rounded-lg flex items-center justify-center text-2xl mb-5 group-hover:bg-brand group-hover:text-white transition">🤝</div>
                 <h4 class="text-lg font-bold text-slate-900 mb-3">FDI & Local Corporation</h4>
@@ -138,7 +152,6 @@
                     Establish a standard Korean subsidiary (Local Corporation). We guide you through the Foreign Direct Investment (FDI) reporting (minimum 100 million KRW), corporate registry, and business license registration.
                 </p>
             </div>
-            <!-- 2. Branch & Liaison -->
             <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:border-brand transition group">
                 <div class="w-12 h-12 bg-slate-100 text-brand rounded-lg flex items-center justify-center text-2xl mb-5 group-hover:bg-brand group-hover:text-white transition">🌍</div>
                 <h4 class="text-lg font-bold text-slate-900 mb-3">Branch & Liaison Office</h4>
@@ -146,7 +159,6 @@
                     Set up an overseas branch to generate profit, or a liaison office for non-sales activities (R&D, market research). Ideal for foreign HQs wanting to maintain direct control over their Korean operations.
                 </p>
             </div>
-            <!-- 3. Corporate Visas -->
             <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:border-brand transition group">
                 <div class="w-12 h-12 bg-slate-100 text-brand rounded-lg flex items-center justify-center text-2xl mb-5 group-hover:bg-brand group-hover:text-white transition">🛂</div>
                 <h4 class="text-lg font-bold text-slate-900 mb-3">Corporate Visas</h4>
@@ -157,7 +169,7 @@
         </div>
     </section>
 
-    <!-- 5. 주요 기업 비자 안내 (D-7, D-8, D-9) -->
+    <!-- 5. 주요 기업 비자 안내 -->
     <section class="py-16 px-6 max-w-5xl mx-auto bg-slate-50 rounded-2xl border border-slate-200 mb-16">
         <div class="text-center mb-10 px-4">
             <h2 class="text-2xl font-bold text-slate-900">Corporate & Investment Visas</h2>
@@ -166,9 +178,10 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-8">
             <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
-                <div class="bg-brand py-3 px-4 text-center">
+                <!-- 💡 D-7 비자 색상 피드백 반영: 투명도가 살짝 들어간 파란색(bg-brand/85)으로 세련되게 변경 -->
+                <div class="bg-brand/85 py-3 px-4 text-center">
                     <h3 class="font-bold text-white">D-7 Visa</h3>
-                    <p class="text-brand-light text-xs mt-0.5">Intra-Company Transferee</p>
+                    <p class="text-slate-200 text-xs mt-0.5">Intra-Company Transferee</p>
                 </div>
                 <div class="p-5">
                     <p class="text-sm text-slate-600 mb-4 h-24">For essential professionals or executives dispatched from an overseas headquarters to a foreign corporate <strong>Branch</strong>, <strong>Liaison Office</strong>, or Subsidiary in Korea.</p>
@@ -210,9 +223,9 @@
         </div>
     </section>
 
-    <!-- 6. 원스톱 업무 절차 (One-Stop Process) -->
-    <section class="py-12 px-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold text-slate-900 text-center mb-10">FDI One-Stop Procedure</h2>
+    <!-- 6. 원스톱 업무 절차 (Process) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200 mt-10 pt-16">
+        <h2 class="text-2xl font-bold text-slate-900 text-center mb-10">Our FDI Process</h2>
         
         <div class="relative border-l-2 border-brand/20 ml-4 md:ml-10 space-y-8">
             <div class="relative pl-8 md:pl-12">
@@ -247,88 +260,8 @@
         </div>
     </section>
 
-    <!-- Case 1 (입력 대기) -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Translation & Apostille</span>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
-                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                </div>
-            </article>
-
-    <!-- Case 2 (입력 대기) -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Translation & Apostille</span>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
-                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                </div>
-            </article>
-
-    <!-- Case 3 (입력 대기) -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Translation & Apostille</span>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
-                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                </div>
-            </article>
-
-    <!-- Case 4 (입력 대기) -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Translation & Apostille</span>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
-                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                </div>
-            </article>
-
-    <!-- Case 5 (입력 대기) -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Translation & Apostille</span>
-                </div>
-                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
-                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                </div>
-            </article>
-    
-    <!-- 7. 소통 채널 (Contact) -->
-    <section id="guide" class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200 mt-10">
+    <!-- 7. 소통 채널 (Process 하단 배치) -->
+    <section id="guide" class="py-16 px-6 max-w-5xl mx-auto scroll-mt-32">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-xl font-bold text-slate-900 mb-2 text-center">Start Your Business in Korea</h3>
             <p class="text-sm text-slate-500 text-center mb-8">Contact us today to discuss your business structure and visa eligibility.</p>
@@ -358,7 +291,100 @@
         </div>
     </section>
 
-    <!-- 8. 영문 푸터 -->
+    <!-- 8. 서브페이지 전용 업무 사례 5개 (소통채널 하단 배치) -->
+    <section id="cases" class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+                <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">FDI & Corporate Visa Cases</h2>
+            </div>
+            <p class="text-slate-500 text-sm mt-2 md:mt-0">Recent success stories for our global clients.</p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Case 1 (Filled) -->
+            <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Business Setup & FDI</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">Successful Establishment of Foreign-Invested Corporation & D-8 Visa Issuance</h3>
+                <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
+                    <p class="text-slate-600 text-sm leading-relaxed font-normal">We guided a US-based IT firm through the complex process of FDI reporting, corporate bank account setup, and company registration in Seoul. Following the successful incorporation, we swiftly secured the D-8 Corporate Investment Visa for the CEO, allowing them to legally manage their business in Korea without delay.</p>
+                </div>
+                <div class="flex justify-end">
+                    <a href="#cases" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand hover:text-brand-hover transition group">
+                        Read More <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Case 2 (Placeholder) -->
+            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">D-7 Branch Visa</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
+                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
+                </div>
+                <div class="flex justify-end opacity-50">
+                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
+                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                </div>
+            </article>
+
+            <!-- Case 3 (Placeholder) -->
+            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Liaison Office Setup</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
+                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
+                </div>
+                <div class="flex justify-end opacity-50">
+                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
+                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                </div>
+            </article>
+
+            <!-- Case 4 (Placeholder) -->
+            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">D-9 Trade Visa</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
+                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
+                </div>
+                <div class="flex justify-end opacity-50">
+                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
+                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                </div>
+            </article>
+
+            <!-- Case 5 (Placeholder) -->
+            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">FDI Reporting</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ 영문 사례 제목이 들어갈 자리입니다 ]</h3>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
+                    <p class="text-slate-400 text-sm leading-relaxed font-normal">나중에 대표님께서 긴 번역본을 주시면, 이곳에 요약본을 넣고 아래 Read More를 통해 전체 상세 글로 넘어가게 세팅할 것입니다.</p>
+                </div>
+                <div class="flex justify-end opacity-50">
+                    <span class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-400">
+                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 9. 영문 푸터 -->
     <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">

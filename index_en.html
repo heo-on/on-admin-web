@@ -59,7 +59,6 @@
         #google_translate_element { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-        
         .channel-card font, .channel-card span { text-align: center !important; display: block !important; width: 100% !important; }
     </style>
 </head>
@@ -67,7 +66,7 @@
 
     <div id="google_translate_element"></div>
 
-    <!-- 1. 상단 헤더 & 네비게이션 (4대 메뉴로 깔끔 정리) -->
+    <!-- 1. 상단 헤더 & 네비게이션 (4대 메뉴 및 공식 풀네임 적용) -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
@@ -78,7 +77,6 @@
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <!-- 💡 Location 메뉴를 제거하고 깔끔한 4개 메뉴 구성 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="#about" class="hover:text-brand transition">About Us</a>
                     <a href="#services" class="hover:text-brand transition">Services</a>
@@ -133,7 +131,7 @@
         </div>
     </section>
 
-    <!-- 4. 사무소 소개 (About Us - 대표 행정사 약력 및 인사말) -->
+    <!-- 4. 사무소 소개 (About Us - 💡 비자 분류 완벽 수정됨) -->
     <section id="about" class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100 scroll-mt-32">
         <div class="text-center mb-12">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
@@ -174,12 +172,13 @@
                 </ul>
             </div>
 
+            <!-- 💡 비자 분류 완벽 수정 반영 구역 -->
             <div class="md:col-span-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Core Focus Areas</h4>
                 <ul class="space-y-4 text-sm lg:text-base text-slate-600">
                     <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
                         <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Business Setup & FDI:</div>
-                        <div class="leading-relaxed break-keep mt-[1px]">FDI Reporting, Corporation Setup, D-8 / D-9 / E-7 Visas</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">FDI Reporting, Corporation Setup, D-8 & D-9 Corporate Visas</div>
                     </li>
                     <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
                         <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Corporate Permits:</div>
@@ -187,7 +186,7 @@
                     </li>
                     <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
                         <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Visa & Immigration:</div>
-                        <div class="leading-relaxed break-keep mt-[1px]">Employment Visas, Marriage Visas, F-5 Permanent Residency</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">E-7 Employment, D-2/D-4 Student, F-6 Marriage, F-5 Residency</div>
                     </li>
                     <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
                         <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Translation & Legalization:</div>
@@ -198,7 +197,7 @@
         </div>
     </section>
 
-    <!-- 5. 핵심 전문 분야 (외국인 맞춤 4대 분야) -->
+    <!-- 5. 핵심 전문 분야 (💡 1~4번 모두 클릭 가능한 a태그 구조 + 비자 설명 수정) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
@@ -206,34 +205,42 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+            <!-- Service 1 (비자 분류 변경 반영) -->
+            <a href="service1_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Business Setup & FDI</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">Foreign Direct Investment (FDI) reporting, corporation establishment, and setting up branch or liaison offices in South Korea.</p>
-            </div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">Foreign Direct Investment (FDI) reporting, corporation establishment, and D-8/D-9 corporate visas.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
+            </a>
             
-            <div class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+            <!-- Service 2 -->
+            <a href="service2_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Corporate Permits & Licenses</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">KC Certification, Medical Device Registration (MFDS), Foreign Patient Attraction Permits, and Travel Agency Registration.</p>
-            </div>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
+            </a>
             
-            <div class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+            <!-- Service 3 (비자 분류 변경 반영) -->
+            <a href="service3_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Visa & Immigration</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">D-8 Investment Visa, E-7 Professional Employment Visa, F-6 Marriage Visa, and F-5 Permanent Residency applications.</p>
-            </div>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">E-7 Professional Employment Visa, D-2/D-4 Student Visas, F-6 Marriage Visa, and F-5 Permanent Residency applications.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
+            </a>
             
-            <div class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group">
+            <!-- Service 4 (💡 방금 만든 번역 페이지와 완벽 연결) -->
+            <a href="service4_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Translation & Apostille</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-4">Issuance of Certificate of Translation, Embassy Legalization, and Apostille services for both domestic and foreign documents.</p>
-            </div>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
+            </a>
         </div>
     </section>
 
     <!-- 6. 구글 SEO용 고정 사례 (Hardcoded Case Studies) -->
-   <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200 scroll-mt-32">
+    <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
                 <div>
@@ -243,7 +250,7 @@
                 <p class="text-slate-500 text-sm mt-2 md:mt-0">Examples of our successful solutions for global clients.</p>
             </div>
 
-            <!-- 💡 API가 아닌 하드코딩된 영문 사례 4개 (Read More 버튼 추가) -->
+            <!-- Read More 버튼이 추가된 사례 섹션 -->
             <div class="space-y-6">
                 <!-- Case 1 -->
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
@@ -303,7 +310,6 @@
                         <p class="text-slate-600 text-sm leading-relaxed font-normal">A Korean corporation required their Articles of Incorporation to be submitted to an overseas bank. We provided a certified translation by our licensed Administrative Attorney, completed the notary public procedures, and swiftly obtained the Ministry of Justice Apostille certification in a one-stop process.</p>
                     </div>
                     <div class="flex justify-end">
-                        <!-- 💡 임시로 #cases를 걸어두어 에러 방지. 나중에 별도 페이지(cases_en.html) 완성 시 링크 변경 -->
                         <a href="#cases" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand hover:text-brand-hover transition group">
                             Read More <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
@@ -444,7 +450,6 @@
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
                 <a href="index_en.html" class="inline-block hover:opacity-80 transition">
-                    <!-- 💡 공식 풀네임으로 수정 -->
                     <h2 class="text-lg md:text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
                 </a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
@@ -464,7 +469,6 @@
                 </div>
             </div>
 
-            <!-- 영문 SEO를 위한 구글 검색 타깃 핵심 키워드 링크 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-default">Korea FDI Setup</span>
                 <span class="hover:text-brand cursor-default">D-8 & E-7 Visa Agent</span>

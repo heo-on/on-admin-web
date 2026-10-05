@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Certified Public Translation & Administrative Attorneys Office ON:ON</title>
-    <!-- 💡 구글 영어 검색 노출을 위한 영문 전용 SEO 메타 태그 -->
+    <!-- 구글 영어 검색 노출을 위한 영문 전용 SEO 메타 태그 -->
     <meta name="description" content="Korea's leading Administrative Attorneys Office ON:ON. We provide foreign direct investment (FDI), visa services, KC certification, medical business permits, certified translation, and Apostille services in Seoul, Korea.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,7 +26,7 @@
         }
     </script>
     
-    <!-- 구글 웹사이트 번역 스크립트 (기본 언어를 'en'으로 변경) -->
+    <!-- 구글 웹사이트 번역 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -36,14 +36,12 @@
             }, 'google_translate_element');
         }
 
-        // 언어 버튼 클릭 시 해당 파일로 이동하도록 스위칭 로직 개선
         function changeLanguage(langCode) {
             if (langCode === 'ko') {
-                window.location.href = 'index.html'; // 한국어 원본으로 이동
+                window.location.href = 'index.html';
             } else if (langCode === 'en') {
-                window.location.href = 'index_en.html'; // 영문 페이지로 이동
+                window.location.href = 'index_en.html';
             } else {
-                // 중국어, 일본어는 향후 index_zh.html 등이 만들어지기 전까지는 기존 구글 번역기 활용
                 const select = document.querySelector('.goog-te-combo');
                 if (select) {
                     select.value = langCode;
@@ -82,15 +80,16 @@
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
+                    <a href="#about" class="hover:text-brand transition">About Us</a>
                     <a href="#services" class="hover:text-brand transition">Services</a>
                     <a href="#cases" class="hover:text-brand transition">Case Studies</a>
+                    <a href="#location" class="hover:text-brand transition">Location</a>
                     <a href="#guide" class="hover:text-brand transition">Contact</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
-                        <!-- 💡 현재 페이지가 EN이므로 활성화 버튼 상태 적용 -->
                         <button onclick="changeLanguage('en')" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
                         <button onclick="changeLanguage('zh-CN')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
                         <button onclick="changeLanguage('ja')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
@@ -135,11 +134,76 @@
         </div>
     </section>
 
-    <!-- 4. 핵심 전문 분야 (외국인 맞춤 4대 분야) -->
+    <!-- 4. 사무소 소개 (About Us - 대표 행정사 약력 및 인사말) -->
+    <section id="about" class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100 scroll-mt-32">
+        <div class="text-center mb-12">
+            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">About Our Representative</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center px-4 md:px-6 mb-12">
+            <div class="md:col-span-4 flex flex-col items-center">
+                <div class="w-full max-w-[260px] h-[320px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
+                    <img src="profile.jpg" alt="Representative Attorney Heo On" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ Representative Photo ]</span><span class=\'text-xs\'>profile.jpg</span></div>';">
+                </div>
+                <div class="w-full text-center">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1">Heo On</h3>
+                    <p class="text-brand font-semibold text-sm mb-4">Managing Administrative Attorney / CEO</p>
+                </div>
+            </div>
+
+            <div class="md:col-span-8">
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
+                    "Navigating Complex Korean Regulations with <span class="text-brand">Precision and Certainty</span>"
+                </h3>
+                <div class="text-slate-600 leading-relaxed space-y-4 text-sm md:text-base">
+                    <p>Welcome to Administrative Attorneys Office ON:ON. I am Heo On, Managing Attorney of the firm.</p>
+                    <p>Success in global business begins with meticulous document preparation and full compliance with Korean administrative laws. As an officially registered agency with the Ministry of Justice, we handle foreign direct investment (FDI), corporate visas, medical permits, KC certification, certified translation, and embassy legalization in a fast, seamless one-stop process.</p>
+                    <p>Drawing on my extensive background as a former military officer (Head of Personnel / Company Commander), I apply rigorous discipline and precise legal interpretation to protect our global clients' interests and deliver optimal results.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-11 gap-6 px-4 md:px-6 border-t border-slate-100 pt-10">
+            <div class="md:col-span-5 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Credentials & Background</h4>
+                <ul class="space-y-3 text-sm lg:text-base text-slate-600">
+                    <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>Regular Member, Korea Association of Administrative Attorneys (KAAA)</strong></li>
+                    <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>Officially Registered Immigration Agency, Ministry of Justice</strong></li>
+                    <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> Former Personnel Officer & Company Commander, ROK Army</li>
+                    <li class="flex items-start gap-2 pt-2 border-t border-slate-200/60 mt-3"><span class="text-slate-400 mt-0.5">🎓</span> <span>Bachelor of Physical Education, Kyungnam University</span></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Core Focus Areas</h4>
+                <ul class="space-y-4 text-sm lg:text-base text-slate-600">
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Business Setup & FDI:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">FDI Reporting, Corporation Setup, D-8 / D-9 / E-7 Visas</div>
+                    </li>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Corporate Permits:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">KC Certification, Medical Device Registration, Travel Agency</div>
+                    </li>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Visa & Immigration:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">Employment Visas, Marriage Visas, F-5 Permanent Residency</div>
+                    </li>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Translation & Legalization:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">Certificate of Translation, Apostille, Embassy Legalization</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 핵심 전문 분야 (외국인 맞춤 4대 분야) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
-            <p class="text-slate-600 mt-2 text-sm md:text-base">Professional legal and administrative solutions for foreign clients.</p>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Professional legal and administrative solutions for global clients.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -169,7 +233,7 @@
         </div>
     </section>
 
-    <!-- 5. 구글 SEO용 고정 사례 (Hardcoded Case Studies) -->
+    <!-- 6. 구글 SEO용 고정 사례 (Hardcoded Case Studies) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -180,7 +244,6 @@
                 <p class="text-slate-500 text-sm mt-2 md:mt-0">Examples of our successful solutions for global clients.</p>
             </div>
 
-            <!-- 💡 API가 아닌 하드코딩된 영문 사례 4개 (구글 로봇 수집용) -->
             <div class="space-y-6">
                 <!-- Case 1 -->
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
@@ -229,7 +292,47 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT & GUIDE (업무 절차 및 소통 채널 - 영문 간소화) -->
+    <!-- 7. 오시는 길 및 주차 안내 (Location & Parking) -->
+    <section id="location" class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100 scroll-mt-32">
+        <div class="text-center mb-10">
+            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">Location & Directions</h2>
+        </div>
+
+        <div class="space-y-8 px-2 md:px-6">
+            <div class="w-full h-80 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
+                <iframe src="https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=en&z=17&output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">📍</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Office Address</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        Room 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul [07807], Republic of Korea
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🚇</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Subway Station</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        <strong>Line 5 Magok Station Exit 6</strong><br>
+                        (1-minute walk right in front of Exit 6)
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🅿️</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Parking Info</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        Underground parking available in Magok 747 Tower.<br>
+                        (Free parking validation provided for visitors)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. PROCESS & CONTACT (업무 절차 및 소통/미디어 채널) -->
     <section id="guide" class="py-20 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Process & Contact</span>
@@ -261,7 +364,7 @@
             </div>
         </div>
 
-        <!-- 💡 영문 맞춤형 소통 채널 (이메일 및 폼 위주) -->
+        <!-- 영문 맞춤형 소통 채널 (3개) -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">Contact Channels</h3>
             
@@ -287,6 +390,7 @@
             </div>
         </div>
 
+        <!-- 미디어 채널 (3개) -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
             <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
@@ -314,7 +418,7 @@
         </div>
     </section>
 
-    <!-- 7. 영문 푸터 (구글 SEO 검색어 최적화) -->
+    <!-- 9. 영문 푸터 (구글 SEO 검색어 최적화) -->
     <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -338,7 +442,7 @@
                 </div>
             </div>
 
-            <!-- 💡 영문 SEO를 위한 구글 검색 타깃 핵심 키워드 링크 -->
+            <!-- 영문 SEO를 위한 구글 검색 타깃 핵심 키워드 링크 -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-default">Korea FDI Setup</span>
                 <span class="hover:text-brand cursor-default">D-8 & E-7 Visa Agent</span>

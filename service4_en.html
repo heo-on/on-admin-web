@@ -269,92 +269,68 @@
         </div>
     </section>
 
-    <!-- 8. 인증 비교표 -->
-    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+    <!-- 💡 8. 절차 비교 및 아포스티유 가입국 현황 통합 섹션 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="text-center mb-10">
-            <h2 class="text-2xl font-bold text-slate-900">Authentication Types Comparison</h2>
-            <p class="text-slate-500 mt-2 text-sm">Understanding which authentication your document requires.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Procedure Comparison & Apostille Member Countries</h2>
         </div>
 
-        <div class="overflow-x-auto">
-            <table class="w-full bg-white border-collapse border border-slate-200 text-left shadow-sm rounded-lg hidden md:table">
-                <thead>
-                    <tr class="bg-slate-100 text-slate-700 text-sm">
-                        <th class="border border-slate-200 px-6 py-4 font-bold w-1/4">Type</th>
-                        <th class="border border-slate-200 px-6 py-4 font-bold">Purpose & Meaning</th>
-                        <th class="border border-slate-200 px-6 py-4 font-bold w-1/4">Required When...</th>
-                    </tr>
-                </thead>
-                <tbody class="text-sm text-slate-600">
-                    <tr>
-                        <td class="border border-slate-200 px-6 py-4 font-bold text-brand bg-brand/5">1. Certificate of Translation</td>
-                        <td class="border border-slate-200 px-6 py-4 leading-relaxed">Issued by a nationally certified Administrative Attorney. It legally guarantees the translation is accurate and identical to the original.</td>
-                        <td class="border border-slate-200 px-6 py-4">Submission to Korean government agencies (Immigration, City Halls).</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-slate-200 px-6 py-4 font-bold text-slate-900">2. Notary Public</td>
-                        <td class="border border-slate-200 px-6 py-4 leading-relaxed">A lawyer/notary public confirms the signature or the fact that the translation was made.</td>
-                        <td class="border border-slate-200 px-6 py-4">Requested by specific private institutions or foreign courts.</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-slate-200 px-6 py-4 font-bold text-slate-900">3. Apostille</td>
-                        <td class="border border-slate-200 px-6 py-4 leading-relaxed">An international certification under the Hague Convention. Bypasses the complex embassy legalization.</td>
-                        <td class="border border-slate-200 px-6 py-4">Submitting documents between Apostille member countries.</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-slate-200 px-6 py-4 font-bold text-slate-900">4. Embassy Legalization</td>
-                        <td class="border border-slate-200 px-6 py-4 leading-relaxed">Consular authentication by the embassy of the destination country.</td>
-                        <td class="border border-slate-200 px-6 py-4">When the destination country is NOT an Apostille member (e.g., Vietnam, China).</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Mobile View -->
-            <div class="md:hidden space-y-4">
-                <div class="bg-brand/5 border border-brand/20 p-5 rounded-xl shadow-sm">
-                    <h4 class="font-bold text-brand mb-2">1. Certificate of Translation</h4>
-                    <p class="text-xs text-slate-600 mb-2">Issued by a nationally certified Administrative Attorney. Guarantees accuracy.</p>
-                    <span class="text-[11px] font-semibold text-slate-500 block bg-white px-2 py-1 rounded border border-slate-200">Required: Korean Govt. Agencies</span>
+        <!-- 절차 비교 박스 -->
+        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- 일반 영사확인 -->
+                <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-slate-200 flex flex-col justify-center">
+                    <h3 class="font-bold text-slate-800 text-base mb-4">
+                        General Embassy Legalization <span class="text-xs text-slate-500 font-normal">(Non-Member)</span>
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-normal break-keep">
+                        Document Issuance &rarr; MOFA Legalization &rarr; <span class="font-bold text-slate-900">Target Country Embassy Legalization</span> &rarr; Recognized in Target Country
+                    </p>
                 </div>
-                <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 class="font-bold text-slate-900 mb-2">2. Notary Public</h4>
-                    <p class="text-xs text-slate-600 mb-2">A notary confirms the signature/translation fact.</p>
-                    <span class="text-[11px] font-semibold text-slate-500 block bg-slate-50 px-2 py-1 rounded border border-slate-200">Required: Specific private institutions</span>
-                </div>
-                <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 class="font-bold text-slate-900 mb-2">3. Apostille</h4>
-                    <p class="text-xs text-slate-600 mb-2">International certification under Hague Convention. Bypasses embassy.</p>
-                    <span class="text-[11px] font-semibold text-slate-500 block bg-slate-50 px-2 py-1 rounded border border-slate-200">Required: Between Apostille members</span>
-                </div>
-                <div class="bg-white border border-slate-200 p-5 rounded-xl shadow-sm">
-                    <h4 class="font-bold text-slate-900 mb-2">4. Embassy Legalization</h4>
-                    <p class="text-xs text-slate-600 mb-2">Consular authentication by the destination country's embassy.</p>
-                    <span class="text-[11px] font-semibold text-slate-500 block bg-slate-50 px-2 py-1 rounded border border-slate-200">Required: Non-Apostille countries</span>
+                
+                <!-- 아포스티유 -->
+                <div class="p-6 md:p-8 bg-brand-light/30 flex flex-col justify-center">
+                    <h3 class="font-bold text-brand text-base mb-4">
+                        Apostille Convention <span class="text-xs text-brand/70 font-normal">(Simplified)</span>
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed font-normal break-keep">
+                        Document Issuance &rarr; <span class="font-bold text-brand">MOFA/MOJ Apostille Issuance</span> &rarr; Immediately Recognized in Target Country
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 9. 아포스티유 협약국 표 -->
-    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-slate-800 rounded-2xl p-8 md:p-10 text-white shadow-md">
-            <div class="md:w-1/2 text-center md:text-left">
-                <span class="bg-blue-500/30 text-blue-200 px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">Hague Convention</span>
-                <h3 class="text-2xl font-bold mb-3">126 Apostille Member Countries</h3>
-                <p class="text-sm text-slate-300 leading-relaxed mb-6 md:mb-0">
-                    If your destination country is on this list, you only need an Apostille. If not, Embassy Legalization is required. (As of 2024, 126 countries are members).
-                </p>
+        <!-- 대륙별 가입국 현황 -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-4 px-1">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900">Member Countries by Continent</h3>
+            <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1.5 rounded-md mt-2 sm:mt-0">As of Sep. 2026 (131 Countries)</span>
+        </div>
+
+        <!-- 국가 리스트 테이블 -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden text-sm">
+            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
+                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Asia / Oceania</div>
+                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">New Zealand, Niue, Marshall Islands, Mauritius, Mongolia, Vanuatu, Bahrain, Bangladesh, Vietnam, Brunei, Samoa, Saudi Arabia, Singapore, Oman, Australia, Uzbekistan, Israel, India, Indonesia, Japan, China (including Macao, Hong Kong), Cook Islands, Kyrgyzstan, Tajikistan, Tonga, Pakistan, Palau, Fiji, Philippines, South Korea</div>
             </div>
-            <div class="md:w-1/2 w-full grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-200">
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇺🇸 United States</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇯🇵 Japan</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇬🇧 United Kingdom</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇦🇺 Australia</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇫🇷 France</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇩🇪 Germany</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇨🇦 Canada</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center font-medium">🇰🇷 South Korea</div>
-                <div class="bg-slate-700/50 border border-slate-600 rounded p-2 text-center text-blue-300 font-bold hover:bg-slate-600 cursor-pointer transition">+ 118 More</div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
+                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Europe</div>
+                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">Greece, Netherlands, Norway, Denmark, Germany, Russia, Romania, Luxembourg, Lithuania, Monaco, Malta, Belgium, Bosnia, Bulgaria, Cyprus, Sweden, Switzerland, Spain, Slovakia, Ireland, Estonia, UK, Austria, Ukraine, Italy, Georgia, Czech Republic, Kosovo, Croatia, Turkey, Portugal, Poland, France, Finland, Hungary, etc.</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
+                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">North America</div>
+                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">USA (including Guam, Mariana Islands, Saipan, Puerto Rico), Canada</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
+                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Central & South America</div>
+                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">Guyana, Guatemala, Grenada, Nicaragua, Dominica, Mexico, Barbados, Bahamas, Venezuela, Belize, Bolivia, Brazil, Suriname, Argentina, Ecuador, El Salvador, Honduras, Uruguay, Chile, Costa Rica, Colombia, Trinidad and Tobago, Panama, Peru, Paraguay, Jamaica, etc.</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr]">
+                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Africa</div>
+                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">Namibia, South Africa, Liberia, Lesotho, Malawi, Morocco, Botswana, Senegal, Seychelles, Algeria, Cape Verde, Burundi, Tunisia, Rwanda, etc.</div>
             </div>
         </div>
     </section>

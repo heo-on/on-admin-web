@@ -49,19 +49,18 @@
         }
 
         function changeLanguage(langCode) {
-            if (langCode === 'ko') {
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
-                location.reload();
-                return;
-            }
-            const select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = langCode;
-                select.dispatchEvent(new Event('change'));
-            }
-            updateLanguageState(langCode);
+    if (langCode === 'en') {
+        window.location.href = 'index_en.html'; // 영문 전용 페이지로 이동
+    } else if (langCode === 'ko') {
+        window.location.href = 'index.html';
+    } else {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+            select.value = langCode;
+            select.dispatchEvent(new Event('change'));
         }
+    }
+}
 
         document.addEventListener("DOMContentLoaded", function() {
             let currentLang = 'ko';

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" data-lang="ko" class="scroll-smooth">
+<html lang="en" data-lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>공인번역&일반 행정사사무소 온:ON | Certified Public Translation & Administrative Attorneys Office ON</title>
-    <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 -->
-    <meta name="description" content="강서·마곡 지역의 신속한 번역 공인 인증 및 공증촉탁 대행은 물론, 온라인 접수를 통해 전국 어디서나 비대면 번역·인증 원스톱 서비스를 제공합니다.">
+    <title>Certified Public Translation & Administrative Attorneys Office ON:ON</title>
+    <!-- 구글 영어 검색 노출을 위한 영문 전용 SEO 메타 태그 -->
+    <meta name="description" content="Korea's leading Administrative Attorneys Office ON:ON. We provide foreign direct investment (FDI), visa services, KC certification, medical business permits, certified translation, and Apostille services in Seoul, Korea.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,287 +30,406 @@
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'ko',
+                pageLanguage: 'en',
                 includedLanguages: 'en,zh-CN,ja,ko',
                 autoDisplay: false
             }, 'google_translate_element');
         }
 
-        function updateLanguageState(langCode) {
-            document.documentElement.setAttribute('data-lang', langCode);
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => {
-                if (btn.getAttribute('data-lang') === langCode) {
-                    btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
-                } else {
-                    btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
-                }
-            });
-        }
-
         function changeLanguage(langCode) {
-    if (langCode === 'en') {
-        window.location.href = 'index_en.html'; // 영문 전용 페이지로 이동
-    } else if (langCode === 'ko') {
-        window.location.href = 'index.html';
-    } else {
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-            select.value = langCode;
-            select.dispatchEvent(new Event('change'));
-        }
-    }
-}
-
-        document.addEventListener("DOMContentLoaded", function() {
-            let currentLang = 'ko';
-            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
-            if (match) {
-                currentLang = match[1];
+            if (langCode === 'ko') {
+                window.location.href = 'index.html';
+            } else if (langCode === 'en') {
+                window.location.href = 'index_en.html';
+            } else {
+                const select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    select.value = langCode;
+                    select.dispatchEvent(new Event('change'));
+                }
             }
-            updateLanguageState(currentLang);
-        });
+        }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
-        .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
-            display: none !important;
-            visibility: hidden !important;
-        }
+        .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate { display: none !important; visibility: hidden !important; }
         body { top: 0px !important; position: static !important; }
         #google_translate_element { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-        
-        .channel-card font, .channel-card span {
-            text-align: center !important;
-            display: block !important;
-            width: 100% !important;
-        }
-
-        [data-lang="en"] .kr-title,
-        [data-lang="en"] .sub-title {
-            display: none !important;
-        }
-        [data-lang="en"] .en-title {
-            display: block !important;
-        }
-        [data-lang="ko"] .en-title,
-        [data-lang="zh-CN"] .en-title,
-        [data-lang="ja"] .en-title {
-            display: none !important;
-        }
+        .channel-card font, .channel-card span { text-align: center !important; display: block !important; width: 100% !important; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
     <div id="google_translate_element"></div>
 
-    <!-- 1. 상단 헤더 & 네비게이션 -->
+    <!-- 1. 상단 헤더 & 네비게이션 (공식 상호 풀네임 및 4대 메뉴) -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
-                <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+            <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+                <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <span class="kr-title text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
-                    <span class="en-title notranslate text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-                    <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                    <span class="text-sm md:text-base font-bold text-slate-900 block leading-none">Certified Public Translation &<br class="hidden md:block">Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
-                    <a href="#services" class="hover:text-brand transition">전문 분야</a>
-                    <a href="#cases" class="hover:text-brand transition">업무 사례</a>
-                    <a href="#guide" class="hover:text-brand transition">Contact & Guide</a>
+                    <a href="#about" class="hover:text-brand transition">About Us</a>
+                    <a href="#services" class="hover:text-brand transition">Services</a>
+                    <a href="#cases" class="hover:text-brand transition">Case Studies</a>
+                    <a href="#contact" class="hover:text-brand transition">Contact</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
-                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
-                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
-                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                        <button onclick="changeLanguage('ko')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
+                        <button onclick="changeLanguage('en')" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
+                        <button onclick="changeLanguage('ja')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
-                    <a href="contact.html#inquiry-form" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                    <a href="#contact" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        문의하기
+                        Inquiry
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- 2. 히어로 섹션 -->
+    <!-- 2. 영문 히어로 섹션 (이미지 유지) -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
         <div class="relative max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6 notranslate">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">성공적인 글로벌 비즈니스 <span class="text-brand">ON</span></h1>
+            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6">Administrative Attorneys Office ON:ON</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">Turn On Your Business<br>Success in <span class="text-brand">Korea</span></h1>
             <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-                외국인 투자법인·비자, 의료분야·각종 인허가, 행정처분 및 군인징계구제부터<br class="hidden md:block">
-                법률·행정서류 번역·인증·아포스티유 대행까지 전문 행정사가 수행합니다.
+                We provide comprehensive legal and administrative services for foreigners and foreign companies, including FDI setup, visas, KC certification, and Apostille services.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.html#inquiry-form" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">빠른 상담 신청하기</a>
-                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">주요 업무 둘러보기</a>
+                <a href="#contact" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Request a Consultation</a>
+                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">Explore Our Services</a>
             </div>
         </div>
     </section>
 
-    <!-- 3. 법적 안내 콜아웃 상자 -->
+    <!-- 3. 법적 안내 상자 -->
     <section class="pt-16 px-6 max-w-7xl mx-auto">
         <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-6 md:p-8 shadow-sm">
             <div class="flex items-start gap-4">
                 <div class="p-2.5 bg-brand text-white rounded-xl font-bold text-lg flex-shrink-0 mt-0.5 shadow-sm">⚖️</div>
                 <div>
-                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">"행정기관 제출용 번역·서류 작성 및 대행은 '행정사'만 가능합니다."</h3>
-                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">관련 법률(행정사법)에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
+                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">Authorized Legal Representation in Korea</h3>
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                        Under the Licensed Administrative Agent Act of Korea, only nationally certified Administrative Attorneys (행정사) are legally authorized to prepare and submit documents to government agencies on behalf of clients. Avoid unauthorized agents to ensure your legal protection.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. 핵심 전문 분야 섹션 (💡 scroll-mt-32 추가로 헤더 뒤 잘림 현상 완전 해결!) -->
+    <!-- 4. 사무소 소개 (About Us) -->
+    <section id="about" class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100 scroll-mt-32">
+        <div class="text-center mb-12">
+            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">About Our Representative</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center px-4 md:px-6 mb-12">
+            <div class="md:col-span-4 flex flex-col items-center">
+                <div class="w-full max-w-[260px] h-[320px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
+                    <img src="profile.jpg" alt="Representative Attorney Heo On" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-6 text-slate-400\'><span class=\'text-sm font-semibold block mb-2\'>[ Representative Photo ]</span><span class=\'text-xs\'>profile.jpg</span></div>';">
+                </div>
+                <div class="w-full text-center">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1">Heo On</h3>
+                    <p class="text-brand font-semibold text-sm mb-4">Managing Administrative Attorney / CEO</p>
+                </div>
+            </div>
+
+            <div class="md:col-span-8">
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
+                    "Navigating Complex Korean Regulations with <span class="text-brand">Precision and Certainty</span>"
+                </h3>
+                <div class="text-slate-600 leading-relaxed space-y-4 text-sm md:text-base">
+                    <p>Welcome to Administrative Attorneys Office ON:ON. I am Heo On, Managing Attorney of the firm.</p>
+                    <p>Success in global business begins with meticulous document preparation and full compliance with Korean administrative laws. As an officially registered agency with the Ministry of Justice, we handle foreign direct investment (FDI), corporate visas, medical permits, KC certification, certified translation, and embassy legalization in a fast, seamless one-stop process.</p>
+                    <p>Drawing on my extensive background as a former military officer (Head of Personnel / Company Commander), I apply rigorous discipline and precise legal interpretation to protect our global clients' interests and deliver optimal results.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-11 gap-6 px-4 md:px-6 border-t border-slate-100 pt-10">
+            <div class="md:col-span-5 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Credentials & Background</h4>
+                <ul class="space-y-3 text-sm lg:text-base text-slate-600">
+                    <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>Regular Member, Korea Association of Administrative Attorneys (KAAA)</strong></li>
+                    <li class="flex items-start gap-2"><span class="text-brand font-bold mt-0.5">▪</span> <strong>Officially Registered Immigration Agency, Ministry of Justice</strong></li>
+                    <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">▪</span> Former Personnel Officer & Company Commander, ROK Army</li>
+                    <li class="flex items-start gap-2 pt-2 border-t border-slate-200/60 mt-3"><span class="text-slate-400 mt-0.5">🎓</span> <span>Bachelor of Physical Education, Kyungnam University</span></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
+                <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Core Focus Areas</h4>
+                <ul class="space-y-4 text-sm lg:text-base text-slate-600">
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Business Setup & FDI:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">FDI Reporting, Corporation Setup, D-8 & D-9 Corporate Visas</div>
+                    </li>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Corporate Permits:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">KC Certification, Medical Device Registration, Travel Agency</div>
+                    </li>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Visa & Immigration:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">E-7 Employment, D-2/D-4 Student, F-6 Marriage, F-5 Residency</div>
+                    </li>
+                    <li class="grid grid-cols-[auto_1fr] gap-3 items-start">
+                        <div class="flex items-center gap-1.5 text-slate-900 font-bold whitespace-nowrap"><span class="text-brand">✔</span> Translation & Legalization:</div>
+                        <div class="leading-relaxed break-keep mt-[1px]">Certificate of Translation, Apostille, Embassy Legalization</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 핵심 전문 분야 (서브페이지 연결 완비) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">전문 분야</h2>
-            <p class="text-slate-600 mt-2 text-sm md:text-base">공인번역&일반 행정사사무소 온:ON이 제공하는 핵심 법률 행정 서비스입니다.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Professional legal and administrative solutions for global clients.</p>
         </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <a href="service1.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            <a href="service1_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">외국인 투자법인 · 비자</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">외국인 투자법인 설립, 취업 및 투자 비자, 체류자격 변경/연장, 영주권 및 국적 취득 대행 서비스를 제공합니다.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Business Setup & FDI</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">Foreign Direct Investment (FDI) reporting, corporation establishment, and D-8/D-9 corporate visas.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
             </a>
-            <a href="service2.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            
+            <a href="service2_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">의료분야 · 각종 인허가</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">의료기기 수입·제조업 허가, 수입·국내해썹(HACCP), 비영리법인 및 각종 인허가 절차를 지원합니다.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Corporate Permits & Licenses</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">KC Certification, Medical Device Registration (MFDS), Foreign Patient Attraction Permits, and Travel Agency Registration.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
             </a>
-            <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            
+            <a href="service3_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">행정처분 · 군인징계</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 소청, 의견서 작성 및 부당한 처분에 대한 행정심판을 구제합니다.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Visa & Immigration</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">E-7 Professional Employment Visa, D-2/D-4 Student Visas, F-6 Marriage Visa, and F-5 Permanent Residency applications.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
             </a>
-            <a href="service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
+            
+            <a href="service4_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
-                <h3 class="text-xl font-bold text-slate-900 mb-3">행정·법률 번역·인증</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">법률·행정서류 공인번역 및 인증, 공증촉탁 대행, 외교부 아포스티유 및 영사확인 수속을 원스톱으로 처리합니다.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Translation & Apostille</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">Issuance of Certificate of Translation, Embassy Legalization, and Apostille services for both domestic and foreign documents.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
             </a>
         </div>
     </section>
 
-    <!-- 5. 주요 업무 사례 섹션 (💡 scroll-mt-32 추가) -->
+    <!-- 6. 프로세스 (위로 이동) -->
+    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200">
+        <div class="text-center mb-16">
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Process</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">How We Work</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Transparent, fast, and reliable administrative procedures.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 Consultation</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Case review and feasibility analysis</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">Strategy & Setup</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Customized strategy and document preparation</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">Filing & App</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Official submission to government agencies</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">Result & Support</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Permit/Visa delivery and follow-up support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 소통 채널 (프로세스 밑으로 이동) -->
+    <section id="contact" class="py-16 px-6 max-w-5xl mx-auto scroll-mt-32">
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-8 text-center">Contact Channels</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <a href="#contact" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
+                </a>
+                
+                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition font-black text-lg flex-shrink-0">@</div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Email Us</span>
+                </a>
+
+                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center sm:col-span-2 lg:col-span-1">
+                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">KakaoTalk Chat</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 사례 요약 (소통채널 밑으로 이동) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
                 <div>
-                    <span class="text-brand font-bold text-sm tracking-widest uppercase">Case Studies</span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">분야별 최신 업무 사례</h2>
+                    <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">Recent Case Studies</h2>
                 </div>
-                <p class="text-slate-500 text-sm mt-2 md:mt-0">4개 대표 분야별 가장 최근에 완료된 실제 수임 사례입니다.</p>
+                <p class="text-slate-500 text-sm mt-2 md:mt-0">Examples of our successful solutions for global clients.</p>
             </div>
 
-            <div id="blog-posts-container" class="space-y-6">
-                <div class="bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
-                    네이버 블로그에서 분야별 최신 수임 사례를 불러오는 중입니다...
+            <div class="space-y-6">
+                <!-- Case 1 -->
+                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Business Setup & FDI</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">Successful Establishment of Foreign-Invested Corporation & D-8 Visa Issuance</h3>
+                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
+                        <p class="text-slate-600 text-sm leading-relaxed font-normal">We guided a US-based IT firm through the complex process of FDI reporting, corporate bank account setup, and company registration in Seoul. Following the successful incorporation, we swiftly secured the D-8 Corporate Investment Visa for the CEO, allowing them to legally manage their business in Korea without delay.</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="#cases" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand hover:text-brand-hover transition group">
+                            Read More <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Case 2 -->
+                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Corporate Permits & Licenses</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">Registration for Foreign Patient Attraction Agency</h3>
+                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
+                        <p class="text-slate-600 text-sm leading-relaxed font-normal">Obtained the highly regulated Foreign Patient Attraction Business Registration from the Ministry of Health and Welfare for a medical tourism startup. We handled the business plan preparation, insurance subscription guidelines, and rigorous document screening, enabling the client to legally operate their medical agency.</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="#cases" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand hover:text-brand-hover transition group">
+                            Read More <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Case 3 -->
+                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Visa & Immigration</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">E-7 Special Occupation Visa Approval for a Foreign Engineer</h3>
+                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
+                        <p class="text-slate-600 text-sm leading-relaxed font-normal">Successfully obtained an E-7 Visa for a foreign mechanical engineer hired by a Korean manufacturing company. We provided a highly convincing employment necessity letter and gathered supplementary evidence proving the applicant's specialized skills, overriding initial concerns from the immigration office.</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="#cases" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand hover:text-brand-hover transition group">
+                            Read More <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Case 4 -->
+                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Translation & Apostille</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">Apostille Legalization for Corporate Articles of Incorporation</h3>
+                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
+                        <p class="text-slate-600 text-sm leading-relaxed font-normal">A Korean corporation required their Articles of Incorporation to be submitted to an overseas bank. We provided a certified translation by our licensed Administrative Attorney, completed the notary public procedures, and swiftly obtained the Ministry of Justice Apostille certification in a one-stop process.</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <a href="#cases" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand hover:text-brand-hover transition group">
+                            Read More <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. 오시는 길 및 주차 안내 (사례 밑으로 이동) -->
+    <section id="location" class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100 scroll-mt-32">
+        <div class="text-center mb-10">
+            <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">Location & Directions</h2>
+        </div>
+
+        <div class="space-y-8 px-2 md:px-6">
+            <div class="w-full h-80 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
+                <iframe src="https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=en&z=17&output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">📍</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Office Address</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        Room 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul [07807], Republic of Korea
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🚇</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Subway Station</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        <strong>Line 5 Magok Station Exit 6</strong><br>
+                        (1-minute walk right in front of Exit 6)
+                    </p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">🅿️</div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Parking Info</h4>
+                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed">
+                        Underground parking available in Magok 747 Tower.<br>
+                        (Free parking validation provided for visitors)
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. CONTACT & GUIDE (💡 scroll-mt-32 추가 + 소통 및 미디어 채널 세련되게 분리) -->
-    <section id="guide" class="py-20 px-6 max-w-7xl mx-auto scroll-mt-32">
-        <div class="text-center mb-16">
-            <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">상담 채널 및 업무 절차</h2>
-            <p class="text-slate-600 mt-2 text-sm md:text-base">투명하고 신속한 단계를 거쳐 최선의 결과를 이끌어냅니다.</p>
-        </div>
-        
-        <!-- 4단계 업무 절차 -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 심층 상담</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">사안 검토 및 수임 가능성 분석</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">맞춤 전략 수립</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">필요 서류 안내 및 입증 자료 확보</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">서류 작성 및 접수</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">주관 관청 및 기관 정식 안건 접수</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">결과 도출 및 사후관리</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
-            </div>
-        </div>
-
-        <!-- 💡 1. 빠르고 편리한 소통 채널 (4개) -->
-        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
-            <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
-                <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
-                </a>
-                
-                <a href="https://talk.naver.com/ct/wr40wlv?frm=pblog&resizeTo=974,1039nidref=https%3A%2F%2Fblog.naverblogwidget.com%2FExternalWidgetRender.naver%3FblogId%3Djuuudy_&ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#03C75A] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition font-black text-lg flex-shrink-0">N</div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
-                </a>
-
-                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오 채널</span>
-                </a>
-
-                <a href="https://open.kakao.com/o/stQfvTDh?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
-                    <div class="absolute top-0 w-full h-1 bg-brand"></div>
-                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-brand leading-tight text-center block w-full">군인 전용 익명 상담</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 💡 2. ON:ON 공식 미디어 채널 (3개, bg-slate-50 + shadow-inner 디자인 완벽 통일) -->
+    <!-- 10. 미디어 채널 (오시는길 밑, 맨 마지막으로 독립) -->
+    <section class="py-16 px-6 max-w-5xl mx-auto mb-10">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
-            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">행정사사무소 온:ON의 생생한 업무 현장과 최신 소식을 영상으로 만나보세요.</p>
-
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
+            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">유튜브 쇼츠</span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">YouTube Shorts</span>
                 </a>
-
                 <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">인스타그램</span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Instagram</span>
                 </a>
 
                 <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
@@ -323,128 +442,54 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 -->
-    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+    <!-- 11. 영문 푸터 (구글 SEO 검색어 최적화) -->
+    <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
-                <a href="index.html" class="inline-block hover:opacity-80 transition">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">공인번역&일반 행정사사무소 온:ON</h2>
+                <a href="index_en.html" class="inline-block hover:opacity-80 transition">
+                    <h2 class="text-lg md:text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
                 </a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
-                    <p>대표 행정사 : 허온(Heo On)</p>
+                    <p>CEO : Heo On (Licensed Admin. Attorney)</p>
                     <span class="hidden md:inline text-slate-300">|</span>
-                    <p>사업자등록번호 : 889-22-02024</p>
-                    <span class="hidden md:inline text-slate-300">|</span>
-                    <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
+                    <p>Business Reg. No : 889-22-02024</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>이메일 : on@koreabiz24.com</p>
+                    <p>Address : Room 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul [07807]</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
+                    <p>Email : on@koreabiz24.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
-                    <p>전화 : 010-7905-2506</p>
+                    <p>Tel : 010-7905-2506</p>
                     <span class="hidden md:inline text-slate-300">|</span>
-                    <p>팩스 : 050-4414-2506</p>
+                    <p>Fax : 050-4414-2506</p>
                 </div>
             </div>
 
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
-                <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
-                <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
-                <span class="hover:text-brand cursor-pointer">영주권·국적 취득 대행</span>
-                <span class="hover:text-brand cursor-pointer">의료기기 수입/제조업</span>
-                <span class="hover:text-brand cursor-pointer">수입·국내 HACCP 인증</span>
-                <span class="hover:text-brand cursor-pointer">비영리 사단·재단법인 설립</span>
-                <span class="hover:text-brand cursor-pointer">영업정지·과징금 행정심판</span>
-                <span class="hover:text-brand cursor-pointer">행정처분·군인징계구제</span>
-                <span class="hover:text-brand cursor-pointer">공인 번역확인증명서</span>
-                <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
-                <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
+                <span class="hover:text-brand cursor-default">Korea FDI Setup</span>
+                <span class="hover:text-brand cursor-default">D-8 & E-7 Visa Agent</span>
+                <span class="hover:text-brand cursor-default">F-5 Permanent Residency</span>
+                <span class="hover:text-brand cursor-default">KC Certification Korea</span>
+                <span class="hover:text-brand cursor-default">Medical Device Registration (MFDS)</span>
+                <span class="hover:text-brand cursor-default">Medical Tourist Business Permit</span>
+                <span class="hover:text-brand cursor-default">Korea Apostille Service</span>
+                <span class="hover:text-brand cursor-default">Embassy Legalization</span>
+                <span class="hover:text-brand cursor-default">Certified Translation Korea</span>
                 <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
-                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Visit Official Blog <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-slate-600">개인정보처리방침</a>
-                    <a href="#" class="hover:text-slate-600">이용약관</a>
+                    <a href="#" class="hover:text-slate-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-600">Terms of Use</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- 🟢 💡 Vercel 서버리스 API 기반 4개 분야 100% 무결점 연동 스크립트 -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const container = document.getElementById('blog-posts-container');
-            if (!container) return;
-
-            // 💡 4개 주요 카테고리(56:투자비자, 67:의료인허가, 63:기업인증/징계, 46:번역인증) API를 동시 호출
-            const fetchCategories = [
-                { categoryNo: '56', label: '외국인 투자·비자' },
-                { categoryNo: '67', label: '의료분야·각종 인허가' },
-                { categoryNo: '63', label: '행정처분·군인징계' },
-                { categoryNo: '46', label: '행정·법률 번역·인증' }
-            ];
-
-            Promise.all(
-                fetchCategories.map(cat => 
-                    fetch(`/api/naver-cases?categoryNo=${cat.categoryNo}`)
-                        .then(res => res.ok ? res.json() : { items: [] })
-                        .then(data => ({
-                            label: cat.label,
-                            post: (data.items && data.items.length > 0) ? data.items[0] : null
-                        }))
-                        .catch(() => ({ label: cat.label, post: null }))
-                )
-            ).then(results => {
-                container.innerHTML = ''; // 로딩 텍스트 제거
-
-                const validResults = results.filter(r => r.post !== null);
-
-                if (validResults.length === 0) {
-                    container.innerHTML = `
-                        <div class="bg-white rounded-2xl p-8 border border-slate-200 text-center">
-                            <p class="text-slate-600 text-sm mb-4">네이버 블로그에서 최신 사례를 직접 확인해 보세요.</p>
-                            <a href="https://blog.naver.com/juuudy_" target="_blank" class="inline-block bg-brand text-white font-bold px-6 py-2 rounded-lg text-xs shadow">공식 블로그 방문하기</a>
-                        </div>
-                    `;
-                    return;
-                }
-
-                validResults.forEach(item => {
-                    const post = item.post;
-                    let pubDate = post.pubDate || '';
-
-                    const cardHtml = `
-                        <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${item.label} 사례</span>
-                                <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
-                            </div>
-                            
-                            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h3>
-                            
-                            <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6">
-                                <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${post.description}</p>
-                            </div>
-
-                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3">
-                                <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
-                                <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
-                                    <span>블로그에서 전체 내용 보기</span>
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                </a>
-                            </div>
-                        </article>
-                    `;
-                    container.innerHTML += cardHtml;
-                });
-            }).catch(error => {
-                console.error('인덱스 블로그 로딩 실패:', error);
-                container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10">사례를 불러오는 중 오류가 발생했습니다.</p>';
-            });
-        });
-    </script>
 </body>
 </html>

@@ -66,7 +66,7 @@
 
     <div id="google_translate_element"></div>
 
-    <!-- 1. 상단 헤더 & 네비게이션 (4대 메뉴 및 공식 풀네임 적용) -->
+    <!-- 1. 상단 헤더 & 네비게이션 (공식 상호 풀네임 및 4대 메뉴) -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
@@ -81,7 +81,7 @@
                     <a href="#about" class="hover:text-brand transition">About Us</a>
                     <a href="#services" class="hover:text-brand transition">Services</a>
                     <a href="#cases" class="hover:text-brand transition">Case Studies</a>
-                    <a href="#guide" class="hover:text-brand transition">Contact</a>
+                    <a href="#contact" class="hover:text-brand transition">Contact</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
@@ -91,7 +91,7 @@
                         <button onclick="changeLanguage('zh-CN')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
                         <button onclick="changeLanguage('ja')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
-                    <a href="#guide" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                    <a href="#contact" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Inquiry
                     </a>
@@ -100,7 +100,7 @@
         </div>
     </header>
 
-    <!-- 2. 영문 히어로 섹션 -->
+    <!-- 2. 영문 히어로 섹션 (이미지 유지) -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
         <div class="relative max-w-5xl mx-auto text-center">
@@ -110,13 +110,13 @@
                 We provide comprehensive legal and administrative services for foreigners and foreign companies, including FDI setup, visas, KC certification, and Apostille services.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#guide" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Request a Consultation</a>
+                <a href="#contact" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Request a Consultation</a>
                 <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">Explore Our Services</a>
             </div>
         </div>
     </section>
 
-    <!-- 3. 법적 안내 상자 (영문) -->
+    <!-- 3. 법적 안내 상자 -->
     <section class="pt-16 px-6 max-w-7xl mx-auto">
         <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-6 md:p-8 shadow-sm">
             <div class="flex items-start gap-4">
@@ -131,7 +131,7 @@
         </div>
     </section>
 
-    <!-- 4. 사무소 소개 (About Us - 💡 비자 분류 완벽 수정됨) -->
+    <!-- 4. 사무소 소개 (About Us) -->
     <section id="about" class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100 scroll-mt-32">
         <div class="text-center mb-12">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
@@ -172,7 +172,6 @@
                 </ul>
             </div>
 
-            <!-- 💡 비자 분류 완벽 수정 반영 구역 -->
             <div class="md:col-span-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Core Focus Areas</h4>
                 <ul class="space-y-4 text-sm lg:text-base text-slate-600">
@@ -197,7 +196,7 @@
         </div>
     </section>
 
-    <!-- 5. 핵심 전문 분야 (💡 1~4번 모두 클릭 가능한 a태그 구조 + 비자 설명 수정) -->
+    <!-- 5. 핵심 전문 분야 (서브페이지 연결 완비) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
@@ -205,7 +204,6 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Service 1 (비자 분류 변경 반영) -->
             <a href="service1_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Business Setup & FDI</h3>
@@ -213,7 +211,6 @@
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
             </a>
             
-            <!-- Service 2 -->
             <a href="service2_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Corporate Permits & Licenses</h3>
@@ -221,7 +218,6 @@
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
             </a>
             
-            <!-- Service 3 (비자 분류 변경 반영) -->
             <a href="service3_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Visa & Immigration</h3>
@@ -229,7 +225,6 @@
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">Read More &rarr;</span>
             </a>
             
-            <!-- Service 4 (💡 방금 만든 번역 페이지와 완벽 연결) -->
             <a href="service4_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Translation & Apostille</h3>
@@ -239,7 +234,67 @@
         </div>
     </section>
 
-    <!-- 6. 구글 SEO용 고정 사례 (Hardcoded Case Studies) -->
+    <!-- 6. 프로세스 (위로 이동) -->
+    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200">
+        <div class="text-center mb-16">
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Process</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">How We Work</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Transparent, fast, and reliable administrative procedures.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 Consultation</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Case review and feasibility analysis</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">Strategy & Setup</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Customized strategy and document preparation</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">Filing & App</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Official submission to government agencies</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
+                <h4 class="font-bold text-slate-900 mt-4 mb-2">Result & Support</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Permit/Visa delivery and follow-up support</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 소통 채널 (프로세스 밑으로 이동) -->
+    <section id="contact" class="py-16 px-6 max-w-5xl mx-auto scroll-mt-32">
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-8 text-center">Contact Channels</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                <a href="#contact" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
+                </a>
+                
+                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition font-black text-lg flex-shrink-0">@</div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Email Us</span>
+                </a>
+
+                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center sm:col-span-2 lg:col-span-1">
+                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">KakaoTalk Chat</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 사례 요약 (소통채널 밑으로 이동) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -250,7 +305,6 @@
                 <p class="text-slate-500 text-sm mt-2 md:mt-0">Examples of our successful solutions for global clients.</p>
             </div>
 
-            <!-- Read More 버튼이 추가된 사례 섹션 -->
             <div class="space-y-6">
                 <!-- Case 1 -->
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
@@ -319,7 +373,7 @@
         </div>
     </section>
 
-    <!-- 7. 오시는 길 및 주차 안내 (Location & Parking) -->
+    <!-- 9. 오시는 길 및 주차 안내 (사례 밑으로 이동) -->
     <section id="location" class="py-16 px-6 max-w-5xl mx-auto bg-white my-10 rounded-2xl shadow-sm border border-slate-100 scroll-mt-32">
         <div class="text-center mb-10">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
@@ -359,67 +413,10 @@
         </div>
     </section>
 
-    <!-- 8. PROCESS & CONTACT (업무 절차 및 소통/미디어 채널) -->
-    <section id="guide" class="py-20 px-6 max-w-7xl mx-auto scroll-mt-32">
-        <div class="text-center mb-16">
-            <span class="text-brand font-bold text-sm tracking-widest uppercase">Process & Contact</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">How We Work</h2>
-            <p class="text-slate-600 mt-2 text-sm md:text-base">Transparent, fast, and reliable administrative procedures.</p>
-        </div>
-        
-        <!-- 4단계 업무 절차 -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">1:1 Consultation</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Case review and feasibility analysis</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">Strategy & Setup</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Customized strategy and document preparation</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">Filing & App</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Official submission to government agencies</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
-                <h4 class="font-bold text-slate-900 mt-4 mb-2">Result & Support</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Permit/Visa delivery and follow-up support</p>
-            </div>
-        </div>
-
-        <!-- 영문 맞춤형 소통 채널 (3개) -->
-        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
-            <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">Contact Channels</h3>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                <a href="#guide" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
-                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
-                </a>
-                
-                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition font-black text-lg flex-shrink-0">@</div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Email Us</span>
-                </a>
-
-                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center sm:col-span-2 lg:col-span-1">
-                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">KakaoTalk Chat</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 미디어 채널 (3개) -->
+    <!-- 10. 미디어 채널 (오시는길 밑, 맨 마지막으로 독립) -->
+    <section class="py-16 px-6 max-w-5xl mx-auto mb-10">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
-            <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
             <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
@@ -445,7 +442,7 @@
         </div>
     </section>
 
-    <!-- 9. 영문 푸터 (구글 SEO 검색어 최적화) -->
+    <!-- 11. 영문 푸터 (구글 SEO 검색어 최적화) -->
     <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">

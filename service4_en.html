@@ -5,21 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Translation & Apostille | Office ON:ON</title>
-    <!-- 구글 영어 검색 노출을 위한 서브페이지 전용 SEO 메타 태그 -->
-    <meta name="description" content="Certified Public Translation, Notarization, Apostille, and Embassy Legalization services in South Korea. Official and legally binding document preparation.">
+    <meta name="description" content="Official Certificate of Translation, Apostille legalization, and Consular Authentication services for international submissions.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            DEFAULT: '#0020A0',
-                            hover: '#001670',
-                            light: '#EEF2FF',
-                            dark: '#0A122A',
-                            footer: '#F8FAFC'
-                        }
+                        brand: { DEFAULT: '#0020A0', hover: '#001670', light: '#EEF2FF', dark: '#0A122A', footer: '#F8FAFC' }
                     }
                 }
             }
@@ -28,13 +21,8 @@
     
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,zh-CN,ja,ko',
-                autoDisplay: false
-            }, 'google_translate_element');
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,zh-CN,ja,ko', autoDisplay: false }, 'google_translate_element');
         }
-
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
             const buttons = document.querySelectorAll('.lang-btn');
@@ -46,67 +34,39 @@
                 }
             });
         }
-
         function changeLanguage(langCode) {
-            if (langCode === 'ko') {
-                window.location.href = 'service4.html';
-                return;
-            } else if (langCode === 'en') {
-                window.location.href = 'service4_en.html';
-                return;
-            }
+            if (langCode === 'ko') { window.location.href = 'service4.html'; return; } 
+            else if (langCode === 'en') { window.location.href = 'service4_en.html'; return; }
             const select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = langCode;
-                select.dispatchEvent(new Event('change'));
-            }
+            if (select) { select.value = langCode; select.dispatchEvent(new Event('change')); }
             updateLanguageState(langCode);
         }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            updateLanguageState('en');
-        });
+        document.addEventListener("DOMContentLoaded", function() { updateLanguageState('en'); });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <style>
-        .goog-te-banner-frame, iframe.goog-te-banner-frame,
-        .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
-            display: none !important;
-            visibility: hidden !important;
-        }
+        .goog-te-banner-frame, iframe.goog-te-banner-frame, .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate { display: none !important; visibility: hidden !important; }
         body { top: 0px !important; position: static !important; }
         #google_translate_element { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-        
-        .channel-card font, .channel-card span {
-            text-align: center !important;
-            display: block !important;
-            width: 100% !important;
-        }
+        .channel-card font, .channel-card span { text-align: center !important; display: block !important; width: 100% !important; }
     </style>
-<!-- Google Analytics (GA4 방문자 통계 & 버튼 클릭 감지) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XSDTEEZRW3');
-
-      function trackContactClick(channelName) {
-        gtag('event', 'click_contact', {
-          'channel_type': channelName
-        });
-      }
-    </script>    
+      function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
+    </script>     
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
-
     <div id="google_translate_element"></div>
 
-    <!-- 1. 상단 헤더 & 네비게이션 -->
+    <!-- 1. 헤더 (CN, JP 반영됨) -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
@@ -116,38 +76,33 @@
                     <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
-
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="index_en.html#about" class="hover:text-brand transition">About Us</a>
+                    <a href="about_en.html" class="hover:text-brand transition">About Us</a>
                     <a href="index_en.html#services" class="text-brand font-bold">Services</a>
                     <a href="#cases" class="hover:text-brand transition">Case Studies</a>
-                    <a href="#guide" class="hover:text-brand transition">Contact & Guide</a>
+                    <a href="inquiry_en.html" class="hover:text-brand transition">Inquiry</a>
                 </nav>
-
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
                         <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
-                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
-                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
-
-                    <a href="#guide" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        Inquiry
+                    <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Inquiry
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- 2. 전문분야 상단 이동 탭 -->
+    <!-- 2. 서비스 이동 탭 -->
     <div class="bg-white border-b border-slate-200 sticky top-[65px] z-40 shadow-sm overflow-x-auto">
-        <div class="max-w-7xl mx-auto px-6 flex items-center gap-2 text-xs md:text-sm font-bold py-2.5">
+        <div class="max-w-5xl mx-auto px-6 flex items-center gap-2 text-xs md:text-sm font-bold py-2.5">
             <a href="index_en.html#services" class="py-2 px-3.5 rounded-lg bg-brand text-white hover:bg-brand-hover shadow-sm transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
-                <svg class="w-4 h-4 stroke-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                <span>View All Services</span>
+                <svg class="w-4 h-4 stroke-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> <span>View All Services</span>
             </a>
             <span class="text-slate-300">|</span>
             <a href="service1_en.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">01. Business Setup & FDI</a>
@@ -157,360 +112,222 @@
         </div>
     </div>
 
-    <!-- 3. 서브페이지 타이틀 헤더 -->
-    <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('stamp.png'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
+    <!-- 3. 타이틀 배너 -->
+    <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Translation & Apostille</h1>
-            <p class="text-blue-100 text-sm md:text-base font-light">
-                Nationally certified translation and embassy legalization services. Guaranteeing 100% legal validity for your critical documents worldwide.
+            <p class="text-blue-100 text-sm md:text-base font-light">Official Certificate of Translation, Apostille legalization, and Consular Authentication services for international submissions.</p>
+        </div>
+    </section>
+
+    <!-- 💡 4. 신뢰도 박스 (공인번역행정사 강조) -->
+    <section class="px-6 pt-12 max-w-5xl mx-auto">
+        <div class="bg-slate-100 p-8 md:p-10 rounded-2xl border border-slate-200 text-center shadow-sm">
+            <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-brand mb-4">Nationally Certified Public Translation Agency</h3>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+                Under Article 20 of the Licensed Administrative Agent Act, only Certified Foreign Language Administrative Attorneys are legally authorized to issue official Certificates of Translation. We guarantee 100% legal compliance for IRCC, USCIS, and global embassy submissions.
             </p>
         </div>
     </section>
 
-    <!-- 4. 권위 어필 -->
-    <section class="pt-12 px-6 max-w-5xl mx-auto" id="details">
-        <div class="bg-brand/5 border border-brand/20 rounded-2xl p-6 md:p-8 shadow-sm text-center">
-            <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center font-bold text-2xl mx-auto mb-4 shadow-md">📜</div>
-            <h3 class="text-lg md:text-xl font-bold text-brand mb-3">Direct Issuance by Certified Public Translator</h3>
-            <p class="text-sm md:text-base text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                Under Korean law, a Certificate of Translation can only be legally issued by a nationally certified Administrative Attorney (공인번역행정사). We directly translate and certify your documents, ensuring they are accepted by government bodies, courts, and embassies without notarization delays.
-            </p>
-        </div>
-    </section>
-
-    <!-- 5. 주요 취급 서류 -->
-    <section class="py-16 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Documents We Handle</h2>
-            <p class="text-slate-500 mt-2 text-sm">Professional translation for specialized sectors.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:border-brand transition group flex flex-col gap-4">
-                <div class="w-12 h-12 bg-slate-100 text-brand rounded-xl flex items-center justify-center text-2xl group-hover:bg-brand group-hover:text-white transition">🏢</div>
-                <div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">Corporate & Business</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Articles of Incorporation, Board of Directors Meeting Minutes, Business Licenses, Contracts, NDAs, Financial Statements, and Corporate Audit Reports.
-                    </p>
+    <!-- 💡 5. 상세 업무 (Key Support Items 박스 추가 반영) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto bg-white mb-8 mt-4 rounded-2xl">
+        <h2 class="text-2xl font-bold text-slate-900 text-center mb-10">Translation & Legalization</h2>
+        <div class="space-y-12">
+            <!-- Item 01 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/3 flex-shrink-0">
+                    <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">01</div>
+                    <h3 class="text-xl font-bold text-slate-900">Certificate of Translation</h3>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Official public certification of English translations for civil registry documents, corporate filings, and immigration records.</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs mb-2 text-brand">Key Support Items</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Family registry, marriage & birth certificates</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Corporate articles, board minutes & contracts</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> IRCC, USCIS, and global immigration compliance check</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            
-            <div class="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:border-brand transition group flex flex-col gap-4">
-                <div class="w-12 h-12 bg-slate-100 text-brand rounded-xl flex items-center justify-center text-2xl group-hover:bg-brand group-hover:text-white transition">👨‍👩‍👧‍👦</div>
-                <div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">Immigration & Family</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Birth Certificates, Marriage Certificates, Family Relations Certificates, Basic Certificates, Criminal Background Checks (FBI, Police), and Passports.
-                    </p>
+            <hr class="border-slate-100">
+            <!-- Item 02 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/3 flex-shrink-0">
+                    <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">02</div>
+                    <h3 class="text-xl font-bold text-slate-900">Apostille Legalization</h3>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Swift processing of Apostille certificates for both domestic public records and overseas corporate/academic documents.</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs mb-2 text-brand">Key Support Items</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Ministry of Justice / MOFA Apostille issuance</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Criminal record checks & academic degrees</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> E-Apostille & physical document handling</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <div class="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:border-brand transition group flex flex-col gap-4">
-                <div class="w-12 h-12 bg-slate-100 text-brand rounded-xl flex items-center justify-center text-2xl group-hover:bg-brand group-hover:text-white transition">🎓</div>
-                <div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">Education & Employment</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Diplomas, Degree Certificates, Academic Transcripts, Employment Certificates, Recommendation Letters, and Professional Resumes.
-                    </p>
+            <hr class="border-slate-100">
+            <!-- Item 03 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/3 flex-shrink-0">
+                    <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">03</div>
+                    <h3 class="text-xl font-bold text-slate-900">Embassy Authentication</h3>
                 </div>
-            </div>
-
-            <div class="bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:border-brand transition group flex flex-col gap-4">
-                <div class="w-12 h-12 bg-slate-100 text-brand rounded-xl flex items-center justify-center text-2xl group-hover:bg-brand group-hover:text-white transition">⚖️</div>
-                <div>
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">Legal & Litigation</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Court Judgments, Petitions, Power of Attorney (POA), Real Estate Registration, Wills, Affidavits, and Medical Records for litigation.
-                    </p>
+                <div class="md:w-2/3">
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Consular authentication agency services and Ministry of Foreign Affairs (MOFA) certification for non-Apostille member nations.</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs mb-2 text-brand">Key Support Items</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Translation & Notarization proxy services</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> MOFA consular confirmation processing</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Final embassy legalization (China, Vietnam, UAE, etc.)</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. 원스톱 업무 절차 (Process) -->
-    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200 mt-10 pt-12">
-        <h2 class="text-2xl font-bold text-slate-900 text-center mb-10">Our Process</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div class="bg-white p-5 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-full">STEP 01</span>
-                <h4 class="font-bold text-slate-900 mt-3 mb-1 text-sm">Document Review</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">Assessing the required authentication level based on the target country.</p>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-full">STEP 02</span>
-                <h4 class="font-bold text-slate-900 mt-3 mb-1 text-sm">Certified Translation</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">Accurate legal translation by our licensed Administrative Attorney.</p>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-full">STEP 03</span>
-                <h4 class="font-bold text-slate-900 mt-3 mb-1 text-sm">Legalization</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">Notarization, MOFA Apostille, or Embassy Legalization (Consular).</p>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 text-center shadow-sm">
-                <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-full">STEP 04</span>
-                <h4 class="font-bold text-slate-900 mt-3 mb-1 text-sm">Delivery</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">Secure worldwide express delivery of the final certified documents.</p>
             </div>
         </div>
     </section>
 
-    <!-- 7. CONTACT & GUIDE -->
-    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 scroll-mt-32">
+    <!-- 6. 소통 채널 -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">Fast & Convenient Communication Channels</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Email Consultation</span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
                 </a>
-                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" onclick="trackContactClick('KakaoTalk')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">KakaoTalk Chat</span>
                 </a>
-                <a href="index_en.html" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            </div>
+        </div>
+
+        <!-- 7. 블로그 엔진 -->
+        <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <span class="text-brand font-bold text-xs uppercase tracking-widest">Success Stories</span>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">Translation & Legalization Cases</h3>
+                </div>
+                <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">View All Blog Posts &rarr;</a>
+            </div>
+            <div id="service-cases-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading 3 Latest Cases...</div>
+            </div>
+        </section>
+
+        <!-- 8. 미디어 채널 3종 (틱톡 포함) -->
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mt-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON Official Media Channels</h3>
+            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Back to Home</span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">YouTube Shorts</span>
+                </a>
+                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">TikTok</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 💡 8. 절차 비교 및 아포스티유 가입국 현황 통합 섹션 -->
-    <section class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200">
-        <div class="text-center mb-10">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Procedure Comparison & Apostille Member Countries</h2>
-        </div>
+    <!-- 구글 블로그 연동 JS -->
+    <script>
+    function loadServiceCases(data) {
+        const container = document.getElementById("service-cases-container");
+        if (!container) return;
+        const entries = data.feed.entry;
+        if (!entries || entries.length === 0) {
+            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent case studies found.</div>`; return;
+        }
+        const keywords = ['translation', 'apostille', 'legalization', 'certificate', 'notary'];
+        const matched = [];
+        entries.forEach(entry => {
+            if (matched.length >= 3) return;
+            if (!entry.category) return;
+            const entryLabels = entry.category.map(c => c.term.toLowerCase());
+            if (keywords.some(kw => entryLabels.includes(kw))) matched.push(entry);
+        });
 
-        <!-- 절차 비교 박스 -->
-        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm mb-12">
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <!-- 일반 영사확인 -->
-                <div class="p-6 md:p-8 border-b md:border-b-0 md:border-r border-slate-200 flex flex-col justify-center">
-                    <h3 class="font-bold text-slate-800 text-base mb-4">
-                        General Embassy Legalization <span class="text-xs text-slate-500 font-normal">(Non-Member)</span>
-                    </h3>
-                    <p class="text-sm text-slate-600 leading-relaxed font-normal break-keep">
-                        Document Issuance &rarr; MOFA Legalization &rarr; <span class="font-bold text-slate-900">Target Country Embassy Legalization</span> &rarr; Recognized in Target Country
-                    </p>
-                </div>
-                
-                <!-- 아포스티유 -->
-                <div class="p-6 md:p-8 bg-brand-light/30 flex flex-col justify-center">
-                    <h3 class="font-bold text-brand text-base mb-4">
-                        Apostille Convention <span class="text-xs text-brand/70 font-normal">(Simplified)</span>
-                    </h3>
-                    <p class="text-sm text-slate-600 leading-relaxed font-normal break-keep">
-                        Document Issuance &rarr; <span class="font-bold text-brand">MOFA/MOJ Apostille Issuance</span> &rarr; Immediately Recognized in Target Country
-                    </p>
-                </div>
-            </div>
-        </div>
+        if (matched.length > 0) {
+            container.innerHTML = "";
+            matched.forEach(entry => {
+                const title = entry.title.$t;
+                let link = "";
+                if (entry.link) { for (let i = 0; i < entry.link.length; i++) { if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; } } }
+                let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
+                let snippet = content.replace(/(<([^>]+)>)/ig, "").substring(0, 120) + "...";
+                let labelsHTML = "";
+                if (entry.category) { entry.category.slice(0, 2).forEach(c => { labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mr-1">${c.term}</span>`; }); }
 
-        <!-- 대륙별 가입국 현황 -->
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-4 px-1">
-            <h3 class="text-lg md:text-xl font-bold text-slate-900">Member Countries by Continent</h3>
-            <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1.5 rounded-md mt-2 sm:mt-0">As of Sep. 2026 (131 Countries)</span>
-        </div>
+                container.insertAdjacentHTML('beforeend', `
+                <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
+                        <h4 class="text-base md:text-lg font-bold text-slate-900 mb-3 leading-snug line-clamp-2">${title}</h4>
+                        <div class="bg-slate-50/80 p-4 rounded-xl border border-slate-100 mb-4"><p class="text-slate-600 text-xs leading-relaxed font-normal">${snippet}</p></div>
+                    </div>
+                    <div class="flex justify-end mt-auto pt-2">
+                        <a href="${link}" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline"><span>Read Full Case</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                    </div>
+                </article>`);
+            });
+        } else { container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No specific cases published yet.</div>`; }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        const script = document.createElement('script');
+        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=20';
+        document.body.appendChild(script);
+    });
+    </script>
 
-        <!-- 국가 리스트 테이블 -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden text-sm">
-            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
-                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Asia / Oceania</div>
-                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">New Zealand, Niue, Marshall Islands, Mauritius, Mongolia, Vanuatu, Bahrain, Bangladesh, Vietnam, Brunei, Samoa, Saudi Arabia, Singapore, Oman, Australia, Uzbekistan, Israel, India, Indonesia, Japan, China (including Macao, Hong Kong), Cook Islands, Kyrgyzstan, Tajikistan, Tonga, Pakistan, Palau, Fiji, Philippines, South Korea</div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
-                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Europe</div>
-                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">Greece, Netherlands, Norway, Denmark, Germany, Russia, Romania, Luxembourg, Lithuania, Monaco, Malta, Belgium, Bosnia, Bulgaria, Cyprus, Sweden, Switzerland, Spain, Slovakia, Ireland, Estonia, UK, Austria, Ukraine, Italy, Georgia, Czech Republic, Kosovo, Croatia, Turkey, Portugal, Poland, France, Finland, Hungary, etc.</div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
-                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">North America</div>
-                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">USA (including Guam, Mariana Islands, Saipan, Puerto Rico), Canada</div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] border-b border-slate-100">
-                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Central & South America</div>
-                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">Guyana, Guatemala, Grenada, Nicaragua, Dominica, Mexico, Barbados, Bahamas, Venezuela, Belize, Bolivia, Brazil, Suriname, Argentina, Ecuador, El Salvador, Honduras, Uruguay, Chile, Costa Rica, Colombia, Trinidad and Tobago, Panama, Peru, Paraguay, Jamaica, etc.</div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-[180px_1fr]">
-                <div class="bg-slate-50 font-bold text-slate-800 p-5 flex items-center border-b md:border-b-0 md:border-r border-slate-100">Africa</div>
-                <div class="p-5 text-slate-600 leading-relaxed font-normal break-keep">Namibia, South Africa, Liberia, Lesotho, Malawi, Morocco, Botswana, Senegal, Seychelles, Algeria, Cape Verde, Burundi, Tunisia, Rwanda, etc.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 10. 사례 요약 (5개 구성) -->
-    <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
-        <div class="flex justify-between items-end mb-8">
-            <div>
-                <span class="text-brand font-bold text-xs uppercase tracking-widest">Success Stories</span>
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">Translation & Apostille Cases</h3>
-            </div>
-        </div>
-
-        <div class="space-y-6">
-            <!-- Case 1: Apostille -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Apostille</span>
-                </div>
-                <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">Apostille Legalization for Corporate Articles of Incorporation</h4>
-                <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">A Korean corporation required their Articles of Incorporation to be submitted to an overseas bank. We provided a certified translation by our licensed Administrative Attorney, completed the notary public procedures, and swiftly obtained the Ministry of Justice Apostille certification in a one-stop process.</p>
-                </div>
-                <div class="flex justify-end">
-                    <a href="#cases" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline">
-                        <span>Read More</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Case 2 Placeholder -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Embassy Legalization</span>
-                </div>
-                <h4 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ Case Study Placeholder 02 ]</h4>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-xs md:text-sm leading-relaxed">This space is reserved for translated case studies.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-slate-400">Read More &rarr;</span>
-                </div>
-            </article>
-
-            <!-- Case 3 Placeholder -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Certificate of Translation</span>
-                </div>
-                <h4 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ Case Study Placeholder 03 ]</h4>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-xs md:text-sm leading-relaxed">This space is reserved for translated case studies.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-slate-400">Read More &rarr;</span>
-                </div>
-            </article>
-
-            <!-- Case 4 Placeholder -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Notary Public</span>
-                </div>
-                <h4 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ Case Study Placeholder 04 ]</h4>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-xs md:text-sm leading-relaxed">This space is reserved for translated case studies.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-slate-400">Read More &rarr;</span>
-                </div>
-            </article>
-
-            <!-- Case 5 Placeholder -->
-            <article class="bg-white rounded-2xl p-6 md:p-8 border border-dashed border-slate-300 shadow-sm hover:border-brand transition group">
-                <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-md">Corporate Documents</span>
-                </div>
-                <h4 class="text-lg md:text-xl font-bold text-slate-400 mb-4 leading-snug group-hover:text-brand transition">[ Case Study Placeholder 05 ]</h4>
-                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 mb-5">
-                    <p class="text-slate-400 text-xs md:text-sm leading-relaxed">This space is reserved for translated case studies.</p>
-                </div>
-                <div class="flex justify-end opacity-50">
-                    <span class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-slate-400">Read More &rarr;</span>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- 💡 11. 미디어 채널 (독립 배치) -->
-    <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mt-8 max-w-5xl mx-auto mb-10">
-        <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON Official Media Channels</h3>
-        <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </div>
-                <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">YouTube Shorts</span>
-            </a>
-
-            <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                </div>
-                <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Instagram</span>
-            </a>
-
-            <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
-                </div>
-                <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">TikTok</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- 12. 영문 푸터 -->
-    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200 mt-10">
+    <!-- 푸터 -->
+    <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
-                <a href="index_en.html" class="inline-block hover:opacity-80 transition">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
-                </a>
+                <a href="index_en.html" class="inline-block hover:opacity-80 transition"><h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2></a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
-                    <p>CEO : Heo On (Licensed Admin. Attorney)</p>
-                    <span class="hidden md:inline text-slate-300">|</span>
-                    <p>Business Reg. No : 889-22-02024</p>
-                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>CEO : Heo On (Licensed Admin. Attorney)</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Business Reg. No : 889-22-02024</p><span class="hidden md:inline text-slate-300">|</span>
                     <p>Address : Room 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul [07807]</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>Email : on@koreabiz24.com</p>
-                    <span class="hidden md:inline text-slate-300">|</span>
-                    <p>Tel : 010-7905-2506</p>
-                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Email : on@koreabiz24.com</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Tel : 010-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
                     <p>Fax : 050-4414-2506</p>
                 </div>
             </div>
-
-            <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
-                <span class="hover:text-brand cursor-default">Korea FDI Setup</span>
-                <span class="hover:text-brand cursor-default">D-8 & E-7 Visa Agent</span>
-                <span class="hover:text-brand cursor-default">F-5 Permanent Residency</span>
-                <span class="hover:text-brand cursor-default">Korean Nationality Recovery</span>
-                <span class="hover:text-brand cursor-default">KC Certification Korea</span>
-                <span class="hover:text-brand cursor-default">Medical Device Registration (MFDS)</span>
-                <span class="hover:text-brand cursor-default">Medical Tourist Business Permit</span>
-                <span class="hover:text-brand cursor-default">Korea Apostille Service</span>
-                <span class="hover:text-brand cursor-default">Embassy Legalization</span>
-                <span class="hover:text-brand cursor-default">Certified Translation Korea</span>
-                <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
-                    Visit Official Blog <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-            </div>
-
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
-                <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-slate-600">Privacy Policy</a>
-                    <a href="#" class="hover:text-slate-600">Terms of Use</a>
-                </div>
             </div>
         </div>
     </footer>
-
 </body>
 </html>

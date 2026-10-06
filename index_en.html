@@ -283,7 +283,7 @@
         </div>
     </section>
 
-    <!-- 7. 업무 사례 -->
+    <!-- 7. 업무 사례 (구글 블로그 실시간 자동 연동) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -291,11 +291,14 @@
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">Recent Case Studies</h2>
                 </div>
-                <p class="text-slate-500 text-sm mt-2 md:mt-0">Examples of our successful solutions for global clients.</p>
+                <!-- 블로그 전체보기 버튼 추가 -->
+                <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
 
-            <div class="space-y-6">
-                <!-- Case 1 -->
+            <!-- 블로그 글이 꽂히는 빈 컨테이너 -->
+            <div id="blogger-cases-container" class="space-y-6">
+                
+                <!-- [안전장치] 블로그에 글이 0개일 때 임시로 보여줄 정적 샘플 (글 쓰면 자동으로 사라짐) -->
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="flex flex-wrap items-center gap-2 mb-3">
                         <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Business Setup & FDI</span>
@@ -306,7 +309,6 @@
                     </div>
                 </article>
 
-                <!-- Case 2 -->
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                     <div class="flex flex-wrap items-center gap-2 mb-3">
                         <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Visa, Immigration & Nationality</span>
@@ -316,31 +318,69 @@
                         <p class="text-slate-600 text-sm leading-relaxed font-normal">Successfully obtained an E-7 Visa for a foreign mechanical engineer hired by a Korean manufacturing company. We provided a highly convincing employment necessity letter overriding initial concerns from the immigration office.</p>
                     </div>
                 </article>
-
-                <!-- Case 3 -->
-                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
-                    <div class="flex flex-wrap items-center gap-2 mb-3">
-                        <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Corporate Permits & Licenses</span>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">Registration for Foreign Patient Attraction Agency</h3>
-                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
-                        <p class="text-slate-600 text-sm leading-relaxed font-normal">Obtained the highly regulated Foreign Patient Attraction Business Registration from the Ministry of Health and Welfare for a medical tourism startup. We handled the business plan preparation and insurance subscription guidelines.</p>
-                    </div>
-                </article>
-
-                <!-- Case 4 -->
-                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
-                    <div class="flex flex-wrap items-center gap-2 mb-3">
-                        <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">Translation & Apostille</span>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">Apostille Legalization for Corporate Articles of Incorporation</h3>
-                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
-                        <p class="text-slate-600 text-sm leading-relaxed font-normal">A Korean corporation required their Articles of Incorporation to be submitted to an overseas bank. We provided a certified translation by our licensed Administrative Attorney, and swiftly obtained the Ministry of Justice Apostille certification.</p>
-                    </div>
-                </article>
+                
             </div>
         </div>
     </section>
+
+    <!-- 💡 구글 블로그 연동을 위한 자바스크립트 엔진 -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const blogUrl = "https://on-admin.blogspot.com";
+        const feedUrl = `${blogUrl}/feeds/posts/default?alt=json&max-results=3`;
+        const container = document.getElementById("blogger-cases-container");
+
+        fetch(feedUrl)
+            .then(response => response.json())
+            .then(data => {
+                const entries = data.feed.entry;
+                // 블로그에 글이 1개라도 있으면 실행
+                if (entries && entries.length > 0) {
+                    container.innerHTML = ""; // 기존 임시 가짜 사례들을 깔끔하게 삭제
+                    
+                    entries.forEach(entry => {
+                        const title = entry.title.$t;
+                        
+                        // 원문 링크 찾기
+                        let link = "";
+                        for (let i = 0; i < entry.link.length; i++) {
+                            if (entry.link[i].rel === "alternate") {
+                                link = entry.link[i].href;
+                                break;
+                            }
+                        }
+                        
+                        // 블로그 본문 내용 가져와서 순수 텍스트만 200자 요약 (HTML 태그 강제 제거)
+                        let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
+                        let snippet = content.replace(/(<([^>]+)>)/ig, "").substring(0, 200) + "...";
+                        
+                        // 대표님이 블로그에 단 라벨(카테고리) 가져오기
+                        let label = "Case Study";
+                        if(entry.category && entry.category.length > 0) {
+                            label = entry.category[0].term;
+                        }
+
+                        // 최신 글 카드를 자동으로 조립
+                        const cardHTML = `
+                        <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
+                            <div class="flex flex-wrap items-center gap-2 mb-3">
+                                <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${label}</span>
+                            </div>
+                            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug">${title}</h3>
+                            <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
+                                <p class="text-slate-600 text-sm leading-relaxed font-normal">${snippet}</p>
+                            </div>
+                            <a href="${link}" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1">Read Full Case <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                        </article>
+                        `;
+                        // 화면에 밀어넣기
+                        container.insertAdjacentHTML('beforeend', cardHTML);
+                    });
+                }
+            })
+            .catch(error => console.log("블로그 연동 대기중..."));
+    });
+    </script>
 
     <!-- 8. 소통 채널 (GA4 클릭 이벤트 센서 포함) -->
     <section id="contact" class="py-16 px-6 max-w-5xl mx-auto scroll-mt-32">

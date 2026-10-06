@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow">
     <title>외국인 투자법인 · 비자 | 행정사사무소 온:ON</title>
-    <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 (화면상 숨김) -->
+    <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 -->
     <meta name="description" content="법무부 등록 대행기관 행정사사무소 온:ON. 외투법인(FDI) 설립부터 외국인등록, 비자조건 검토, 체류자격변경(비자변경) 및 비자연장까지 완벽 지원. 기업투자(D-8), 무역경영(D-9), 취업(E-7, E-9), 구직(D-10), 동포 및 영주/거주(F-2, F-4, F-5, F-6) 등 모든 비자 수속 원스톱 솔루션.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -54,6 +54,9 @@
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
                 return;
+            } else if (langCode === 'en') {
+                window.location.href = 'service1_en.html';
+                return;
             }
             const select = document.querySelector('.goog-te-combo');
             if (select) {
@@ -74,7 +77,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- 구글 번역 상단 바 숨김 및 중앙 정렬 패치 -->
+    <!-- 구글 번역 상단 바 숨김 및 중앙 정렬 패치, 첨부3 영문 타이틀 렌더링 스타일 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -92,6 +95,7 @@
             width: 100% !important;
         }
 
+        /* 언어 전환 시 헤더 텍스트 로직 (첨부3) */
         [data-lang="en"] .kr-title,
         [data-lang="en"] .sub-title {
             display: none !important;
@@ -105,19 +109,30 @@
             display: none !important;
         }
     </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XSDTEEZRW3');
+      function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
+    </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
 
     <div id="google_translate_element"></div>
 
-    <!-- 1. 상단 헤더 & 네비게이션 -->
+    <!-- 1. 상단 헤더 & 네비게이션 (첨부3 반영) -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <span class="kr-title text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
-                    <span class="en-title notranslate text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                    <!-- 한국어 타이틀 -->
+                    <span class="kr-title text-sm md:text-base font-bold text-slate-900 block leading-none">공인번역일반행정사사무소 온행</span>
+                    <!-- 영어 타이틀 (번역기 작동 시 표시) -->
+                    <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                     <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
@@ -127,20 +142,20 @@
                     <a href="about.html" class="hover:text-brand transition">사무소 소개</a>
                     <a href="index.html#services" class="text-brand font-bold">전문 분야</a>
                     <a href="index.html#cases" class="hover:text-brand transition">업무 사례</a>
-                    <a href="index.html#guide" class="hover:text-brand transition">Contact & Guide</a>
+                    <a href="contact.html#inquiry-form" class="hover:text-brand transition">상담 문의</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
                         <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
-                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
-                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
 
                     <a href="contact.html#inquiry-form" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        문의하기
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        상담 문의
                     </a>
                 </div>
             </div>
@@ -162,9 +177,9 @@
         </div>
     </div>
 
-    <!-- 3. 서브페이지 타이틀 헤더 -->
-    <section class="bg-brand py-14 px-6 border-b border-slate-200">
-        <div class="max-w-5xl mx-auto text-center">
+    <!-- 3. 서브페이지 타이틀 헤더 (첨부1 빌딩 배경 적용) -->
+    <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 01</span>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">외국인 투자법인 · 비자</h1>
             <p class="text-blue-100 text-sm md:text-base font-light">
@@ -173,8 +188,21 @@
         </div>
     </section>
 
-    <!-- 4. 상세 업무 내용 -->
-    <section class="py-16 px-6 max-w-5xl mx-auto bg-white my-8 rounded-2xl shadow-sm border border-slate-100">
+    <!-- 💡 4. 공인 대행기관 신뢰도 박스 (첨부1 반영) -->
+    <section class="px-6 pt-12 max-w-5xl mx-auto">
+        <div class="bg-slate-100 p-8 md:p-10 rounded-2xl border border-slate-200 text-center shadow-sm">
+            <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-brand mb-4">법무부 공식 지정 출입국 민원 대행기관</h3>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+                외국인 직접투자(FDI)와 기업 비자 신청은 한국 정부의 엄격한 재무 및 법적 심사를 거칩니다. 법무부에 정식 등록된 공인 대행기관으로서, 당사는 불필요한 지연 없이 귀하의 자본과 비즈니스 체류 자격을 완벽하게 보호하는 합법적인 대리 업무를 제공합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. 상세 업무 내용 (체크리스트 포함) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto bg-white mb-8 mt-4 rounded-2xl border border-slate-100 shadow-sm">
         <div class="space-y-12">
             
             <div class="flex flex-col md:flex-row gap-8 items-start">
@@ -244,34 +272,8 @@
         </div>
     </section>
 
-    <!-- 5. 최근 사례 (56번 카테고리 고정 연결) -->
-    <section class="py-12 px-6 max-w-5xl mx-auto">
-        <div class="flex justify-between items-end mb-8">
-            <div>
-                <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">외국인 투자 · 비자 최근 사례</h3>
-            </div>
-            <!-- 💡 블로그 56번(외국인투자/비자) 카테고리 바로가기 연결 -->
-            <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=56" target="_blank" class="text-xs font-bold text-brand hover:underline">블로그 카테고리 바로가기 &rarr;</a>
-        </div>
-
-        <div id="service1-posts-container" class="space-y-6">
-            <div class="bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
-                관련 최신 수임 사례를 불러오는 중입니다...
-            </div>
-        </div>
-
-        <div class="mt-12 bg-slate-100/80 rounded-xl p-8 text-center border border-slate-200">
-            <h4 class="text-base font-bold text-slate-900 mb-1">외국인 법인설립 및 비자 신청, 전문가와 상담하세요.</h4>
-            <p class="text-xs text-slate-500 mb-5">사전 요건 검토를 통해 불허 위험을 최소화합니다.</p>
-            <a href="contact.html#inquiry-form" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-7 py-2.5 rounded-lg text-sm shadow transition">
-                1:1 상담 신청하기
-            </a>
-        </div>
-    </section>
-
-    <!-- 6. CONTACT & GUIDE -->
-    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 scroll-mt-32">
+    <!-- 💡 6. 업무 절차 & 소통 채널 (사례 구역 상단 배치) -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200 scroll-mt-32">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">상담 채널 및 업무 절차</h2>
@@ -297,11 +299,11 @@
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">결과 도출 및 사후관리</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
+                <p class="text-xs text-slate-500 leading-relaxed">승인서 수령 및 피드백</p>
             </div>
         </div>
 
-        <!-- 💡 1. 상담 집중 구역 -->
+        <!-- 상담 채널 4종 -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -330,11 +332,41 @@
                 </a>
             </div>
         </div>
+    </section>
 
-        <!-- 💡 2. 미디어 채널 독립 배치 (bg-slate-50 + shadow-inner 통일) -->
+    <!-- 💡 7. 최근 사례 (3개 고정 수집 레이아웃) -->
+    <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <span class="text-brand font-bold text-xs uppercase tracking-widest">Case Studies</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">외국인 투자 · 비자 최근 사례</h3>
+            </div>
+            <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=56" target="_blank" class="text-brand font-bold text-xs md:text-sm hover:underline">블로그 전체 사례 보기 &rarr;</a>
+        </div>
+
+        <!-- 3개짜리 그리드 컨테이너 -->
+        <div id="service1-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="col-span-full bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
+                관련 최신 수임 사례를 불러오는 중입니다...
+            </div>
+        </div>
+
+        <!-- 💡 8. 상담 유도 배너 박스 (첨부2 디자인 반영) -->
+        <div class="mt-16 bg-slate-50/80 rounded-xl p-8 text-center border border-slate-200">
+            <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1">외국인 법인설립 및 비자 신청, 전문가와 상담하세요.</h4>
+            <p class="text-sm text-slate-500 mb-6">사전 요건 검토를 통해 불허 위험을 최소화합니다.</p>
+            <a href="contact.html#inquiry-form" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-3.5 rounded-lg text-sm shadow-md transition">
+                1:1 상담 신청하기
+            </a>
+        </div>
+    </section>
+
+    <!-- 💡 9. ON:ON 공식 미디어 채널 (틱톡 포함 3개) -->
+    <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
             <p class="text-xs md:text-sm text-slate-500 text-center mb-8">행정사사무소 온:ON의 생생한 업무 현장과 최신 소식을 영상으로 만나보세요.</p>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
@@ -360,7 +392,7 @@
         </div>
     </section>
 
-    <!-- 7. 푸터 -->
+    <!-- 10. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
@@ -410,13 +442,13 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 Vercel 서버리스 API 연동 스크립트 (카테고리 56번 타겟팅) -->
+    <!-- 🟢 💡 Vercel API 기반 3개 수집 및 3그리드 렌더링 엔진 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('service1-posts-container');
             if (!container) return;
 
-            // 💡 Vercel 백엔드 API 직접 호출 (56번 외국인투자/비자 카테고리 지정)
+            // 56번(외국인투자·비자) API 호출
             fetch('/api/naver-cases?categoryNo=56')
                 .then(response => {
                     if (!response.ok) throw new Error('API 호출 에러');
@@ -425,41 +457,44 @@
                 .then(data => {
                     container.innerHTML = '';
 
-                    // 타 분야 키워드가 포함된 경우 튕겨내는 필터
                     const excludeKeywords = ["의료기기", "해썹", "haccp", "징계", "행정심판", "번역자확인", "공증촉탁"];
                     
                     const safePosts = data.items.filter(post => {
                         const targetText = post.title.toLowerCase();
-                        const isExcluded = excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
-                        return !isExcluded;
+                        return !excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
                     });
 
-                    if (!safePosts || safePosts.length === 0) {
+                    // ✨ 핵심: 최대 3개까지만 자르기
+                    const displayPosts = safePosts.slice(0, 3);
+
+                    if (!displayPosts || displayPosts.length === 0) {
                         renderFallback(container);
                         return;
                     }
 
-                    safePosts.forEach(post => {
+                    displayPosts.forEach(post => {
                         let categoryName = "투자·비자 사례";
                         let pubDate = post.pubDate || '';
 
                         const cardHtml = `
-                            <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
-                                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                    <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${categoryName}</span>
-                                    <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
-                                </div>
-                                
-                                <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>
-                                
-                                <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6">
-                                    <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${post.description}</p>
+                            <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
+                                <div>
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                        <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${categoryName}</span>
+                                        <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
+                                    </div>
+                                    
+                                    <h4 class="text-base md:text-lg font-bold text-slate-900 mb-4 leading-snug break-keep line-clamp-2">${post.title}</h4>
+                                    
+                                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6 flex-grow">
+                                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal line-clamp-3">${post.description}</p>
+                                    </div>
                                 </div>
 
-                                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3">
-                                    <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
+                                <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                                    <span class="text-[11px] text-slate-400">※ 블로그 요약본입니다.</span>
                                     <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
-                                        <span>블로그에서 전체 내용 보기</span>
+                                        <span>원문 보기</span>
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                     </a>
                                 </div>
@@ -473,10 +508,9 @@
                     renderFallback(container);
                 });
 
-            // 💡 [56번 카테고리 다이렉트 대체 안내 상자]
             function renderFallback(container) {
                 container.innerHTML = `
-                    <div class="bg-brand-light/30 border border-brand-light p-8 md:p-12 rounded-2xl text-center flex flex-col items-center justify-center transition-all hover:shadow-md">
+                    <div class="col-span-full bg-brand-light/30 border border-brand-light p-8 md:p-12 rounded-2xl text-center flex flex-col items-center justify-center transition-all hover:shadow-md">
                         <span class="text-3xl mb-4">📚</span>
                         <h4 class="text-brand font-bold text-lg md:text-xl mb-2">더 많은 수임 사례는 공식 블로그에서!</h4>
                         <p class="text-slate-600 text-xs md:text-sm mb-6 leading-relaxed">

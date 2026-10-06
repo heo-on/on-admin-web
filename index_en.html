@@ -7,9 +7,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
+ 
       gtag('config', 'G-XSDTEEZRW3');
-
+ 
       /* 소통 채널 버튼 클릭 감지 센서 */
       function trackContactClick(channelName) {
         gtag('event', 'click_contact', {
@@ -17,7 +17,7 @@
         });
       }
     </script>
-
+ 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
@@ -52,7 +52,7 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
-
+ 
         function changeLanguage(langCode) {
             if (langCode === 'ko') {
                 window.location.href = 'index.html';
@@ -79,9 +79,9 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
-
+ 
     <div id="google_translate_element"></div>
-
+ 
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
@@ -91,7 +91,7 @@
                     <span class="text-sm md:text-base font-bold text-slate-900 block leading-none">Certified Public Translation &<br class="hidden md:block">Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
-
+ 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="about_en.html" class="hover:text-brand transition">About Us</a>
@@ -99,7 +99,7 @@
                     <a href="#cases" class="hover:text-brand transition">Case Studies</a>
                     <a href="inquiry_en.html" class="hover:text-brand transition font-bold text-brand">Inquiry</a>
                 </nav>
-
+ 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
@@ -115,7 +115,7 @@
             </div>
         </div>
     </header>
-
+ 
     <!-- 2. 영문 히어로 섹션 -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
@@ -131,7 +131,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 3. 법적 안내 상자 -->
     <section class="pt-16 px-6 max-w-7xl mx-auto">
         <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-6 md:p-8 shadow-sm">
@@ -146,7 +146,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 4. 핵심 전문 분야 (Services) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
@@ -184,7 +184,7 @@
             </a>
         </div>
     </section>
-
+ 
     <!-- 5. 업무 프로세스 & 소통 채널 묶음 -->
     <section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <!-- Our Process -->
@@ -216,7 +216,7 @@
                 <p class="text-xs text-slate-500 leading-relaxed">Handling supplementary requests and securing final visa issuance.</p>
             </div>
         </div>
-
+ 
         <!-- Fast & Convenient Communication Channels -->
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
@@ -239,7 +239,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 6. 업무 사례 (각 4개 분야별 최신 글 1개씩 자동 연동) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
         <div class="max-w-7xl mx-auto">
@@ -250,14 +250,14 @@
                 </div>
                 <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
-
+ 
             <!-- 블로그 글이 꽂히는 그리드 컨테이너 -->
             <div id="blogger-cases-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading Latest Cases from Blog...</div>
             </div>
         </div>
     </section>
-
+ 
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -268,14 +268,14 @@
             container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent cases available.</div>`;
             return;
         }
-
+ 
         const categories = [
             { id: 1, name: "Business Setup & FDI", keywords: ['fdi', 'd8', 'd-8', 'setup', 'corporation'], post: null },
             { id: 2, name: "Visa & Nationality", keywords: ['visa', 'immigration', 'nationality'], post: null },
             { id: 3, name: "Permits & Licenses", keywords: ['permits', 'licenses', 'kc', 'medical', 'business'], post: null },
             { id: 4, name: "Translation & Apostille", keywords: ['translation', 'apostille', 'legalization', 'certificate', 'notary'], post: null }
         ];
-
+ 
         entries.forEach(entry => {
             if (!entry.category) return;
             const entryLabels = entry.category.map(c => c.term.toLowerCase());
@@ -287,9 +287,9 @@
                 }
             });
         });
-
+ 
         const matchedPosts = categories.filter(cat => cat.post !== null);
-
+ 
         if (matchedPosts.length > 0) {
             container.innerHTML = ""; 
             
@@ -313,7 +313,7 @@
                         labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`;
                     });
                 }
-
+ 
                 const cardHTML = `
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col h-full">
                     <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
@@ -328,14 +328,14 @@
             });
         }
     }
-
+ 
     document.addEventListener("DOMContentLoaded", function() {
         const script = document.createElement('script');
         script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);
     });
     </script>
-
+ 
     <!-- 7. 미디어 채널 -->
     <section class="py-16 px-6 max-w-5xl mx-auto mb-10 border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
@@ -363,3 +363,4 @@
             </div>
         </div>
     </section>
+ 

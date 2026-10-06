@@ -92,4 +92,264 @@
                 </div>
             </a>
 
-            <div class="flex
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
+                    <a href="about_en.html" class="hover:text-brand transition">About Us</a>
+                    <a href="#services" class="hover:text-brand transition">Services</a>
+                    <a href="#cases" class="hover:text-brand transition">Case Studies</a>
+                    <a href="inquiry_en.html" class="hover:text-brand transition font-bold text-brand">Inquiry</a>
+                </nav>
+
+                <div class="flex items-center gap-2.5">
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                        <button onclick="changeLanguage('ko')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
+                        <button onclick="changeLanguage('en')" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
+                        <button onclick="changeLanguage('ja')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
+                    </div>
+                    <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Inquiry
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 영문 히어로 섹션 -->
+    <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
+        <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
+        <div class="relative max-w-5xl mx-auto text-center">
+            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6">Administrative Attorneys Office ON:ON</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">Turn On Your Business<br>Success in <span class="text-brand">Korea</span></h1>
+            <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                We provide comprehensive legal and administrative services for foreign investors, global corporations, and individuals, including FDI setup, visas, nationality, KC certification, and Apostille services.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="inquiry_en.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Request a Consultation</a>
+                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 법적 안내 상자 -->
+    <section class="pt-16 px-6 max-w-7xl mx-auto">
+        <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-6 md:p-8 shadow-sm">
+            <div class="flex items-start gap-4">
+                <div class="p-2.5 bg-brand text-white rounded-xl font-bold text-lg flex-shrink-0 mt-0.5 shadow-sm">⚖️</div>
+                <div>
+                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">Authorized Legal Representation in Korea</h3>
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                        Under the Licensed Administrative Agent Act of Korea, only nationally certified Administrative Attorneys (행정사) are legally authorized to prepare and submit documents to government agencies on behalf of clients. Avoid unauthorized agents to ensure your legal protection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 핵심 전문 분야 (Services) -->
+    <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
+        <div class="text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Professional legal and administrative solutions for global clients.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <a href="service1_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Business Setup & FDI</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Foreign Direct Investment (FDI) reporting, corporation establishment, branch setups, and D-7/D-8/D-9 corporate visas.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+            </a>
+            
+            <a href="service2_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Visa & Nationality</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">E-7 Employment Visas, F-5 Permanent Residency, Korean Nationality Recovery, and Dual Citizenship applications.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+            </a>
+            
+            <a href="service3_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Permits & Licenses</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">KC Certification, Medical Device Registration (MFDS), Foreign Patient Attraction Permits, and Travel Agency Registration.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+            </a>
+            
+            <a href="service4_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Translation & Apostille</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Issuance of Certificate of Translation, Embassy Legalization, and Apostille services for both domestic and foreign documents.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5. 업무 프로세스 & 소통 채널 묶음 -->
+    <section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200">
+        <!-- Our Process -->
+        <div class="text-center mb-16">
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Process</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">Our Process</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Transparent, fast, and reliable administrative procedures.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Eligibility Assessment</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Analyzing income, points, and specific visa requirements.</p>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Document Prep</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Translation, Apostille, and drafting justification letters.</p>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Immigration Filing</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Official proxy submission to the Korea Immigration Office.</p>
+            </div>
+            <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
+                <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Review & Approval</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Handling supplementary requests and securing final visa issuance.</p>
+            </div>
+        </div>
+
+        <!-- Fast & Convenient Communication Channels -->
+        <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm">
+            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-brand rounded-2xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+                    <div class="w-12 h-12 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-4 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-800 leading-tight">Email Consultation</span>
+                </a>
+                <a href="https://pf.kakao.com/_bcHxln" target="_blank" onclick="trackContactClick('KakaoTalk')" class="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-[#FEE500] rounded-2xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-12 h-12 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-4 group-hover:opacity-90 transition flex-shrink-0">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-800 leading-tight">KakaoTalk Chat</span>
+                </a>
+                <a href="mailto:on@koreabiz24.com" onclick="trackContactClick('Direct Email')" class="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-brand rounded-2xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-12 h-12 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-4 group-hover:bg-brand group-hover:text-white transition font-black text-xl flex-shrink-0">@</div>
+                    <span class="text-sm font-bold text-slate-800 leading-tight">Direct Email Us</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 업무 사례 (각 4개 분야별 최신 글 1개씩 자동 연동) -->
+    <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">Recent Case Studies</h2>
+                </div>
+                <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            </div>
+
+            <!-- 블로그 글이 꽂히는 그리드 컨테이너 -->
+            <div id="blogger-cases-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading Latest Cases from Blog...</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    function loadBloggerCases(data) {
+        const container = document.getElementById("blogger-cases-container");
+        if (!container) return;
+        
+        const entries = data.feed.entry;
+        if (!entries || entries.length === 0) {
+            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent cases available.</div>`;
+            return;
+        }
+
+        const categories = [
+            { id: 1, name: "Business Setup & FDI", keywords: ['fdi', 'd8', 'd-8', 'setup', 'corporation'], post: null },
+            { id: 2, name: "Visa & Nationality", keywords: ['visa', 'immigration', 'nationality'], post: null },
+            { id: 3, name: "Permits & Licenses", keywords: ['permits', 'licenses', 'kc', 'medical', 'business'], post: null },
+            { id: 4, name: "Translation & Apostille", keywords: ['translation', 'apostille', 'legalization', 'certificate', 'notary'], post: null }
+        ];
+
+        entries.forEach(entry => {
+            if (!entry.category) return;
+            const entryLabels = entry.category.map(c => c.term.toLowerCase());
+            
+            categories.forEach(cat => {
+                if (!cat.post) {
+                    const hasMatch = cat.keywords.some(kw => entryLabels.includes(kw));
+                    if (hasMatch) cat.post = entry;
+                }
+            });
+        });
+
+        const matchedPosts = categories.filter(cat => cat.post !== null);
+
+        if (matchedPosts.length > 0) {
+            container.innerHTML = ""; 
+            
+            matchedPosts.forEach(cat => {
+                const entry = cat.post;
+                const title = entry.title.$t;
+                
+                let link = "";
+                if (entry.link) {
+                    for (let i = 0; i < entry.link.length; i++) {
+                        if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; }
+                    }
+                }
+                
+                let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
+                let snippet = content.replace(/(<([^>]+)>)/ig, "").substring(0, 150) + "...";
+                
+                let labelsHTML = "";
+                if (entry.category) {
+                    entry.category.slice(0, 2).forEach(c => {
+                        labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`;
+                    });
+                }
+
+                const cardHTML = `
+                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col h-full">
+                    <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug line-clamp-2">${title}</h3>
+                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5 flex-grow">
+                        <p class="text-slate-600 text-sm leading-relaxed font-normal">${snippet}</p>
+                    </div>
+                    <a href="${link}" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1 mt-auto">Read Full Case <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                </article>
+                `;
+                container.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const script = document.createElement('script');
+        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
+        document.body.appendChild(script);
+    });
+    </script>
+
+    <!-- 7. 미디어 채널 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto mb-10 border-t border-slate-200">
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
+            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">YouTube Shorts</span>
+                </a>
+                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </div>

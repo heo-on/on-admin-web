@@ -82,7 +82,7 @@
                         <button onclick="changeLanguage('ja')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
                     <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Inquiry
                     </a>
                 </div>
@@ -104,29 +104,38 @@
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">1:1 Email Online Consultation</h2>
             <p class="text-slate-500 text-sm md:text-base mb-10">If you leave detailed information, our attorneys will review it and respond promptly.</p>
             
-            <form onsubmit="sendEmailInquiry(event)" class="space-y-6">
+            <!-- 💡 FormSubmit 연동: action에 대표님 이메일(on@koreabiz24.com) 설정 -->
+            <form action="https://formsubmit.co/on@koreabiz24.com" method="POST" class="space-y-6" onsubmit="trackContactClick('Email Form Submit')">
+                
+                <!-- 설정용 숨김 필드들 -->
+                <input type="hidden" name="_subject" value="[ON:ON Global] New Online Inquiry Request">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://on-admin-web.vercel.app/inquiry_en.html">
+                <input type="hidden" name="_template" value="table">
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-1.5">Name or Company Name <span class="text-red-500">*</span></label>
-                        <input type="text" id="q_name" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="Hong Gil-dong / Onbiz Co., Ltd.">
+                        <!-- 식별을 위해 id 대신 name 속성으로 전부 교체/추가 -->
+                        <input type="text" name="Name" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="Hong Gil-dong / Onbiz Co., Ltd.">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-1.5">Nationality <span class="text-red-500">*</span></label>
-                        <input type="text" id="q_nation" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="South Korea / USA / China / Japan etc.">
+                        <input type="text" name="Nationality" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="South Korea / USA / China / Japan etc.">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-1.5">Contact (Mobile Phone) <span class="text-red-500">*</span></label>
-                        <input type="tel" id="q_phone" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="010-0000-0000 / +82 10-0000-0000">
+                        <input type="tel" name="Phone" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="+82 10-0000-0000">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-1.5">Email address for reply <span class="text-red-500">*</span></label>
-                        <input type="email" id="q_email" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="example@email.com">
+                        <input type="email" name="Email" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="example@email.com">
                     </div>
                 </div>
                 
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-1.5">Counseling fields <span class="text-red-500">*</span></label>
-                    <select id="q_field" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition bg-white">
+                    <select name="Counseling Field" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition bg-white">
                         <option value="" disabled selected>Please select the area where you need counseling.</option>
                         <option value="Business Setup & FDI">Business Setup & FDI</option>
                         <option value="Visa & Nationality">Visa & Nationality</option>
@@ -138,12 +147,12 @@
 
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-1.5">Inquiry Title <span class="text-red-500">*</span></label>
-                    <input type="text" id="q_title" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="Please write down the core topic you would like to discuss.">
+                    <input type="text" name="Title" required class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition" placeholder="Please write down the core topic you would like to discuss.">
                 </div>
 
                 <div>
                     <label class="block text-sm font-bold text-slate-700 mb-1.5">Inquiry Details <span class="text-red-500">*</span></label>
-                    <textarea id="q_details" required rows="6" class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition resize-none" placeholder="For a faster and more accurate response, please provide as much specific detail as possible regarding your case."></textarea>
+                    <textarea name="Details" required rows="6" class="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition resize-none" placeholder="For a faster and more accurate response, please provide as much specific detail as possible regarding your case."></textarea>
                 </div>
 
                 <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg flex items-start gap-3 mt-4">
@@ -155,7 +164,7 @@
                 </div>
 
                 <div class="text-right pt-4">
-                    <button type="submit" class="bg-brand hover:bg-brand-hover text-white font-bold py-3.5 px-8 rounded-lg shadow-md transition text-sm md:text-base tracking-wide flex items-center justify-center gap-2 w-full sm:w-auto sm:ml-auto" onclick="trackContactClick('Email Form Submit')">
+                    <button type="submit" onclick="alert('Your inquiry has been successfully sent to our attorneys. We will reply to your email shortly.');" class="bg-brand hover:bg-brand-hover text-white font-bold py-3.5 px-8 rounded-lg shadow-md transition text-sm md:text-base tracking-wide flex items-center justify-center gap-2 w-full sm:w-auto sm:ml-auto">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Send inquiry email
                     </button>
@@ -163,33 +172,6 @@
             </form>
         </div>
     </section>
-
-    <script>
-    function sendEmailInquiry(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('q_name').value;
-        const nationality = document.getElementById('q_nation').value;
-        const phone = document.getElementById('q_phone').value;
-        const email = document.getElementById('q_email').value;
-        const field = document.getElementById('q_field').value;
-        const title = document.getElementById('q_title').value;
-        const details = document.getElementById('q_details').value;
-        
-        const subject = encodeURIComponent(`[ON:ON Inquiry] ${title} - ${name}`);
-        const body = encodeURIComponent(
-            `Name/Company: ${name}\n` +
-            `Nationality: ${nationality}\n` +
-            `Contact: ${phone}\n` +
-            `Email: ${email}\n` +
-            `Counseling Field: ${field}\n\n` +
-            `[Inquiry Details]\n${details}`
-        );
-        
-        window.location.href = `mailto:on@koreabiz24.com?subject=${subject}&body=${body}`;
-        alert("The email application has launched. Please press 'Send' in your email client!");
-    }
-    </script>
 
     <!-- 4. 영문 푸터 -->
     <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200 mt-16">

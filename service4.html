@@ -117,6 +117,12 @@
             width: 12px;
             margin-left: -12px;
         }
+
+        /* 💡 추가됨: 일본어/중국어 번역 시 띄어쓰기 없는 문장의 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
+        [data-lang="ja"] *, [data-lang="zh-CN"] * {
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+        }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
@@ -150,23 +156,23 @@
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <!-- 영문 변환 시 메뉴명 첫 글자가 대문자로 깔끔하게 오도록 notranslate 적용 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about.html" class="hover:text-brand transition">
-                        <span class="kr-title">사무소 소개</span>
-                        <span class="en-title notranslate hidden">Office Introduction</span>
-                    </a>
-                    <a href="index.html#services" class="text-brand font-bold">
-                        <span class="kr-title">전문 분야</span>
-                        <span class="en-title notranslate hidden">Specialized Fields</span>
-                    </a>
-                    <a href="index.html#cases" class="hover:text-brand transition">
-                        <span class="kr-title">업무 사례</span>
-                        <span class="en-title notranslate hidden">Work Cases</span>
-                    </a>
-                    <a href="contact.html#inquiry-form" class="hover:text-brand transition">
-                        <span class="kr-title">상담 문의</span>
-                        <span class="en-title notranslate hidden">Consultation Inquiry</span>
-                    </a>
-                </nav>
+    <a href="about.html" class="hover:text-brand transition">
+        <span class="kr-title">사무소 소개</span>
+        <span class="en-title notranslate hidden">Office Introduction</span>
+    </a>
+    <a href="index.html#services" class="hover:text-brand transition">
+        <span class="kr-title">전문 분야</span>
+        <span class="en-title notranslate hidden">Specialized Fields</span>
+    </a>
+    <a href="index.html#cases" class="hover:text-brand transition">
+        <span class="kr-title">업무 사례</span>
+        <span class="en-title notranslate hidden">Work Cases</span>
+    </a>
+    <a href="contact.html#inquiry-form" class="hover:text-brand transition">
+        <span class="kr-title">상담 문의</span>
+        <span class="en-title notranslate hidden">Consultation Inquiry</span>
+    </a>
+</nav>
 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
@@ -211,7 +217,7 @@
         </div>
     </section>
 
-    <!-- 4. 국가공인 외국어번역행정사 신뢰도 박스 -->
+    <!-- 4. 국가공인 외국어번역행정 신뢰도 박스 -->
     <section class="px-6 pt-12 max-w-5xl mx-auto">
         <div class="bg-slate-100 p-8 md:p-10 rounded-2xl border border-slate-200 text-center shadow-sm">
             <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
@@ -366,7 +372,7 @@
         </div>
     </section>
 
-    <!-- 💡 7. 이용 안내 & 소통 채널 (위로 이동됨) -->
+    <!-- 7. 이용 안내 & 소통 채널 -->
     <section id="guide" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32 border-t border-slate-200">
         <div class="text-center mb-12">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
@@ -450,7 +456,7 @@
         </div>
     </section>
 
-    <!-- 💡 8. 최근 사례 (위로 이동) -->
+    <!-- 💡 8. 최근 사례 (1열 세로 레이아웃 교체 완료) -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -460,14 +466,15 @@
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=46" target="_blank" class="text-brand font-bold text-xs md:text-sm hover:underline">블로그 전체 사례 보기 &rarr;</a>
         </div>
 
-        <div id="service4-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 💡 1열 세로 리스트형 컨테이너 적용 -->
+        <div id="service4-posts-container" class="grid grid-cols-1 gap-6">
             <div class="col-span-full bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
                 관련 최신 수임 사례를 불러오는 중입니다...
             </div>
         </div>
     </section>
 
-    <!-- 💡 9. 비교표 (아래로 이동됨) -->
+    <!-- 9. 비교표 -->
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="text-center mb-8">
             <span class="text-brand font-bold text-xs uppercase tracking-widest">WHICH ONE DO I NEED</span>
@@ -515,7 +522,7 @@
         </div>
     </section>
 
-    <!-- 💡 10. 아포스티유 절차 및 가입국 현황표 (아래로 이동됨) -->
+    <!-- 10. 아포스티유 절차 및 가입국 현황표 -->
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-100">
         <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">절차 비교 및 아포스티유 가입국 현황</h3>
         
@@ -568,7 +575,7 @@
         </div>
     </section>
 
-    <!-- 💡 11. 상담 유도 배너 박스 (독립 분리 및 재배치) -->
+    <!-- 11. 상담 유도 배너 박스 -->
     <section class="max-w-5xl mx-auto px-6 pb-16">
         <div class="bg-slate-50/80 rounded-xl p-8 text-center border border-slate-200">
             <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1">공인번역 및 아포스티유, 전문가와 상담하세요.</h4>
@@ -579,7 +586,7 @@
         </div>
     </section>
 
-    <!-- 💡 12. ON:ON 공식 미디어 채널 (틱톡 포함 3개) -->
+    <!-- 12. ON:ON 공식 미디어 채널 -->
     <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
@@ -660,7 +667,7 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 Vercel 서버리스 API 연동 스크립트 (46번 카테고리 3개 수집 지정) -->
+    <!-- 🟢 💡 Vercel 서버리스 API 연동 스크립트 (46번 카테고리 3개 수집 지정 및 제한 해제) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('service4-posts-container');
@@ -681,7 +688,7 @@
                         return !excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
                     });
 
-                    // ✨ 핵심: 최대 3개까지만 자르기
+                    // ✨ 최대 3개까지만 자르기
                     safePosts = safePosts.slice(0, 3);
 
                     if (!safePosts || safePosts.length === 0) {
@@ -693,6 +700,7 @@
                         let categoryName = "번역·인증 사례";
                         let pubDate = post.pubDate || '';
 
+                        // 💡 수정됨: <p> 태그에서 line-clamp 클래스 삭제 완료
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
                                 <div>
@@ -701,10 +709,10 @@
                                         <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
                                     </div>
                                     
-                                    <h4 class="text-base md:text-lg font-bold text-slate-900 mb-4 leading-snug break-keep line-clamp-2">${post.title}</h4>
+                                    <h4 class="text-base md:text-lg font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>
                                     
                                     <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6 flex-grow">
-                                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal line-clamp-3">${post.description}</p>
+                                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${post.description}</p>
                                     </div>
                                 </div>
 

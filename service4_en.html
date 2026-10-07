@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Translation & Apostille | Office ON:ON</title>
+
+    <!-- 💡 파비콘(로고) 설정 -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <meta name="description" content="Official Certificate of Translation, Apostille legalization, and Consular Authentication services for international submissions.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,12 +23,15 @@
         }
     </script>
     
+    <!-- 💡 구글 번역기 및 언어 버튼 Active 동기화 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,zh-CN,ja,ko', autoDisplay: false }, 'google_translate_element');
         }
+
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
+            
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
                 if (btn.getAttribute('data-lang') === langCode) {
@@ -33,15 +40,42 @@
                     btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
                 }
             });
+
+            const mainTitleElement = document.getElementById('dynamic-main-title');
+            if (mainTitleElement) {
+                if (langCode === 'ko') {
+                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                } else if (langCode === 'zh-CN') {
+                    mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
+                } else if (langCode === 'ja') {
+                    mainTitleElement.innerHTML = '公認翻訳および行政書士事務所 ON:ON';
+                } else {
+                    mainTitleElement.innerHTML = 'Certified Public Translation &<br>Administrative Attorneys Office ON:ON';
+                }
+            }
         }
+
         function changeLanguage(langCode) {
             if (langCode === 'ko') { window.location.href = 'service4.html'; return; } 
-            else if (langCode === 'en') { window.location.href = 'service4_en.html'; return; }
+            else if (langCode === 'en') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+                return;
+            }
             const select = document.querySelector('.goog-te-combo');
             if (select) { select.value = langCode; select.dispatchEvent(new Event('change')); }
             updateLanguageState(langCode);
         }
-        document.addEventListener("DOMContentLoaded", function() { updateLanguageState('en'); });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'en';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateLanguageState(currentLang);
+        });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -52,6 +86,21 @@
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
         .channel-card font, .channel-card span { text-align: center !important; display: block !important; width: 100% !important; }
+
+        .bullet-point::before {
+            content: "•";
+            color: #0020A0;
+            font-weight: bold;
+            display: inline-block;
+            width: 12px;
+            margin-left: -12px;
+        }
+
+        /* 💡 일본어/중국어 번역 시 박스 이탈 방지 자동 줄바꿈 강제 스타일 */
+        [data-lang="ja"] *, [data-lang="zh-CN"] * {
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+        }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
@@ -63,25 +112,28 @@
       function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
     </script>     
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+   
+<body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
     <div id="google_translate_element"></div>
 
-    <!-- 1. 헤더 (CN, JP 반영됨) -->
+    <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
-                <div>
-                    <span class="text-base font-bold text-slate-900 block leading-none">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-                    <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                <div class="flex flex-col">
+                    <!-- 윗줄: & 뒤에 <br> 줄바꿈 및 가변 제어 -->
+                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
+                    <!-- 아랫줄: 서브 영문 상호 고정 -->
+                    <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about_en.html" class="hover:text-brand transition">About Us</a>
-                    <a href="index_en.html#services" class="text-brand font-bold">Services</a>
-                    <a href="#cases" class="hover:text-brand transition">Case Studies</a>
-                    <a href="inquiry_en.html" class="hover:text-brand transition">Inquiry</a>
+                    <a href="about_en.html" class="hover:text-brand transition py-1">About Us</a>
+                    <a href="index_en.html#services" class="text-brand font-bold py-1">Services</a>
+                    <a href="index_en.html#cases" class="hover:text-brand transition py-1">Case Studies</a>
+                    <a href="inquiry_en.html" class="hover:text-brand transition py-1">Inquiry</a>
                 </nav>
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
@@ -98,7 +150,7 @@
         </div>
     </header>
 
-    <!-- 2. 서비스 이동 탭 -->
+    <!-- 2. 전문분야 상단 이동 탭 -->
     <div class="bg-white border-b border-slate-200 sticky top-[65px] z-40 shadow-sm overflow-x-auto">
         <div class="max-w-5xl mx-auto px-6 flex items-center gap-2 text-xs md:text-sm font-bold py-2.5">
             <a href="index_en.html#services" class="py-2 px-3.5 rounded-lg bg-brand text-white hover:bg-brand-hover shadow-sm transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
@@ -112,16 +164,16 @@
         </div>
     </div>
 
-    <!-- 3. 타이틀 배너 -->
+    <!-- 3. 서브페이지 타이틀 헤더 -->
     <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Translation & Apostille</h1>
-            <p class="text-blue-100 text-sm md:text-base font-light">Official Certificate of Translation, Apostille legalization, and Consular Authentication services for international submissions.</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Translation & Legalization</h1>
+            <p class="text-blue-100 text-sm md:text-base font-light">Official Certificate of Translation by Foreign Language Administrative Attorneys, MOFA Apostille, and Embassy Consular Legalization.</p>
         </div>
     </section>
 
-    <!-- 💡 4. 신뢰도 박스 (공인번역행정사 강조) -->
+    <!-- 4. 공인 대행기관 신뢰도 박스 -->
     <section class="px-6 pt-12 max-w-5xl mx-auto">
         <div class="bg-slate-100 p-8 md:p-10 rounded-2xl border border-slate-200 text-center shadow-sm">
             <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
@@ -129,76 +181,211 @@
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-brand mb-4">Nationally Certified Public Translation Agency</h3>
             <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
-                Under Article 20 of the Licensed Administrative Agent Act, only Certified Foreign Language Administrative Attorneys are legally authorized to issue official Certificates of Translation. We guarantee 100% legal compliance for IRCC, USCIS, and global embassy submissions.
+                Under Article 20 of the Licensed Administrative Agent Act, only Foreign Language Administrative Attorneys are legally authorized to issue official Certificates of Translation for submissions to government authorities. As a fully licensed administrative law office, we guarantee 100% legal compliance for IRCC, USCIS, and global embassy submissions.
             </p>
         </div>
     </section>
 
-    <!-- 💡 5. 상세 업무 (Key Support Items 박스 추가 반영) -->
-    <section class="py-12 px-6 max-w-5xl mx-auto bg-white mb-8 mt-4 rounded-2xl">
-        <h2 class="text-2xl font-bold text-slate-900 text-center mb-10">Translation & Legalization</h2>
+    <!-- 💡 5. 주요 취급 서류 (4개 카테고리 그리드 카드 복원) -->
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">Major Documents Handled</h2>
+            <div class="w-12 h-1 bg-brand/30 mx-auto mt-4 mb-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">Personal / Family</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">Family Relation Certificate</li>
+                    <li class="bullet-point">Basic Certificate (Birth Record)</li>
+                    <li class="bullet-point">Marriage Relation Certificate</li>
+                    <li class="bullet-point">Resident Register Transcript</li>
+                    <li class="bullet-point">Passport Translation</li>
+                    <li class="bullet-point">Criminal Background Check</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">Study / Immigration</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">School Student Records</li>
+                    <li class="bullet-point">Academic Transcripts</li>
+                    <li class="bullet-point">Graduation / Enrollment Certs</li>
+                    <li class="bullet-point">Degree Certificates</li>
+                    <li class="bullet-point">Recommendation Letters</li>
+                    <li class="bullet-point">Statement of Purpose (SOP)</li>
+                    <li class="bullet-point">Financial Guarantee Docs</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">Corporate / Business</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">Articles of Incorporation</li>
+                    <li class="bullet-point">Corporate Register Transcript</li>
+                    <li class="bullet-point">List of Shareholders</li>
+                    <li class="bullet-point">Board Meeting Minutes</li>
+                    <li class="bullet-point">Business Registration Cert</li>
+                    <li class="bullet-point">Financial Statements</li>
+                    <li class="bullet-point">Audit Reports</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">Legal / Contracts</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">Commercial Contracts</li>
+                    <li class="bullet-point">Power of Attorney (POA)</li>
+                    <li class="bullet-point">Written Statements</li>
+                    <li class="bullet-point">MOUs & Agreements</li>
+                    <li class="bullet-point">Court Judgments</li>
+                    <li class="bullet-point">Lawsuit Filings & Petitions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💡 6. 상세 업무 내용 & 법적 책임 안내 상자 복원 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto bg-white mb-8 rounded-2xl shadow-sm border border-slate-100">
         <div class="space-y-12">
             <!-- Item 01 -->
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
                     <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">01</div>
-                    <h3 class="text-xl font-bold text-slate-900">Certificate of Translation</h3>
+                    <h3 class="text-xl font-bold text-slate-900">Certificate of Translation<br>Issuance</h3>
                 </div>
                 <div class="md:w-2/3">
-                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Official public certification of English translations for civil registry documents, corporate filings, and immigration records.</p>
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
+                        Pursuant to Articles 2 and 20 of the Licensed Administrative Agent Act, nationally certified Foreign Language Administrative Attorneys directly translate and issue official "Certificates of Translation" for government agencies.
+                    </p>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
                         <h4 class="font-bold text-xs mb-2 text-brand">Key Support Items</h4>
                         <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Family registry, marriage & birth certificates</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Corporate articles, board minutes & contracts</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> IRCC, USCIS, and global immigration compliance check</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Submissions for Courts, Prosecution, Immigration Offices, Education Boards</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Certified translation for Family, Basic, Marriage, Transcripts, Student Records</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Official Certificate of Translation issuance under Administrative Agent Law</li>
                         </ul>
                     </div>
                 </div>
             </div>
+
             <hr class="border-slate-100">
+
             <!-- Item 02 -->
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
                     <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">02</div>
-                    <h3 class="text-xl font-bold text-slate-900">Apostille Legalization</h3>
+                    <h3 class="text-xl font-bold text-slate-900">MOFA Apostille &<br>Consular Authentication</h3>
                 </div>
                 <div class="md:w-2/3">
-                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Swift processing of Apostille certificates for both domestic public records and overseas corporate/academic documents.</p>
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
+                        We handle Ministry of Foreign Affairs (MOFA) Apostille certification and Embassy Consular Legalization to grant international legal validity to domestic public records and corporate documents.
+                    </p>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
                         <h4 class="font-bold text-xs mb-2 text-brand">Key Support Items</h4>
                         <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Ministry of Justice / MOFA Apostille issuance</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Criminal record checks & academic degrees</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> E-Apostille & physical document handling</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Republic of Korea MOFA Apostille issuance representation</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Foreign embassy legalization (China, Vietnam, Philippines, UAE, etc.)</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> One-stop notarization proxy with licensed notary law firms</li>
                         </ul>
                     </div>
                 </div>
             </div>
+
             <hr class="border-slate-100">
+
             <!-- Item 03 -->
             <div class="flex flex-col md:flex-row gap-8 items-start">
                 <div class="md:w-1/3 flex-shrink-0">
                     <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">03</div>
-                    <h3 class="text-xl font-bold text-slate-900">Embassy Authentication</h3>
+                    <h3 class="text-xl font-bold text-slate-900">Corporate, Legal &<br>Contract Translation</h3>
                 </div>
                 <div class="md:w-2/3">
-                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">Consular authentication agency services and Ministry of Foreign Affairs (MOFA) certification for non-Apostille member nations.</p>
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
+                        We deliver rigorous, legally sound translations of corporate contracts, articles, board minutes, and financial statements with thorough legal terminology comprehension and strict confidentiality.
+                    </p>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
                         <h4 class="font-bold text-xs mb-2 text-brand">Key Support Items</h4>
                         <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Translation & Notarization proxy services</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> MOFA consular confirmation processing</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Final embassy legalization (China, Vietnam, UAE, etc.)</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Precision translation for English/Korean contracts, articles & corporate registries</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Audit reports, financial statements, business plans & litigation evidence docs</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> Format alignment matching overseas submission guidelines & strict NDA handling</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- 💡 번역확인증명서 법적 책임 안내 상자 복원 -->
+        <div class="mt-8 bg-blue-50/70 border border-blue-100 rounded-xl p-6">
+            <h4 class="font-bold text-slate-900 mb-2 text-base flex items-center gap-2">
+                <span>📌</span> Legal Liability Notice for Certificate of Translation
+            </h4>
+            <p class="text-xs md:text-sm text-slate-600 leading-relaxed mb-3">
+                The Certificate of Translation is an official legal process certifying translation accuracy. Its legal scope is explicitly defined as follows:
+            </p>
+            <ul class="text-xs md:text-sm text-slate-700 space-y-1 bg-white p-4 rounded-lg border border-slate-200 font-medium">
+                <li>• This document certifies that the translation was completed at the applicant's request and accurately corresponds to the original text.</li>
+                <li>• The translator assumes no legal liability for any forgery, alteration, or fundamental authenticity of the original source document.</li>
+            </ul>
+            <p class="text-xs text-slate-500 mt-3">
+                In summary, Foreign Language Administrative Attorneys do not adjudicate the underlying authenticity of source documents, but rather <strong class="text-brand">officially certify that the translated text is complete, true, and accurate to the provided original document.</strong>
+            </p>
+        </div>
     </section>
 
-    <!-- 6. 소통 채널 -->
-    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
+    <!-- 💡 7. 이용 안내 (5단계 절차) & 보안/방문 안내 -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32 border-t border-slate-200">
+        <div class="text-center mb-12">
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">How It Works</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Transparent, fast, and accurate steps to complete your certified translation and Apostille.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">01</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">Submission</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Send docs via online form, mail, or visit</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">02</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">Quote & Review</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Document analysis, timeline & fee quote</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">03</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">Translation</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Certified translation & legal proofreading</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">04</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">Certification</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Certificate issuance, Notarization & Apostille</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">05</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">Delivery</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">PDF scan delivery, registered mail & express shipping</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-10">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
+                <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">🛡️</div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Security & Confidentiality</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Under the Administrative Agent Act and Privacy Act, all documents are strictly protected under NDA and safely destroyed after completion.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
+                <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">📍</div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm">Appointment Visit Notice</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">To ensure dedicated focus and accommodate external court/embassy filings, visits are operated 100% by advance appointment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 소통 채널 2종 (영문 전용) -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
@@ -216,23 +403,138 @@
                 </a>
             </div>
         </div>
+    </section>
 
-        <!-- 7. 블로그 엔진 -->
-        <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
-            <div class="flex justify-between items-end mb-8">
-                <div>
-                    <span class="text-brand font-bold text-xs uppercase tracking-widest">Success Stories</span>
-                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">Translation & Legalization Cases</h3>
-                </div>
-                <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">View All Blog Posts &rarr;</a>
+    <!-- 💡 8. 사례 요약 (1열 세로 배열 & line-clamp-5 에러 방어 적용) -->
+    <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <span class="text-brand font-bold text-xs uppercase tracking-widest">Success Stories</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">Translation & Legalization Cases</h3>
             </div>
-            <div id="service-cases-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading 3 Latest Cases...</div>
-            </div>
-        </section>
+            <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">View All Blog Posts &rarr;</a>
+        </div>
+        <!-- 💡 1열 세로 배열 적용 (grid-cols-1) -->
+        <div id="service-cases-container" class="grid grid-cols-1 gap-6">
+            <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading 3 Latest Cases...</div>
+        </div>
+    </section>
 
-        <!-- 8. 미디어 채널 3종 (틱톡 포함) -->
-        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mt-8">
+    <!-- 💡 9. 비교표 복원 (Certificate of Translation vs Notarization vs Apostille vs Consular Legalization) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="text-center mb-8">
+            <span class="text-brand font-bold text-xs uppercase tracking-widest">WHICH ONE DO I NEED</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">Comparison: Translation Cert vs Notarization vs Apostille</h2>
+            <p class="text-xs md:text-sm text-slate-500 mt-1">Each certificate serves distinct legal authentication functions. Always verify submission guidelines with your receiving authority.</p>
+        </div>
+
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+            <table class="w-full text-left text-sm text-slate-600 min-w-[700px]">
+                <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-4 w-1/4">Type</th>
+                        <th class="px-6 py-4 w-1/4">Authorized Body</th>
+                        <th class="px-6 py-4 w-1/4">What It Certifies</th>
+                        <th class="px-6 py-4 w-1/4">When Required</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">Certificate of Translation</td>
+                        <td class="px-6 py-4">Foreign Language Admin. Attorney</td>
+                        <td class="px-6 py-4">Exact match of translation with source text & translator qualifications</td>
+                        <td class="px-6 py-4 text-xs">When receiving body asks for qualified/certified translation</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">Translation Notarization</td>
+                        <td class="px-6 py-4">Licensed Notary Public / Law Firm</td>
+                        <td class="px-6 py-4">Notary's official seal on translator statement</td>
+                        <td class="px-6 py-4 text-xs">When receiving authority explicitly mandates 'Notarization'</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">Apostille</td>
+                        <td class="px-6 py-4">Ministry of Foreign Affairs (MOFA)</td>
+                        <td class="px-6 py-4">Authenticity of official seals and signatures on public records</td>
+                        <td class="px-6 py-4 text-xs">When submitting docs to Apostille Convention member states</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">Consular Authentication</td>
+                        <td class="px-6 py-4">MOFA & Foreign Embassy Consulates</td>
+                        <td class="px-6 py-4">Final verification of validity for overseas document submission</td>
+                        <td class="px-6 py-4 text-xs">When submitting docs to Non-Apostille member states</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 💡 10. 아포스티유 절차 및 가입국 현황표 복원 (131개국 기준) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-100">
+        <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">Process Comparison & Apostille Country Status</h3>
+        
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-8">
+            <table class="w-full text-left text-sm text-slate-600">
+                <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-4 w-1/2">Standard Consular Process (Non-Member States)</th>
+                        <th class="px-6 py-4 w-1/2 text-brand">Apostille Convention Process (Streamlined)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="px-6 py-5 leading-relaxed">Document Issuance → MOFA Confirmation → <strong class="text-slate-800">Foreign Embassy Legalization</strong> → Recognition in Target Nation</td>
+                        <td class="px-6 py-5 leading-relaxed font-medium bg-brand-light/20">Document Issuance → <strong class="text-brand">MOFA Apostille Issuance</strong> → Immediate Recognition in Member States</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="flex justify-between items-end mb-3 px-2">
+            <h4 class="font-bold text-slate-800">Apostille Member Countries by Region</h4>
+            <span class="text-xs font-bold text-brand bg-brand-light px-2 py-1 rounded">As of Sep 11, 2026 (131 Countries)</span>
+        </div>
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+            <table class="w-full text-left text-xs md:text-sm text-slate-600 min-w-[700px]">
+                <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 w-[18%] bg-slate-50">Asia / Oceania</td>
+                        <td class="px-5 py-4 leading-relaxed">Australia, Bahrain, Bangladesh, Brunei, China (inc. Hong Kong, Macao), Cook Islands, Fiji, India, Indonesia, Israel, Japan, Kyrgyzstan, Marshall Islands, Mauritius, Mongolia, New Zealand, Niue, Oman, Pakistan, Palau, Philippines, Samoa, Saudi Arabia, Singapore, South Korea, Tajikistan, Tonga, Uzbekistan, Vanuatu, Vietnam.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">Europe</td>
+                        <td class="px-5 py-4 leading-relaxed">Austria, Belgium, Bosnia & Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Georgia, Germany, Greece, Hungary, Ireland, Italy, Kosovo, Lithuania, Luxembourg, Malta, Monaco, Netherlands, Norway, Poland, Portugal, Romania, Russia, Slovakia, Spain, Sweden, Switzerland, Türkiye, Ukraine, United Kingdom, etc.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">North America</td>
+                        <td class="px-5 py-4 leading-relaxed">Canada, United States of America (inc. Guam, Northern Mariana Islands, Puerto Rico, US Virgin Islands).</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">Latin America</td>
+                        <td class="px-5 py-4 leading-relaxed">Argentina, Bahamas, Barbados, Belize, Bolivia, Brazil, Chile, Colombia, Costa Rica, Dominican Republic, Ecuador, El Salvador, Grenada, Guatemala, Guyana, Honduras, Jamaica, Mexico, Nicaragua, Panama, Paraguay, Peru, Suriname, Trinidad & Tobago, Uruguay, Venezuela.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">Africa</td>
+                        <td class="px-5 py-4 leading-relaxed">Algeria, Botswana, Burundi, Cape Verde, Lesotho, Liberia, Malawi, Morocco, Namibia, Rwanda, Senegal, Seychelles, South Africa, Tunisia.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 💡 11. 상담 유도 배너 박스 복원 -->
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+        <div class="bg-slate-50/80 rounded-xl p-8 text-center border border-slate-200">
+            <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1">Consult with Experts for Certified Translation & Apostille</h4>
+            <p class="text-sm text-slate-500 mb-6">Prevent document rejection risks with official certified translation and legal authentication.</p>
+            <a href="inquiry_en.html" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-3.5 rounded-lg text-sm shadow-md transition">
+                Request 1:1 Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- 12. 미디어 채널 3종 (유튜브, 인스타그램, 틱톡) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON Official Media Channels</h3>
             <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
@@ -258,48 +560,76 @@
         </div>
     </section>
 
-    <!-- 구글 블로그 연동 JS -->
+    <!-- 🟢 구글 블로그 연동 JS (에러 방어막 & line-clamp-5 5줄 제한 적용) -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
         if (!container) return;
-        const entries = data.feed.entry;
-        if (!entries || entries.length === 0) {
-            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent case studies found.</div>`; return;
-        }
-        const keywords = ['translation', 'apostille', 'legalization', 'certificate', 'notary'];
-        const matched = [];
-        entries.forEach(entry => {
-            if (matched.length >= 3) return;
-            if (!entry.category) return;
-            const entryLabels = entry.category.map(c => c.term.toLowerCase());
-            if (keywords.some(kw => entryLabels.includes(kw))) matched.push(entry);
-        });
+        
+        try {
+            if (!data || !data.feed || !data.feed.entry || data.feed.entry.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No specific cases published yet.</div>`;
+                return;
+            }
 
-        if (matched.length > 0) {
-            container.innerHTML = "";
-            matched.forEach(entry => {
-                const title = entry.title.$t;
-                let link = "";
-                if (entry.link) { for (let i = 0; i < entry.link.length; i++) { if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; } } }
-                let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
-                let snippet = content.replace(/(<([^>]+)>)/ig, "").substring(0, 120) + "...";
-                let labelsHTML = "";
-                if (entry.category) { entry.category.slice(0, 2).forEach(c => { labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mr-1">${c.term}</span>`; }); }
+            const entries = data.feed.entry;
+            const keywords = ['translation', 'apostille', 'legalization', 'certificate', 'notary'];
+            const matched = [];
 
-                container.insertAdjacentHTML('beforeend', `
-                <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
-                    <div>
-                        <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
-                        <h4 class="text-base md:text-lg font-bold text-slate-900 mb-3 leading-snug line-clamp-2">${title}</h4>
-                        <div class="bg-slate-50/80 p-4 rounded-xl border border-slate-100 mb-4"><p class="text-slate-600 text-xs leading-relaxed font-normal">${snippet}</p></div>
-                    </div>
-                    <div class="flex justify-end mt-auto pt-2">
-                        <a href="${link}" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand hover:underline"><span>Read Full Case</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
-                    </div>
-                </article>`);
+            entries.forEach(entry => {
+                if (matched.length >= 3) return;
+                if (!entry.category) return;
+                
+                const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
+                if (keywords.some(kw => entryLabels.includes(kw))) matched.push(entry);
             });
-        } else { container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No specific cases published yet.</div>`; }
+
+            if (matched.length > 0) {
+                container.innerHTML = "";
+                matched.forEach(entry => {
+                    const title = entry.title ? entry.title.$t : "No Title";
+                    let link = "";
+                    if (entry.link) { 
+                        for (let i = 0; i < entry.link.length; i++) { 
+                            if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; } 
+                        } 
+                    }
+                    
+                    let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
+                    let snippet = content.replace(/(<([^>]+)>)/ig, "");
+                    
+                    let labelsHTML = "";
+                    if (entry.category) { 
+                        entry.category.slice(0, 2).forEach(c => { 
+                            if(c.term) labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mr-1">${c.term}</span>`; 
+                        }); 
+                    }
+
+                    // 💡 line-clamp-5 5줄 제한 적용
+                    container.insertAdjacentHTML('beforeend', `
+                    <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
+                            <h4 class="text-base md:text-lg font-bold text-slate-900 mb-3 leading-snug break-keep">${title}</h4>
+                            <div class="bg-slate-50/80 p-4 rounded-xl border border-slate-100 mb-4">
+                                <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-normal line-clamp-5">${snippet}</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-auto pt-2 border-t border-slate-100">
+                            <a href="${link}" target="_blank" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline">
+                                <span>Read Full Case</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>`);
+                });
+            } else {
+                container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No specific cases published yet.</div>`;
+            }
+        } catch (error) {
+            console.error("Blogger API Parsing Error:", error);
+            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No specific cases published yet.</div>`;
+        }
     }
     document.addEventListener("DOMContentLoaded", function() {
         const script = document.createElement('script');
@@ -309,7 +639,7 @@
     </script>
 
     <!-- 푸터 -->
-    <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
                 <a href="index_en.html" class="inline-block hover:opacity-80 transition"><h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2></a>

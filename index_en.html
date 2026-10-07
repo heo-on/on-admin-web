@@ -23,7 +23,7 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Certified Public Translation & Administrative Attorneys Office ON:ON</title>
     
-    <!-- 💡 1. 브라우저 탭 파비콘(로고) 설정 -->
+    <!-- 브라우저 탭 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <!-- 구글 영어 검색 노출을 위한 영문 전용 SEO 메타 태그 -->
@@ -57,7 +57,7 @@
             }, 'google_translate_element');
         }
 
-        // 💡 2. 자바스크립트로 직접 언어 버튼 색상 & 로고 상호명 제어
+        // 언어 버튼 색상 & 로고 상호명 직접 제어 (& 이후 줄바꿈 적용)
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
             
@@ -71,17 +71,17 @@
                 }
             });
 
-            // 로고 메인 상호명 텍스트 업데이트 (2번째 줄 영문 서브타이틀은 고정)
+            // 로고 메인 상호명 텍스트 및 줄바꿈 업데이트
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
                 if (langCode === 'ko') {
-                    mainTitleElement.textContent = '공인번역일반행정사사무소 온행';
+                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
                 } else if (langCode === 'zh-CN') {
-                    mainTitleElement.textContent = '公认翻译及行政律师事务所 ON:ON';
+                    mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
                 } else if (langCode === 'ja') {
-                    mainTitleElement.textContent = '公認翻訳および行政書士事務所 ON:ON';
+                    mainTitleElement.innerHTML = '公認翻訳および行政書士事務所 ON:ON';
                 } else {
-                    mainTitleElement.textContent = 'Certified Public Translation & Administrative Attorneys Office ON:ON';
+                    mainTitleElement.innerHTML = 'Certified Public Translation &<br>Administrative Attorneys Office ON:ON';
                 }
             }
         }
@@ -129,7 +129,7 @@
             width: 100% !important;
         }
 
-        /* 💡 추가됨: 일본어/중국어 번역 시 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
+        /* 일본어/중국어 번역 시 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
         [data-lang="ja"] *, [data-lang="zh-CN"] * {
             word-break: break-all !important;
             overflow-wrap: break-word !important;
@@ -146,15 +146,14 @@
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <!-- 💡 윗줄: 언어 변환 시 가변 대응되는 메인 상호명 -->
-                    <span id="dynamic-main-title" class="notranslate text-sm md:text-base font-bold text-slate-900 leading-none">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-                    <!-- 💡 아윗줄: 무조건 영문으로 영구 고정되는 서브 타이틀 (기본 모드 시 영문 2줄 완성) -->
+                    <!-- 💡 윗줄: & 뒤에 <br> 줄바꿈 적용 -->
+                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
+                    <!-- 💡 아윗줄: 서브 영문 상호 고정 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <!-- 💡 상단 메뉴 Active 하드코딩 제거 (ScrollSpy 스크립트 연결) -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2" id="main-nav">
                     <a href="about_en.html" class="nav-link hover:text-brand transition py-1">About Us</a>
                     <a href="#services" id="link-services" class="nav-link hover:text-brand transition py-1">Services</a>
@@ -209,7 +208,7 @@
         </div>
     </section>
 
-    <!-- 💡 4. 핵심 전문 분야 (Services - 4개 전체 유지) -->
+    <!-- 4. 핵심 전문 분야 (Services) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
@@ -279,7 +278,7 @@
             </div>
         </div>
 
-        <!-- 💡 소통 채널 기존 2개 고정 유지 -->
+        <!-- 소통 채널 2개 유통 -->
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -302,7 +301,7 @@
         </div>
     </section>
 
-    <!-- 💡 6. 최근 사례 (1열 세로 배열 교정 & line-clamp 해제) -->
+    <!-- 6. 최근 사례 (1열 세로 배열 & line-clamp-5 5줄 제한 적용) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -313,14 +312,14 @@
                 <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
 
-            <!-- 💡 1열 세로 리스트형 컨테이너 적용 (grid-cols-1) -->
+            <!-- 1열 세로 리스트형 컨테이너 -->
             <div id="blogger-cases-container" class="grid grid-cols-1 gap-6">
                 <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading Latest Cases from Blog...</div>
             </div>
         </div>
     </section>
 
-    <!-- 7. 미디어 채널 (푸터 상단 위치 고정) -->
+    <!-- 7. 미디어 채널 -->
     <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
@@ -381,7 +380,7 @@
         </div>
     </footer>
 
-    <!-- 🟢 Blogger API 연동 스크립트 (1열 세로 배열 & line-clamp 해제 적용) -->
+    <!-- 🟢 Blogger API 연동 스크립트 (line-clamp-5 5줄 제한 적용) -->
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -438,14 +437,14 @@
                     });
                 }
 
-                // 💡 수정됨: line-clamp-2 제거하여 글자 잘림 제한 해제
+                // 💡 line-clamp-5 속성을 적용하여 깔끔하게 5줄로 제한
                 const cardHTML = `
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                     <div>
                         <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
                         <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${title}</h3>
                         <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
-                            <p class="text-slate-600 text-sm leading-relaxed font-normal">${snippet}</p>
+                            <p class="text-slate-600 text-sm leading-relaxed font-normal line-clamp-5">${snippet}</p>
                         </div>
                     </div>
                     <a href="${link}" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1 mt-auto">Read Full Case <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>

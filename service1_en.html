@@ -66,16 +66,23 @@
         }
 
         function changeLanguage(langCode) {
-            if (langCode === 'ko') { window.location.href = 'service1.html'; return; } 
-            else if (langCode === 'en') {
+            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
+            const baseLang = document.documentElement.getAttribute('lang') || 'ko';
+
+            if (langCode === baseLang) {
+                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
-                return;
+            } else {
+                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
+                const select = document.querySelector('.goog-te-combo');
+                if (select) { 
+                    select.value = langCode; 
+                    select.dispatchEvent(new Event('change')); 
+                }
+                updateLanguageState(langCode);
             }
-            const select = document.querySelector('.goog-te-combo');
-            if (select) { select.value = langCode; select.dispatchEvent(new Event('change')); }
-            updateLanguageState(langCode);
         }
 
         document.addEventListener("DOMContentLoaded", function() {

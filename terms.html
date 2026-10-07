@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>이용약관 | 행정사사무소 온:ON</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#0020A0', hover: '#001670', light: '#EEF2FF', dark: '#0A122A', footer: '#F8FAFC' } } } } }
+    </script>
+    
+    <script type="text/javascript">
+        function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'ko', includedLanguages: 'en,zh-CN,ja,ko', autoDisplay: false }, 'google_translate_element'); }
+        function updateLanguageState(langCode) {
+            document.documentElement.setAttribute('data-lang', langCode);
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === langCode) { btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold'; } 
+                else { btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium'; }
+            });
+            const mainTitleElement = document.getElementById('dynamic-main-title');
+            if (mainTitleElement) {
+                if (langCode === 'ko') mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                else if (langCode === 'zh-CN') mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
+                else if (langCode === 'ja') mainTitleElement.innerHTML = '公認翻訳および行政書士事務所 ON:ON';
+                else mainTitleElement.innerHTML = 'Certified Public Translation &<br>Administrative Attorneys Office ON:ON';
+            }
+        }
+        function changeLanguage(langCode) {
+            const baseLang = document.documentElement.getAttribute('lang') || 'ko';
+            if (langCode === baseLang) {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+            } else {
+                const select = document.querySelector('.goog-te-combo');
+                if (select) { select.value = langCode; select.dispatchEvent(new Event('change')); }
+                updateLanguageState(langCode);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'ko';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) currentLang = match[1];
+            updateLanguageState(currentLang);
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+        .goog-te-banner-frame, iframe.goog-te-banner-frame, .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate { display: none !important; visibility: hidden !important; }
+        body { top: 0px !important; position: static !important; }
+        #google_translate_element { display: none !important; }
+        [data-lang="en"] .kr-title { display: none !important; }
+        [data-lang="en"] .en-title { display: block !important; }
+        [data-lang="ko"] .en-title, [data-lang="zh-CN"] .en-title, [data-lang="ja"] .en-title { display: none !important; }
+        [data-lang="ja"] *, [data-lang="zh-CN"] * { word-break: break-all !important; overflow-wrap: break-word !important; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
+
+    <div id="google_translate_element"></div>
+
+    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+                <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+                <div class="flex flex-col">
+                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">공인번역일반행정사사무소 온행</span>
+                    <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
+                    <a href="about.html" class="hover:text-brand transition"><span class="kr-title">사무소 소개</span><span class="en-title notranslate hidden">About Us</span></a>
+                    <a href="index.html#services" class="hover:text-brand transition"><span class="kr-title">전문 분야</span><span class="en-title notranslate hidden">Services</span></a>
+                    <a href="index.html#cases" class="hover:text-brand transition"><span class="kr-title">업무 사례</span><span class="en-title notranslate hidden">Case Studies</span></a>
+                    <a href="contact.html" class="hover:text-brand transition"><span class="kr-title">상담 문의</span><span class="en-title notranslate hidden">Inquiry</span></a>
+                </nav>
+                <div class="flex items-center gap-2.5">
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16 px-6 max-w-4xl mx-auto">
+        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 border-b border-slate-200 pb-4">이용약관</h1>
+            
+            <div class="space-y-8 text-sm md:text-base text-slate-600 leading-relaxed">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">제 1 조 (목적)</h3>
+                    <p>본 약관은 공인번역일반행정사사무소 온:ON(이하 "사무소")이 제공하는 행정 상담, 출입국·비자 수속 대행, 공인 번역 및 아포스티유 인증 대행 등의 서비스 이용과 관련하여 사무소와 의뢰인 간의 권리, 의무 및 책임 사항을 규정함을 목적으로 합니다.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">제 2 조 (서비스의 범위 및 한계)</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>사무소는 행정사법에 의거하여 적법한 서류 작성, 번역 및 인허가 대행 업무를 수행합니다.</li>
+                        <li>사무소가 발급하는 '번역확인증명서'는 원문과 번역문이 동일함을 증명하는 것이며, 의뢰인이 제공한 원본 서류의 진위(위조/변조) 여부에 대해서는 사무소가 법적 책임을 지지 않습니다.</li>
+                        <li>출입국·비자 및 정부 인허가 신청에 대한 '최종 승인 여부'는 관할 정부 기관(출입국외국인청 등)의 고유 권한이므로, 사무소는 수속 대행의 충실한 이행을 약속하나 100% 승인 결과를 보장하지는 않습니다.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">제 3 조 (의뢰인의 의무)</h3>
+                    <p>의뢰인은 사무소의 업무 수행에 필요한 정확한 정보와 위조되지 않은 합법적인 원본 서류를 제공하여야 합니다. 의뢰인이 제공한 허위 정보나 위조 서류로 인해 발생하는 행정적, 법적 불이익에 대한 모든 책임은 의뢰인 본인에게 있습니다.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">제 4 조 (계약의 성립 및 비용)</h3>
+                    <p>서비스 이용 계약은 의뢰인이 상담 후 산정된 비용을 지불함과 동시에 성립됩니다. 번역 및 대행 업무가 이미 착수된 이후에는 단순 변심으로 인한 환불이 제한될 수 있습니다.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">제 5 조 (비밀유지)</h3>
+                    <p>사무소는 업무 수행 과정에서 알게 된 의뢰인의 개인정보 및 기업 기밀 사항을 행정사법 및 개인정보보호법에 따라 철저히 보호하며, 타인에게 누설하지 않습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
+                <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-slate-600">개인정보처리방침</a>
+                    <a href="terms.html" class="hover:text-slate-600 font-bold">이용약관</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

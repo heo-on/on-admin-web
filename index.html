@@ -36,8 +36,11 @@
             }, 'google_translate_element');
         }
 
+        // 💡 1. 자바스크립트로 직접 언어 버튼 색상 & 로고 상호명 갈아끼우기 (구글 번역기 충돌 원천 차단)
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
+            
+            // 버튼 색상 업데이트
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
                 if (btn.getAttribute('data-lang') === langCode) {
@@ -46,6 +49,20 @@
                     btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
                 }
             });
+
+            // 로고 메인 상호명 텍스트 업데이트 (2번째 줄 서브타이틀은 고정)
+            const mainTitleElement = document.getElementById('dynamic-main-title');
+            if (mainTitleElement) {
+                if (langCode === 'en') {
+                    mainTitleElement.textContent = 'Certified Public Translation & Administrative Attorneys Office ON:ON';
+                } else if (langCode === 'zh-CN') {
+                    mainTitleElement.textContent = '公认翻译及行政律师事务所 ON:ON';
+                } else if (langCode === 'ja') {
+                    mainTitleElement.textContent = '公認翻訳および行政書士事務所 ON:ON';
+                } else {
+                    mainTitleElement.textContent = '공인번역일반행정사사무소 온행';
+                }
+            }
         }
 
         function changeLanguage(langCode) {
@@ -58,11 +75,15 @@
                 window.location.href = 'index_en.html';
                 return;
             }
+            
+            // 구글 번역기 트리거 (CN, JP 등)
             const select = document.querySelector('.goog-te-combo');
             if (select) {
                 select.value = langCode;
                 select.dispatchEvent(new Event('change'));
             }
+            
+            // 즉시 버튼 색상 및 상호명 업데이트
             updateLanguageState(langCode);
         }
 
@@ -72,6 +93,7 @@
             if (match) {
                 currentLang = match[1];
             }
+            // 페이지 로드 시 현재 언어에 맞게 세팅
             updateLanguageState(currentLang);
         });
     </script>
@@ -93,19 +115,6 @@
             display: block !important;
             width: 100% !important;
         }
-
-        /* 💡 언어 스위칭 핵심 로직: 영문 서브타이틀은 절대 숨기지 않음 */
-        [data-lang="en"] .kr-title {
-            display: none !important;
-        }
-        [data-lang="en"] .en-title {
-            display: block !important;
-        }
-        [data-lang="ko"] .en-title,
-        [data-lang="zh-CN"] .en-title,
-        [data-lang="ja"] .en-title {
-            display: none !important;
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
@@ -117,13 +126,10 @@
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
-                <!-- 💡 상호명 컨테이너 -->
                 <div class="flex flex-col">
-                    <!-- 첫 번째 줄: 언어별 메인 상호명 -->
-                    <span class="kr-title text-sm md:text-base font-bold text-slate-900 leading-none">공인번역일반행정사사무소 온행</span>
-                    <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-                    
-                    <!-- 두 번째 줄: 무조건 고정되는 영문 서브타이틀 -->
+                    <!-- 💡 2. 자바스크립트가 직접 갈아끼우는 영역: 구글 번역 금지(notranslate) -->
+                    <span id="dynamic-main-title" class="notranslate text-sm md:text-base font-bold text-slate-900 leading-none">공인번역일반행정사사무소 온행</span>
+                    <!-- 영원히 고정되는 영문 서브타이틀 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
@@ -131,20 +137,16 @@
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2" id="main-nav">
                     <a href="about.html" class="nav-link hover:text-brand transition py-1">
-                        <span class="kr-title">사무소 소개</span>
-                        <span class="en-title notranslate hidden">Office Introduction</span>
+                        <span class="notranslate">사무소 소개</span>
                     </a>
                     <a href="#services" id="link-services" class="nav-link hover:text-brand transition py-1">
-                        <span class="kr-title">전문 분야</span>
-                        <span class="en-title notranslate hidden">Specialized Fields</span>
+                        <span class="notranslate">전문 분야</span>
                     </a>
                     <a href="#cases" id="link-cases" class="nav-link hover:text-brand transition py-1">
-                        <span class="kr-title">업무 사례</span>
-                        <span class="en-title notranslate hidden">Work Cases</span>
+                        <span class="notranslate">업무 사례</span>
                     </a>
                     <a href="contact.html#inquiry-form" id="link-guide" class="nav-link hover:text-brand transition py-1">
-                        <span class="kr-title">상담 문의</span>
-                        <span class="en-title notranslate hidden">Consultation Inquiry</span>
+                        <span class="notranslate">상담 문의</span>
                     </a>
                 </nav>
 
@@ -155,10 +157,9 @@
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
-                    <a href="contact.html#inquiry-form" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                    <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <span class="kr-title">상담 문의</span>
-                        <span class="en-title notranslate hidden">Contact Us</span>
+                        <span class="notranslate">상담 문의</span>
                     </a>
                 </div>
             </div>
@@ -398,7 +399,7 @@
     <!-- 🟢 스크롤 감지 및 Vercel API 블로그 연동 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 💡 1. 스크롤 위치 감지 헤더 메뉴 활성화 (Bottom-to-Top 검사)
+            // 1. 스크롤 위치 감지 헤더 메뉴 활성화 (Bottom-to-Top 검사)
             const navLinks = {
                 'services': document.getElementById('link-services'),
                 'cases': document.getElementById('link-cases'),
@@ -441,7 +442,7 @@
             window.addEventListener('scroll', setActiveNav);
             setActiveNav();
 
-            // 💡 2. 블로그 사례 연동 (59번 군인징계 고정)
+            // 2. 블로그 사례 연동 (59번 군인징계 고정)
             const container = document.getElementById('blog-posts-container');
             if (!container) return;
 

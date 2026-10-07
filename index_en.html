@@ -7,9 +7,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
- 
+
       gtag('config', 'G-XSDTEEZRW3');
- 
+
       /* 소통 채널 버튼 클릭 감지 센서 */
       function trackContactClick(channelName) {
         gtag('event', 'click_contact', {
@@ -17,11 +17,15 @@
         });
       }
     </script>
- 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Certified Public Translation & Administrative Attorneys Office ON:ON</title>
+    
+    <!-- 💡 1. 브라우저 탭 파비콘(로고) 설정 -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <!-- 구글 영어 검색 노출을 위한 영문 전용 SEO 메타 태그 -->
     <meta name="description" content="Korea's leading Administrative Attorneys Office ON:ON. We provide foreign direct investment (FDI), visa & nationality services, KC certification, medical business permits, certified translation, and Apostille services in Seoul, Korea.">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -52,20 +56,62 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
- 
-        function changeLanguage(langCode) {
-            if (langCode === 'ko') {
-                window.location.href = 'index.html';
-            } else if (langCode === 'en') {
-                window.location.href = 'index_en.html';
-            } else {
-                const select = document.querySelector('.goog-te-combo');
-                if (select) {
-                    select.value = langCode;
-                    select.dispatchEvent(new Event('change'));
+
+        // 💡 2. 자바스크립트로 직접 언어 버튼 색상 & 로고 상호명 제어
+        function updateLanguageState(langCode) {
+            document.documentElement.setAttribute('data-lang', langCode);
+            
+            // 언어 버튼 파란색 하이라이트 제어
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === langCode) {
+                    btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
+                } else {
+                    btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
+                }
+            });
+
+            // 로고 메인 상호명 텍스트 업데이트 (2번째 줄 영문 서브타이틀은 고정)
+            const mainTitleElement = document.getElementById('dynamic-main-title');
+            if (mainTitleElement) {
+                if (langCode === 'ko') {
+                    mainTitleElement.textContent = '공인번역일반행정사사무소 온행';
+                } else if (langCode === 'zh-CN') {
+                    mainTitleElement.textContent = '公认翻译及行政律师事务所 ON:ON';
+                } else if (langCode === 'ja') {
+                    mainTitleElement.textContent = '公認翻訳および行政書士事務所 ON:ON';
+                } else {
+                    mainTitleElement.textContent = 'Certified Public Translation & Administrative Attorneys Office ON:ON';
                 }
             }
         }
+
+        function changeLanguage(langCode) {
+            if (langCode === 'ko') {
+                window.location.href = 'index.html';
+                return;
+            } else if (langCode === 'en') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+                return;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+            updateLanguageState(langCode);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'en';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateLanguageState(currentLang);
+        });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
@@ -76,46 +122,62 @@
         #google_translate_element { display: none !important; }
         #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+
+        .channel-card font, .channel-card span {
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
+        }
+
+        /* 💡 추가됨: 일본어/중국어 번역 시 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
+        [data-lang="ja"] *, [data-lang="zh-CN"] * {
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
- 
+
     <div id="google_translate_element"></div>
- 
+
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
-                <div>
-                    <span class="text-sm md:text-base font-bold text-slate-900 block leading-none">Certified Public Translation &<br class="hidden md:block">Administrative Attorneys Office ON:ON</span>
+                <div class="flex flex-col">
+                    <!-- 💡 윗줄: 언어 변환 시 가변 대응되는 메인 상호명 -->
+                    <span id="dynamic-main-title" class="notranslate text-sm md:text-base font-bold text-slate-900 leading-none">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                    <!-- 💡 아윗줄: 무조건 영문으로 영구 고정되는 서브 타이틀 (기본 모드 시 영문 2줄 완성) -->
+                    <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
- 
+
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about_en.html" class="hover:text-brand transition">About Us</a>
-                    <a href="#services" class="hover:text-brand transition">Services</a>
-                    <a href="#cases" class="hover:text-brand transition">Case Studies</a>
-                    <a href="inquiry_en.html" class="hover:text-brand transition font-bold text-brand">Inquiry</a>
+                <!-- 💡 상단 메뉴 Active 하드코딩 제거 (ScrollSpy 스크립트 연결) -->
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2" id="main-nav">
+                    <a href="about_en.html" class="nav-link hover:text-brand transition py-1">About Us</a>
+                    <a href="#services" id="link-services" class="nav-link hover:text-brand transition py-1">Services</a>
+                    <a href="#cases" id="link-cases" class="nav-link hover:text-brand transition py-1">Case Studies</a>
+                    <a href="inquiry_en.html" id="link-inquiry" class="nav-link hover:text-brand transition py-1">Inquiry</a>
                 </nav>
- 
+
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                        <button onclick="changeLanguage('ko')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
-                        <button onclick="changeLanguage('en')" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
-                        <button onclick="changeLanguage('zh-CN')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
-                        <button onclick="changeLanguage('ja')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
                     <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Inquiry
                     </a>
                 </div>
             </div>
         </div>
     </header>
- 
+
     <!-- 2. 영문 히어로 섹션 -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
@@ -131,7 +193,7 @@
             </div>
         </div>
     </section>
- 
+
     <!-- 3. 법적 안내 상자 -->
     <section class="pt-16 px-6 max-w-7xl mx-auto">
         <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-6 md:p-8 shadow-sm">
@@ -146,8 +208,8 @@
             </div>
         </div>
     </section>
- 
-    <!-- 4. 핵심 전문 분야 (Services) -->
+
+    <!-- 💡 4. 핵심 전문 분야 (Services - 4개 전체 유지) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
@@ -184,7 +246,7 @@
             </a>
         </div>
     </section>
- 
+
     <!-- 5. 업무 프로세스 & 소통 채널 묶음 -->
     <section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <!-- Our Process -->
@@ -216,13 +278,13 @@
                 <p class="text-xs text-slate-500 leading-relaxed">Handling supplementary requests and securing final visa issuance.</p>
             </div>
         </div>
- 
-        <!-- Fast & Convenient Communication Channels -->
+
+        <!-- 💡 소통 채널 기존 2개 고정 유지 -->
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
                 <!-- 1. 온라인 1:1 문의 페이지 폼으로 이동 -->
-                <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-brand rounded-2xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+                <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-brand rounded-2xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-12 h-12 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-4 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
@@ -230,7 +292,7 @@
                 </a>
                 
                 <!-- 2. 카카오톡 채널 -->
-                <a href="https://pf.kakao.com/_bcHxln" target="_blank" onclick="trackContactClick('KakaoTalk')" class="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-[#FEE500] rounded-2xl shadow-sm hover:shadow-md transition group text-center">
+                <a href="https://pf.kakao.com/_bcHxln" target="_blank" onclick="trackContactClick('KakaoTalk')" class="channel-card flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-[#FEE500] rounded-2xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-12 h-12 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-4 group-hover:opacity-90 transition flex-shrink-0">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
                     </div>
@@ -239,10 +301,10 @@
             </div>
         </div>
     </section>
- 
-    <!-- 6. 업무 사례 (각 4개 분야별 최신 글 1개씩 자동 연동) -->
+
+    <!-- 💡 6. 최근 사례 (1열 세로 배열 교정 & line-clamp 해제) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
                 <div>
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
@@ -250,14 +312,76 @@
                 </div>
                 <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
- 
-            <!-- 블로그 글이 꽂히는 그리드 컨테이너 -->
-            <div id="blogger-cases-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- 💡 1열 세로 리스트형 컨테이너 적용 (grid-cols-1) -->
+            <div id="blogger-cases-container" class="grid grid-cols-1 gap-6">
                 <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading Latest Cases from Blog...</div>
             </div>
         </div>
     </section>
- 
+
+    <!-- 7. 미디어 채널 (푸터 상단 위치 고정) -->
+    <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200">
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
+            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">YouTube Shorts</span>
+                </a>
+                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 푸터 -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <a href="index_en.html" class="inline-block hover:opacity-80 transition">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
+                </a>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+                    <p>Representative Attorney : Heo On</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Business Registration : 889-22-02024</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Address : #813, 8F, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul, Korea</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
+                    <p>Email : on@koreabiz24.com</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Tel : +82-10-7905-2506</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Fax : +82-50-4414-2506</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
+                <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-600">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🟢 Blogger API 연동 스크립트 (1열 세로 배열 & line-clamp 해제 적용) -->
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -268,14 +392,14 @@
             container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent cases available.</div>`;
             return;
         }
- 
+
         const categories = [
             { id: 1, name: "Business Setup & FDI", keywords: ['fdi', 'd8', 'd-8', 'setup', 'corporation'], post: null },
             { id: 2, name: "Visa & Nationality", keywords: ['visa', 'immigration', 'nationality'], post: null },
             { id: 3, name: "Permits & Licenses", keywords: ['permits', 'licenses', 'kc', 'medical', 'business'], post: null },
             { id: 4, name: "Translation & Apostille", keywords: ['translation', 'apostille', 'legalization', 'certificate', 'notary'], post: null }
         ];
- 
+
         entries.forEach(entry => {
             if (!entry.category) return;
             const entryLabels = entry.category.map(c => c.term.toLowerCase());
@@ -287,9 +411,9 @@
                 }
             });
         });
- 
+
         const matchedPosts = categories.filter(cat => cat.post !== null);
- 
+
         if (matchedPosts.length > 0) {
             container.innerHTML = ""; 
             
@@ -305,7 +429,7 @@
                 }
                 
                 let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
-                let snippet = content.replace(/(<([^>]+)>)/ig, "").substring(0, 150) + "...";
+                let snippet = content.replace(/(<([^>]+)>)/ig, "");
                 
                 let labelsHTML = "";
                 if (entry.category) {
@@ -313,13 +437,16 @@
                         labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`;
                     });
                 }
- 
+
+                // 💡 수정됨: line-clamp-2 제거하여 글자 잘림 제한 해제
                 const cardHTML = `
-                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col h-full">
-                    <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
-                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug line-clamp-2">${title}</h3>
-                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5 flex-grow">
-                        <p class="text-slate-600 text-sm leading-relaxed font-normal">${snippet}</p>
+                <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
+                        <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${title}</h3>
+                        <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-5">
+                            <p class="text-slate-600 text-sm leading-relaxed font-normal">${snippet}</p>
+                        </div>
                     </div>
                     <a href="${link}" target="_blank" class="text-brand text-sm font-semibold hover:underline flex items-center gap-1 mt-auto">Read Full Case <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
                 </article>
@@ -328,39 +455,47 @@
             });
         }
     }
- 
+
     document.addEventListener("DOMContentLoaded", function() {
+        // 스크롤 위치 감지 상단 메뉴 활성화
+        const navLinks = {
+            'services': document.getElementById('link-services'),
+            'cases': document.getElementById('link-cases')
+        };
+
+        function setActiveNav() {
+            const scrollPos = window.scrollY + 250;
+            const servicesSec = document.getElementById('services');
+            const casesSec = document.getElementById('cases');
+
+            Object.values(navLinks).forEach(link => {
+                if (link) {
+                    link.classList.remove('text-brand', 'font-bold');
+                    link.classList.add('text-slate-600');
+                }
+            });
+
+            if (casesSec && scrollPos >= casesSec.offsetTop) {
+                if (navLinks['cases']) {
+                    navLinks['cases'].classList.add('text-brand', 'font-bold');
+                    navLinks['cases'].classList.remove('text-slate-600');
+                }
+            } else if (servicesSec && scrollPos >= servicesSec.offsetTop) {
+                if (navLinks['services']) {
+                    navLinks['services'].classList.add('text-brand', 'font-bold');
+                    navLinks['services'].classList.remove('text-slate-600');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', setActiveNav);
+        setActiveNav();
+
+        // Blogger API 동적 호출
         const script = document.createElement('script');
         script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);
     });
     </script>
- 
-    <!-- 7. 미디어 채널 -->
-    <section class="py-16 px-6 max-w-5xl mx-auto mb-10 border-t border-slate-200">
-        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
-            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
-            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">YouTube Shorts</span>
-                </a>
-                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">Instagram</span>
-                </a>
-                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
-                    <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
-                    </div>
-                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">TikTok</span>
-                </a>
-            </div>
-        </div>
-    </section>
- 
+</body>
+</html>

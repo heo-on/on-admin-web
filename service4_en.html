@@ -96,7 +96,7 @@
             margin-left: -12px;
         }
 
-        /* 💡 일본어/중국어 번역 시 박스 이탈 방지 자동 줄바꿈 강제 스타일 */
+        /* 일본어/중국어 번역 시 박스 이탈 방지 자동 줄바꿈 강제 스타일 */
         [data-lang="ja"] *, [data-lang="zh-CN"] * {
             word-break: break-all !important;
             overflow-wrap: break-word !important;
@@ -122,9 +122,7 @@
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <!-- 윗줄: & 뒤에 <br> 줄바꿈 및 가변 제어 -->
                     <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
-                    <!-- 아랫줄: 서브 영문 상호 고정 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
@@ -143,7 +141,7 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
                     <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Inquiry
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Inquiry
                     </a>
                 </div>
             </div>
@@ -164,8 +162,8 @@
         </div>
     </div>
 
-    <!-- 3. 서브페이지 타이틀 헤더 -->
-    <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
+    <!-- 💡 3. 서브페이지 타이틀 헤더 (배경을 stamp.png로 교체) -->
+    <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('stamp.png'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Translation & Legalization</h1>
@@ -186,7 +184,7 @@
         </div>
     </section>
 
-    <!-- 💡 5. 주요 취급 서류 (4개 카테고리 그리드 카드 복원) -->
+    <!-- 5. 주요 취급 서류 -->
     <section class="py-16 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-10">
             <h2 class="text-2xl font-bold text-slate-900 mt-1">Major Documents Handled</h2>
@@ -243,7 +241,7 @@
         </div>
     </section>
 
-    <!-- 💡 6. 상세 업무 내용 & 법적 책임 안내 상자 복원 -->
+    <!-- 6. 상세 업무 내용 & 법적 책임 안내 상자 -->
     <section class="py-16 px-6 max-w-5xl mx-auto bg-white mb-8 rounded-2xl shadow-sm border border-slate-100">
         <div class="space-y-12">
             <!-- Item 01 -->
@@ -314,7 +312,7 @@
             </div>
         </div>
 
-        <!-- 💡 번역확인증명서 법적 책임 안내 상자 복원 -->
+        <!-- 번역확인증명서 법적 책임 안내 상자 -->
         <div class="mt-8 bg-blue-50/70 border border-blue-100 rounded-xl p-6">
             <h4 class="font-bold text-slate-900 mb-2 text-base flex items-center gap-2">
                 <span>📌</span> Legal Liability Notice for Certificate of Translation
@@ -332,7 +330,7 @@
         </div>
     </section>
 
-    <!-- 💡 7. 이용 안내 (5단계 절차) & 보안/방문 안내 -->
+    <!-- 7. 이용 안내 (5단계 절차) & 보안/방문 안내 -->
     <section id="guide" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32 border-t border-slate-200">
         <div class="text-center mb-12">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
@@ -385,13 +383,13 @@
             </div>
         </div>
 
-        <!-- 소통 채널 2종 (영문 전용) -->
+        <!-- 소통 채널 2종 -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
                 </a>
@@ -405,7 +403,7 @@
         </div>
     </section>
 
-    <!-- 💡 8. 사례 요약 (1열 세로 배열 & line-clamp-5 에러 방어 적용) -->
+    <!-- 8. 사례 요약 (에러 방어 및 1열 레이아웃 적용) -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -414,13 +412,12 @@
             </div>
             <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">View All Blog Posts &rarr;</a>
         </div>
-        <!-- 💡 1열 세로 배열 적용 (grid-cols-1) -->
         <div id="service-cases-container" class="grid grid-cols-1 gap-6">
             <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading 3 Latest Cases...</div>
         </div>
     </section>
 
-    <!-- 💡 9. 비교표 복원 (Certificate of Translation vs Notarization vs Apostille vs Consular Legalization) -->
+    <!-- 9. 비교표 (Translation Cert vs Notarization vs Apostille vs Consular Legalization) -->
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="text-center mb-8">
             <span class="text-brand font-bold text-xs uppercase tracking-widest">WHICH ONE DO I NEED</span>
@@ -468,7 +465,7 @@
         </div>
     </section>
 
-    <!-- 💡 10. 아포스티유 절차 및 가입국 현황표 복원 (131개국 기준) -->
+    <!-- 10. 아포스티유 절차 및 가입국 현황표 -->
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-100">
         <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">Process Comparison & Apostille Country Status</h3>
         
@@ -521,7 +518,7 @@
         </div>
     </section>
 
-    <!-- 💡 11. 상담 유도 배너 박스 복원 -->
+    <!-- 11. 상담 유도 배너 박스 -->
     <section class="max-w-5xl mx-auto px-6 pb-16">
         <div class="bg-slate-50/80 rounded-xl p-8 text-center border border-slate-200">
             <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1">Consult with Experts for Certified Translation & Apostille</h4>
@@ -532,7 +529,7 @@
         </div>
     </section>
 
-    <!-- 12. 미디어 채널 3종 (유튜브, 인스타그램, 틱톡) -->
+    <!-- 12. 미디어 채널 3종 -->
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON Official Media Channels</h3>
@@ -560,7 +557,7 @@
         </div>
     </section>
 
-    <!-- 🟢 구글 블로그 연동 JS (에러 방어막 & line-clamp-5 5줄 제한 적용) -->
+    <!-- 🟢 구글 블로그 연동 JS -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
@@ -605,7 +602,6 @@
                         }); 
                     }
 
-                    // 💡 line-clamp-5 5줄 제한 적용
                     container.insertAdjacentHTML('beforeend', `
                     <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
                         <div>
@@ -656,6 +652,9 @@
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-600">Privacy Policy</a><a href="#" class="hover:text-slate-600">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>

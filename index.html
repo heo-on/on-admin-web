@@ -55,7 +55,6 @@
                 location.reload();
                 return;
             } else if (langCode === 'en') {
-                // 영문 버튼 클릭 시 영문 메인 페이지로 다이렉트 이동
                 window.location.href = 'index_en.html';
                 return;
             }
@@ -79,7 +78,6 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     <style>
-        /* 구글 번역 상단 바 숨김 */
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
             display: none !important;
@@ -96,7 +94,7 @@
             width: 100% !important;
         }
 
-        /* 💡 언어 스위칭 스타일: 영문 변환 시 상호명 2줄 노출 로직 완전 고정 */
+        /* 언어 스위칭 스타일 */
         [data-lang="en"] .kr-title {
             display: none !important;
         }
@@ -117,35 +115,31 @@
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <!-- 💡 로고 및 상호명 부분: 영문 변환 시 완벽하게 2줄 유지 -->
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <!-- 한국어 모드 상호명 -->
                     <span class="kr-title text-sm md:text-base font-bold text-slate-900 block leading-none">공인번역일반행정사사무소 온행</span>
-                    <!-- 영문 모드 메인 상호명 -->
                     <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-                    <!-- 항상 유지되는 하단 작은 영문 상호명 (서브타이틀) -->
                     <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <!-- 💡 네비게이션 메뉴: 영문 변환 시 첫 글자 대문자 완벽 매칭(notranslate 적용) -->
-                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about.html" class="hover:text-brand transition">
+                <!-- 💡 4번 메뉴를 'Contact & Guide' 대신 완벽한 '상담 문의' 스위칭 태그로 정정 및 nav-link 아이디 부여 -->
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2" id="main-nav">
+                    <a href="about.html" class="nav-link hover:text-brand transition py-1">
                         <span class="kr-title">사무소 소개</span>
                         <span class="en-title notranslate hidden">Office Introduction</span>
                     </a>
-                    <a href="#services" class="hover:text-brand transition">
+                    <a href="#services" id="link-services" class="nav-link hover:text-brand transition py-1">
                         <span class="kr-title">전문 분야</span>
                         <span class="en-title notranslate hidden">Specialized Fields</span>
                     </a>
-                    <a href="#cases" class="hover:text-brand transition">
+                    <a href="#cases" id="link-cases" class="nav-link hover:text-brand transition py-1">
                         <span class="kr-title">업무 사례</span>
                         <span class="en-title notranslate hidden">Work Cases</span>
                     </a>
-                    <a href="contact.html#inquiry-form" class="hover:text-brand transition">
+                    <a href="contact.html#inquiry-form" id="link-guide" class="nav-link hover:text-brand transition py-1">
                         <span class="kr-title">상담 문의</span>
                         <span class="en-title notranslate hidden">Consultation Inquiry</span>
                     </a>
@@ -191,7 +185,7 @@
                 <div class="p-2.5 bg-brand text-white rounded-xl font-bold text-lg flex-shrink-0 mt-0.5 shadow-sm">⚖️</div>
                 <div>
                     <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">"행정기관 제출용 번역·서류 작성 및 대행은 '행정사'만 가능합니다."</h3>
-                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">관련 법률(행정사법)에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">행정사법에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
                 </div>
             </div>
         </div>
@@ -219,7 +213,7 @@
             <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">행정처분 · 군인징계</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 소청, 의견서 작성 및 부당한 처분에 대한 행정심판을 구제합니다.</p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 소청, 의견서 작성 및 부당한 처원에 대한 행정심판을 구제합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
             <a href="service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
@@ -297,7 +291,7 @@
         </div>
     </section>
 
-    <!-- 6. 주요 업무 사례 (💡 1열 세로 리스트 배열로 완전 복구!) -->
+    <!-- 6. 주요 업무 사례 (1열 세로 배열) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-y border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -308,7 +302,6 @@
                 <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">모든 사례 보기 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
 
-            <!-- 👇 1열 세로 배열 변경 (grid-cols-1 적용) -->
             <div id="blog-posts-container" class="grid grid-cols-1 gap-6">
                 <div class="col-span-full bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
                     네이버 블로그에서 분야별 최신 수임 사례를 불러오는 중입니다...
@@ -398,13 +391,55 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 Vercel 서버리스 API 기반 4개 분야 100% 무결점 연동 스크립트 -->
+    <!-- 🟢 💡 스크롤 감지 메뉴 활성화(ScrollSpy) & Vercel API 블로그 연동 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // 💡 1. 스크롤 및 해시(#) 감지 헤더 메뉴 파란색 활성화(ScrollSpy)
+            const navLinks = {
+                'services': document.getElementById('link-services'),
+                'cases': document.getElementById('link-cases'),
+                'guide': document.getElementById('link-guide')
+            };
+
+            function setActiveNav() {
+                const scrollPos = window.scrollY + 200;
+                const servicesSec = document.getElementById('services');
+                const casesSec = document.getElementById('cases');
+                const guideSec = document.getElementById('guide');
+
+                // 기본 초기화
+                Object.values(navLinks).forEach(link => {
+                    if(link) {
+                        link.classList.remove('text-brand', 'font-bold');
+                        link.classList.add('text-slate-600');
+                    }
+                });
+
+                if (guideSec && scrollPos >= guideSec.offsetTop) {
+                    if(navLinks['guide']) {
+                        navLinks['guide'].classList.add('text-brand', 'font-bold');
+                        navLinks['guide'].classList.remove('text-slate-600');
+                    }
+                } else if (casesSec && scrollPos >= casesSec.offsetTop) {
+                    if(navLinks['cases']) {
+                        navLinks['cases'].classList.add('text-brand', 'font-bold');
+                        navLinks['cases'].classList.remove('text-slate-600');
+                    }
+                } else if (servicesSec && scrollPos >= servicesSec.offsetTop) {
+                    if(navLinks['services']) {
+                        navLinks['services'].classList.add('text-brand', 'font-bold');
+                        navLinks['services'].classList.remove('text-slate-600');
+                    }
+                }
+            }
+
+            window.addEventListener('scroll', setActiveNav);
+            setActiveNav(); // 초기 실행
+
+            // 💡 2. 4개 분야 블로그 사례 연동 (하드 필터링 적용)
             const container = document.getElementById('blog-posts-container');
             if (!container) return;
 
-            // 💡 4개 주요 카테고리(56:투자비자, 67:의료인허가, 63:징계항고, 46:번역인증) API 동시 호출
             const fetchCategories = [
                 { categoryNo: '56', label: '외국인 투자·비자' },
                 { categoryNo: '67', label: '의료분야·각종 인허가' },
@@ -419,7 +454,7 @@
                         .then(data => {
                             let validItems = data.items || [];
                             
-                            // 🚨 [하드 필터링 적용] 징계·항고(63번) 슬롯에 의료/해썹 관련 글 노출 완전 차단
+                            // 징계·항고(63번) 슬롯 하드 필터링
                             if (cat.categoryNo === '63') {
                                 const excludeKeywords = ["의료기기", "해썹", "haccp", "제조업", "수입업"];
                                 validItems = validItems.filter(post => {
@@ -436,7 +471,7 @@
                         .catch(() => ({ label: cat.label, post: null }))
                 )
             ).then(results => {
-                container.innerHTML = ''; // 로딩 텍스트 제거
+                container.innerHTML = '';
 
                 const validResults = results.filter(r => r.post !== null);
 
@@ -450,7 +485,6 @@
                     return;
                 }
 
-                // 💡 1열 세로 배열 구조 (flex flex-col/row)
                 validResults.forEach(item => {
                     const post = item.post;
                     let pubDate = post.pubDate || '';

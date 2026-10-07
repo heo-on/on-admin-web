@@ -125,7 +125,6 @@
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <!-- 💡 4번 메뉴를 'Contact & Guide' 대신 완벽한 '상담 문의' 스위칭 태그로 정정 및 nav-link 아이디 부여 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2" id="main-nav">
                     <a href="about.html" class="nav-link hover:text-brand transition py-1">
                         <span class="kr-title">사무소 소개</span>
@@ -185,7 +184,7 @@
                 <div class="p-2.5 bg-brand text-white rounded-xl font-bold text-lg flex-shrink-0 mt-0.5 shadow-sm">⚖️</div>
                 <div>
                     <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">"행정기관 제출용 번역·서류 작성 및 대행은 '행정사'만 가능합니다."</h3>
-                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">행정사법에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">관련 법률(행정사법)에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
                 </div>
             </div>
         </div>
@@ -213,7 +212,7 @@
             <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">행정처분 · 군인징계</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 소청, 의견서 작성 및 부당한 처원에 대한 행정심판을 구제합니다.</p>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">기업 행정 처분, 군인 징계 처분, 항고 심사, 소청, 의견서 작성 및 부당한 처분에 대한 행정심판을 구제합니다.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline">자세히 보기 &rarr;</span>
             </a>
             <a href="service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer">
@@ -391,10 +390,10 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 스크롤 감지 메뉴 활성화(ScrollSpy) & Vercel API 블로그 연동 스크립트 -->
+    <!-- 🟢 💡 스크롤 감지 메뉴 활성화(Bottom-to-Top 역순 감지) & 카테고리 59번(군인징계) 정밀 타겟 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 💡 1. 스크롤 및 해시(#) 감지 헤더 메뉴 파란색 활성화(ScrollSpy)
+            // 💡 1. 스크롤 위치 감지 헤더 메뉴 활성화 (Bottom-to-Top 검사로 업무 사례 하이라이트 문제 해결)
             const navLinks = {
                 'services': document.getElementById('link-services'),
                 'cases': document.getElementById('link-cases'),
@@ -402,31 +401,32 @@
             };
 
             function setActiveNav() {
-                const scrollPos = window.scrollY + 200;
+                const scrollPos = window.scrollY + 250;
                 const servicesSec = document.getElementById('services');
-                const casesSec = document.getElementById('cases');
                 const guideSec = document.getElementById('guide');
+                const casesSec = document.getElementById('cases');
 
-                // 기본 초기화
+                // 초기화
                 Object.values(navLinks).forEach(link => {
-                    if(link) {
+                    if (link) {
                         link.classList.remove('text-brand', 'font-bold');
                         link.classList.add('text-slate-600');
                     }
                 });
 
-                if (guideSec && scrollPos >= guideSec.offsetTop) {
-                    if(navLinks['guide']) {
-                        navLinks['guide'].classList.add('text-brand', 'font-bold');
-                        navLinks['guide'].classList.remove('text-slate-600');
-                    }
-                } else if (casesSec && scrollPos >= casesSec.offsetTop) {
-                    if(navLinks['cases']) {
+                // 스크롤 감지 역순 검사 (DOM 하단 섹션부터 먼저 체킹)
+                if (casesSec && scrollPos >= casesSec.offsetTop) {
+                    if (navLinks['cases']) {
                         navLinks['cases'].classList.add('text-brand', 'font-bold');
                         navLinks['cases'].classList.remove('text-slate-600');
                     }
+                } else if (guideSec && scrollPos >= guideSec.offsetTop) {
+                    if (navLinks['guide']) {
+                        navLinks['guide'].classList.add('text-brand', 'font-bold');
+                        navLinks['guide'].classList.remove('text-slate-600');
+                    }
                 } else if (servicesSec && scrollPos >= servicesSec.offsetTop) {
-                    if(navLinks['services']) {
+                    if (navLinks['services']) {
                         navLinks['services'].classList.add('text-brand', 'font-bold');
                         navLinks['services'].classList.remove('text-slate-600');
                     }
@@ -434,16 +434,16 @@
             }
 
             window.addEventListener('scroll', setActiveNav);
-            setActiveNav(); // 초기 실행
+            setActiveNav();
 
-            // 💡 2. 4개 분야 블로그 사례 연동 (하드 필터링 적용)
+            // 💡 2. 블로그 사례 연동 (59번 군인징계 카테고리 정확히 지정)
             const container = document.getElementById('blog-posts-container');
             if (!container) return;
 
             const fetchCategories = [
                 { categoryNo: '56', label: '외국인 투자·비자' },
                 { categoryNo: '67', label: '의료분야·각종 인허가' },
-                { categoryNo: '63', label: '행정처분·군인징계' },
+                { categoryNo: '59', label: '행정처분·군인징계' }, // 💡 63번 대신 군인징계 전용 59번으로 고정
                 { categoryNo: '46', label: '행정·법률 번역·인증' }
             ];
 
@@ -454,8 +454,8 @@
                         .then(data => {
                             let validItems = data.items || [];
                             
-                            // 징계·항고(63번) 슬롯 하드 필터링
-                            if (cat.categoryNo === '63') {
+                            // 징계·항고 슬롯 필터링
+                            if (cat.categoryNo === '59') {
                                 const excludeKeywords = ["의료기기", "해썹", "haccp", "제조업", "수입업"];
                                 validItems = validItems.filter(post => {
                                     const targetText = post.title.toLowerCase();

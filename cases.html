@@ -33,7 +33,7 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
-
+ 
         function updateButtonStyles(activeLang) {
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
@@ -44,7 +44,7 @@
                 }
             });
         }
-
+ 
         function changeLanguage(langCode) {
             // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
@@ -64,9 +64,18 @@
                 updateLanguageState(langCode);
             }
         }
+ 
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'ko';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateButtonStyles(currentLang);
+        });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+ 
     <!-- 구글 번역 상단 바 숨김 및 중앙 정렬 패치 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
@@ -84,7 +93,7 @@
             display: block !important;
             width: 100% !important;
         }
-
+ 
         /* 활성 탭 디자인 */
         .tab-btn.active {
             background-color: #0020A0;
@@ -104,9 +113,9 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
-
+ 
     <div id="google_translate_element"></div>
-
+ 
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
@@ -117,7 +126,7 @@
                     <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON</span>
                 </div>
             </a>
-
+ 
             <!-- 우측 메뉴 및 버튼 영역 -->
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
@@ -126,7 +135,7 @@
                     <a href="cases.html" class="text-brand font-bold">업무 사례</a>
                     <a href="index.html#guide" class="hover:text-brand transition">Contact & Guide</a>
                 </nav>
-
+ 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
@@ -134,7 +143,7 @@
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">ZH</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JA</button>
                     </div>
-
+ 
                     <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         문의하기
@@ -143,7 +152,7 @@
             </div>
         </div>
     </header>
-
+ 
     <!-- 2. 서브페이지 타이틀 헤더 -->
     <section class="bg-brand py-14 px-6 border-b border-slate-200">
         <div class="max-w-5xl mx-auto text-center">
@@ -154,7 +163,7 @@
             </p>
         </div>
     </section>
-
+ 
     <!-- 3. 사례 탭 메뉴 및 콘텐츠 영역 -->
     <section class="py-12 px-6 max-w-5xl mx-auto min-h-[500px]">
         <!-- 탭 버튼 영역 -->
@@ -165,14 +174,14 @@
             <button onclick="filterCases('cat3')" id="btn-cat3" class="tab-btn px-4 py-2 rounded-full border text-sm md:text-base font-bold transition">행정처분·군인징계</button>
             <button onclick="filterCases('cat4')" id="btn-cat4" class="tab-btn px-4 py-2 rounded-full border text-sm md:text-base font-bold transition">번역·인증</button>
         </div>
-
+ 
         <div class="flex justify-between items-end mb-6 border-b border-slate-200 pb-3">
             <h3 id="current-category-title" class="text-lg md:text-xl font-bold text-slate-900">전체 분야 최신 사례</h3>
             <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-xs font-bold text-brand hover:underline flex items-center gap-1">
                 공식 블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
         </div>
-
+ 
         <!-- 블로그 포스팅 렌더링 컨테이너 -->
         <div id="cases-container" class="space-y-6">
             <div class="bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
@@ -180,7 +189,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 4. CONTACT & GUIDE (업무 절차 및 상담 채널) -->
     <section id="guide" class="py-16 px-6 max-w-7xl mx-auto mb-10 border-t border-slate-200 pt-16 mt-10">
         <div class="text-center mb-16">
@@ -211,7 +220,7 @@
                 <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
             </div>
         </div>
-
+ 
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             
@@ -227,14 +236,14 @@
                     <div class="w-11 h-11 bg-slate-100 text-[#03C75A] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#03C75A] group-hover:text-white transition font-black text-lg flex-shrink-0">N</div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">네이버 톡톡</span>
                 </a>
-
+ 
                 <a href="https://pf.kakao.com/_bcHxln" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">카카오톡 상담</span>
                 </a>
-
+ 
                 <a href="https://open.kakao.com/o/stQfvTDh" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group relative overflow-hidden text-center">
                     <div class="absolute top-0 w-full h-1 bg-brand"></div>
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
@@ -243,7 +252,7 @@
                     <span class="text-xs sm:text-sm font-bold text-brand leading-tight text-center block w-full">군인 전용 익명 상담</span>
                 </a>
             </div>
-
+ 
             <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
@@ -251,14 +260,14 @@
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">유튜브 쇼츠</span>
                 </a>
-
+ 
                 <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">인스타그램</span>
                 </a>
-
+ 
                 <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
@@ -268,7 +277,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 5. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
@@ -292,7 +301,7 @@
                     <p>팩스 : 050-4414-2506</p>
                 </div>
             </div>
-
+ 
             <div class="flex flex-wrap gap-4 text-sm text-slate-500 mb-8 border-t border-slate-200 pt-8">
                 <span class="hover:text-brand cursor-pointer">외국인 투자법인</span>
                 <span class="hover:text-brand cursor-pointer">취업/투자 비자</span>
@@ -309,7 +318,7 @@
                     블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
-
+ 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p>&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
@@ -319,7 +328,7 @@
             </div>
         </div>
     </footer>
-
+ 
     <!-- 🟢 탭 연동 다중 블로그 추출 스크립트 -->
     <script>
         // 4개 전문 분야의 이중 필터 객체 모음
@@ -349,13 +358,13 @@
                 expandedKeywords: ["번역", "인증", "아포스티유", "영사확인", "공증", "서류"]
             }
         };
-
+ 
         let globalBlogData = []; // API에서 받아온 데이터를 저장할 전역 변수
-
+ 
         document.addEventListener("DOMContentLoaded", function() {
             const rssUrl = "https://rss.blog.naver.com/juuudy_.xml";
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
+ 
             // 초기 데이터 1회 로드
             fetch(apiUrl)
                 .then(response => response.json())
@@ -372,13 +381,13 @@
                     document.getElementById('cases-container').innerHTML = '<p class="text-slate-500 text-sm text-center py-10">사례를 불러오는 중 오류가 발생했습니다.</p>';
                 });
         });
-
+ 
         // 탭 클릭 시 필터링 및 렌더링 함수
         function filterCases(filterType) {
             // 버튼 스타일 업데이트
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`btn-${filterType}`).classList.add('active');
-
+ 
             // 타이틀 업데이트
             const titleEl = document.getElementById('current-category-title');
             if (filterType === 'all') {
@@ -386,11 +395,11 @@
             } else {
                 titleEl.textContent = categories[filterType].title;
             }
-
+ 
             const container = document.getElementById('cases-container');
             container.innerHTML = '';
             let selectedPosts = [];
-
+ 
             if (filterType === 'all') {
                 // 전체보기: 각 카테고리별로 최신 1~2개씩 뽑아서 합침
                 const usedLinks = new Set();
@@ -402,11 +411,11 @@
                         const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
                         const isCorrectRoom = catInfo.roomKeywords.some(kw => catName.includes(kw.toLowerCase()));
                         if (!isCorrectRoom) return false;
-
+ 
                         const targetText = (post.title + " " + catName).toLowerCase();
                         return catInfo.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                     }).slice(0, 2); // 각 카테고리당 최대 2개
-
+ 
                     matchedPosts.forEach(p => {
                         usedLinks.add(p.link);
                         p.customLabel = catInfo.label;
@@ -420,20 +429,20 @@
                     const catName = post.categories ? post.categories.join(" ").toLowerCase() : "";
                     const isCorrectRoom = catInfo.roomKeywords.some(kw => catName.includes(kw.toLowerCase()));
                     if (!isCorrectRoom) return false;
-
+ 
                     const targetText = (post.title + " " + catName).toLowerCase();
                     return catInfo.expandedKeywords.some(keyword => targetText.includes(keyword.toLowerCase()));
                 }).slice(0, 6); // 단일 카테고리는 최대 6개 노출
-
+ 
                 selectedPosts.forEach(p => p.customLabel = catInfo.label);
             }
-
+ 
             // 결과 렌더링
             if (selectedPosts.length === 0) {
                 container.innerHTML = '<p class="text-slate-500 text-sm text-center py-10 border border-slate-200 rounded-xl bg-white">선택하신 분야의 최신 수임 사례가 없습니다.</p>';
                 return;
             }
-
+ 
             selectedPosts.forEach((post) => {
                 let tmp = document.createElement("DIV");
                 tmp.innerHTML = post.description;
@@ -442,9 +451,9 @@
                 if (summary.length > 320) {
                     summary = summary.substring(0, 320) + "...";
                 }
-
+ 
                 let pubDate = post.pubDate ? post.pubDate.split(' ')[0] : '';
-
+ 
                 const cardHtml = `
                     <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition">
                         <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -457,7 +466,7 @@
                         <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6">
                             <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal">${summary}</p>
                         </div>
-
+ 
                         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3">
                             <span class="text-xs text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정 및 상세 검토 사항은 원문에서 확인하실 수 있습니다.</span>
                             <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
@@ -473,3 +482,4 @@
     </script>
 </body>
 </html>
+ 

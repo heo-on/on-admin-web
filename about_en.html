@@ -8,12 +8,12 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XSDTEEZRW3');
-
+ 
       function trackContactClick(channelName) {
         gtag('event', 'click_contact', { 'channel_type': channelName });
       }
     </script>
-
+ 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
@@ -21,7 +21,7 @@
     
     <!-- 💡 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="logo.png">
-
+ 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,7 +40,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,zh-CN,ja,ko', autoDisplay: false }, 'google_translate_element');
         }
-
+ 
         // 언어 버튼 색상 & 로고 상호명 직접 제어 (& 이후 줄바꿈 적용)
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
@@ -54,7 +54,7 @@
                     btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
                 }
             });
-
+ 
             // 로고 메인 상호명 텍스트 및 줄바꿈 업데이트
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
@@ -69,7 +69,7 @@
                 }
             }
         }
-
+ 
         function changeLanguage(langCode) {
             // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
@@ -89,6 +89,15 @@
                 updateLanguageState(langCode);
             }
         }
+ 
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'en';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateLanguageState(currentLang);
+        });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
@@ -105,9 +114,9 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
-
+ 
     <div id="google_translate_element"></div>
-
+ 
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
@@ -120,7 +129,7 @@
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
-
+ 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <!-- 💡 About Us에 진한 파란색(text-brand font-bold) 적용 -->
@@ -129,7 +138,7 @@
                     <a href="index_en.html#cases" class="hover:text-brand transition py-1">Case Studies</a>
                     <a href="inquiry_en.html" class="hover:text-brand transition py-1">Inquiry</a>
                 </nav>
-
+ 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
@@ -145,20 +154,20 @@
             </div>
         </div>
     </header>
-
+ 
     <!-- 2. 서브 타이틀 영역 -->
     <div class="bg-brand text-white py-14 px-6 text-center">
         <h1 class="text-3xl md:text-4xl font-bold mb-3">About Us</h1>
         <p class="text-brand-light text-sm md:text-base opacity-90">Get to know Administrative Attorneys Office ON:ON.</p>
     </div>
-
+ 
     <!-- 3. 사무소 소개 (Representative) -->
     <section class="py-16 px-6 max-w-5xl mx-auto bg-white mt-10 rounded-2xl shadow-sm border border-slate-100">
         <div class="text-center mb-12">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Representative</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">About Our Representative</h2>
         </div>
-
+ 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center px-4 md:px-6 mb-12">
             <div class="md:col-span-4 flex flex-col items-center">
                 <div class="w-full max-w-[260px] h-[320px] bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex items-center justify-center mb-4">
@@ -169,7 +178,7 @@
                     <p class="text-brand font-semibold text-sm mb-4">Managing Administrative Attorney / CEO</p>
                 </div>
             </div>
-
+ 
             <div class="md:col-span-8">
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug">
                     "Navigating Complex Korean Regulations with <span class="text-brand">Precision and Certainty</span>"
@@ -181,7 +190,7 @@
                 </div>
             </div>
         </div>
-
+ 
         <div class="grid grid-cols-1 md:grid-cols-11 gap-6 px-4 md:px-6 border-t border-slate-100 pt-10">
             <div class="md:col-span-5 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Credentials & Background</h4>
@@ -192,7 +201,7 @@
                     <li class="flex items-start gap-2 pt-2 border-t border-slate-200/60 mt-3"><span class="text-slate-400 mt-0.5">🎓</span> <span>Bachelor of Physical Education, Kyungnam University</span></li>
                 </ul>
             </div>
-
+ 
             <div class="md:col-span-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-900 mb-4 border-b border-slate-200 pb-3 text-base text-brand">Core Focus Areas</h4>
                 <ul class="space-y-4 text-sm lg:text-base text-slate-600">
@@ -216,19 +225,19 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 4. 오시는 길 -->
     <section class="py-16 px-6 max-w-5xl mx-auto bg-white mb-10 rounded-2xl shadow-sm border border-slate-100">
         <div class="text-center mb-10">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-3">Location & Directions</h2>
         </div>
-
+ 
         <div class="space-y-8 px-2 md:px-6">
             <div class="w-full h-80 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
                 <iframe src="https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=en&z=17&output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
             </div>
-
+ 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
                     <div class="w-9 h-9 bg-brand-light text-brand rounded-lg flex items-center justify-center font-bold mb-3">📍</div>
@@ -256,7 +265,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 5. 업무 프로세스 & 상담 채널 -->
     <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <div class="text-center mb-12">
@@ -287,7 +296,7 @@
                 <p class="text-xs text-slate-500 leading-relaxed">Handling supplementary requests and securing final visa issuance.</p>
             </div>
         </div>
-
+ 
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm max-w-5xl mx-auto">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -307,7 +316,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 💡 6. 미디어 채널 (유튜브, 인스타그램, 틱톡 3개 세트) -->
     <section class="py-16 px-6 max-w-7xl mx-auto mb-10 border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
@@ -335,7 +344,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- 7. 푸터 -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
@@ -358,7 +367,7 @@
                     <p>Fax : +82-50-4414-2506</p>
                 </div>
             </div>
-
+ 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">

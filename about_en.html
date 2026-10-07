@@ -18,6 +18,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>About Us | Office ON:ON</title>
+    
+    <!-- 💡 파비콘(로고) 설정 -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,25 +35,80 @@
         }
     </script>
     
-    <!-- 구글 웹사이트 번역 -->
+    <!-- 💡 구글 웹사이트 번역 및 스위칭 로직 (언어 버튼 Active 동기화 포함) -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,zh-CN,ja,ko', autoDisplay: false }, 'google_translate_element');
         }
-        function changeLanguage(langCode) {
-            if (langCode === 'ko') { window.location.href = 'index.html'; } 
-            else if (langCode === 'en') { window.location.href = 'about_en.html'; } 
-            else {
-                const select = document.querySelector('.goog-te-combo');
-                if (select) { select.value = langCode; select.dispatchEvent(new Event('change')); }
+
+        // 언어 버튼 색상 & 로고 상호명 직접 제어 (& 이후 줄바꿈 적용)
+        function updateLanguageState(langCode) {
+            document.documentElement.setAttribute('data-lang', langCode);
+            
+            // 언어 버튼 파란색 하이라이트 제어
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === langCode) {
+                    btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
+                } else {
+                    btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
+                }
+            });
+
+            // 로고 메인 상호명 텍스트 및 줄바꿈 업데이트
+            const mainTitleElement = document.getElementById('dynamic-main-title');
+            if (mainTitleElement) {
+                if (langCode === 'ko') {
+                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                } else if (langCode === 'zh-CN') {
+                    mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
+                } else if (langCode === 'ja') {
+                    mainTitleElement.innerHTML = '公認翻訳および行政書士事務所 ON:ON';
+                } else {
+                    mainTitleElement.innerHTML = 'Certified Public Translation &<br>Administrative Attorneys Office ON:ON';
+                }
             }
         }
+
+        function changeLanguage(langCode) {
+            if (langCode === 'ko') {
+                window.location.href = 'about.html';
+                return;
+            } else if (langCode === 'en') {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+                return;
+            }
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+            updateLanguageState(langCode);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'en';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateLanguageState(currentLang);
+        });
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame, .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate { display: none !important; visibility: hidden !important; }
         body { top: 0px !important; position: static !important; }
         #google_translate_element { display: none !important; }
+        
+        /* 일본어/중국어 번역 시 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
+        [data-lang="ja"] *, [data-lang="zh-CN"] * {
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -61,28 +120,32 @@
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
-                <div>
-                    <span class="text-sm md:text-base font-bold text-slate-900 block leading-none">Certified Public Translation &<br class="hidden md:block">Administrative Attorneys Office ON:ON</span>
+                <div class="flex flex-col">
+                    <!-- 💡 윗줄: & 뒤에 <br> 줄바꿈 적용 및 가변 제어 -->
+                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
+                    <!-- 💡 아윗줄: 서브 영문 상호 영구 고정 -->
+                    <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about_en.html" class="hover:text-brand transition font-bold text-brand">About Us</a>
-                    <a href="index_en.html#services" class="hover:text-brand transition">Services</a>
-                    <a href="index_en.html#cases" class="hover:text-brand transition">Case Studies</a>
-                    <a href="inquiry_en.html" class="hover:text-brand transition">Inquiry</a>
+                    <!-- 💡 About Us에 진한 파란색(text-brand font-bold) 적용 -->
+                    <a href="about_en.html" class="hover:text-brand transition font-bold text-brand py-1">About Us</a>
+                    <a href="index_en.html#services" class="hover:text-brand transition py-1">Services</a>
+                    <a href="index_en.html#cases" class="hover:text-brand transition py-1">Case Studies</a>
+                    <a href="inquiry_en.html" class="hover:text-brand transition py-1">Inquiry</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
-                        <button onclick="changeLanguage('ko')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
-                        <button onclick="changeLanguage('en')" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
-                        <button onclick="changeLanguage('zh-CN')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
-                        <button onclick="changeLanguage('ja')" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
                     <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Inquiry
                     </a>
                 </div>
@@ -235,15 +298,13 @@
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm max-w-5xl mx-auto">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <!-- 1. 온라인 1:1 문의 페이지 폼으로 이동 -->
                 <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-brand rounded-2xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-12 h-12 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-4 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-sm font-bold text-slate-800 leading-tight">Online Inquiry Form</span>
                 </a>
                 
-                <!-- 2. 카카오톡 채널 -->
                 <a href="https://pf.kakao.com/_bcHxln" target="_blank" onclick="trackContactClick('KakaoTalk')" class="flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-[#FEE500] rounded-2xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-12 h-12 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-4 group-hover:opacity-90 transition flex-shrink-0">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
@@ -254,8 +315,8 @@
         </div>
     </section>
 
-    <!-- 6. 미디어 채널 (유튜브, 인스타그램, 틱톡 완벽 세트) -->
-    <section class="py-16 px-6 max-w-5xl mx-auto mb-10 border-t border-slate-200">
+    <!-- 💡 6. 미디어 채널 (유튜브, 인스타그램, 틱톡 3개 세트) -->
+    <section class="py-16 px-6 max-w-7xl mx-auto mb-10 border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
             <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
@@ -270,4 +331,49 @@
                     <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                     </div>
-                    <span class
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight block w-full">TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 푸터 -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <a href="index_en.html" class="inline-block hover:opacity-80 transition">
+                    <h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
+                </a>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+                    <p>Representative Attorney : Heo On</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Business Registration : 889-22-02024</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Address : #813, 8F, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul, Korea</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
+                    <p>Email : on@koreabiz24.com</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Tel : +82-10-7905-2506</p>
+                    <span class="hidden md:inline text-slate-300">|</span>
+                    <p>Fax : +82-50-4414-2506</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
+                <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-600">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -109,6 +109,12 @@
         [data-lang="ja"] .en-title {
             display: none !important;
         }
+
+        /* 💡 추가됨: 일본어/중국어 번역 시 띄어쓰기 없는 문장의 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
+        [data-lang="ja"] *, [data-lang="zh-CN"] * {
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+        }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
@@ -189,7 +195,7 @@
         </div>
     </section>
 
-    <!-- 💡 4. 정부 인허가 정식 대행기관 신뢰도 박스 -->
+    <!-- 4. 정부 인허가 정식 대행기관 신뢰도 박스 -->
     <section class="px-6 pt-12 max-w-5xl mx-auto">
         <div class="bg-slate-100 p-8 md:p-10 rounded-2xl border border-slate-200 text-center shadow-sm">
             <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
@@ -273,7 +279,7 @@
         </div>
     </section>
 
-    <!-- 💡 6. 업무 절차 & 소통 채널 (사례 상단 배치) -->
+    <!-- 6. 업무 절차 & 소통 채널 -->
     <section id="guide" class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200 scroll-mt-32">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
@@ -300,17 +306,17 @@
             <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
                 <h4 class="font-bold text-slate-900 mt-4 mb-2">결과 도출 및 사후관리</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">인허가·승인서 수령 및 피드백</p>
+                <p class="text-xs text-slate-500 leading-relaxed">승인서 수령 및 피드백</p>
             </div>
         </div>
 
-        <!-- 상담 채널 4종 -->
+        <!-- 소통 채널 4종 -->
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
                 </a>
@@ -335,7 +341,7 @@
         </div>
     </section>
 
-    <!-- 💡 7. 최근 사례 (3개 고정 수집 레이아웃) -->
+    <!-- 💡 7. 최근 사례 (1열 세로 배열 변경 완료) -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -345,14 +351,14 @@
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=67" target="_blank" class="text-brand font-bold text-xs md:text-sm hover:underline">블로그 전체 사례 보기 &rarr;</a>
         </div>
 
-        <!-- 3개짜리 그리드 컨테이너 -->
-        <div id="service2-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 💡 1열 세로 리스트형 컨테이너 -->
+        <div id="service2-posts-container" class="grid grid-cols-1 gap-6">
             <div class="col-span-full bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
                 관련 최신 수임 사례를 불러오는 중입니다...
             </div>
         </div>
 
-        <!-- 💡 8. 상담 유도 배너 박스 (첨부2 디자인 반영) -->
+        <!-- 상담 유도 배너 박스 -->
         <div class="mt-16 bg-slate-50/80 rounded-xl p-8 text-center border border-slate-200">
             <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1">까다로운 인허가 절차, 전문가와 상담하세요.</h4>
             <p class="text-sm text-slate-500 mb-6">요건 미비로 인한 허가 지연 및 불허 위험을 완벽히 차단합니다.</p>
@@ -362,7 +368,7 @@
         </div>
     </section>
 
-    <!-- 💡 9. ON:ON 공식 미디어 채널 (틱톡 포함 3개) -->
+    <!-- 8. ON:ON 공식 미디어 채널 -->
     <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
@@ -443,7 +449,7 @@
         </div>
     </footer>
 
-    <!-- 🟢 💡 Vercel API 기반 3개 수집 및 3그리드 렌더링 엔진 -->
+    <!-- 🟢 💡 Vercel API 기반 수집 및 1열 세로 렌더링 엔진 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('service2-posts-container');
@@ -465,7 +471,7 @@
                         return !excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
                     });
 
-                    // ✨ 핵심: 최대 3개까지만 자르기
+                    // 최대 3개 자르기
                     const displayPosts = safePosts.slice(0, 3);
 
                     if (!displayPosts || displayPosts.length === 0) {
@@ -473,29 +479,30 @@
                         return;
                     }
 
+                    // 💡 1열 세로 배열에 맞춘 넓은 카드 구조 적용
                     displayPosts.forEach(post => {
                         let categoryName = "의료·인허가 사례";
                         let pubDate = post.pubDate || '';
 
                         const cardHtml = `
-                            <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
+                            <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                                 <div>
                                     <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                                         <span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md">${categoryName}</span>
                                         <span class="text-xs text-slate-400 font-medium">${pubDate}</span>
                                     </div>
                                     
-                                    <h4 class="text-base md:text-lg font-bold text-slate-900 mb-4 leading-snug break-keep line-clamp-2">${post.title}</h4>
+                                    <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>
                                     
-                                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6 flex-grow">
-                                        <p class="text-slate-600 text-xs md:text-sm leading-relaxed break-keep font-normal line-clamp-3">${post.description}</p>
+                                    <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6">
+                                        <p class="text-slate-600 text-sm leading-relaxed break-keep font-normal line-clamp-3 md:line-clamp-2">${post.description}</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
-                                    <span class="text-[11px] text-slate-400">※ 블로그 요약본입니다.</span>
+                                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3 mt-auto">
+                                    <span class="text-[11px] text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정은 원문에서 확인하실 수 있습니다.</span>
                                     <a href="${post.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline flex-shrink-0">
-                                        <span>원문 보기</span>
+                                        <span>블로그 원문 보기</span>
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                                     </a>
                                 </div>

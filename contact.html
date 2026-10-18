@@ -51,16 +51,13 @@
         }
  
         function changeLanguage(langCode) {
-            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
 
             if (langCode === baseLang) {
-                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
             } else {
-                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
                 const select = document.querySelector('.goog-te-combo');
                 if (select) { 
                     select.value = langCode; 
@@ -82,7 +79,6 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
  
     <style>
-        /* 구글 번역 상단 바 숨김 */
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
             display: none !important;
@@ -99,7 +95,6 @@
             width: 100% !important;
         }
  
-        /* 💡 언어 스위칭 로직: 영문 2번째 줄 상호명 항상 강제 고정 */
         [data-lang="en"] .kr-title {
             display: none !important;
         }
@@ -123,16 +118,13 @@
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <!-- 첫 번째 줄: 선택 언어별 상호 -->
                     <span class="kr-title text-sm md:text-base font-bold text-slate-900 leading-none">공인번역일반행정사사무소 온행</span>
                     <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-                    <!-- 두 번째 줄: 무조건 고정되는 영문 서브타이틀 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
  
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <!-- 💡 4번 메뉴: 한글 '상담 문의'로 완전 고정 및 파란색 Active 활성화 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="about.html" class="hover:text-brand transition py-1">
                         <span class="kr-title">사무소 소개</span>
@@ -176,7 +168,7 @@
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">CONTACT US</span>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">상담 문의 및 오시는 길</h1>
             <p class="text-blue-100 text-sm md:text-base font-light">
-                의뢰인의 권익 보호를 위해 가장 빠르고 정확 소통 채널을 운영하고 있습니다.
+                의뢰인의 권익 보호를 위해 가장 빠르고 정확한 소통 채널을 운영하고 있습니다.
             </p>
         </div>
     </section>
@@ -261,19 +253,17 @@
         </div>
     </section>
  
-    <!-- 5. 1:1 이메일 온라인 상담 폼 -->
+    <!-- 5. 1:1 이메일 온라인 상담 폼 (💡 AJAX 백그라운드 전송 기술 적용) -->
     <section class="py-6 px-6 max-w-5xl mx-auto">
         <div id="inquiry-form" class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden scroll-mt-28">
             <div class="absolute top-0 left-0 w-full h-1.5 bg-brand"></div>
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">1:1 이메일 온라인 상담</h3>
             <p class="text-sm text-slate-500 mb-8">상세한 내용을 남겨주시면 확인 후 가장 신속하게 회신해 드립니다.</p>
  
-            <form action="https://formspree.io/f/xjykqarw" method="POST" class="space-y-5">
+            <!-- 폼 ID 추가 (JS 제어용) -->
+            <form id="contact-form" action="https://formspree.io/f/xjykqarw" method="POST" class="space-y-5">
                 <input type="hidden" name="문의_출처" value="[공식 웹사이트 1:1 이메일 폼]">
                 <input type="hidden" name="_subject" value="[웹사이트 접수] 새로운 상담 신청 내역입니다.">
-                
-                <!-- 💡 리다이렉트: 제출 완료 후 이동할 페이지 (Vercel 기본 주소) -->
-                <input type="hidden" name="_next" value="https://on-admin.com/success.html">
                 
                 <!-- 💡 봇 스팸 차단용 숨김 필드 (허니팟) -->
                 <input type="text" name="_gotcha" style="display:none">
@@ -335,7 +325,8 @@
                 </div>
  
                 <div class="pt-2 text-center md:text-right">
-                    <button type="submit" class="w-full md:w-auto bg-brand text-white font-bold text-base px-10 py-3.5 rounded-lg shadow-md hover:bg-brand-hover hover:shadow-lg transition">
+                    <!-- 버튼에 로딩 상태를 보여주기 위해 ID 추가 -->
+                    <button id="submit-btn" type="submit" class="w-full md:w-auto bg-brand text-white font-bold text-base px-10 py-3.5 rounded-lg shadow-md hover:bg-brand-hover hover:shadow-lg transition">
                         문의 메일 전송하기
                     </button>
                 </div>
@@ -460,12 +451,55 @@
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="privacy.html" class="hover:text-slate-600">개인정보처리방침</a>
-<a href="terms.html" class="hover:text-slate-600">이용약관</a>
+                    <a href="terms.html" class="hover:text-slate-600">이용약관</a>
                 </div>
             </div>
         </div>
     </footer>
     
+    <!-- 💡 화면 이탈 방지 (AJAX 폼 전송) 스크립트 -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); // 기본 제출 이동 동작을 완벽히 차단
+
+            // 전송 중 버튼 상태 변경
+            submitBtn.textContent = '전송 중입니다...';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+            const data = new FormData(event.target);
+
+            try {
+                // 뒤에서 몰래 폼스프리로 데이터만 쏘기
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // 성공하면 아까 만든 success.html로 부드럽게 화면 이동!
+                    window.location.href = 'success.html';
+                } else {
+                    alert('서버 문제로 전송에 실패했습니다. 다시 시도해 주세요.');
+                    submitBtn.textContent = '문의 메일 전송하기';
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                }
+            } catch (error) {
+                alert('인터넷 연결 문제로 전송에 실패했습니다.');
+                submitBtn.textContent = '문의 메일 전송하기';
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+        });
+    </script>
+
     <!-- 채널톡 플러그인 연동 스크립트 -->
     <script>
       (function() {

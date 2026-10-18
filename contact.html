@@ -176,7 +176,7 @@
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">CONTACT US</span>
             <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">상담 문의 및 오시는 길</h1>
             <p class="text-blue-100 text-sm md:text-base font-light">
-                의뢰인의 권익 보호를 위해 가장 빠르고 정확한 소통 채널을 운영하고 있습니다.
+                의뢰인의 권익 보호를 위해 가장 빠르고 정확 소통 채널을 운영하고 있습니다.
             </p>
         </div>
     </section>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="flex items-start gap-3">
                         <strong class="text-slate-900 w-16">이메일</strong>
-                        <p>on@koreabiz24.com</p>
+                        <p>on@on-admin.com</p>
                     </div>
                 </div>
             </div>
@@ -271,6 +271,12 @@
             <form action="https://formspree.io/f/xjykqarw" method="POST" class="space-y-5">
                 <input type="hidden" name="문의_출처" value="[공식 웹사이트 1:1 이메일 폼]">
                 <input type="hidden" name="_subject" value="[웹사이트 접수] 새로운 상담 신청 내역입니다.">
+                
+                <!-- 💡 리다이렉트: 제출 완료 후 이동할 페이지 (Vercel 기본 주소) -->
+                <input type="hidden" name="_next" value="https://on-admin.com/success.html">
+                
+                <!-- 💡 봇 스팸 차단용 숨김 필드 (허니팟) -->
+                <input type="text" name="_gotcha" style="display:none">
  
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
@@ -425,7 +431,7 @@
                     <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>이메일 : on@koreabiz24.com</p>
+                    <p>이메일 : on@on-admin.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>전화 : 010-7905-2506</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -459,7 +465,48 @@
             </div>
         </div>
     </footer>
+    
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
+    </script>
  
 </body>
 </html>
- 

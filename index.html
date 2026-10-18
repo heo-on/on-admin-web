@@ -6,7 +6,7 @@
     <meta name="robots" content="index, follow">
     <title>공인번역&일반 행정사사무소 온:ON | Certified Public Translation & Administrative Attorneys Office ON</title>
     <!-- 브라우저 탭 파비콘(로고) 설정 -->
-<link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
     <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 -->
     <meta name="description" content="강서·마곡 지역의 신속한 번역 공인 인증 및 공증촉탁 대행은 물론, 온라인 접수를 통해 전국 어디서나 비대면 번역·인증 원스톱 서비스를 제공합니다.">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -190,7 +190,7 @@
                 <div class="p-2.5 bg-brand text-white rounded-xl font-bold text-lg flex-shrink-0 mt-0.5 shadow-sm">⚖️</div>
                 <div>
                     <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">"행정기관 제출용 번역·서류 작성 및 대행은 '행정사'만 가능합니다."</h3>
-                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">관련 법률(행정사법)에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
+                    <p class="text-xs md:text-sm text-slate-600 leading-relaxed">행정사법에 의거하여, 행정사가 아닌 자(기타 법률에 따른 자격사 제외)가 행정기관 제출용 서류를 작성하거나 제출을 대행하는 행위를 업(業)으로 하는 것은 불법입니다.</p>
                 </div>
             </div>
         </div>
@@ -361,7 +361,7 @@
                     <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>이메일 : on@koreabiz24.com</p>
+                    <p>이메일 : on@on-admin.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>전화 : 010-7905-2506</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -390,7 +390,7 @@
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="privacy.html" class="hover:text-slate-600">개인정보처리방침</a>
-<a href="terms.html" class="hover:text-slate-600">이용약관</a>
+                    <a href="terms.html" class="hover:text-slate-600">이용약관</a>
                 </div>
             </div>
         </div>
@@ -504,8 +504,8 @@
                             <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h3>
                             
                             <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6 flex-grow">
-    <p class="text-slate-600 text-sm leading-relaxed break-keep font-normal">${post.description}</p>
-</div>
+                                <p class="text-slate-600 text-sm leading-relaxed break-keep font-normal">${post.description}</p>
+                            </div>
 
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3">
                                 <span class="text-[11px] text-slate-400">※ 본 내용은 블로그 요약본입니다. 전체 진행 과정은 원문에서 확인하실 수 있습니다.</span>
@@ -523,6 +523,48 @@
                 container.innerHTML = '<p class="col-span-full text-slate-500 text-sm text-center py-10">사례를 불러오는 중 오류가 발생했습니다.</p>';
             });
         });
+    </script>
+
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
     </script>
 </body>
 </html>

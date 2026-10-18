@@ -225,7 +225,7 @@
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">빠르고 편리한 소통 채널</h3>
             
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 max-w-4xl mx-auto">
-                <a href="mailto:on@koreabiz24.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <a href="mailto:on@on-admin.com" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
@@ -294,7 +294,7 @@
                 </div>
                 <!-- 연락처(이메일, 전화, 팩스) -->
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>이메일 : on@koreabiz24.com</p>
+                    <p>이메일 : on@on-admin.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>전화 : 010-7905-2506</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -480,6 +480,47 @@
             });
         }
     </script>
+
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
+    </script>
 </body>
 </html>
- 

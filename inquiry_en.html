@@ -22,6 +22,13 @@
     <!-- 💡 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="logo.png">
 
+    <!-- 💡 영문 상담 문의 전용 OG 메타 태그 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Online Inquiry & Directions | Office ON:ON">
+    <meta property="og:description" content="1:1 Online consultation and office directions (Magok Station Exit 6, Seoul). Contact Administrative Attorneys Office ON:ON.">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/en/inquiry.html">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -170,7 +177,7 @@
         </div>
     </section>
 
-    <!-- 💡 3. 연락처 및 상담 업무 시간 (영문 복원 및 KST 안내 추가) -->
+    <!-- 💡 3. 연락처 및 상담 업무 시간 -->
     <section class="pt-16 pb-8 px-6 max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- 대표 연락처 -->
@@ -189,7 +196,7 @@
                     </div>
                     <div class="flex items-start gap-3">
                         <strong class="text-slate-900 w-16">Email</strong>
-                        <p>on@koreabiz24.com</p>
+                        <p>on@on-admin.com</p>
                     </div>
                 </div>
             </div>
@@ -208,7 +215,6 @@
                         <strong class="text-slate-900 w-24">Weekends</strong>
                         <p class="text-red-500 font-medium">Closed <span class="text-xs text-slate-400 ml-1">(Available by appointment)</span></p>
                     </div>
-                    <!-- 💡 한국 시간(KST) 안내 문구 -->
                     <p class="text-xs text-slate-500 mt-4 bg-white p-3 rounded-lg border border-slate-200">
                         ※ All business hours are based on <strong>Korean Standard Time (KST)</strong>. For urgent inquiries outside business hours, please leave an email or KakaoTalk message and we will respond promptly.
                     </p>
@@ -217,7 +223,7 @@
         </div>
     </section>
 
-    <!-- 4. 빠르고 편리한 1:1 다이렉트 소통 채널 (영문 전용 2개) -->
+    <!-- 4. 빠르고 편리한 1:1 다이렉트 소통 채널 -->
     <section class="py-6 px-6 max-w-5xl mx-auto">
         <div class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-sm">
             <h3 class="text-xl font-bold text-slate-900 mb-8 text-center border-b border-slate-100 pb-6">Fast & Convenient Communication Channels</h3>
@@ -225,7 +231,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <a href="#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-white text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition shadow-sm flex-shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
                 </a>
@@ -247,8 +253,8 @@
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">1:1 Email Online Consultation</h3>
             <p class="text-sm text-slate-500 mb-8">If you leave detailed information, our attorneys will review it and respond promptly.</p>
 
-            <!-- 💡 영문 페이지 FormSubmit 연결 -->
-            <form action="https://formsubmit.co/on@koreabiz24.com" method="POST" class="space-y-5" onsubmit="trackContactClick('Email Form Submit')">
+            <!-- 💡 영문 페이지 FormSubmit 연결 (공식 이메일 반영) -->
+            <form action="https://formsubmit.co/on@on-admin.com" method="POST" class="space-y-5" onsubmit="trackContactClick('Email Form Submit')">
                 <input type="hidden" name="_subject" value="[ON:ON Global] New Online Inquiry Request">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="https://on-admin-web.vercel.app/inquiry_en.html">
@@ -319,7 +325,7 @@
         </div>
     </section>
 
-    <!-- 💡 7. 오시는 길 및 주차 안내 (영문 복원) -->
+    <!-- 💡 7. 오시는 길 및 주차 안내 -->
     <section class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="text-center mb-10">
             <span class="text-brand font-bold text-xs tracking-widest uppercase bg-brand-light px-3 py-1 rounded-full">Location & Parking</span>
@@ -410,7 +416,7 @@
                     <p>Address : #813, 8F, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul, Korea</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>Email : on@koreabiz24.com</p>
+                    <p>Email : on@on-admin.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>Tel : +82-10-7905-2506</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -428,5 +434,46 @@
         </div>
     </footer>
 
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
+    </script>
 </body>
 </html>

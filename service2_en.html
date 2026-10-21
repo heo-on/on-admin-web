@@ -49,7 +49,6 @@
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
             
-            // 언어 버튼 파란색 하이라이트 제어
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
                 if (btn.getAttribute('data-lang') === langCode) {
@@ -59,7 +58,6 @@
                 }
             });
 
-            // 로고 메인 상호명 텍스트 및 줄바꿈 업데이트
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
                 if (langCode === 'ko') {
@@ -75,16 +73,13 @@
         }
 
         function changeLanguage(langCode) {
-            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
 
             if (langCode === baseLang) {
-                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
             } else {
-                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
                 const select = document.querySelector('.goog-te-combo');
                 if (select) { 
                     select.value = langCode; 
@@ -93,6 +88,7 @@
                 updateLanguageState(langCode);
             }
         }
+
         document.addEventListener("DOMContentLoaded", function() {
             let currentLang = 'en';
             const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
@@ -113,7 +109,6 @@
         .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
         .channel-card font, .channel-card span { text-align: center !important; display: block !important; width: 100% !important; }
 
-        /* 💡 일본어/중국어 번역 시 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
         [data-lang="ja"] *, [data-lang="zh-CN"] * {
             word-break: break-all !important;
             overflow-wrap: break-word !important;
@@ -333,7 +328,6 @@
             </div>
             <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">View All Blog Posts &rarr;</a>
         </div>
-        <!-- 💡 1열 세로 배열 적용 (grid-cols-1) -->
         <div id="service-cases-container" class="grid grid-cols-1 gap-6">
             <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading 3 Latest Cases...</div>
         </div>
@@ -367,7 +361,7 @@
         </div>
     </section>
 
-    <!-- 🟢 구글 블로그 연동 JS (에러 방어 및 line-clamp-5 적용) -->
+    <!-- 🟢 구글 블로그 연동 JS -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
@@ -414,7 +408,6 @@
                         }); 
                     }
 
-                    // 💡 line-clamp-5 5줄 제한 적용
                     container.insertAdjacentHTML('beforeend', `
                     <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
                         <div>
@@ -458,9 +451,9 @@
                     <p>Address : Room 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul [07807]</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>Email : on@koreabiz24.com</p><span class="hidden md:inline text-slate-300">|</span>
-                    <p>Tel : 010-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
-                    <p>Fax : 050-4414-2506</p>
+                    <p>Email : on@on-admin.com</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Tel : +82-10-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Fax : +82-50-4414-2506</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
@@ -472,5 +465,47 @@
             </div>
         </div>
     </footer>
+
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
+    </script>
 </body>
 </html>

@@ -9,6 +9,13 @@
     <!-- 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="logo.png">
 
+    <!-- 💡 영문 FDI·비자 서비스 전용 카카오톡 / SNS 공유 썸네일 (OG 메타 태그) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Business Setup & FDI in Korea | Office ON:ON">
+    <meta property="og:description" content="One-stop legal representation for Foreign Direct Investment (FDI) reporting, corporation setup, branch offices, and corporate visas (D-7, D-8, D-9) in South Korea.">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/en/service1.html">
+
     <meta name="description" content="Start your business in Korea. Expert agency for Foreign Direct Investment (FDI) reporting, corporation setup, branch offices, and corporate visas (D-7, D-8, D-9).">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -474,9 +481,9 @@
                     <p>Address : Room 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul [07807]</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>Email : on@koreabiz24.com</p><span class="hidden md:inline text-slate-300">|</span>
-                    <p>Tel : 010-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
-                    <p>Fax : 050-4414-2506</p>
+                    <p>Email : on@on-admin.com</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Tel : +82-10-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Fax : +82-50-4414-2506</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
@@ -488,5 +495,47 @@
             </div>
         </div>
     </footer>
+
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
+    </script>
 </body>
 </html>

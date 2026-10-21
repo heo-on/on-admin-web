@@ -26,6 +26,13 @@
     <!-- 브라우저 탭 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="logo.png">
 
+    <!-- 💡 영문 전용 카카오톡 / SNS 공유 썸네일 (OG 메타 태그) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Certified Public Translation & Administrative Attorneys Office ON:ON">
+    <meta property="og:description" content="Korea's leading Administrative Attorneys Office. We provide FDI, visa, medical business permits, and certified translation services.">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/en/index.html">
+
     <!-- 구글 영어 검색 노출을 위한 영문 전용 SEO 메타 태그 -->
     <meta name="description" content="Korea's leading Administrative Attorneys Office ON:ON. We provide foreign direct investment (FDI), visa & nationality services, KC certification, medical business permits, certified translation, and Apostille services in Seoul, Korea.">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -364,7 +371,7 @@
                     <p>Address : #813, 8F, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul, Korea</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>Email : on@koreabiz24.com</p>
+                    <p>Email : on@on-admin.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>Tel : +82-10-7905-2506</p>
                     <span class="hidden md:inline text-slate-300">|</span>
@@ -497,6 +504,48 @@
         script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);
     });
+    </script>
+    
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
     </script>
 </body>
 </html>

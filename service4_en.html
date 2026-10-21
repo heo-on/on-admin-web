@@ -9,6 +9,13 @@
     <!-- 💡 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="logo.png">
 
+    <!-- 💡 영문 공인번역·아포스티유 전용 카카오톡 / SNS 공유 썸네일 (OG 메타 태그) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Certified Translation & Apostille Legalization | Office ON:ON">
+    <meta property="og:description" content="Official Certificate of Translation by Foreign Language Administrative Attorneys, MOFA Apostille, and Consular Legalization for IRCC, USCIS, and global submissions.">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/en/service4.html">
+
     <meta name="description" content="Official Certificate of Translation, Apostille legalization, and Consular Authentication services for international submissions.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,16 +63,13 @@
         }
 
         function changeLanguage(langCode) {
-            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
 
             if (langCode === baseLang) {
-                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
             } else {
-                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
                 const select = document.querySelector('.goog-te-combo');
                 if (select) { 
                     select.value = langCode; 
@@ -169,7 +173,7 @@
         </div>
     </div>
 
-    <!-- 💡 3. 서브페이지 타이틀 헤더 (배경을 stamp.png로 교체) -->
+    <!-- 3. 서브페이지 타이틀 헤더 -->
     <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('stamp.png'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>

@@ -107,7 +107,6 @@
             margin-left: -12px;
         }
 
-        /* 일본어/중국어 번역 시 박스 이탈 방지 자동 줄바꿈 강제 스타일 */
         [data-lang="ja"] *, [data-lang="zh-CN"] * {
             word-break: break-all !important;
             overflow-wrap: break-word !important;
@@ -656,19 +655,61 @@
                     <p>Address : Room 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul [07807]</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <p>Email : on@koreabiz24.com</p><span class="hidden md:inline text-slate-300">|</span>
-                    <p>Tel : 010-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
-                    <p>Fax : 050-4414-2506</p>
+                    <p>Email : on@on-admin.com</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Tel : +82-10-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>Fax : +82-50-4414-2506</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="privacy.html" class="hover:text-slate-600">Privacy Policy</a>
-<a href="terms.html" class="hover:text-slate-600">Terms of Use</a>
+                    <a href="terms.html" class="hover:text-slate-600">Terms of Use</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
+    </script>
 </body>
 </html>

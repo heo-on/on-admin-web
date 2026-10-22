@@ -7,7 +7,7 @@
     <title>Corporate Permits & Licenses | Office ON:ON</title>
 
     <!-- 파비콘(로고) 설정 -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="/logo.png">
 
     <!-- 💡 영문 기업 인허가·인증 전용 카카오톡 / SNS 공유 썸네일 (OG 메타 태그) -->
     <meta property="og:type" content="website">
@@ -137,21 +137,19 @@
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
-                <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+                <img src="/logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <!-- 윗줄: & 뒤에 <br> 줄바꿈 적용 및 가변 제어 -->
                     <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
-                    <!-- 아랫줄: 서브 영문 상호 영구 고정 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about_en.html" class="hover:text-brand transition py-1">About Us</a>
-                    <a href="index_en.html#services" class="text-brand font-bold py-1">Services</a>
-                    <a href="index_en.html#cases" class="hover:text-brand transition py-1">Case Studies</a>
-                    <a href="inquiry_en.html" class="hover:text-brand transition py-1">Inquiry</a>
+                    <a href="about.html" class="hover:text-brand transition py-1">About Us</a>
+                    <a href="index.html#services" class="text-brand font-bold py-1">Services</a>
+                    <a href="index.html#cases" class="hover:text-brand transition py-1">Case Studies</a>
+                    <a href="inquiry.html" class="hover:text-brand transition py-1">Inquiry</a>
                 </nav>
                 <div class="flex items-center gap-2.5">
                     <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
@@ -160,7 +158,7 @@
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
-                    <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                    <a href="inquiry.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Inquiry
                     </a>
                 </div>
@@ -171,14 +169,14 @@
     <!-- 2. 전문분야 상단 이동 탭 -->
     <div class="bg-white border-b border-slate-200 sticky top-[65px] z-40 shadow-sm overflow-x-auto">
         <div class="max-w-5xl mx-auto px-6 flex items-center gap-2 text-xs md:text-sm font-bold py-2.5">
-            <a href="index_en.html#services" class="py-2 px-3.5 rounded-lg bg-brand text-white hover:bg-brand-hover shadow-sm transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
+            <a href="index.html#services" class="py-2 px-3.5 rounded-lg bg-brand text-white hover:bg-brand-hover shadow-sm transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
                 <svg class="w-4 h-4 stroke-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> <span>View All Services</span>
             </a>
             <span class="text-slate-300">|</span>
-            <a href="service1_en.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">01. Business Setup & FDI</a>
-            <a href="service2_en.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">02. Visa, Immigration & Nationality</a>
-            <a href="service3_en.html" class="py-2 px-3 border-b-2 border-brand text-brand whitespace-nowrap bg-brand-light/40 rounded">03. Corporate Permits & Licenses</a>
-            <a href="service4_en.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">04. Translation & Apostille</a>
+            <a href="service1.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">01. Business Setup & FDI</a>
+            <a href="service2.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">02. Visa, Immigration & Nationality</a>
+            <a href="service3.html" class="py-2 px-3 border-b-2 border-brand text-brand whitespace-nowrap bg-brand-light/40 rounded">03. Corporate Permits & Licenses</a>
+            <a href="service4.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">04. Translation & Apostille</a>
         </div>
     </div>
 
@@ -272,7 +270,7 @@
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
             <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+                <a href="inquiry.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
@@ -413,7 +411,7 @@
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
-                <a href="index_en.html" class="inline-block hover:opacity-80 transition"><h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2></a>
+                <a href="index.html" class="inline-block hover:opacity-80 transition"><h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2></a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
                     <p>CEO : Heo On (Licensed Admin. Attorney)</p><span class="hidden md:inline text-slate-300">|</span>
                     <p>Business Reg. No : 889-22-02024</p><span class="hidden md:inline text-slate-300">|</span>
@@ -428,8 +426,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="privacy.html" class="hover:text-slate-600">Privacy Policy</a>
-                    <a href="terms.html" class="hover:text-slate-600">Terms of Use</a>
+                    <a href="/privacy.html" class="hover:text-slate-600">Privacy Policy</a>
+                    <a href="/terms.html" class="hover:text-slate-600">Terms of Use</a>
                 </div>
             </div>
         </div>

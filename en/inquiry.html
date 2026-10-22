@@ -20,7 +20,7 @@
     <title>Online Inquiry | Office ON:ON</title>
     
     <!-- 💡 파비콘(로고) 설정 -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="/logo.png">
 
     <!-- 💡 영문 상담 문의 전용 OG 메타 태그 -->
     <meta property="og:type" content="website">
@@ -76,16 +76,13 @@
         }
 
         function changeLanguage(langCode) {
-            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
 
             if (langCode === baseLang) {
-                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
             } else {
-                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
                 const select = document.querySelector('.goog-te-combo');
                 if (select) { 
                     select.value = langCode; 
@@ -131,23 +128,20 @@
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
-                <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+                <img src="/logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <!-- 💡 윗줄: 언어 변환 시 가변되는 메인 상호 (& 뒤 줄바꿈) -->
                     <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
-                    <!-- 💡 아랫줄: 영문 고정 서브 타이틀 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
-                    <a href="about_en.html" class="hover:text-brand transition py-1">About Us</a>
-                    <a href="index_en.html#services" class="hover:text-brand transition py-1">Services</a>
-                    <a href="index_en.html#cases" class="hover:text-brand transition py-1">Case Studies</a>
-                    <!-- 💡 Inquiry에 진한 파란색(text-brand font-bold) 적용 -->
-                    <a href="inquiry_en.html" class="font-bold text-brand py-1">Inquiry</a>
+                    <a href="about.html" class="hover:text-brand transition py-1">About Us</a>
+                    <a href="index.html#services" class="hover:text-brand transition py-1">Services</a>
+                    <a href="index.html#cases" class="hover:text-brand transition py-1">Case Studies</a>
+                    <a href="inquiry.html" class="font-bold text-brand py-1">Inquiry</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
@@ -177,10 +171,9 @@
         </div>
     </section>
 
-    <!-- 💡 3. 연락처 및 상담 업무 시간 -->
+    <!-- 3. 연락처 및 상담 업무 시간 -->
     <section class="pt-16 pb-8 px-6 max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- 대표 연락처 -->
             <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center">
                 <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                     <span class="text-brand">📞</span> Contact Info
@@ -201,7 +194,6 @@
                 </div>
             </div>
 
-            <!-- 상담 및 업무 시간 -->
             <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-inner flex flex-col justify-center">
                 <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
                     <span class="text-brand">⏰</span> Business Hours
@@ -229,7 +221,7 @@
             <h3 class="text-xl font-bold text-slate-900 mb-8 text-center border-b border-slate-100 pb-6">Fast & Convenient Communication Channels</h3>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                <a href="#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                <a href="#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-slate-50 border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-white text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition shadow-sm flex-shrink-0">
                         <svg class="w-5 h-5 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
@@ -253,11 +245,10 @@
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">1:1 Email Online Consultation</h3>
             <p class="text-sm text-slate-500 mb-8">If you leave detailed information, our attorneys will review it and respond promptly.</p>
 
-            <!-- 💡 영문 페이지 FormSubmit 연결 (공식 이메일 반영) -->
             <form action="https://formsubmit.co/on@on-admin.com" method="POST" class="space-y-5" onsubmit="trackContactClick('Email Form Submit')">
                 <input type="hidden" name="_subject" value="[ON:ON Global] New Online Inquiry Request">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://on-admin-web.vercel.app/inquiry_en.html">
+                <input type="hidden" name="_next" value="https://on-admin.com/en/inquiry.html">
                 <input type="hidden" name="_template" value="table">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -333,13 +324,11 @@
         </div>
 
         <div class="space-y-8">
-            <!-- 구글 맵 -->
             <div class="w-full h-96 bg-slate-100 rounded-2xl border border-slate-200 overflow-hidden relative shadow-inner">
                 <iframe src="https://maps.google.com/maps?q=37.5592736391913,126.826136981493&hl=en&z=17&output=embed" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- 주소 -->
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center md:text-left">
                     <div class="w-10 h-10 bg-brand-light text-brand rounded-full flex items-center justify-center font-bold mb-4 mx-auto md:mx-0 text-lg">📍</div>
                     <h4 class="font-bold text-slate-900 mb-2 text-base">Office Address</h4>
@@ -348,7 +337,6 @@
                         <span class="text-xs text-slate-400">Zip Code: 07807</span>
                     </p>
                 </div>
-                <!-- 지하철 -->
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center md:text-left">
                     <div class="w-10 h-10 bg-brand-light text-brand rounded-full flex items-center justify-center font-bold mb-4 mx-auto md:mx-0 text-lg">🚇</div>
                     <h4 class="font-bold text-slate-900 mb-2 text-base">Subway Station</h4>
@@ -357,7 +345,6 @@
                         <span class="text-xs text-slate-400">1-minute walk right in front of Exit 6</span>
                     </p>
                 </div>
-                <!-- 주차 -->
                 <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center md:text-left">
                     <div class="w-10 h-10 bg-brand-light text-brand rounded-full flex items-center justify-center font-bold mb-4 mx-auto md:mx-0 text-lg">🅿️</div>
                     <h4 class="font-bold text-slate-900 mb-2 text-base">Parking Info</h4>
@@ -405,7 +392,7 @@
     <footer id="contact-footer" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
-                <a href="index_en.html" class="inline-block hover:opacity-80 transition">
+                <a href="index.html" class="inline-block hover:opacity-80 transition">
                     <h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
                 </a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
@@ -427,8 +414,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="privacy.html" class="hover:text-slate-600">Privacy Policy</a>
-<a href="terms.html" class="hover:text-slate-600">Terms of Use</a>
+                    <a href="/privacy.html" class="hover:text-slate-600">Privacy Policy</a>
+                    <a href="/terms.html" class="hover:text-slate-600">Terms of Use</a>
                 </div>
             </div>
         </div>

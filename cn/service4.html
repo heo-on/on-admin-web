@@ -1,1 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh-CN" class="scroll-smooth scroll-pt-24 md:scroll-pt-28">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XSDTEEZRW3');
 
+      function trackContactClick(channelName) {
+        gtag('event', 'click_contact', { 'channel_type': channelName });
+      }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>公认翻译与海牙认证 (Translation & Apostille) | 公认翻译及行政律师事务所 ON:ON</title>
+
+    <!-- 💡 浏览器标签页图标 -->
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <!-- 💡 中文公认翻译·海牙认证专用 SNS 分享卡片 (OG Meta Tag) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="韩国公认翻译、公证及海牙认证 | 公认翻译及行政律师事务所 ON:ON">
+    <meta property="og:description" content="外国语行政律师直接出具国家法定翻译确认证明书、韩国外交部海牙认证(Apostille)及各国驻韩使领馆领事认证一站式代办。">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/cn/service4.html">
+
+    <meta name="description" content="出具国家法定翻译确认证明书、韩国外交部海牙认证(Apostille)及驻韩使领馆领事认证。为向加拿大移民局(IRCC)、美国移民局(USCIS)、法院、出入境及海外机构提交之文书提供100%合规涉外法律认证。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { DEFAULT: '#0020A0', hover: '#001670', light: '#EEF2FF', dark: '#0A122A', footer: '#F8FAFC' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- 💡 谷歌翻译及语言按钮同步脚本 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,ja,ko', autoDisplay: false }, 'google_translate_element');
+        }
+
+        function updateLanguageState(langCode) {
+            document.documentElement.setAttribute('data-lang', langCode);
+            
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-lang') === langCode) {
+                    btn.className = 'lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold';
+                } else {
+                    btn.className = 'lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium';
+                }
+            });
+
+            const mainTitleElement = document.getElementById('dynamic-main-title');
+            if (mainTitleElement) {
+                if (langCode === 'ko') {
+                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                } else if (langCode === 'zh-CN') {
+                    mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
+                } else if (langCode === 'ja') {
+                    mainTitleElement.innerHTML = '公認翻訳および行政書士事務所 ON:ON';
+                } else {
+                    mainTitleElement.innerHTML = 'Certified Public Translation &<br>Administrative Attorneys Office ON:ON';
+                }
+            }
+        }
+
+        function changeLanguage(langCode) {
+            const baseLang = document.documentElement.getAttribute('lang') || 'zh-CN';
+
+            if (langCode === baseLang) {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                location.reload();
+            } else {
+                const select = document.querySelector('.goog-te-combo');
+                if (select) { 
+                    select.value = langCode; 
+                    select.dispatchEvent(new Event('change')); 
+                }
+                updateLanguageState(langCode);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentLang = 'zh-CN';
+            const match = document.cookie.match(/googtrans=\/[^\/]+\/([a-zA-Z-]+)/);
+            if (match) {
+                currentLang = match[1];
+            }
+            updateLanguageState(currentLang);
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+        .goog-te-banner-frame, iframe.goog-te-banner-frame, .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate { display: none !important; visibility: hidden !important; }
+        body { top: 0px !important; position: static !important; }
+        #google_translate_element { display: none !important; }
+        #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+        .channel-card font, .channel-card span { text-align: center !important; display: block !important; width: 100% !important; }
+
+        .bullet-point::before {
+            content: "•";
+            color: #0020A0;
+            font-weight: bold;
+            display: inline-block;
+            width: 12px;
+            margin-left: -12px;
+        }
+
+        [data-lang="ja"] *, [data-lang="zh-CN"] * {
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XSDTEEZRW3');
+      function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
+    </script>     
+</head>
+   
+<body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
+    <div id="google_translate_element"></div>
+
+    <!-- 1. 顶部导航栏 -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+                <img src="/logo.png" alt="ON:ON 事务所标志" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+                <div class="flex flex-col">
+                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">公认翻译及行政律师事务所 ON:ON</span>
+                    <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                </div>
+            </a>
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
+                    <a href="about.html" class="hover:text-brand transition py-1">关于我们</a>
+                    <a href="index.html#services" class="text-brand font-bold py-1">业务领域</a>
+                    <a href="index.html#cases" class="hover:text-brand transition py-1">成功案例</a>
+                    <a href="inquiry.html" class="hover:text-brand transition py-1">在线咨询</a>
+                </nav>
+                <div class="flex items-center gap-2.5">
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                        <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">KR</button>
+                        <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
+                        <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">CN</button>
+                        <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
+                    </div>
+                    <a href="inquiry.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> 立即咨询
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 业务领域快捷切换标签栏 -->
+    <div class="bg-white border-b border-slate-200 sticky top-[65px] z-40 shadow-sm overflow-x-auto">
+        <div class="max-w-5xl mx-auto px-6 flex items-center gap-2 text-xs md:text-sm font-bold py-2.5">
+            <a href="index.html#services" class="py-2 px-3.5 rounded-lg bg-brand text-white hover:bg-brand-hover shadow-sm transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
+                <svg class="w-4 h-4 stroke-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> <span>查看全部业务</span>
+            </a>
+            <span class="text-slate-300">|</span>
+            <a href="service1.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">01. 外商投资与法人设立</a>
+            <a href="service2.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">02. 签证、移民与国籍业务</a>
+            <a href="service3.html" class="py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-brand whitespace-nowrap transition">03. 企业行政许可与认证</a>
+            <a href="service4.html" class="py-2 px-3 border-b-2 border-brand text-brand whitespace-nowrap bg-brand-light/40 rounded">04. 公认翻译与海牙认证</a>
+        </div>
+    </div>
+
+    <!-- 3. 业务横幅 -->
+    <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('/stamp.png'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">公认翻译与涉外认证 (Translation & Legalization)</h1>
+            <p class="text-blue-100 text-sm md:text-base font-light">外国语行政律师直接出具国家法定翻译确认证明书、韩国外交部海牙认证(Apostille)及各国驻韩使领馆领事认证。</p>
+        </div>
+    </section>
+
+    <!-- 4. 法定机构公信力说明 -->
+    <section class="px-6 pt-12 max-w-5xl mx-auto">
+        <div class="bg-slate-100 p-8 md:p-10 rounded-2xl border border-slate-200 text-center shadow-sm">
+            <div class="w-12 h-12 bg-brand text-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-brand mb-4">韩国国家法定公认翻译行政法律机构</h3>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+                根据大韩民国《行政士法》第20条规定，仅限国家法定外国语行政律师具备合法出具向政府机关提交之官方“翻译确认证明书”的法定资质。作为具备完全法定执业资质的行政法律事务所，我们为向加拿大移民局(IRCC)、美国移民局(USCIS)及全球各国使领馆提交的文件提供100%符合法律标准的公认翻译与官方涉外认证。
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. 主要受理文件类别 -->
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">主要受理文件类别</h2>
+            <div class="w-12 h-1 bg-brand/30 mx-auto mt-4 mb-2 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">个人与亲属关系</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">亲属关系证明书</li>
+                    <li class="bullet-point">基本证明书 (出生记录)</li>
+                    <li class="bullet-point">婚姻关系证明书</li>
+                    <li class="bullet-point">居民登录本 (户籍誊本)</li>
+                    <li class="bullet-point">护照公认翻译</li>
+                    <li class="bullet-point">无犯罪记录证明书</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">留学与移民业务</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">学校学生生活记录簿</li>
+                    <li class="bullet-point">学期及学年成绩证明单</li>
+                    <li class="bullet-point">毕业证明 / 在读证明书</li>
+                    <li class="bullet-point">学位证书 / 结业证明</li>
+                    <li class="bullet-point">教授推荐信 (Recommendation)</li>
+                    <li class="bullet-point">个人陈述信 (SOP / 动机书)</li>
+                    <li class="bullet-point">资金担保及存款证明文件</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">企业与商业文书</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">公司章程 (Articles of Inc.)</li>
+                    <li class="bullet-point">法人登记簿誊本 (工商登记)</li>
+                    <li class="bullet-point">股东名册及股权证明</li>
+                    <li class="bullet-point">董事会 / 股东大会决议记录</li>
+                    <li class="bullet-point">营业执照 (事业者登录证)</li>
+                    <li class="bullet-point">财务报表 (资产负债表等)</li>
+                    <li class="bullet-point">外部独立审计报告书</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                <h3 class="font-bold text-slate-900 mb-4 text-base border-b border-slate-100 pb-3">法律与商事合同</h3>
+                <ul class="text-xs text-slate-600 space-y-3 pl-3">
+                    <li class="bullet-point">涉外商业贸易合同</li>
+                    <li class="bullet-point">法定授权委托书 (POA)</li>
+                    <li class="bullet-point">法律陈述书与书面宣誓</li>
+                    <li class="bullet-point">合作备忘录 (MOU) 及协议</li>
+                    <li class="bullet-point">法院民刑事裁决书 / 判决书</li>
+                    <li class="bullet-point">诉讼状、起诉书及请愿材料</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 详细业务内容与法定责任声明 -->
+    <section class="py-16 px-6 max-w-5xl mx-auto bg-white mb-8 rounded-2xl shadow-sm border border-slate-100">
+        <div class="space-y-12">
+            <!-- Item 01 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/3 flex-shrink-0">
+                    <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">01</div>
+                    <h3 class="text-xl font-bold text-slate-900">法定翻译确认证明书<br>出具</h3>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
+                        根据大韩民国《行政士法》第2条及第20条规定，国家法定外国语行政律师直接进行专业法律翻译，并向司法法院、检察厅、出入境管理机关及教育厅等政府行政部门出具具有法定证据效力的“翻译确认证明书”。
+                    </p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs mb-2 text-brand">核心支持项目</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 提交至韩国法院、检察厅、出入境管理事务所、教育支援厅等官方机构</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 亲属关系、基本证明、婚姻关系、成绩单、生活记录簿等法定公认翻译</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 依据韩国《行政士法》直接核发官方公认“翻译确认证明书”</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <!-- Item 02 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/3 flex-shrink-0">
+                    <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">02</div>
+                    <h3 class="text-xl font-bold text-slate-900">韩国外交部海牙认证 &<br>使领馆领事认证代办</h3>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
+                        全面代理大韩民国外交部海牙认证(Apostille)及各国驻韩使领馆领事认证，赋予韩国国内公文书及涉外企业文书在目标国家的完全国际法律效力。
+                    </p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs mb-2 text-brand">核心支持项目</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 大韩民国外交部 (MOFA) 官方海牙认证 (Apostille) 申请代理</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 非海牙公约国驻韩使领馆领事认证（中国、越南、菲律宾、阿联酋等）</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 协同法定公证法务法人提供公证及涉外认证一站式代办</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-slate-100">
+
+            <!-- Item 03 -->
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="md:w-1/3 flex-shrink-0">
+                    <div class="text-brand text-4xl font-extrabold opacity-20 mb-2">03</div>
+                    <h3 class="text-xl font-bold text-slate-900">企业商务、法律与<br>合同精密翻译</h3>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">
+                        严谨提供跨国商务合同、公司章程、股东会决议及财务审计报告的法律级专业翻译，精准契合涉外法律术语规范，并严格遵守商业保密协议(NDA)。
+                    </p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs mb-2 text-brand">核心支持项目</h4>
+                        <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 中英韩商事合同、公司章程、法人登记簿精密法律翻译</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 财务报表、审计报告、商业计划书及法庭诉讼证据文书</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 严格契合海外官方提交指南格式排版及商业机密绝密保护</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 翻译确认证明书法定义务与责任告知 -->
+        <div class="mt-8 bg-blue-50/70 border border-blue-100 rounded-xl p-6">
+            <h4 class="font-bold text-slate-900 mb-2 text-base flex items-center gap-2">
+                <span>📌</span> 翻译确认证明书法定义务与责任告知
+            </h4>
+            <p class="text-xs md:text-sm text-slate-600 leading-relaxed mb-3">
+                翻译确认证明书是证明译文与原文一致性及准确性的法定程序，其法律责任范围明确界定如下：
+            </p>
+            <ul class="text-xs md:text-sm text-slate-700 space-y-1 bg-white p-4 rounded-lg border border-slate-200 font-medium">
+                <li>• 本文件旨在证明译文系依申请人委托如实翻译，且内容与申请人所提交之原始文件完全一致。</li>
+                <li>• 译员及行政律师不对原始文件本身的伪造、变造或基础真实性承担实质审查法律责任。</li>
+            </ul>
+            <p class="text-xs text-slate-500 mt-3">
+                简而言之，外国语行政律师并不对原件的基础法律事实作出实质裁判，而是<strong class="text-brand">依法对译文与原件文书内容的高度一致性、完整性与真实性承担官方证明之法律责任。</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. 服务流程 (5阶段) & 保密/预约指南 -->
+    <section id="guide" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32 border-t border-slate-200">
+        <div class="text-center mb-12">
+            <span class="text-brand font-bold text-sm tracking-widest uppercase">Contact & Guide</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">办理流程</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">透明、迅速、精准的涉外公认翻译与海牙认证全套程序。</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">01</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">提交审查</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">通过在线表单、邮件或提前预约来访提交文件扫描件</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">02</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">报价评估</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">深入分析文件性质、评估办理周期并提供透明法定规费报价</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">03</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">专业翻译</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">外国语行政律师直接执行专业翻译及法律术语交叉校对</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">04</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">官方认证</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">出具法定翻译确认证明书、公证处公证及外交部海牙认证代办</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 text-center shadow-sm hover:border-brand transition duration-300">
+                <div class="w-12 h-12 bg-brand-light text-brand rounded-full mx-auto flex items-center justify-center font-bold mb-4">05</div>
+                <h4 class="font-bold text-slate-900 mb-2 text-sm">交付送达</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">高清PDF扫描件快速发送、纸质原件挂号邮寄或国际快递特快专递</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-10">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
+                <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">🛡️</div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm">保密安全与商业机密保护</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">根据韩国《行政士法》及《个人信息保护法》，客户提交之全部商业秘密与个人信息均受严格保密协议(NDA)保护，业务办结后进行安全销毁。</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-xl border border-slate-200 flex gap-4 items-start shadow-sm">
+                <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">📍</div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm">100% 预约制来访接待</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">为保障法律文书审查的专注度及应对外部法院/使领馆现场出差受理，本所线下咨询全面实行100%事前预约制。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 便捷沟通渠道 -->
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-8 text-center">便捷高效的 1:1 沟通渠道</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <a href="inquiry.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+                    <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">在线咨询表单</span>
+                </a>
+                <a href="https://pf.kakao.com/_bcHxln?ref=website" target="_blank" onclick="trackContactClick('KakaoTalk')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FEE500] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-3 group-hover:opacity-90 transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">KakaoTalk 在线交流</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 成功案例 (연동: on-admin-cn.blogspot.com) -->
+    <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <span class="text-brand font-bold text-xs uppercase tracking-widest">Success Stories</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">公认翻译与涉外认证成功案例</h3>
+            </div>
+            <a href="https://on-admin-cn.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">查看全部案例 &rarr;</a>
+        </div>
+        <div id="service-cases-container" class="grid grid-cols-1 gap-6">
+            <div class="col-span-full text-center py-10 text-slate-400 font-medium">正在从博客同步最新案例...</div>
+        </div>
+    </section>
+
+    <!-- 9. 认证方式对比表 (翻译确认证明书 vs 翻译公证 vs 海牙认证 vs 领事认证) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="text-center mb-8">
+            <span class="text-brand font-bold text-xs uppercase tracking-widest">WHICH ONE DO I NEED</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">认证方式对比：翻译确认证明书 vs 翻译公证 vs 海牙认证</h2>
+            <p class="text-xs md:text-sm text-slate-500 mt-1">各类证明与认证具备不同的法定证明效力。请务必提前与文件最终接收机构确认具体要求。</p>
+        </div>
+
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+            <table class="w-full text-left text-sm text-slate-600 min-w-[700px]">
+                <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-4 w-1/4">证明类型</th>
+                        <th class="px-6 py-4 w-1/4">法定授权主体</th>
+                        <th class="px-6 py-4 w-1/4">证明核心内容</th>
+                        <th class="px-6 py-4 w-1/4">适用业务场景</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">翻译确认证明书</td>
+                        <td class="px-6 py-4">外国语行政律师 (行政士)</td>
+                        <td class="px-6 py-4">译文与原件完全一致及译者国家法定执业资质</td>
+                        <td class="px-6 py-4 text-xs">官方接收机构要求合格/公认翻译证明时</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">翻译公证书</td>
+                        <td class="px-6 py-4">司法部指定公证机构 / 法务法人</td>
+                        <td class="px-6 py-4">公证人对翻译人陈述及签章之官方证明</td>
+                        <td class="px-6 py-4 text-xs">接收机构明确强制要求“公证 (Notarization)”时</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">海牙认证 (Apostille)</td>
+                        <td class="px-6 py-4">大韩民国外交部 (MOFA)</td>
+                        <td class="px-6 py-4">确认公文书或公证书印鉴与签名的官方真实性</td>
+                        <td class="px-6 py-4 text-xs">文件提交至《海牙公约》缔约国时</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-6 py-4 font-bold text-brand">领事认证 (Consular)</td>
+                        <td class="px-6 py-4">外交部及各国驻韩使领馆领事部</td>
+                        <td class="px-6 py-4">海外文件合法有效性的最终官方核验</td>
+                        <td class="px-6 py-4 text-xs">文件提交至非海牙公约成员国时</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 10. 海牙认证流程与缔约国概览 -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-100">
+        <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">认证流程对比与海牙成员国分布</h3>
+        
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-8">
+            <table class="w-full text-left text-sm text-slate-600">
+                <thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-4 w-1/2">常规领事认证流程 (非海牙公约国)</th>
+                        <th class="px-6 py-4 w-1/2 text-brand">海牙公约认证流程 (简化高效)</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="px-6 py-5 leading-relaxed">文书开具 → 外交部领事确认 → <strong class="text-slate-800">目标国驻韩使馆领事认证</strong> → 在目标国获得法律认可</td>
+                        <td class="px-6 py-5 leading-relaxed font-medium bg-brand-light/20">文书开具 → <strong class="text-brand">大韩民国外交部海牙认证(Apostille)</strong> → 在全部成员国即时获得直接法律认可</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="flex justify-between items-end mb-3 px-2">
+            <h4 class="font-bold text-slate-800">主要海牙公约成员国分布概览</h4>
+            <span class="text-xs font-bold text-brand bg-brand-light px-2 py-1 rounded">截至2026年9月11일（共131个国家和地区）</span>
+        </div>
+        <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
+            <table class="w-full text-left text-xs md:text-sm text-slate-600 min-w-[700px]">
+                <tbody class="divide-y divide-slate-100">
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 w-[18%] bg-slate-50">亚洲 / 大洋洲</td>
+                        <td class="px-5 py-4 leading-relaxed">中国（含香港、澳门）、韩国、日本、新加坡、澳大利亚、新西兰、印度、印度尼西亚、菲律宾、沙特阿拉伯、巴林、文莱、斐济、以色列、吉尔吉斯斯坦、蒙古、阿曼、巴基斯坦、萨摩亚、塔吉克斯坦、乌兹别克斯坦、越南、瓦努阿图等。</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">欧洲</td>
+                        <td class="px-5 py-4 leading-relaxed">英国、德国、法国、意大利、西班牙、荷兰、瑞士、瑞典、奥地利、比利时、波兰、葡萄牙、爱尔兰、丹麦、芬兰、挪威、希腊、捷克、匈牙利、罗马尼亚、土耳其、俄罗斯、乌克兰等全部欧盟及欧洲主要国家。</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">北美洲</td>
+                        <td class="px-5 py-4 leading-relaxed">美国（含关岛、北马里亚纳群岛、波多黎各、美属维尔京群岛等）、加拿大。</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">中南美洲</td>
+                        <td class="px-5 py-4 leading-relaxed">巴西、阿根廷、智利、墨西哥、哥伦比亚、秘鲁、巴拿马、哥斯达黎加、厄瓜多尔、乌拉圭、委内瑞拉、多米尼加共和国、牙买加等。</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50/50 transition">
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">非洲</td>
+                        <td class="px-5 py-4 leading-relaxed">南非、摩洛哥、突尼斯、纳米比亚、塞内加尔、博茨瓦纳、毛里求斯、塞舌尔、卢旺达等。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 11. 咨询引导横幅 -->
+    <section class="max-w-5xl mx-auto px-6 pb-16">
+        <div class="bg-slate-50/80 rounded-xl p-8 text-center border border-slate-200">
+            <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1">预约公认翻译与海牙认证专家咨询</h4>
+            <p class="text-sm text-slate-500 mb-6">依托官方公认翻译与法定涉外认证，彻底消除文件在海内外机构被拒受理的风险。</p>
+            <a href="inquiry.html" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-3.5 rounded-lg text-sm shadow-md transition">
+                立即预约 1:1 咨询
+            </a>
+        </div>
+    </section>
+
+    <!-- 12. 官方自媒体频道 -->
+    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
+            <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 官方自媒体频道</h3>
+            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">随时掌握最新在韩行政政策、签证动态与事务所纪实。</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">YouTube Shorts</span>
+                </a>
+                <a href="https://www.instagram.com/heo.on2506/" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#E1306C] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#E1306C] rounded-full flex items-center justify-center mb-3 group-hover:bg-gradient-to-tr group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
+                    <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🟢 구글 블로그 연동 JS (중국어 전용 블로그 연동) -->
+    <script>
+    function loadServiceCases(data) {
+        const container = document.getElementById("service-cases-container");
+        if (!container) return;
+        
+        try {
+            if (!data || !data.feed || !data.feed.entry || data.feed.entry.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">暂无最新案例发布。</div>`;
+                return;
+            }
+
+            const entries = data.feed.entry;
+            const keywords = ['translation', 'apostille', 'legalization', 'certificate', 'notary', '翻译', '海牙', '公证', '认证'];
+            const matched = [];
+
+            entries.forEach(entry => {
+                if (matched.length >= 3) return;
+                if (!entry.category) return;
+                
+                const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
+                if (keywords.some(kw => entryLabels.includes(kw))) matched.push(entry);
+            });
+
+            if (matched.length > 0) {
+                container.innerHTML = "";
+                matched.forEach(entry => {
+                    const title = entry.title ? entry.title.$t : "无标题";
+                    let link = "";
+                    if (entry.link) { 
+                        for (let i = 0; i < entry.link.length; i++) { 
+                            if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; } 
+                        } 
+                    }
+                    
+                    let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
+                    let snippet = content.replace(/(<([^>]+)>)/ig, "");
+                    
+                    let labelsHTML = "";
+                    if (entry.category) { 
+                        entry.category.slice(0, 2).forEach(c => { 
+                            if(c.term) labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mr-1">${c.term}</span>`; 
+                        }); 
+                    }
+
+                    container.insertAdjacentHTML('beforeend', `
+                    <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-1 mb-3">${labelsHTML}</div>
+                            <h4 class="text-base md:text-lg font-bold text-slate-900 mb-3 leading-snug break-keep">${title}</h4>
+                            <div class="bg-slate-50/80 p-4 rounded-xl border border-slate-100 mb-4">
+                                <p class="text-slate-600 text-xs md:text-sm leading-relaxed font-normal line-clamp-5">${snippet}</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-auto pt-2 border-t border-slate-100">
+                            <a href="${link}" target="_blank" class="inline-flex items-center gap-1.5 text-xs md:text-sm font-bold text-brand hover:underline">
+                                <span>阅读案例全文</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>`);
+                });
+            } else {
+                container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">暂无最新案例发布。</div>`;
+            }
+        } catch (error) {
+            console.error("Blogger API Parsing Error:", error);
+            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">暂无最新案例发布。</div>`;
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        const script = document.createElement('script');
+        script.src = 'https://on-admin-cn.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=20';
+        document.body.appendChild(script);
+    });
+    </script>
+
+    <!-- 页脚 -->
+    <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8">
+                <a href="index.html" class="inline-block hover:opacity-80 transition"><h2 class="text-xl font-bold text-slate-900 mb-4">公认翻译及行政律师事务所 ON:ON</h2></a>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+                    <p>代表行政律师 : 许温 (Heo On)</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>营业执照号 : 889-22-02024</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>事务所地址 : 韩国首尔特别市江西区空港大路168，麻谷747大厦813室 [07807]</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
+                    <p>电子邮箱 : on@on-admin.com</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>代表电话 : +82-10-7905-2506</p><span class="hidden md:inline text-slate-300">|</span>
+                    <p>传真号码 : +82-50-4414-2506</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
+                <p class="notranslate">&copy; 2026 公认翻译及行政律师事务所 ON:ON. 版权所有.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="/privacy.html" class="hover:text-slate-600">个人信息处理方针</a>
+                    <a href="/terms.html" class="hover:text-slate-600">使用条款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ChannelIO (채널톡) 연동 스크립트 -->
+    <script>
+      (function() {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function() {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function(args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
+
+      ChannelIO('boot', {
+        "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
+      });
+    </script>
+</body>
+</html>

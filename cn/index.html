@@ -307,7 +307,8 @@
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">最新成功案例</h2>
                 </div>
-                <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">查看全部案例 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                <!-- 💡 중국어 블로그 전체보기 링크로 연결 -->
+                <a href="https://on-admin-cn.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">查看全部案例 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
 
             <div id="blogger-cases-container" class="grid grid-cols-1 gap-6">
@@ -377,7 +378,7 @@
         </div>
     </footer>
 
-    <!-- Blogger API 联动脚本 -->
+    <!-- 🟢 Blogger API 联动脚本 (中文博客 on-admin-cn.blogspot.com 연동 및 다국어 라벨 매칭) -->
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -390,10 +391,10 @@
         }
 
         const categories = [
-            { id: 1, name: "外商投资与法人设立", keywords: ['fdi', 'd8', 'd-8', 'setup', 'corporation'], post: null },
-            { id: 2, name: "签证与国籍业务", keywords: ['visa', 'immigration', 'nationality'], post: null },
-            { id: 3, name: "企业许可与认证", keywords: ['permits', 'licenses', 'kc', 'medical', 'business'], post: null },
-            { id: 4, name: "公认翻译与海牙认证", keywords: ['translation', 'apostille', 'legalization', 'certificate', 'notary'], post: null }
+            { id: 1, name: "外商投资与法人设立", keywords: ['fdi', 'd8', 'd-8', 'setup', 'corporation', '投资', '外资', '法人'], post: null },
+            { id: 2, name: "签证与国籍业务", keywords: ['visa', 'immigration', 'nationality', '签证', '永住', '国籍', '移民'], post: null },
+            { id: 3, name: "企业许可与认证", keywords: ['permits', 'licenses', 'kc', 'medical', 'business', '许可', '认证', '医疗'], post: null },
+            { id: 4, name: "公认翻译与海牙认证", keywords: ['translation', 'apostille', 'legalization', 'certificate', 'notary', '翻译', '海牙', '公证', '认证'], post: null }
         ];
 
         entries.forEach(entry => {
@@ -485,8 +486,9 @@
         window.addEventListener('scroll', setActiveNav);
         setActiveNav();
 
+        // 💡 중국어 전용 블로그 주소(on-admin-cn.blogspot.com)로 동적 호출
         const script = document.createElement('script');
-        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
+        script.src = 'https://on-admin-cn.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);
     });
     </script>

@@ -24,7 +24,7 @@
     <title>Certified Public Translation & Administrative Attorneys Office ON:ON</title>
     
     <!-- 브라우저 탭 파비콘(로고) 설정 -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="/logo.png">
 
     <!-- 💡 영문 전용 카카오톡 / SNS 공유 썸네일 (OG 메타 태그) -->
     <meta property="og:type" content="website">
@@ -94,16 +94,13 @@
         }
 
         function changeLanguage(langCode) {
-            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
 
             if (langCode === baseLang) {
-                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
             } else {
-                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
                 const select = document.querySelector('.goog-te-combo');
                 if (select) { 
                     select.value = langCode; 
@@ -152,22 +149,20 @@
     <!-- 1. 상단 헤더 & 네비게이션 -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <a href="index_en.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
-                <img src="logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+                <img src="/logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <!-- 💡 윗줄: & 뒤에 <br> 줄바꿈 적용 -->
                     <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
-                    <!-- 💡 아윗줄: 서브 영문 상호 고정 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2" id="main-nav">
-                    <a href="about_en.html" class="nav-link hover:text-brand transition py-1">About Us</a>
+                    <a href="about.html" class="nav-link hover:text-brand transition py-1">About Us</a>
                     <a href="#services" id="link-services" class="nav-link hover:text-brand transition py-1">Services</a>
                     <a href="#cases" id="link-cases" class="nav-link hover:text-brand transition py-1">Case Studies</a>
-                    <a href="inquiry_en.html" id="link-inquiry" class="nav-link hover:text-brand transition py-1">Inquiry</a>
+                    <a href="inquiry.html" id="link-inquiry" class="nav-link hover:text-brand transition py-1">Inquiry</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
@@ -177,7 +172,7 @@
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
-                    <a href="inquiry_en.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
+                    <a href="inquiry.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Inquiry
                     </a>
@@ -196,7 +191,7 @@
                 We provide comprehensive legal and administrative services for foreign investors, global corporations, and individuals, including FDI setup, visas, nationality, KC certification, and Apostille services.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="inquiry_en.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Request a Consultation</a>
+                <a href="inquiry.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Request a Consultation</a>
                 <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">Explore Our Services</a>
             </div>
         </div>
@@ -225,28 +220,28 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <a href="service1_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+            <a href="service1.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Business Setup & FDI</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Foreign Direct Investment (FDI) reporting, corporation establishment, branch setups, and D-7/D-8/D-9 corporate visas.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
             </a>
             
-            <a href="service2_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+            <a href="service2.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Visa & Nationality</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">E-7 Employment Visas, F-5 Permanent Residency, Korean Nationality Recovery, and Dual Citizenship applications.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
             </a>
             
-            <a href="service3_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+            <a href="service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Permits & Licenses</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">KC Certification, Medical Device Registration (MFDS), Foreign Patient Attraction Permits, and Travel Agency Registration.</p>
                 <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
             </a>
             
-            <a href="service4_en.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
+            <a href="service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Translation & Apostille</h3>
                 <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Issuance of Certificate of Translation, Embassy Legalization, and Apostille services for both domestic and foreign documents.</p>
@@ -257,7 +252,6 @@
 
     <!-- 5. 업무 프로세스 & 소통 채널 묶음 -->
     <section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200">
-        <!-- Our Process -->
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Process</span>
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">Our Process</h2>
@@ -287,19 +281,16 @@
             </div>
         </div>
 
-        <!-- 소통 채널 2개 유통 -->
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                <!-- 1. 온라인 1:1 문의 페이지 폼으로 이동 -->
-                <a href="inquiry_en.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-brand rounded-2xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
+                <a href="inquiry.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-brand rounded-2xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-12 h-12 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-4 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-sm font-bold text-slate-800 leading-tight">Online Inquiry Form</span>
                 </a>
                 
-                <!-- 2. 카카오톡 채널 -->
                 <a href="https://pf.kakao.com/_bcHxln" target="_blank" onclick="trackContactClick('KakaoTalk')" class="channel-card flex flex-col items-center justify-center p-6 bg-white border border-slate-200 hover:border-[#FEE500] rounded-2xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-12 h-12 bg-[#FEE500] text-[#371d1e] rounded-full flex items-center justify-center mb-4 group-hover:opacity-90 transition flex-shrink-0">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.86 5.37 4.71 6.83l-1.2 4.33c-.09.33.27.59.56.44l5.05-3.32c.29.04.58.06.88.06 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
@@ -310,7 +301,7 @@
         </div>
     </section>
 
-    <!-- 6. 최근 사례 (1열 세로 배열 & line-clamp-5 5줄 제한 적용) -->
+    <!-- 6. 최근 사례 -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -321,7 +312,6 @@
                 <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
 
-            <!-- 1열 세로 리스트형 컨테이너 -->
             <div id="blogger-cases-container" class="grid grid-cols-1 gap-6">
                 <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading Latest Cases from Blog...</div>
             </div>
@@ -360,7 +350,7 @@
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
-                <a href="index_en.html" class="inline-block hover:opacity-80 transition">
+                <a href="index.html" class="inline-block hover:opacity-80 transition">
                     <h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
                 </a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
@@ -382,14 +372,14 @@
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="privacy.html" class="hover:text-slate-600">Privacy Policy</a>
-<a href="terms.html" class="hover:text-slate-600">Terms of Use</a>
+                    <a href="/privacy.html" class="hover:text-slate-600">Privacy Policy</a>
+                    <a href="/terms.html" class="hover:text-slate-600">Terms of Use</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- 🟢 Blogger API 연동 스크립트 (line-clamp-5 5줄 제한 적용) -->
+    <!-- Blogger API 연동 스크립트 -->
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -430,23 +420,22 @@
                 const title = entry.title.$t;
                 
                 let link = "";
-                if (entry.link) {
-                    for (let i = 0; i < entry.link.length; i++) {
-                        if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; }
-                    }
+                if (entry.link) { 
+                    for (let i = 0; i < entry.link.length; i++) { 
+                        if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; } 
+                    } 
                 }
                 
                 let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
                 let snippet = content.replace(/(<([^>]+)>)/ig, "");
                 
                 let labelsHTML = "";
-                if (entry.category) {
-                    entry.category.slice(0, 2).forEach(c => {
-                        labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`;
-                    });
+                if (entry.category) { 
+                    entry.category.slice(0, 2).forEach(c => { 
+                        labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`; 
+                    }); 
                 }
 
-                // 💡 line-clamp-5 속성을 적용하여 깔끔하게 5줄로 제한
                 const cardHTML = `
                 <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                     <div>
@@ -465,7 +454,6 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-        // 스크롤 위치 감지 상단 메뉴 활성화
         const navLinks = {
             'services': document.getElementById('link-services'),
             'cases': document.getElementById('link-cases')
@@ -499,7 +487,6 @@
         window.addEventListener('scroll', setActiveNav);
         setActiveNav();
 
-        // Blogger API 동적 호출
         const script = document.createElement('script');
         script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);

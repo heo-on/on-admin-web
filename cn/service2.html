@@ -375,7 +375,7 @@
     </section>
 
     <!-- 🟢 구글 블로그 연동 JS (중국어 전용 블로그 연동) -->
-    <script>
+<script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
         if (!container) return;
@@ -387,15 +387,24 @@
             }
 
             const entries = data.feed.entry;
-            const keywords = ['visa', 'immigration', 'nationality', '签证', '永住', '国籍', '移民', '出入境'];
+            // 비자/국적/영주권 관련 키워드 (라벨 및 제목 검색)
+            const keywords = ['immigration', 'service 2', 'visa', 'd10', 'f4', 'f5', '签证', '国籍', '永住', '双重国籍'];
             const matched = [];
 
             entries.forEach(entry => {
                 if (matched.length >= 3) return;
-                if (!entry.category) return;
                 
-                const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
-                const isMatch = keywords.some(kw => entryLabels.includes(kw));
+                const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
+                const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
+
+                // 다른 서비스(외투 1, 인허가 3, 번역 4) 전용 글은 비자 페이지에 들어오지 않도록 차단
+                const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 3') || l.includes('service 4'));
+
+                // 라벨 또는 제목에 비자/출입국/국적 키워드가 포함되어 있는지 확인
+                const isMatch = !isExcluded && (
+                    entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
+                    keywords.some(kw => titleText.includes(kw))
+                );
                 
                 if (isMatch) matched.push(entry);
             });

@@ -379,6 +379,7 @@
     </footer>
 
     <!-- 🟢 Blogger API 联动脚本 (中文博客 on-admin-cn.blogspot.com 연동 및 다국어 라벨 매칭) -->
+<!-- 🟢 Blogger API 联动脚本 (4대 분야 분배 및 중복 필터링 최적화) -->
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -391,20 +392,43 @@
         }
 
         const categories = [
-            { id: 1, name: "外商投资与法人设立", keywords: ['fdi', 'd8', 'd-8', 'setup', 'corporation', '投资', '外资', '法人'], post: null },
-            { id: 2, name: "签证与国籍业务", keywords: ['visa', 'immigration', 'nationality', '签证', '永住', '国籍', '移民'], post: null },
-            { id: 3, name: "企业许可与认证", keywords: ['permits', 'licenses', 'kc', 'medical', 'business', '许可', '认证', '医疗'], post: null },
-            { id: 4, name: "公认翻译与海牙认证", keywords: ['translation', 'apostille', 'legalization', 'certificate', 'notary', '翻译', '海牙', '公证', '认证'], post: null }
+            { id: 1, name: "外商投资与法人设立", keywords: ['service 1', 'fdi', '外资', '外商投资', '法人设立'], post: null },
+            { id: 2, name: "签证与国籍业务", keywords: ['immigration', 'service 2', 'visa', 'd10', 'f4', 'f5', '签证', '国籍', '永住', '双重国籍'], post: null },
+            { id: 3, name: "企业许可与认证", keywords: ['service 3', 'permits', 'licenses', 'haccp', 'kc', '医疗器械', '许可', '认证'], post: null },
+            { id: 4, name: "公认翻译与海牙认证", keywords: ['service 4', 'certified translation', '海牙', '公证', '翻译', 'apostille'], post: null }
         ];
 
         entries.forEach(entry => {
-            if (!entry.category) return;
-            const entryLabels = entry.category.map(c => c.term.toLowerCase());
+            const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
+            const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
             
             categories.forEach(cat => {
                 if (!cat.post) {
-                    const hasMatch = cat.keywords.some(kw => entryLabels.includes(kw));
-                    if (hasMatch) cat.post = entry;
+                    let isMatch = false;
+                    if (cat.id === 1) {
+                        isMatch = entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                                  cat.keywords.some(kw => titleText.includes(kw));
+                    } else if (cat.id === 2) {
+                        const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 3') || l.includes('service 4'));
+                        isMatch = !isExcluded && (
+                            entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                            cat.keywords.some(kw => titleText.includes(kw))
+                        );
+                    } else if (cat.id === 3) {
+                        const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 4'));
+                        isMatch = !isExcluded && (
+                            entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                            cat.keywords.some(kw => titleText.includes(kw))
+                        );
+                    } else if (cat.id === 4) {
+                        const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 3'));
+                        isMatch = !isExcluded && (
+                            entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                            cat.keywords.some(kw => titleText.includes(kw))
+                        );
+                    }
+
+                    if (isMatch) cat.post = entry;
                 }
             });
         });
@@ -416,7 +440,7 @@
             
             matchedPosts.forEach(cat => {
                 const entry = cat.post;
-                const title = entry.title.$t;
+                const title = entry.title ? entry.title.$t : "无标题";
                 
                 let link = "";
                 if (entry.link) { 
@@ -431,7 +455,9 @@
                 let labelsHTML = "";
                 if (entry.category) { 
                     entry.category.slice(0, 2).forEach(c => { 
-                        labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`; 
+                        if (c.term) {
+                            labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`; 
+                        }
                     }); 
                 }
 
@@ -449,6 +475,8 @@
                 `;
                 container.insertAdjacentHTML('beforeend', cardHTML);
             });
+        } else {
+            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">暂无最新案例发布。</div>`;
         }
     }
 
@@ -486,7 +514,6 @@
         window.addEventListener('scroll', setActiveNav);
         setActiveNav();
 
-        // 💡 중국어 전용 블로그 주소(on-admin-cn.blogspot.com)로 동적 호출
         const script = document.createElement('script');
         script.src = 'https://on-admin-cn.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);

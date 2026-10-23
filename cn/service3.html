@@ -337,7 +337,7 @@
     </section>
 
     <!-- 🟢 구글 블로그 연동 JS (중국어 전용 블로그 연동) -->
-    <script>
+<script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
         if (!container) return;
@@ -349,15 +349,26 @@
             }
 
             const entries = data.feed.entry;
-            const keywords = ['permits', 'licenses', 'kc', 'medical', 'business', '许可', '认证', '医疗', '执照'];
+            // 기업 인허가/인증/의료/HACCP 관련 키워드 (라벨 및 제목 검색)
+            const keywords = ['service 3', 'permits', 'licenses', 'haccp', 'kc', '医疗器械', '许可', '认证', '医疗'];
             const matched = [];
 
             entries.forEach(entry => {
                 if (matched.length >= 3) return;
-                if (!entry.category) return;
                 
-                const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
-                if (keywords.some(kw => entryLabels.includes(kw))) matched.push(entry);
+                const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
+                const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
+
+                // 다른 서비스(외투 1, 비자 2, 번역 4) 전용 글은 인허가 페이지로 유입되지 않도록 차단
+                const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 4'));
+
+                // 라벨 또는 제목에 인허가/인증 키워드가 포함되어 있는지 확인
+                const isMatch = !isExcluded && (
+                    entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
+                    keywords.some(kw => titleText.includes(kw))
+                );
+                
+                if (isMatch) matched.push(entry);
             });
 
             if (matched.length > 0) {

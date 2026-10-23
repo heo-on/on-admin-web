@@ -392,7 +392,7 @@
     </section>
 
     <!-- 🟢 구글 블로그 연동 JS (중국어 전용 블로그 연동) -->
-    <script>
+<script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
         if (!container) return;
@@ -404,15 +404,19 @@
             }
 
             const entries = data.feed.entry;
-            const keywords = ['fdi', 'd8', 'd-8', 'setup', 'corporation', '投资', '外资', '法人', '设立'];
+            // 외투 관련 라벨 및 제목 검색 키워드
+            const keywords = ['service 1', 'fdi', '外资', '外商投资', '法人设立'];
             const matched = [];
 
             entries.forEach(entry => {
                 if (matched.length >= 3) return;
-                if (!entry.category) return;
                 
-                const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
-                const isMatch = keywords.some(kw => entryLabels.includes(kw));
+                const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
+                const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
+
+                // 라벨 또는 글 제목에 외투/법인설립 키워드가 들어있는지 확인
+                const isMatch = entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
+                                keywords.some(kw => titleText.includes(kw));
                 
                 if (isMatch) matched.push(entry);
             });

@@ -9,6 +9,21 @@
       "source": "/ko",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/index_en.html",
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/index_cn.html",
+      "destination": "/cn",
+      "permanent": true
+    },
+    {
+      "source": "/index_jp.html",
+      "destination": "/jp",
+      "permanent": true
     }
   ]
 }

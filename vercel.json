@@ -1,13 +1,13 @@
 {
   "redirects": [
     {
-      "source": "/ko",
+      "source": "/ko/(.*)",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/ko/:path*",
-      "destination": "/:path*",
+      "source": "/ko",
+      "destination": "/",
       "permanent": true
     }
   ]

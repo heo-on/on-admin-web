@@ -459,24 +459,39 @@
         </div>
     </section>
 
-    <!-- Blogger Integration JS -->
+    <!-- Blogger Integration JS (최신 Service 4 연동 로직 적용) -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
         if (!container) return;
+        
         try {
             if (!data || !data.feed || !data.feed.entry || data.feed.entry.length === 0) {
                 container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent cases published.</div>`;
                 return;
             }
+
             const entries = data.feed.entry;
-            const keywords = ['translation', 'apostille', 'legalization', 'certificate', 'notary'];
+            // Service 4 공인번역 / 공증 / 아포스티유 관련 매칭 키워드
+            const keywords = ['service 4', 'certified translation', 'translation', 'apostille', 'legalization', 'certificate', 'notary'];
             const matched = [];
+
             entries.forEach(entry => {
                 if (matched.length >= 3) return;
-                if (!entry.category) return;
-                const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
-                if (keywords.some(kw => entryLabels.includes(kw))) matched.push(entry);
+                
+                const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
+                const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
+
+                // 외투(Service 1), 비자(Service 2), 인허가(Service 3) 글 제외
+                const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 3'));
+
+                // 라벨 또는 제목에 키워드가 부분 포함되어 있는지 확인
+                const isMatch = !isExcluded && (
+                    entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
+                    keywords.some(kw => titleText.includes(kw))
+                );
+                
+                if (isMatch) matched.push(entry);
             });
 
             if (matched.length > 0) {
@@ -489,14 +504,17 @@
                             if (entry.link[i].rel === "alternate") { link = entry.link[i].href; break; } 
                         } 
                     }
+                    
                     let content = entry.summary ? entry.summary.$t : (entry.content ? entry.content.$t : "");
                     let snippet = content.replace(/(<([^>]+)>)/ig, "");
+                    
                     let labelsHTML = "";
                     if (entry.category) { 
                         entry.category.slice(0, 2).forEach(c => { 
                             if(c.term) labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mr-1">${c.term}</span>`; 
                         }); 
                     }
+
                     container.insertAdjacentHTML('beforeend', `
                     <article class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
                         <div>
@@ -522,6 +540,7 @@
             container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent cases published.</div>`;
         }
     }
+
     document.addEventListener("DOMContentLoaded", function() {
         const script = document.createElement('script');
         script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=20';

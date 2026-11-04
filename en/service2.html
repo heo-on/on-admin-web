@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en" class="scroll-smooth scroll-pt-24 md:scroll-pt-28">
 <head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XSDTEEZRW3');
+
+      function trackContactClick(channelName) {
+        gtag('event', 'click_contact', { 'channel_type': channelName });
+      }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Visa, Immigration & Nationality | Office ON:ON</title>
     
-    <!-- 💡 파비콘(로고) 설정 -->
+    <!-- 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="/logo.png">
 
-    <!-- 💡 영문 비자·국적 업무 전용 카카오톡 / SNS 공유 썸네일 (OG 메타 태그) -->
+    <!-- 영문 비자·국적 업무 전용 OG 메타 태그 -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Visa, Immigration & Nationality in Korea | Office ON:ON">
     <meta property="og:description" content="Expert legal agency for Korean visas and immigration. Professional services for E-7 work visas, F-5 permanent residency, Korean nationality recovery, and dual citizenship.">
@@ -36,7 +49,7 @@
         }
     </script>
     
-    <!-- 💡 구글 번역기 및 언어 버튼 Active 동기화 스크립트 -->
+    <!-- 구글 번역기 및 언어 버튼 Active 동기화 스크립트 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -114,15 +127,6 @@
             overflow-wrap: break-word !important;
         }
     </style>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XSDTEEZRW3');
-      function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
-    </script>     
 </head>
    
 <body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
@@ -305,7 +309,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <a href="inquiry.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
                 </a>
@@ -319,7 +323,7 @@
         </div>
     </section>
 
-    <!-- 8. 사례 요약 (1열 세로 레이아웃 & line-clamp-5 5줄 제한 적용) -->
+    <!-- 8. 사례 요약 (성공 사례) -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -361,7 +365,7 @@
         </div>
     </section>
 
-    <!-- 🟢 구글 블로그 연동 JS -->
+    <!-- 구글 블로그 연동 JS (부분 일치 + 타 서비스 제외 + 탐색 범위 50개 개선형) -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
@@ -374,15 +378,30 @@
             }
 
             const entries = data.feed.entry;
-            const keywords = ['visa', 'immigration', 'nationality'];
+            // 비자/출입국/국적 전용 키워드
+            const keywords = ['visa', 'immigration', 'nationality', 'k-eta', 'eta', 'f-4', 'f4', 'f-5', 'f5', 'f-1-d', 'e-7', 'e7', 'citizenship', 'alien registration'];
             const matched = [];
 
             entries.forEach(entry => {
                 if (matched.length >= 3) return;
-                if (!entry.category) return;
                 
-                const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
-                const isMatch = keywords.some(kw => entryLabels.includes(kw));
+                const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
+                const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
+
+                // 타 서비스 전용 글(Service 1 법인설립, Service 3 인허가, Service 4 번역/공증) 배제
+                const isExcluded = entryLabels.some(l => 
+                    l.includes('service 1') || 
+                    l.includes('service 3') || 
+                    l.includes('service 4') ||
+                    l.includes('medical device') ||
+                    l.includes('haccp')
+                );
+
+                // 라벨 또는 제목에 비자/국적/출입국 키워드가 포함되어 있는지 확인
+                const isMatch = !isExcluded && (
+                    entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
+                    keywords.some(kw => titleText.includes(kw))
+                );
                 
                 if (isMatch) matched.push(entry);
             });
@@ -435,7 +454,11 @@
     }
     document.addEventListener("DOMContentLoaded", function() {
         const script = document.createElement('script');
-        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=20';
+        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=50';
+        script.onerror = function() {
+            const container = document.getElementById("service-cases-container");
+            if (container) container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">Unable to load cases.</div>`;
+        };
         document.body.appendChild(script);
     });
     </script>

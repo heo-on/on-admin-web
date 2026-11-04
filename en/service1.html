@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en" class="scroll-smooth scroll-pt-24 md:scroll-pt-28">
 <head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XSDTEEZRW3');
+
+      function trackContactClick(channelName) {
+        gtag('event', 'click_contact', { 'channel_type': channelName });
+      }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
@@ -9,7 +22,7 @@
     <!-- 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="/logo.png">
 
-    <!-- 💡 영문 FDI·비자 서비스 전용 카카오톡 / SNS 공유 썸네일 (OG 메타 태그) -->
+    <!-- 영문 FDI·비자 서비스 전용 OG 메타 태그 -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Business Setup & FDI in Korea | Office ON:ON">
     <meta property="og:description" content="One-stop legal representation for Foreign Direct Investment (FDI) reporting, corporation setup, branch offices, and corporate visas (D-7, D-8, D-9) in South Korea.">
@@ -73,7 +86,7 @@
         }
 
         function changeLanguage(langCode) {
-            const baseLang = document.documentElement.getAttribute('lang') || 'ko';
+            const baseLang = document.documentElement.getAttribute('lang') || 'en';
 
             if (langCode === baseLang) {
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -114,15 +127,6 @@
             overflow-wrap: break-word !important;
         }
     </style>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XSDTEEZRW3');
-      function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
-    </script>     
 </head>
    
 <body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
@@ -345,7 +349,7 @@
         </div>
     </section>
 
-    <!-- 8. 사례 요약 (에러 방어 로직 완벽 적용) -->
+    <!-- 8. 성공 사례 요약 -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -367,7 +371,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">YouTube Shorts</span>
                 </a>
@@ -387,7 +391,7 @@
         </div>
     </section>
 
-    <!-- 🟢 구글 블로그 연동 JS -->
+    <!-- 구글 블로그 연동 JS (부분 일치 + 탐색 범위 50개 개선형) -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
@@ -400,7 +404,7 @@
             }
 
             const entries = data.feed.entry;
-            const keywords = ['fdi', 'd8', 'd-8', 'setup', 'corporation'];
+            const keywords = ['fdi', 'd8', 'd-8', 'setup', 'corporation', 'business', 'incorporation'];
             const matched = [];
 
             entries.forEach(entry => {
@@ -408,7 +412,7 @@
                 if (!entry.category) return;
                 
                 const entryLabels = entry.category.map(c => c.term ? c.term.toLowerCase() : "");
-                const isMatch = keywords.some(kw => entryLabels.includes(kw));
+                const isMatch = keywords.some(kw => entryLabels.some(label => label.includes(kw)));
                 
                 if (isMatch) matched.push(entry);
             });
@@ -461,7 +465,11 @@
     }
     document.addEventListener("DOMContentLoaded", function() {
         const script = document.createElement('script');
-        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=20';
+        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=50';
+        script.onerror = function() {
+            const container = document.getElementById("service-cases-container");
+            if (container) container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">Unable to load cases.</div>`;
+        };
         document.body.appendChild(script);
     });
     </script>
@@ -486,7 +494,7 @@
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="privacy.html" class="hover:text-slate-600">Privacy Policy</a>
-<a href="terms.html" class="hover:text-slate-600">Terms of Use</a>
+                    <a href="terms.html" class="hover:text-slate-600">Terms of Use</a>
                 </div>
             </div>
         </div>

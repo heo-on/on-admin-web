@@ -6,12 +6,14 @@
     <meta name="robots" content="index, follow">
     <title>상담 문의 및 오시는 길 | 행정사사무소 온:ON</title>
     <meta property="og:type" content="website">
-<meta property="og:title" content="상담 문의 | 공인번역&일반 행정사사무소 온:ON">
-<meta property="og:description" content="1:1 맞춤 상담 신청. 오시는 길: 서울 마곡역 6번 출구 마곡 747타워 813호.">
-<meta property="og:image" content="https://on-admin.com/logo.png">
-<meta property="og:url" content="https://on-admin.com/contact.html">
+    <meta property="og:title" content="상담 문의 | 공인번역&일반 행정사사무소 온:ON">
+    <meta property="og:description" content="1:1 맞춤 상담 신청. 오시는 길: 서울 마곡역 6번 출구 마곡 747타워 813호.">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/contact.html">
+    
     <!-- 브라우저 탭 파비콘(로고) 설정 -->
-<link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="/logo.png">
+    
     <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 -->
     <meta name="description" content="강서·마곡 공인번역일반행정사사무소 온:ON 대표 연락처, 업무시간, 1:1 이메일 상담 접수 및 오시는 길(마곡역 6번 출구 마곡747타워) 안내입니다.">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -121,7 +123,7 @@
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
-                <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+                <img src="/logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
                     <span class="kr-title text-sm md:text-base font-bold text-slate-900 leading-none">공인번역일반행정사사무소 온행</span>
                     <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
@@ -258,20 +260,21 @@
         </div>
     </section>
  
-    <!-- 5. 1:1 이메일 온라인 상담 폼 (💡 AJAX 백그라운드 전송 기술 적용) -->
+    <!-- 5. 1:1 이메일 온라인 상담 폼 (FormSubmit 직접 연동) -->
     <section class="py-6 px-6 max-w-5xl mx-auto">
         <div id="inquiry-form" class="bg-white p-6 md:p-10 rounded-2xl border border-slate-200 shadow-xl relative overflow-hidden scroll-mt-28">
             <div class="absolute top-0 left-0 w-full h-1.5 bg-brand"></div>
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">1:1 이메일 온라인 상담</h3>
             <p class="text-sm text-slate-500 mb-8">상세한 내용을 남겨주시면 확인 후 가장 신속하게 회신해 드립니다.</p>
  
-            <!-- 폼 ID 추가 (JS 제어용) -->
-            <form id="contact-form" action="https://formspree.io/f/xjykqarw" method="POST" class="space-y-5">
+            <form id="contact-form" action="https://formsubmit.co/on@on-admin.com" method="POST" class="space-y-5">
                 <input type="hidden" name="문의_출처" value="[공식 웹사이트 1:1 이메일 폼]">
                 <input type="hidden" name="_subject" value="[웹사이트 접수] 새로운 상담 신청 내역입니다.">
+                <input type="hidden" name="_next" value="https://on-admin.com/success.html">
+                <input type="hidden" name="_captcha" value="false">
                 
-                <!-- 💡 봇 스팸 차단용 숨김 필드 (허니팟) -->
-                <input type="text" name="_gotcha" style="display:none">
+                <!-- 봇 스팸 차단용 숨김 필드 -->
+                <input type="text" name="_honey" style="display:none">
  
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
@@ -330,7 +333,6 @@
                 </div>
  
                 <div class="pt-2 text-center md:text-right">
-                    <!-- 버튼에 로딩 상태를 보여주기 위해 ID 추가 -->
                     <button id="submit-btn" type="submit" class="w-full md:w-auto bg-brand text-white font-bold text-base px-10 py-3.5 rounded-lg shadow-md hover:bg-brand-hover hover:shadow-lg transition">
                         문의 메일 전송하기
                     </button>
@@ -381,7 +383,7 @@
         </div>
     </section>
  
-    <!-- 6. ON:ON 공식 미디어 채널 3종 (독립 하단 배치) -->
+    <!-- 6. ON:ON 공식 미디어 채널 3종 -->
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
             <h3 class="text-lg font-bold text-slate-900 mb-2 text-center">ON:ON 공식 미디어 채널</h3>
@@ -462,47 +464,17 @@
         </div>
     </footer>
     
-    <!-- 💡 화면 이탈 방지 (AJAX 폼 전송) 스크립트 -->
+    <!-- 폼 전송 시 버튼 피드백 제어 스크립트 -->
     <script>
-        const form = document.getElementById('contact-form');
+        const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
 
-        form.addEventListener('submit', async function(event) {
-            event.preventDefault(); // 기본 제출 이동 동작을 완벽히 차단
-
-            // 전송 중 버튼 상태 변경
-            submitBtn.textContent = '전송 중입니다...';
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
-
-            const data = new FormData(event.target);
-
-            try {
-                // 뒤에서 몰래 폼스프리로 데이터만 쏘기
-                const response = await fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    // 성공하면 아까 만든 success.html로 부드럽게 화면 이동!
-                    window.location.href = 'success.html';
-                } else {
-                    alert('서버 문제로 전송에 실패했습니다. 다시 시도해 주세요.');
-                    submitBtn.textContent = '문의 메일 전송하기';
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-                }
-            } catch (error) {
-                alert('인터넷 연결 문제로 전송에 실패했습니다.');
-                submitBtn.textContent = '문의 메일 전송하기';
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-            }
-        });
+        if (contactForm && submitBtn) {
+            contactForm.addEventListener('submit', function() {
+                submitBtn.textContent = '문의 메일 전송 중...';
+                submitBtn.classList.add('opacity-70', 'cursor-wait');
+            });
+        }
     </script>
 
     <!-- 채널톡 플러그인 연동 스크립트 -->

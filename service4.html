@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <title>행정·법률 번역·인증 | 행정사사무소 온:ON</title>
+    
+    <!-- OG 메타 태그 -->
     <meta property="og:type" content="website">
-<meta property="og:title" content="행정·법률 번역·인증 | 공인번역&일반 행정사사무소 온:ON">
-<meta property="og:description" content="국가공인 외국어번역행정사. 전문 번역확인증명서 발급, 공증 대행, 외교부 아포스티유 및 대사관 영사확인 대행.">
-<meta property="og:image" content="https://on-admin.com/logo.png">
-<meta property="og:url" content="https://on-admin.com/service4.html">
+    <meta property="og:title" content="행정·법률 번역·인증 | 공인번역&일반 행정사사무소 온:ON">
+    <meta property="og:description" content="국가공인 외국어번역행정사. 전문 번역확인증명서 발급, 공증 대행, 외교부 아포스티유 및 대사관 영사확인 대행.">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/service4.html">
+    
     <!-- 브라우저 탭 파비콘(로고) 설정 -->
-<link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="/logo.png">
+    
     <!-- 검색 엔진 최적화(SEO) 기본 메타 태그 -->
     <meta name="description" content="외국어번역행정사 직접 수행. 행정·법률서류 공인번역 및 번역확인증명서 발급, 공증촉탁 대행, 외교부 아포스티유(Apostille) 및 영사확인, 기업·계약서·정관 전문 번역 원스톱 솔루션 대행 전문 행정사사무소 온:ON.">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,16 +60,13 @@
         }
 
         function changeLanguage(langCode) {
-            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
 
             if (langCode === baseLang) {
-                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
             } else {
-                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
                 const select = document.querySelector('.goog-te-combo');
                 if (select) { 
                     select.value = langCode; 
@@ -86,7 +87,7 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- 구글 번역 상단 바 숨김 및 영문 타이틀/메뉴 스위칭 스타일 -->
+    <!-- 구글 번역 상단 바 숨김 및 스타일 -->
     <style>
         .goog-te-banner-frame, iframe.goog-te-banner-frame,
         .VIpgJd-Z31SFb-M3B12d-sm2Cdf, iframe.skiptranslate {
@@ -104,7 +105,6 @@
             width: 100% !important;
         }
 
-        /* 언어 스위칭 스타일: 영문 변환 시 크게 1줄, 아래에 작게 1줄 총 2줄 표시 유지 */
         [data-lang="en"] .kr-title {
             display: none !important;
         }
@@ -117,7 +117,6 @@
             display: none !important;
         }
 
-        /* 불렛 스타일 */
         .bullet-point::before {
             content: "•";
             color: #0020A0;
@@ -127,7 +126,6 @@
             margin-left: -12px;
         }
 
-        /* 💡 추가됨: 일본어/중국어 번역 시 띄어쓰기 없는 문장의 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
         [data-lang="ja"] *, [data-lang="zh-CN"] * {
             word-break: break-all !important;
             overflow-wrap: break-word !important;
@@ -151,19 +149,15 @@
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
-                <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+                <img src="/logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <!-- 한국어 상호명 -->
                     <span class="kr-title text-sm md:text-base font-bold text-slate-900 block leading-none">공인번역일반행정사사무소 온행</span>
-                    <!-- 영문 상호명 (영문 모드 시 정밀 노출) -->
                     <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
-                    <!-- 영문 하단 소형 상호명 (2줄 연출) -->
                     <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <!-- 영문 변환 시 메뉴명 첫 글자가 대문자로 깔끔하게 오도록 notranslate 적용 -->
                 <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2">
                     <a href="about.html" class="hover:text-brand transition">
                         <span class="kr-title">사무소 소개</span>
@@ -334,7 +328,7 @@
                         <h4 class="font-bold text-xs mb-2 text-brand">주요 지원 항목</h4>
                         <ul class="space-y-1.5 text-xs md:text-sm text-slate-600">
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 대한민국 외교부 아포스티유(Apostille) 인증 대행</li>
-                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 주한 외국 대사관(태국, 대만 등) 영사확인 대행</li>
+                            <li class="flex items-center gap-2"><span class="text-brand">✔</span> 주한 외국 대사관(태국, 베트남, 대만 등) 영사확인 대행</li>
                             <li class="flex items-center gap-2"><span class="text-brand">✔</span> 공증인가 법무법인 공증촉탁 대행 수속 원스톱 처리</li>
                         </ul>
                     </div>
@@ -465,7 +459,7 @@
         </div>
     </section>
 
-    <!-- 💡 8. 최근 사례 (1열 세로 레이아웃 교체 완료) -->
+    <!-- 8. 최근 사례 -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -475,7 +469,6 @@
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=46" target="_blank" class="text-brand font-bold text-xs md:text-sm hover:underline">블로그 전체 사례 보기 &rarr;</a>
         </div>
 
-        <!-- 💡 1열 세로 리스트형 컨테이너 적용 -->
         <div id="service4-posts-container" class="grid grid-cols-1 gap-6">
             <div class="col-span-full bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
                 관련 최신 수임 사례를 불러오는 중입니다...
@@ -618,7 +611,7 @@
 
                 <a href="https://www.tiktok.com/@heoon2506?lang" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#000000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#000000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#000000] group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 162.6 161.73v77.52a85 85 0 1 0 85.05 84.97V0h76.45a142.3 142.3 0 0 0 123.9 123.42z"/></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">TikTok</span>
                 </a>
@@ -662,21 +655,21 @@
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
                 <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
-                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 border-t border-slate-200 pt-6">
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="privacy.html" class="hover:text-slate-600">개인정보처리방침</a>
-<a href="terms.html" class="hover:text-slate-600">이용약관</a>
+                    <a href="/privacy.html" class="hover:text-slate-600">개인정보처리방침</a>
+                    <a href="/terms.html" class="hover:text-slate-600">이용약관</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- 🟢 💡 Vercel 서버리스 API 연동 스크립트 (46번 카테고리 3개 수집 지정 및 제한 해제) -->
+    <!-- Vercel 서버리스 API 연동 스크립트 (방어 로직 및 필터 강화형) -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('service4-posts-container');
@@ -690,17 +683,22 @@
                 .then(data => {
                     container.innerHTML = ''; 
 
-                    const excludeKeywords = ["의료기기", "해썹", "haccp", "외투법인"];
+                    if (!data || !data.items || !Array.isArray(data.items) || data.items.length === 0) {
+                        renderFallback(container);
+                        return;
+                    }
+
+                    // 타 서비스(외투, 비자, 인허가, 해썹, 의료기기, 징계) 글 배제
+                    const excludeKeywords = ["의료기기", "해썹", "haccp", "외투", "비자", "법인설립", "d-8", "e-7", "징계", "행정처분"];
                     
                     let safePosts = data.items.filter(post => {
-                        const targetText = post.title.toLowerCase();
+                        const targetText = (post.title || '').toLowerCase();
                         return !excludeKeywords.some(kw => targetText.includes(kw.toLowerCase()));
                     });
 
-                    // ✨ 최대 3개까지만 자르기
                     safePosts = safePosts.slice(0, 3);
 
-                    if (!safePosts || safePosts.length === 0) {
+                    if (safePosts.length === 0) {
                         renderFallback(container);
                         return;
                     }
@@ -709,7 +707,6 @@
                         let categoryName = "번역·인증 사례";
                         let pubDate = post.pubDate || '';
 
-                        // 💡 수정됨: <p> 태그에서 line-clamp 클래스 삭제 완료
                         const cardHtml = `
                             <article class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between h-full">
                                 <div>

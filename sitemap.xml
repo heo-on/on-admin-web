@@ -1,1 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 메인 및 공통 페이지 -->
+  <url>
+    <loc>https://on-admin.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
 
+  <!-- 한국어 서비스 페이지 -->
+  <url>
+    <loc>https://on-admin.com/service1.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/service2.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/service3.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/service4.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 영문 서비스 페이지 -->
+  <url>
+    <loc>https://on-admin.com/en/index.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/en/service1.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/en/service2.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/en/service3.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/en/service4.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 중문 서비스 페이지 -->
+  <url>
+    <loc>https://on-admin.com/cn/service1.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/cn/service2.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/cn/service3.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/cn/service4.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 일문 서비스 페이지 -->
+  <url>
+    <loc>https://on-admin.com/jp/service1.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/jp/service2.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/jp/service3.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://on-admin.com/jp/service4.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://on-admin.com/sitemap.xml

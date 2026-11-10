@@ -10,7 +10,6 @@
 
       gtag('config', 'G-XSDTEEZRW3');
 
-      /* Channel Click Tracking */
       function trackContactClick(channelName) {
         gtag('event', 'click_contact', {
           'channel_type': channelName
@@ -50,7 +49,7 @@
         }
     </script>
     
-    <!-- Google Website Translation Script -->
+    <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -60,7 +59,6 @@
             }, 'google_translate_element');
         }
 
-        // Language Buttons Highlight & Dynamic Title
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
             
@@ -274,7 +272,7 @@
             </div>
         </div>
 
-        <!-- Channels -->
+        <!-- Communication Channels -->
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -295,7 +293,7 @@
         </div>
     </section>
 
-    <!-- 6. Case Studies (English Blog Integration) -->
+    <!-- 6. Case Studies (정확한 영문 블로그 주소 적용) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -303,7 +301,7 @@
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">Recent Case Studies</h2>
                 </div>
-                <a href="https://on-admin-en.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
 
             <div id="blogger-cases-container" class="grid grid-cols-1 gap-6">
@@ -373,7 +371,7 @@
         </div>
     </footer>
 
-    <!-- 🟢 Blogger API Integration (English Blog on-admin-en.blogspot.com) -->
+    <!-- Blogger API Integration -->
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -509,7 +507,7 @@
         setActiveNav();
 
         const script = document.createElement('script');
-        script.src = 'https://on-admin-en.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
+        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);
     });
     </script>

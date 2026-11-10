@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en" class="scroll-smooth scroll-pt-24 md:scroll-pt-28">
 <head>
-    <!-- Google Analytics (GA4 방문자 통계 & 버튼 클릭 감지) -->
+    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,7 +10,7 @@
 
       gtag('config', 'G-XSDTEEZRW3');
 
-      /* 소통 채널 버튼 클릭 감지 센서 */
+      /* Channel Click Tracking */
       function trackContactClick(channelName) {
         gtag('event', 'click_contact', {
           'channel_type': channelName
@@ -21,14 +21,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-<title>Korea Visa, FDI & Certified Translation in Seoul | Office ON:ON</title>
-<meta name="description" content="Licensed Administrative Attorney & Translation Office in Seoul, Korea. Foreign Direct Investment (FDI), D-8/E-7 Visa, corporate licensing, and certified translation & apostille.">
-<meta property="og:title" content="Korea Visa, FDI & Certified Translation in Seoul | Office ON:ON">
-<meta property="og:description" content="Professional administrative and legal immigration services for foreign investors, expats, and international businesses in South Korea.">
-<meta property="og:image" content="https://on-admin.com/logo.png">
-<meta property="og:url" content="https://on-admin.com/en/index.html">
+    <title>Korea FDI, Visa, Corporate Permits & Certified Translation | Office ON:ON</title>
+    <meta name="description" content="Immigration & corporate administrative agency in Seoul. FDI corporate setup, D-8/E-7/F-1-D visas, factory & HACCP permits, official translation & Hague Apostille services.">
+    <meta property="og:title" content="Korea Business Setup, Visa & Certified Translation | Office ON:ON">
+    <meta property="og:description" content="One-stop statutory administrative solutions in Korea: FDI company incorporation, investor visas, regulatory licensing, and certified translation.">
+    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:url" content="https://on-admin.com/en/index.html">
     
-    <!-- 브라우저 탭 파비콘(로고) 설정 -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -50,7 +50,7 @@
         }
     </script>
     
-    <!-- 구글 웹사이트 번역 스크립트 -->
+    <!-- Google Website Translation Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -60,11 +60,10 @@
             }, 'google_translate_element');
         }
 
-        // 언어 버튼 색상 & 로고 상호명 직접 제어 (& 이후 줄바꿈 적용)
+        // Language Buttons Highlight & Dynamic Title
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
             
-            // 언어 버튼 파란색 하이라이트 제어
             const buttons = document.querySelectorAll('.lang-btn');
             buttons.forEach(btn => {
                 if (btn.getAttribute('data-lang') === langCode) {
@@ -74,7 +73,6 @@
                 }
             });
 
-            // 로고 메인 상호명 텍스트 및 줄바꿈 업데이트
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
                 if (langCode === 'ko') {
@@ -90,7 +88,7 @@
         }
 
         function changeLanguage(langCode) {
-            const baseLang = document.documentElement.getAttribute('lang') || 'ko';
+            const baseLang = document.documentElement.getAttribute('lang') || 'en';
 
             if (langCode === baseLang) {
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -131,7 +129,6 @@
             width: 100% !important;
         }
 
-        /* 일본어/중국어 번역 시 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
         [data-lang="ja"] *, [data-lang="zh-CN"] * {
             word-break: break-all !important;
             overflow-wrap: break-word !important;
@@ -142,13 +139,13 @@
 
     <div id="google_translate_element"></div>
 
-    <!-- 1. 상단 헤더 & 네비게이션 -->
+    <!-- 1. Header Navigation -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
-            <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
+            <a href="/en/index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="/logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
+                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
@@ -177,106 +174,107 @@
         </div>
     </header>
 
-    <!-- 2. 영문 히어로 섹션 -->
+    <!-- 2. Hero Section -->
     <section class="relative py-28 md:py-36 px-6 overflow-hidden bg-cover bg-center border-b border-slate-200" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');">
         <div class="absolute inset-0 bg-slate-50/90 backdrop-blur-[1px]"></div>
         <div class="relative max-w-5xl mx-auto text-center">
-            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6">Administrative Attorneys Office ON:ON</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">Turn On Your Business<br>Success in <span class="text-brand">Korea</span></h1>
+            <span class="inline-block bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-6">Registered with Ministry of Justice · Office ON:ON</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">Turn On Your Success in <span class="text-brand">Korea</span></h1>
             <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-                We provide comprehensive legal and administrative services for foreign investors, global corporations, and individuals, including FDI setup, visas, nationality, KC certification, and Apostille services.
+                Comprehensive legal and administrative solutions for global enterprises, foreign investors, and international residents. Specializing in FDI company incorporation, immigration visas, corporate permits, and certified legal translation & Apostille.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="/en/inquiry.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Request a Consultation</a>
-                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">Explore Our Services</a>
+                <a href="/en/inquiry.html" class="bg-brand hover:bg-brand-hover text-white font-bold px-7 py-3.5 rounded-lg shadow-md transition text-center">Book Consultation</a>
+                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-semibold px-7 py-3.5 rounded-lg shadow-sm transition text-center">Explore Services</a>
             </div>
         </div>
     </section>
 
-    <!-- 3. 법적 안내 상자 -->
+    <!-- 3. Statutory Authority Notice -->
     <section class="pt-16 px-6 max-w-7xl mx-auto">
         <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-6 md:p-8 shadow-sm">
             <div class="flex items-start gap-4">
                 <div class="p-2.5 bg-brand text-white rounded-xl font-bold text-lg flex-shrink-0 mt-0.5 shadow-sm">⚖️</div>
                 <div>
-                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">Authorized Legal Representation in Korea</h3>
+                    <h3 class="text-base md:text-lg font-bold text-slate-900 mb-1.5">Statutory Administrative Attorney Legal Representation</h3>
                     <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
-                        Under the Licensed Administrative Agent Act of Korea, only nationally certified Administrative Attorneys (행정사) are legally authorized to prepare and submit documents to government agencies on behalf of clients. Avoid unauthorized agents to ensure your legal protection.
+                        Under the Administrative Scrivener Act of the Republic of Korea, only licensed Administrative Attorneys are legally authorized to prepare and submit official administrative petitions, corporate filings, and visa documents to government ministries. Ensure your Korean business and legal status are fully protected by working with licensed legal counsel.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. 핵심 전문 분야 (Services) -->
+    <!-- 4. Core Services (01 ~ 04) -->
     <section id="services" class="py-16 px-6 max-w-7xl mx-auto scroll-mt-32">
         <div class="text-center mb-16">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Our Services</h2>
-            <p class="text-slate-600 mt-2 text-sm md:text-base">Professional legal and administrative solutions for global clients.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">Core Practice Areas</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Rigorous, swift, and authoritative legal administrative solutions in South Korea.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <a href="/en/service1.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">01</div>
-                <h3 class="text-lg font-bold text-slate-900 mb-3">Business Setup & FDI</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Foreign Direct Investment (FDI) reporting, corporation establishment, branch setups, and D-7/D-8/D-9 corporate visas.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">FDI & Corporate Setup</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Foreign Direct Investment (FDI) declaration, foreign-invested enterprise incorporation, branch office setup, and D-7/D-8/D-9 corporate investment visas.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Learn More &rarr;</span>
             </a>
             
             <a href="/en/service2.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">02</div>
-                <h3 class="text-lg font-bold text-slate-900 mb-3">Visa & Nationality</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">E-7 Employment Visas, F-5 Permanent Residency, Korean Nationality Recovery, and Dual Citizenship applications.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Visa, Immigration & Nationality</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">E-7 professional employment visas, F-1-D digital nomad visas, F-5 permanent residency, dual nationality declaration, and restoration of Korean citizenship.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Learn More &rarr;</span>
             </a>
             
             <a href="/en/service3.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">03</div>
-                <h3 class="text-lg font-bold text-slate-900 mb-3">Permits & Licenses</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">KC Certification, Medical Device Registration (MFDS), Foreign Patient Attraction Permits, and Travel Agency Registration.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Corporate Permits & Licenses</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Factory registration, imported food & Kimchi HACCP certification, KC safety certification, medical device import & sales licenses (MFDS), and travel agency permits.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Learn More &rarr;</span>
             </a>
             
             <a href="/en/service4.html" class="block bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand hover:shadow-xl transition duration-300 group cursor-pointer flex flex-col">
                 <div class="w-12 h-12 bg-brand-light text-brand rounded-xl flex items-center justify-center font-bold text-xl mb-6 group-hover:bg-brand group-hover:text-white transition">04</div>
-                <h3 class="text-lg font-bold text-slate-900 mb-3">Translation & Apostille</h3>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Issuance of Certificate of Translation, Embassy Legalization, and Apostille services for both domestic and foreign documents.</p>
-                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Read More &rarr;</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Certified Translation & Apostille</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Issuance of statutory Certificates of Translation Confirmation, Ministry of Foreign Affairs (MOFA) Hague Apostille, and embassy consular legalization.</p>
+                <span class="text-brand text-sm font-semibold flex items-center gap-1 group-hover:underline mt-auto">Learn More &rarr;</span>
             </a>
         </div>
     </section>
 
-    <!-- 5. 업무 프로세스 & 소통 채널 묶음 -->
+    <!-- 5. Workflow & Communication Channels -->
     <section class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <div class="text-center mb-16">
             <span class="text-brand font-bold text-sm tracking-widest uppercase">Process</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">Our Process</h2>
-            <p class="text-slate-600 mt-2 text-sm md:text-base">Transparent, fast, and reliable administrative procedures.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2">Standard Procedure</h2>
+            <p class="text-slate-600 mt-2 text-sm md:text-base">Transparent, swift, and legally sound standard administrative workflow.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
             <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 01</span>
-                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Eligibility Assessment</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Analyzing income, points, and specific visa requirements.</p>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Legal Diagnosis</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Comprehensive evaluation of capital sources, visa point scoring, and statutory requirements.</p>
             </div>
             <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 02</span>
-                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Document Prep</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Translation, Apostille, and drafting justification letters.</p>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Documentation & Notary</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Certified legal translation, Apostille legalization, and statutory statement formulation.</p>
             </div>
             <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 03</span>
-                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Immigration Filing</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Official proxy submission to the Korea Immigration Office.</p>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Agency Representation</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Official filing with Korea Immigration Service, Court Registry, Tax Office, and Ministries.</p>
             </div>
             <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:border-brand transition">
                 <span class="text-xs font-bold text-brand bg-brand-light px-3 py-1 rounded-full">STEP 04</span>
-                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Review & Approval</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Handling supplementary requests and securing final visa issuance.</p>
+                <h4 class="font-bold text-slate-900 text-lg mt-5 mb-2">Tracking & Issuance</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Active case monitoring, prompt supplement handling, and acquisition of final certificates.</p>
             </div>
         </div>
 
+        <!-- Channels -->
         <div class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-200 text-center shadow-sm">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-8">Fast & Convenient Communication Channels</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -297,7 +295,7 @@
         </div>
     </section>
 
-    <!-- 6. 최근 사례 -->
+    <!-- 6. Case Studies (English Blog Integration) -->
     <section id="cases" class="bg-slate-100/70 py-20 px-6 border-t border-slate-200 scroll-mt-32">
         <div class="max-w-5xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
@@ -305,20 +303,20 @@
                     <span class="text-brand font-bold text-sm tracking-widest uppercase">Success Stories</span>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1">Recent Case Studies</h2>
                 </div>
-                <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+                <a href="https://on-admin-en.blogspot.com" target="_blank" class="text-brand font-semibold text-sm hover:underline mt-2 md:mt-0 flex items-center gap-1">View All Cases <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
             </div>
 
             <div id="blogger-cases-container" class="grid grid-cols-1 gap-6">
-                <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading Latest Cases from Blog...</div>
+                <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading latest case studies from blog...</div>
             </div>
         </div>
     </section>
 
-    <!-- 7. 미디어 채널 -->
+    <!-- 7. Media Channels -->
     <section class="py-16 px-6 max-w-7xl mx-auto border-t border-slate-200">
         <div class="bg-slate-50 p-6 md:p-10 rounded-2xl border border-slate-200 shadow-inner">
-            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Media Channels</h3>
-            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Watch our latest updates and office activities.</p>
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-2 text-center">ON:ON Official Media Channels</h3>
+            <p class="text-xs md:text-sm text-slate-500 text-center mb-8">Stay updated with the latest South Korean policies, visa updates, and office activities.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                 <a href="https://www.youtube.com/@heo.on2506/shorts" target="_blank" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-[#FF0000] rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-[#FF0000] rounded-full flex items-center justify-center mb-3 group-hover:bg-[#FF0000] group-hover:text-white transition flex-shrink-0">
@@ -342,19 +340,19 @@
         </div>
     </section>
 
-    <!-- 8. 푸터 -->
+    <!-- 8. Footer -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">
         <div class="max-w-7xl mx-auto">
             <div class="mb-8">
-                <a href="index.html" class="inline-block hover:opacity-80 transition">
+                <a href="/en/index.html" class="inline-block hover:opacity-80 transition">
                     <h2 class="text-xl font-bold text-slate-900 mb-4">Certified Public Translation & Administrative Attorneys Office ON:ON</h2>
                 </a>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
-                    <p>Representative Attorney : Heo On</p>
+                    <p>Managing Attorney : Heo On</p>
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>Business Registration : 889-22-02024</p>
                     <span class="hidden md:inline text-slate-300">|</span>
-                    <p>Address : #813, 8F, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul, Korea</p>
+                    <p>Address : Suite 813, Magok 747 Tower, 168 Gonghang-daero, Gangseo-gu, Seoul, Republic of Korea [07807]</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
                     <p>Email : on@on-admin.com</p>
@@ -369,13 +367,13 @@
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="/privacy.html" class="hover:text-slate-600">Privacy Policy</a>
-                    <a href="/terms.html" class="hover:text-slate-600">Terms of Use</a>
+                    <a href="/terms.html" class="hover:text-slate-600">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Blogger API 연동 스크립트 -->
+    <!-- 🟢 Blogger API Integration (English Blog on-admin-en.blogspot.com) -->
     <script>
     function loadBloggerCases(data) {
         const container = document.getElementById("blogger-cases-container");
@@ -383,25 +381,48 @@
         
         const entries = data.feed.entry;
         if (!entries || entries.length === 0) {
-            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent cases available.</div>`;
+            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent case studies published.</div>`;
             return;
         }
 
         const categories = [
-            { id: 1, name: "Business Setup & FDI", keywords: ['fdi', 'd8', 'd-8', 'setup', 'corporation'], post: null },
-            { id: 2, name: "Visa & Nationality", keywords: ['visa', 'immigration', 'nationality'], post: null },
-            { id: 3, name: "Permits & Licenses", keywords: ['permits', 'licenses', 'kc', 'medical', 'business'], post: null },
-            { id: 4, name: "Translation & Apostille", keywords: ['translation', 'apostille', 'legalization', 'certificate', 'notary'], post: null }
+            { id: 1, name: "FDI & Corporate Setup", keywords: ['service 1', 'fdi', 'setup', 'incorporation', 'business', 'company', 'investment'], post: null },
+            { id: 2, name: "Visa & Immigration", keywords: ['immigration', 'service 2', 'visa', 'nomad', 'k-eta', 'e-7', 'citizenship', 'nationality'], post: null },
+            { id: 3, name: "Corporate Permits & Licenses", keywords: ['service 3', 'permits', 'licenses', 'factory', 'haccp', 'medical device', 'kc'], post: null },
+            { id: 4, name: "Certified Translation & Apostille", keywords: ['service 4', 'certified translation', 'apostille', 'translation', 'notary', 'consular'], post: null }
         ];
 
         entries.forEach(entry => {
-            if (!entry.category) return;
-            const entryLabels = entry.category.map(c => c.term.toLowerCase());
+            const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
+            const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
             
             categories.forEach(cat => {
                 if (!cat.post) {
-                    const hasMatch = cat.keywords.some(kw => entryLabels.includes(kw));
-                    if (hasMatch) cat.post = entry;
+                    let isMatch = false;
+                    if (cat.id === 1) {
+                        isMatch = entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                                  cat.keywords.some(kw => titleText.includes(kw));
+                    } else if (cat.id === 2) {
+                        const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 3') || l.includes('service 4'));
+                        isMatch = !isExcluded && (
+                            entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                            cat.keywords.some(kw => titleText.includes(kw))
+                        );
+                    } else if (cat.id === 3) {
+                        const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 4'));
+                        isMatch = !isExcluded && (
+                            entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                            cat.keywords.some(kw => titleText.includes(kw))
+                        );
+                    } else if (cat.id === 4) {
+                        const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 3'));
+                        isMatch = !isExcluded && (
+                            entryLabels.some(l => cat.keywords.some(kw => l.includes(kw))) ||
+                            cat.keywords.some(kw => titleText.includes(kw))
+                        );
+                    }
+
+                    if (isMatch) cat.post = entry;
                 }
             });
         });
@@ -413,7 +434,7 @@
             
             matchedPosts.forEach(cat => {
                 const entry = cat.post;
-                const title = entry.title.$t;
+                const title = entry.title ? entry.title.$t : "Untitled";
                 
                 let link = "";
                 if (entry.link) { 
@@ -428,7 +449,9 @@
                 let labelsHTML = "";
                 if (entry.category) { 
                     entry.category.slice(0, 2).forEach(c => { 
-                        labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`; 
+                        if (c.term) {
+                            labelsHTML += `<span class="bg-brand-light text-brand text-xs font-bold px-3 py-1 rounded-md mb-1 inline-block mr-1">${c.term}</span>`; 
+                        }
                     }); 
                 }
 
@@ -446,6 +469,8 @@
                 `;
                 container.insertAdjacentHTML('beforeend', cardHTML);
             });
+        } else {
+            container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent case studies published.</div>`;
         }
     }
 
@@ -484,12 +509,12 @@
         setActiveNav();
 
         const script = document.createElement('script');
-        script.src = 'https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
+        script.src = 'https://on-admin-en.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadBloggerCases&max-results=20';
         document.body.appendChild(script);
     });
     </script>
     
-    <!-- 채널톡 플러그인 연동 스크립트 -->
+    <!-- ChannelIO Script -->
     <script>
       (function() {
         var w = window;

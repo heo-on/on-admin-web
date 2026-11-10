@@ -174,12 +174,15 @@
         </div>
     </div>
 
-    <!-- 3. Service Hero Banner -->
+    <!-- 3. Service Hero Banner (깔끔한 2단 줄바꿈 적용) -->
     <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('/stamp.png'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Certified Translation & Legal Apostille (Translation & Legalization)</h1>
-            <p class="text-blue-100 text-sm md:text-base font-light">Official issuance of statutory Certificates of Translation by licensed administrative attorneys, Hague Apostille certification by the Ministry of Foreign Affairs (MOFA), and consular legalization.</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-snug">
+                Certified Translation & Legal Apostille<br>
+                <span class="text-xl md:text-2xl font-semibold opacity-90">(Translation & Legalization)</span>
+            </h1>
+            <p class="text-blue-100 text-sm md:text-base font-light max-w-3xl mx-auto">Official issuance of statutory Certificates of Translation by licensed administrative attorneys, Hague Apostille certification by the Ministry of Foreign Affairs (MOFA), and consular legalization.</p>
         </div>
     </section>
 
@@ -415,14 +418,14 @@
         </div>
     </section>
 
-    <!-- 8. Case Studies (Blogger Integration: on-admin-en.blogspot.com) -->
+    <!-- 8. Case Studies (정확한 영문 블로그 주소 적용) -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
                 <span class="text-brand font-bold text-xs uppercase tracking-widest">SUCCESS STORIES</span>
                 <h3 class="text-xl md:text-2xl font-bold text-slate-900 mt-1">Certified Translation & Apostille Cases</h3>
             </div>
-            <a href="https://on-admin-en.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">View All Cases &rarr;</a>
+            <a href="https://on-admin.blogspot.com" target="_blank" class="text-brand text-xs md:text-sm font-bold hover:underline">View All Cases &rarr;</a>
         </div>
         <div id="service-cases-container" class="grid grid-cols-1 gap-6">
             <div class="col-span-full text-center py-10 text-slate-400 font-medium">Loading latest case studies from blog...</div>
@@ -569,7 +572,7 @@
         </div>
     </section>
 
-    <!-- Blogger Integration JS (English Service 4) -->
+    <!-- Blogger Integration JS -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
@@ -582,7 +585,7 @@
             }
 
             const entries = data.feed.entry;
-            const keywords = ['service 4', 'certified translation', 'apostille', 'translation', 'notary', 'consular'];
+            const keywords = ['service 4', 'certified translation', 'apostille', 'translation', 'notary', 'consular', 'certificate', 'death'];
             const matched = [];
 
             entries.forEach(entry => {
@@ -591,7 +594,6 @@
                 const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
                 const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
 
-                // Exclude unrelated categories (FDI, Visa, Permits)
                 const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 3'));
 
                 const isMatch = !isExcluded && (
@@ -648,12 +650,8 @@
             container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No recent case studies published.</div>`;
         }
     }
-    document.addEventListener("DOMContentLoaded", function() {
-        const script = document.createElement('script');
-        script.src = 'https://on-admin-en.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=20';
-        document.body.appendChild(script);
-    });
     </script>
+    <script src="https://on-admin.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadServiceCases&max-results=20"></script>
 
     <!-- Footer -->
     <footer id="contact" class="bg-brand-footer text-slate-600 py-12 px-6 border-t border-slate-200">

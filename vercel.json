@@ -32,22 +32,22 @@
     },
     {
       "source": "/inquiry_en.html",
-      "destination": "/en/contact.html",
+      "destination": "/en/inquiry.html",
       "permanent": true
     },
     {
       "source": "/inquiry_cn.html",
-      "destination": "/cn/contact.html",
+      "destination": "/cn/inquiry.html",
       "permanent": true
     },
     {
       "source": "/inquiry_ja.html",
-      "destination": "/jp/contact.html",
+      "destination": "/jp/inquiry.html",
       "permanent": true
     },
     {
       "source": "/inquiry_jp.html",
-      "destination": "/jp/contact.html",
+      "destination": "/jp/inquiry.html",
       "permanent": true
     }
   ]

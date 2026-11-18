@@ -24,6 +24,31 @@
       "source": "/index_jp.html",
       "destination": "/jp",
       "permanent": true
+    },
+    {
+      "source": "/index_ja.html",
+      "destination": "/jp",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry_en.html",
+      "destination": "/en/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry_cn.html",
+      "destination": "/cn/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry_ja.html",
+      "destination": "/jp/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry_jp.html",
+      "destination": "/jp/contact.html",
+      "permanent": true
     }
   ]
 }

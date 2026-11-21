@@ -6,9 +6,10 @@
     <meta name="robots" content="index, follow">
   <title>군인·공무원 징계항고 및 영업정지 행정심판 구제 | 행정사사무소 온:ON</title>
   <meta name="description" content="육군 인사과장 출신 허온 행정사의 군인·경찰·공무원 징계 처분 구제, 소청심사, 음주운전 면허취소 및 영업정지 행정심판 전문 1:1 비밀 법률·행정 상담.">
-  <meta property="og:title" content="군인·공무원 징계항고 및 행정처분 구제 상담 | 행정사사무소 온:ON">
-  <meta property="og:description" content="육군 인사과장 출신 대표행정사의 군인 징계 감경 항고, 영업정지 처분 취소 행정심판.">
-  <meta property="og:image" content="https://on-admin.com/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="행정사사무소 온:ON | 군인·공무원 징계항고 및 행정처분 구제 상담">
+  <meta property="og:description" content="성공적인 글로벌 비즈니스를 위해 '온' 힘을 다합니다. 육군 인사과장 출신 대표행정사의 군인 징계 감경 항고, 영업정지 행정심판.">
+  <meta property="og:image" content="https://on-admin.com/og-image.png">
   <meta property="og:url" content="https://on-admin.com/service3.html">
     <!-- 브라우저 탭 파비콘(로고) 설정 -->
 <link rel="icon" type="image/png" href="logo.png">
@@ -101,7 +102,7 @@
             width: 100% !important;
         }
 
-        /* 💡 수정 완료: 영어 변환 시 작은 영문 상호(.sub-title)가 사라지지 않고 그대로 유지되도록 고쳤습니다! */
+        /* 영어 변환 시 작은 영문 상호(.sub-title)가 사라지지 않고 그대로 유지되도록 처리 */
         [data-lang="en"] .kr-title {
             display: none !important;
         }
@@ -114,7 +115,7 @@
             display: none !important;
         }
 
-        /* 💡 추가됨: 일본어/중국어 번역 시 띄어쓰기 없는 문장의 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
+        /* 일본어/중국어 번역 시 띄어쓰기 없는 문장의 박스 이탈(Overflow) 방지 자동 줄바꿈 강제 스타일 */
         [data-lang="ja"] *, [data-lang="zh-CN"] * {
             word-break: break-all !important;
             overflow-wrap: break-word !important;
@@ -141,7 +142,7 @@
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
                     <!-- 한국어 타이틀 -->
-                    <span class="kr-title text-sm md:text-base font-bold text-slate-900 block leading-none">공인번역일반행정사사무소 온행</span>
+                    <span class="kr-title text-sm md:text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
                     <!-- 영어 타이틀 (번역기 작동 시 표시) -->
                     <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                     <!-- 영어 작은 상호 (항상 표시) -->
@@ -155,7 +156,7 @@
                         <span class="kr-title">사무소 소개</span>
                         <span class="en-title notranslate hidden">Office Introduction</span>
                     </a>
-                    <a href="index.html#services" class="hover:text-brand transition">
+                    <a href="index.html#services" class="text-brand font-bold transition">
                         <span class="kr-title">전문 분야</span>
                         <span class="en-title notranslate hidden">Specialized Fields</span>
                     </a>
@@ -179,8 +180,12 @@
 
                     <a href="contact.html#inquiry-form" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        상담 문의
+                        <span class="notranslate">상담 문의</span>
                     </a>
+                    <button onclick="copyPageLink(this)" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-bold px-2.5 py-1.5 md:px-3.5 rounded-lg border border-slate-200 transition flex items-center gap-1 whitespace-nowrap cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        <span class="share-label notranslate">공유</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -333,7 +338,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 <a href="contact.html#inquiry-form" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5 fill-none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">이메일 문의</span>
                 </a>
@@ -358,7 +363,7 @@
         </div>
     </section>
 
-    <!-- 💡 7. 최근 사례 (1열 세로 배열 변경 완료) -->
+    <!-- 7. 최근 사례 (1열 세로 배열) -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -369,7 +374,7 @@
             <a href="https://blog.naver.com/PostList.naver?blogId=juuudy_&from=postList&categoryNo=58" target="_blank" class="text-brand font-bold text-xs md:text-sm hover:underline">블로그 전체 사례 보기 &rarr;</a>
         </div>
 
-        <!-- 💡 1열 세로 리스트형 컨테이너 -->
+        <!-- 1열 세로 리스트형 컨테이너 -->
         <div id="service3-posts-container" class="grid grid-cols-1 gap-6">
             <div class="col-span-full bg-white rounded-2xl p-10 border border-slate-200 text-center text-slate-400 font-medium text-sm">
                 관련 최신 수임 사례를 불러오는 중입니다...
@@ -432,7 +437,6 @@
                     <p>주소 : 서울특별시 강서구 공항대로 168, 8층 813호 , 마곡 747타워 (우편번호: 07807)</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-2">
-                    <!-- 💡 수정됨: 푸터 이메일 주소 일원화 반영 완료 -->
                     <p>이메일 : on@on-admin.com</p>
                     <span class="hidden md:inline text-slate-300">|</span>
                     <p>전화 : 010-7905-2506</p>
@@ -462,13 +466,13 @@
                 <p class="notranslate">&copy; 2026 Certified Public Translation & Administrative Attorneys Office ON:ON. All rights reserved.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
                     <a href="privacy.html" class="hover:text-slate-600">개인정보처리방침</a>
-<a href="terms.html" class="hover:text-slate-600">이용약관</a>
+                    <a href="terms.html" class="hover:text-slate-600">이용약관</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- 🟢 💡 Vercel 서버리스 API 기반 - 58번, 59번 이중 연동 및 1열 세로 렌더링 스크립트 -->
+    <!-- Vercel 서버리스 API 기반 - 58번, 59번 이중 연동 및 1열 세로 렌더링 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const container = document.getElementById('service3-posts-container');
@@ -500,7 +504,7 @@
                     return dateB - dateA;
                 });
 
-                // ✨ 최대 3개 자르기
+                // 최대 3개 자르기
                 safePosts = safePosts.slice(0, 3);
 
                 if (!safePosts || safePosts.length === 0) {
@@ -508,7 +512,7 @@
                     return;
                 }
 
-                // 💡 1열 세로 배열 맞춤형 넓은 카드 렌더링
+                // 1열 세로 배열 맞춤형 넓은 카드 렌더링
                 safePosts.forEach(post => {
                     let categoryName = "징계·행정처분 사례";
                     let pubDate = post.pubDate || '';
@@ -524,8 +528,8 @@
                                 <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-4 leading-snug break-keep">${post.title}</h4>
                                 
                                 <div class="bg-slate-50/80 p-5 rounded-xl border border-slate-100 mb-6 flex-grow">
-    <p class="text-slate-600 text-sm leading-relaxed break-keep font-normal">${post.description}</p>
-</div>
+                                    <p class="text-slate-600 text-sm leading-relaxed break-keep font-normal">${post.description}</p>
+                                </div>
                             </div>
 
                             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 border-t border-slate-100 gap-3 mt-auto">
@@ -604,6 +608,39 @@
       ChannelIO('boot', {
         "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
       });
+    </script>
+
+    <!-- 현재 페이지 직통 링크 복사 스크립트 -->
+    <script>
+      function copyPageLink(btn) {
+        const url = window.location.href;
+        const label = btn.querySelector('.share-label');
+        const onSuccess = () => {
+          const orig = label.textContent;
+          label.textContent = '복사됨!';
+          btn.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-300');
+          setTimeout(() => {
+            label.textContent = orig;
+            btn.classList.remove('bg-emerald-50', 'text-emerald-700', 'border-emerald-300');
+          }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(onSuccess).catch(() => fallbackCopy(url, onSuccess));
+        } else {
+          fallbackCopy(url, onSuccess);
+        }
+      }
+      function fallbackCopy(text, cb) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        cb();
+      }
     </script>
 </body>
 </html>

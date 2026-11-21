@@ -1,17 +1,20 @@
-// api/naver-cases.js
-export default async function handler(req, res) {
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
-
-    if (req.method === 'OPTIONS') { res.status(200).end(); return; }
-
+export async function onRequest(context) {
+    const { request } = context;
+    const { searchParams } = new URL(request.url);
+    const categoryNo = searchParams.get('categoryNo') || '67';
     const blogId = 'juuudy_';
-    const categoryNo = req.query.categoryNo || '67'; 
-    
+
+    const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+    };
+
+    if (request.method === 'OPTIONS') {
+        return new Response(null, { headers });
+    }
+
     try {
-        // 1. 네이버 블로그 비공개 API (글 번호, 제목 가져오기)
         const listUrl = `https://blog.naver.com/PostTitleListAsync.naver?blogId=${blogId}&viewdate=&currentPage=1&categoryNo=${categoryNo}&parentCategoryNo=&countPerPage=5`;
         const listResponse = await fetch(listUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
         const rawText = await listResponse.text();
@@ -31,10 +34,9 @@ export default async function handler(req, res) {
         }
 
         if (listData.postList.length === 0) {
-            return res.status(200).json({ items: [] });
+            return new Response(JSON.stringify({ items: [] }), { headers: { ...headers, 'Content-Type': 'application/json' } });
         }
 
-        // 2. RSS 피드 호출 (최근 글 50개 요약문)
         let rssItems = [];
         try {
             const rssUrl = `https://rss.blog.naver.com/${blogId}.xml`;
@@ -48,7 +50,6 @@ export default async function handler(req, res) {
                 const linkMatch = itemHtml.match(/<link>(.*?)<\/link>/);
                 const link = linkMatch ? linkMatch[1] : '';
                 
-                // 💡 [핵심 수정] 네이버의 꼬인 주소(?logNo=숫자)에서 완벽하게 글 번호 추출!
                 const logNoMatch = link.match(/logNo=(\d+)/) || link.match(/\/(\d+)(?:\?|$)/);
                 const logNo = logNoMatch ? logNoMatch[1] : null;
 
@@ -66,14 +67,12 @@ export default async function handler(req, res) {
             }
         } catch (e) { console.error('RSS Fetch Error:', e); }
 
-        // 3. 플랜 B: 모바일 페이지 직접 접속 본문 크롤링 (RSS에 없는 예전 글)
         const fetchFallbackSummary = async (logNo) => {
             try {
                 const postUrl = `https://m.blog.naver.com/${blogId}/${logNo}`;
                 const postRes = await fetch(postUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
                 const html = await postRes.text();
                 
-                // 본문 <p> 태그나 <span> 태그 텍스트 강제 긁어오기
                 const pMatches = [...html.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)];
                 let content = pMatches.map(m => m[1].replace(/<[^>]+>/g, '')).join(' ').replace(/\s+/g, ' ').trim();
                 
@@ -84,7 +83,6 @@ export default async function handler(req, res) {
             return "해당 수임 사례의 전체 진행 과정 및 상세 검토 사항은 온:ON 공식 블로그 원문에서 직접 확인하실 수 있습니다.";
         };
 
-        // 4. 데이터 최종 조립
         const itemsWithSummaries = await Promise.all(
             listData.postList.map(async (post) => {
                 let decodedTitle = post.title || '';
@@ -92,12 +90,10 @@ export default async function handler(req, res) {
 
                 const matchedRss = rssItems.find(r => r.logNo === post.logNo);
                 
-                // RSS 요약문이 있으면 쓰고, 없으면 모바일에서 긁어온 본문 쓴다!
                 let summary = matchedRss && matchedRss.description.length > 10 
                               ? matchedRss.description 
                               : await fetchFallbackSummary(post.logNo);
                 
-                // 요약문이 너무 길면 자르기
                 if (summary.length > 220) summary = summary.substring(0, 220) + '...';
 
                 return {
@@ -109,10 +105,14 @@ export default async function handler(req, res) {
             })
         );
 
-        return res.status(200).json({ items: itemsWithSummaries });
+        return new Response(JSON.stringify({ items: itemsWithSummaries }), { 
+            headers: { ...headers, 'Content-Type': 'application/json' } 
+        });
 
     } catch (error) {
-        console.error('Vercel Serverless Function Error:', error);
-        return res.status(200).json({ items: [] });
+        console.error('Cloudflare Pages Function Error:', error);
+        return new Response(JSON.stringify({ items: [] }), { 
+            headers: { ...headers, 'Content-Type': 'application/json' } 
+        });
     }
 }

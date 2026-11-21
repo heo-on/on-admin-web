@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-  <title>강서·마곡 공인번역 및 아포스티유·영사확인 대행 | 행정사사무소 온:ON</title>
+  <title>공인번역 및 아포스티유·영사확인 대행 | 행정사사무소 온:ON</title>
   <meta name="description" content="외국어번역행정사의 번역확인증명서 발급, 유학·이민 서류, 기업 정관·계약서 공증촉탁 대행 및 외교부 아포스티유·영사확인 신속 원스톱 처리.">
-  <meta property="og:title" content="강서·마곡 공인번역 및 아포스티유 대행 | 행정사사무소 온:ON">
-  <meta property="og:description" content="공인 외국어번역행정사의 번역인증, 공증촉탁 대행, 아포스티유 및 대사관 영사확인.">
-  <meta property="og:image" content="https://on-admin.com/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="행정사사무소 온:ON | 공인번역 및 아포스티유·영사확인 대행">
+  <meta property="og:description" content="성공적인 글로벌 비즈니스를 위해 '온' 힘을 다합니다. 외국어번역행정사의 공인번역인증, 공증촉탁 대행, 아포스티유·영사확인.">
+  <meta property="og:image" content="https://on-admin.com/og-image.png">
   <meta property="og:url" content="https://on-admin.com/service4.html">
     
     <!-- 브라우저 탭 파비콘(로고) 설정 -->
-    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="icon" type="image/png" href="logo.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -145,9 +146,9 @@
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-3.5 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0">
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
-                <img src="/logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
+                <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div>
-                    <span class="kr-title text-sm md:text-base font-bold text-slate-900 block leading-none">공인번역일반행정사사무소 온행</span>
+                    <span class="kr-title text-sm md:text-base font-bold text-slate-900 block leading-none">공인번역&일반 행정사사무소 온:ON</span>
                     <span class="en-title notranslate text-sm md:text-base font-bold text-slate-900 leading-none hidden">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                     <span class="sub-title notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
@@ -159,7 +160,7 @@
                         <span class="kr-title">사무소 소개</span>
                         <span class="en-title notranslate hidden">Office Introduction</span>
                     </a>
-                    <a href="index.html#services" class="hover:text-brand transition">
+                    <a href="index.html#services" class="text-brand font-bold transition">
                         <span class="kr-title">전문 분야</span>
                         <span class="en-title notranslate hidden">Specialized Fields</span>
                     </a>
@@ -183,8 +184,12 @@
 
                     <a href="contact.html#inquiry-form" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
                         <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        상담 문의
+                        <span class="notranslate">상담 문의</span>
                     </a>
+                    <button onclick="copyPageLink(this)" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-bold px-2.5 py-1.5 md:px-3.5 rounded-lg border border-slate-200 transition flex items-center gap-1 whitespace-nowrap cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        <span class="share-label notranslate">공유</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -794,6 +799,39 @@
       ChannelIO('boot', {
         "pluginKey": "f436e58a-598d-460b-860c-8c4f997b8b6e"
       });
+    </script>
+
+    <!-- 현재 페이지 직통 링크 복사 스크립트 -->
+    <script>
+      function copyPageLink(btn) {
+        const url = window.location.href;
+        const label = btn.querySelector('.share-label');
+        const onSuccess = () => {
+          const orig = label.textContent;
+          label.textContent = '복사됨!';
+          btn.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-300');
+          setTimeout(() => {
+            label.textContent = orig;
+            btn.classList.remove('bg-emerald-50', 'text-emerald-700', 'border-emerald-300');
+          }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(onSuccess).catch(() => fallbackCopy(url, onSuccess));
+        } else {
+          fallbackCopy(url, onSuccess);
+        }
+      }
+      function fallbackCopy(text, cb) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        cb();
+      }
     </script>
 </body>
 </html>

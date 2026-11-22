@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja" data-lang="ja" class="scroll-smooth scroll-pt-24 md:scroll-pt-28">
 <head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XSDTEEZRW3');
+
+      function trackContactClick(channelName) {
+        gtag('event', 'click_contact', { 'channel_type': channelName });
+      }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-  <title>韓国ビザ・出入国管理 & 国籍業務 | F-1-Dノマド・E-7・国籍回復 | 行政書士事務所 ON:ON</title>
-  <meta name="description" content="韓国F-1-Dデジタルノマドビザ、E-7専門就労ビザ、F-4在外国同胞、外国人登録証申請、韓国国籍事実証明書の取得、65歳以上の重複数国籍回復サポート。">
-  <meta property="og:title" content="韓国ビザ・出入国管理 & 国籍業務代行 | 行政書士事務所 ON:ON">
-  <meta property="og:description" content="F-1-Dデジタルノマドビザ、E-7就労ビザ、外国人登録証、韓国国籍証明・国籍回復代行。">
-  <meta property="og:image" content="https://on-admin.com/logo.png">
-  <meta property="og:url" content="https://on-admin.com/jp/service2.html">
+    <title>韓国ビザ・出入国管理 & 国籍業務 | 公認翻訳および行政書士事務所 ON:ON</title>
+    <meta name="description" content="韓国F-1-Dデジタルノマドビザ、E-7専門就労ビザ、F-4在外国同胞、外国人登録証申請、韓国国籍事実証明書の取得、65歳以上の重複数国籍回復サポート。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="公認翻訳および行政書士事務所 ON:ON | 韓国ビザ・出入国管理 & 国籍業務代行">
+    <meta property="og:description" content="お客様の成功のために「ON（すべて）」を尽くします。F-1-Dデジタルノマドビザ、E-7就労ビザ、外国人登録証、韓国国籍証明・国籍回復代行。">
+    <meta property="og:image" content="https://on-admin.com/og-image.png">
+    <meta property="og:url" content="https://on-admin.com/jp/service2.html">
     
-    <!-- 💡 ファビコン(ロゴ)設定 -->
+    <!-- ファビコン(ロゴ)設定 -->
     <link rel="icon" type="image/png" href="/logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,7 +47,7 @@
         }
     </script>
     
-    <!-- 💡 Google 翻訳および言語ボタン同期スクリプト -->
+    <!-- Google 翻訳および言語ボタン同期スクリプト -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -58,7 +72,7 @@
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
                 if (langCode === 'ko') {
-                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                    mainTitleElement.innerHTML = '공인번역&일반 행정사사무소 온:ON';
                 } else if (langCode === 'zh-CN') {
                     mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
                 } else if (langCode === 'ja') {
@@ -111,15 +125,6 @@
             overflow-wrap: break-word !important;
         }
     </style>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XSDTEEZRW3');
-      function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
-    </script>     
 </head>
    
 <body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
@@ -150,8 +155,13 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">JP</button>
                     </div>
                     <a href="inquiry.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> ご相談窓口
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="notranslate">ご相談窓口</span>
                     </a>
+                    <button onclick="copyPageLink(this)" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-bold px-2.5 py-1.5 md:px-3.5 rounded-lg border border-slate-200 transition flex items-center gap-1 whitespace-nowrap cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        <span class="share-label notranslate">共有</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -306,7 +316,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <a href="inquiry.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">オンライン相談フォーム</span>
                 </a>
@@ -362,7 +372,7 @@
         </div>
     </section>
 
-    <!-- 🟢 Google Blogger 連動 JS (ビザ・国籍業務専用・他サービス混入防止フィルター適用) -->
+    <!-- Google Blogger 連動 JS (ビザ・国籍業務専用・他サービス混入防止フィルター適用) -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
@@ -375,7 +385,6 @@
             }
 
             const entries = data.feed.entry;
-            // ビザ・国籍・永住権関連キーワード (ラベルおよびタイトル検索)
             const keywords = ['immigration', 'service 2', 'visa', 'd10', 'f4', 'f5', 'ビザ', '国籍', '永住', '二重国籍', '就労'];
             const matched = [];
 
@@ -385,10 +394,8 @@
                 const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
                 const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
 
-                // 他のサービス(投資 1, 許認可 3, 翻訳 4)専用の記事がビザページに混入するのを防止
                 const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 3') || l.includes('service 4'));
 
-                // ラベルまたはタイトルにビザ・出入国キーワードが含まれているか判定
                 const isMatch = !isExcluded && (
                     entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
                     keywords.some(kw => titleText.includes(kw))
@@ -475,6 +482,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- ページ共有リンクコピースクリプト -->
+    <script>
+      function copyPageLink(btn) {
+        const url = window.location.href;
+        const label = btn.querySelector('.share-label');
+        const onCopied = () => {
+          if (label) label.textContent = 'コピー完了!';
+          setTimeout(() => { if (label) label.textContent = '共有'; }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(onCopied);
+        } else {
+          const input = document.createElement('input');
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          document.body.removeChild(input);
+          onCopied();
+        }
+      }
+    </script>
 
     <!-- ChannelIO (チャネルトーク) 連携スクリプト -->
     <script>

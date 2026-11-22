@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-<title>공인번역·외투법인·비자·인허가 | 행정사사무소 온:ON</title>
-<meta name="description" content="마곡·강서 대표 행정사사무소 온:ON. 육군 인사과장 출신 허온 대표행정사의 외국인투자법인(FDI), D-8/E-7 비자, 공인번역공증, 기업 인허가 전문 1:1 비공개 상담.">    <!-- 브라우저 탭 파비콘(로고) 설정 -->
+    <title>공인번역·외투법인·비자·인허가 | 행정사사무소 온:ON</title>
+    <meta name="description" content="마곡·강서 대표 행정사사무소 온:ON. 육군 인사과장 출신 허온 대표행정사의 외국인투자법인(FDI), D-8/E-7 비자, 공인번역공증, 기업 인허가 전문 1:1 비공개 상담.">
     <!-- 카카오톡 미리보기 설정 -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="행정사사무소 온:ON | 공인번역·외투법인·비자·인허가">
-<meta property="og:description" content="성공적인 글로벌 비즈니스를 위해 '온' 힘을 다합니다. 외투법인·비자·인허가·공인번역공증 전문.">
-<meta property="og:image" content="https://on-admin.com/og-image.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="행정사사무소 온:ON | 공인번역·외투법인·비자·인허가">
+    <meta property="og:description" content="성공적인 글로벌 비즈니스를 위해 '온' 힘을 다합니다. 외투법인·비자·인허가·공인번역공증 전문.">
+    <meta property="og:image" content="https://on-admin.com/og-image.png">
     <meta property="og:url" content="https://on-admin.com/index.html">
     <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,7 +44,7 @@
             }, 'google_translate_element');
         }
 
-        // 💡 1. 자바스크립트로 직접 언어 버튼 색상 & 로고 상호명 갈아끼우기 (구글 번역기 충돌 원천 차단)
+        // 1. 자바스크립트로 직접 언어 버튼 색상 & 로고 상호명 갈아끼우기 (구글 번역기 충돌 원천 차단)
         function updateLanguageState(langCode) {
             document.documentElement.setAttribute('data-lang', langCode);
             
@@ -68,22 +68,19 @@
                 } else if (langCode === 'ja') {
                     mainTitleElement.textContent = '公認翻訳および行政書士事務所 ON:ON';
                 } else {
-                    mainTitleElement.textContent = '공인번역일반행정사사무소 온행';
+                    mainTitleElement.textContent = '공인번역&일반 행정사사무소 온:ON';
                 }
             }
         }
 
         function changeLanguage(langCode) {
-            // 현재 페이지의 기본 언어 자동 인식 (한국어 페이지면 'ko', 영문 페이지면 'en')
             const baseLang = document.documentElement.getAttribute('lang') || 'ko';
 
             if (langCode === baseLang) {
-                // 원래 페이지 언어 버튼을 누르면: 번역을 풀고 원본으로 복귀 (새로고침)
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
                 location.reload();
             } else {
-                // 다른 언어 버튼을 누르면: 페이지 이동 없이 구글 번역기만 돌림
                 const select = document.querySelector('.goog-te-combo');
                 if (select) { 
                     select.value = langCode; 
@@ -99,7 +96,6 @@
             if (match) {
                 currentLang = match[1];
             }
-            // 페이지 로드 시 현재 언어에 맞게 세팅
             updateLanguageState(currentLang);
         });
     </script>
@@ -133,43 +129,35 @@
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="logo.png" alt="행정사사무소 온 로고" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <!-- 💡 2. 자바스크립트가 직접 갈아끼우는 영역: 구글 번역 금지(notranslate) -->
-                    <span id="dynamic-main-title" class="notranslate text-sm md:text-base font-bold text-slate-900 leading-none">공인번역일반행정사사무소 온행</span>
+                    <!-- 자바스크립트가 직접 갈아끼우는 영역: 구글 번역 금지(notranslate) -->
+                    <span id="dynamic-main-title" class="notranslate text-sm md:text-base font-bold text-slate-900 leading-none">공인번역&일반 행정사사무소 온:ON</span>
                     <!-- 영원히 고정되는 영문 서브타이틀 -->
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
 
             <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
-                <nav class="hidden lg:flex gap-8 text-sm font-medium text-slate-600 mr-2" id="main-nav">
-                    <a href="about.html" class="nav-link hover:text-brand transition py-1">
-                        <span class="notranslate">사무소 소개</span>
-                    </a>
-                    <a href="#services" id="link-services" class="nav-link hover:text-brand transition py-1">
-                        <span class="notranslate">전문 분야</span>
-                    </a>
-                    <a href="#cases" id="link-cases" class="nav-link hover:text-brand transition py-1">
-                        <span class="notranslate">업무 사례</span>
-                    </a>
-                    <a href="contact.html#inquiry-form" id="link-guide" class="nav-link hover:text-brand transition py-1">
-                        <span class="notranslate">상담 문의</span>
-                    </a>
+                <nav class="hidden lg:flex gap-7 text-sm font-medium text-slate-600 mr-2" id="main-nav">
+                    <a href="about.html" class="nav-link hover:text-brand transition py-1 whitespace-nowrap">사무소 소개</a>
+                    <a href="#services" id="link-services" class="nav-link hover:text-brand transition py-1 whitespace-nowrap">전문 분야</a>
+                    <a href="#cases" id="link-cases" class="nav-link hover:text-brand transition py-1 whitespace-nowrap">업무 사례</a>
+                    <a href="contact.html#inquiry-form" id="link-guide" class="nav-link hover:text-brand transition py-1 whitespace-nowrap">상담 문의</a>
                 </nav>
 
                 <div class="flex items-center gap-2.5">
-                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0">
+                    <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-lg text-xs font-semibold flex-shrink-0 notranslate">
                         <button onclick="changeLanguage('ko')" data-lang="ko" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">KR</button>
                         <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">EN</button>
                         <button onclick="changeLanguage('zh-CN')" data-lang="zh-CN" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">CN</button>
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
                     <a href="contact.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <span class="notranslate">상담 문의</span>
+                        <svg class="w-3.5 h-3.5 hidden sm:block flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span>상담 문의</span>
                     </a>
                     <button onclick="copyPageLink(this)" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-bold px-2.5 py-1.5 md:px-3.5 rounded-lg border border-slate-200 transition flex items-center gap-1 whitespace-nowrap cursor-pointer">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
-                        <span class="share-label notranslate">공유</span>
+                        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        <span class="share-label">공유</span>
                     </button>
                 </div>
             </div>
@@ -392,7 +380,7 @@
                 <span class="hover:text-brand cursor-pointer">아포스티유·영사확인</span>
                 <span class="hover:text-brand cursor-pointer">기업·법률서류 번역</span>
                 <a href="https://blog.naver.com/juuudy_" target="_blank" class="text-brand font-medium hover:underline ml-auto flex items-center gap-1">
-                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    블로그 바로가기 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
 
@@ -406,10 +394,9 @@
         </div>
     </footer>
 
-    <!-- 🟢 스크롤 감지 및 API 블로그 연동 스크립트 -->
+    <!-- 스크롤 감지 및 API 블로그 연동 스크립트 -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // 1. 스크롤 위치 감지 헤더 메뉴 활성화 (Bottom-to-Top 검사)
             const navLinks = {
                 'services': document.getElementById('link-services'),
                 'cases': document.getElementById('link-cases'),
@@ -422,7 +409,6 @@
                 const guideSec = document.getElementById('guide');
                 const casesSec = document.getElementById('cases');
 
-                // 초기화
                 Object.values(navLinks).forEach(link => {
                     if (link) {
                         link.classList.remove('text-brand', 'font-bold');
@@ -430,7 +416,6 @@
                     }
                 });
 
-                // 역순 검사
                 if (casesSec && scrollPos >= casesSec.offsetTop) {
                     if (navLinks['cases']) {
                         navLinks['cases'].classList.add('text-brand', 'font-bold');
@@ -452,7 +437,6 @@
             window.addEventListener('scroll', setActiveNav);
             setActiveNav();
 
-            // 2. 블로그 사례 연동 (59번 군인징계 고정)
             const container = document.getElementById('blog-posts-container');
             if (!container) return;
 
@@ -582,9 +566,16 @@
       function copyPageLink(btn) {
         const url = window.location.href;
         const label = btn.querySelector('.share-label');
+        const lang = document.documentElement.getAttribute('data-lang') || 'ko';
+        const copiedMap = {
+          'ko': '복사됨!',
+          'en': 'Copied!',
+          'zh-CN': '已复制!',
+          'ja': 'コピー完了!'
+        };
         const onSuccess = () => {
           const orig = label.textContent;
-          label.textContent = '복사됨!';
+          label.textContent = copiedMap[lang] || '복사됨!';
           btn.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-300');
           setTimeout(() => {
             label.textContent = orig;

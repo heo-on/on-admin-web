@@ -17,14 +17,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-  <title>韓国 公認翻訳 & アポスティーユ | 委任状(POA)公証・卒業見込証明書 | 行政書士事務所 ON:ON</title>
-  <meta name="description" content="韓国国家公認の外国語翻訳行政書士による翻訳確認証明書の発行。海外委任状(POA)・企業契約書の公証嘱託代行、公認会計士確認書、卒業見込証明書、韓国外交部アポスティーユ(Apostille)認証代行。">
-  <meta property="og:title" content="韓国 公認翻訳 & アポスティーユ代行 | 行政書士事務所 ON:ON">
-  <meta property="og:description" content="翻訳確認証明書の発行、海外委任状(POA)公証嘱託代行、外交部アポスティーユ申請代行。">
-  <meta property="og:image" content="https://on-admin.com/logo.png">
-  <meta property="og:url" content="https://on-admin.com/jp/service4.html">
+    <title>韓国 公認翻訳 & アポスティーユ | 公認翻訳および行政書士事務所 ON:ON</title>
+    <meta name="description" content="韓国国家公認の外国語翻訳行政書士による翻訳確認証明書の発行。海外委任状(POA)・企業契約書の公証嘱託代行、公認会計士確認書、卒業見込証明書、韓国外交部アポスティーユ(Apostille)認証代行。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="公認翻訳および行政書士事務所 ON:ON | 韓国 公認翻訳 & アポスティーユ代行">
+    <meta property="og:description" content="お客様の成功のために「ON（すべて）」を尽くします。翻訳確認証明書の発行、海外委任状(POA)公証嘱託代行、外交部アポスティーユ申請代行。">
+    <meta property="og:image" content="https://on-admin.com/og-image.png">
+    <meta property="og:url" content="https://on-admin.com/jp/service4.html">
 
-    <!-- 💡 ファビコン(ロゴ)設定 -->
+    <!-- ファビコン(ロゴ)設定 -->
     <link rel="icon" type="image/png" href="/logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,7 +41,7 @@
         }
     </script>
     
-    <!-- 💡 Google 翻訳および言語ボタン同期スクリプト -->
+    <!-- Google 翻訳および言語ボタン同期スクリプト -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({ pageLanguage: 'ja', includedLanguages: 'en,zh-CN,ja,ko', autoDisplay: false }, 'google_translate_element');
@@ -61,7 +62,7 @@
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
                 if (langCode === 'ko') {
-                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                    mainTitleElement.innerHTML = '공인번역&일반 행정사사무소 온:ON';
                 } else if (langCode === 'zh-CN') {
                     mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
                 } else if (langCode === 'ja') {
@@ -122,15 +123,6 @@
             overflow-wrap: break-word !important;
         }
     </style>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSDTEEZRW3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XSDTEEZRW3');
-      function trackContactClick(channelName) { gtag('event', 'click_contact', { 'channel_type': channelName }); }
-    </script>     
 </head>
    
 <body class="bg-slate-50 text-slate-800 font-sans antialiased break-keep">
@@ -161,8 +153,13 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn bg-white text-slate-900 px-2.5 py-1 rounded shadow-sm transition font-bold">JP</button>
                     </div>
                     <a href="inquiry.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> ご相談窓口
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="notranslate">ご相談窓口</span>
                     </a>
+                    <button onclick="copyPageLink(this)" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-bold px-2.5 py-1.5 md:px-3.5 rounded-lg border border-slate-200 transition flex items-center gap-1 whitespace-nowrap cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        <span class="share-label notranslate">共有</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -409,7 +406,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <a href="inquiry.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">オンライン相談フォーム</span>
                 </a>
@@ -441,7 +438,7 @@
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="text-center mb-8">
             <span class="text-brand font-bold text-xs uppercase tracking-widest">WHICH ONE DO I NEED</span>
-            <h2 class="text-2xl font-bold text-slate-900 mt-1">認証方式の比較：翻訳確認証明書 vs 翻訳公証 vs アポスティーユ</h2>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1 text-center">認証方式の比較：<br>翻訳確認証明書 vs 翻訳公証 vs アポスティーユ</h2>
             <p class="text-xs md:text-sm text-slate-500 mt-1">各種証明書および認証は、それぞれ異なる法定効力を持ちます。事前に提出先機関の要求基準をご確認ください。</p>
         </div>
 
@@ -485,9 +482,9 @@
         </div>
     </section>
 
-    <!-- 10. アポスティーユ手続きと締約国一覧 -->
+    <!-- 10. アポスティーユ手続きと締約国全131カ国一覧 -->
     <section class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-100">
-        <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">認証手続きの比較とアポスティーユ締約国一覧</h3>
+        <h3 class="font-bold text-slate-900 mb-6 text-xl text-center">認証手続きの比較とアポスティーユ締約国全一覧</h3>
         
         <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200 mb-8">
             <table class="w-full text-left text-sm text-slate-600">
@@ -507,31 +504,31 @@
         </div>
 
         <div class="flex justify-between items-end mb-3 px-2">
-            <h4 class="font-bold text-slate-800">主要アポスティーユ締約国一覧</h4>
-            <span class="text-xs font-bold text-brand bg-brand-light px-2 py-1 rounded">2026年9月11日現在（計131カ国・地域）</span>
+            <h4 class="font-bold text-slate-800">ハーグ条約（アポスティーユ）締約国・地域 全一覧（地域別）</h4>
+            <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded">2026年7月現在（計131カ国・地域）</span>
         </div>
         <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
             <table class="w-full text-left text-xs md:text-sm text-slate-600 min-w-[700px]">
                 <tbody class="divide-y divide-slate-100">
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 w-[18%] bg-slate-50">アジア / オセアニア</td>
-                        <td class="px-5 py-4 leading-relaxed">日本、韓国、中国（香港・マカオ含む）、シンガポール、オーストラリア、ニュージーランド、インド、インドネシア、フィリピン、サウジアラビア、バーレーン、ブルネイ、フィジー、イスラエル、キルギス、モンゴル、オマーン、パキスタン、サモア、タジキスタン、ウズベキスタン、ベトナム、バヌアツ等。</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 w-[18%] bg-slate-50 align-top">アジア / オセアニア<br><span class="text-[11px] font-normal text-slate-500">（32カ国・地域）</span></td>
+                        <td class="px-5 py-4 leading-relaxed">日本、韓国、中国、香港、マカオ、シンガポール、オーストラリア、ニュージーランド、インド、インドネシア、フィリピン、ベトナム、モンゴル、カザフスタン、キルギス、タジキスタン、ウズベキスタン、パキスタン、バングラデシュ、ブルネイ、サウジアラビア、バーレーン、イスラエル、オマーン、フィジー、クック諸島、マーシャル諸島、ニウエ、パラオ、サモア、トンガ、バヌアツ</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">ヨーロッパ</td>
-                        <td class="px-5 py-4 leading-relaxed">イギリス、ドイツ、フランス、イタリア、スペイン、オランダ、スイス、スウェーデン、オーストリア、ベルギー、ポーランド、ポルトガル、アイルランド、デンマーク、フィンランド、ノルウェー、ギリシャ、チェコ、ハンガリー、ルーマニア、トルコ、ロシア、ウクライナ等、EU加盟国および欧州主要国。</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">ヨーロッパ<br><span class="text-[11px] font-normal text-slate-500">（49カ国）</span></td>
+                        <td class="px-5 py-4 leading-relaxed">イギリス、ドイツ、フランス、イタリア、スペイン、オランダ（アルバ含む）、スイス、スウェーデン、オーストリア、ベルギー、ポーランド、ポルトガル、アイルランド、デンマーク、フィンランド、ノルウェー、ギリシャ、チェコ、ハンガリー、ルーマニア、ブルガリア、クロアチア、キプロス、エストニア、ラトビア、リトアニア、ルクセンブルク、マルタ、スロバキア、スロベニア、アイスランド、リヒテンシュタイン、モナコ、アンドラ、サンマリノ、アルバニア、アルメニア、アゼルバイジャン、ベラルーシ、ボスニア・ヘルツェゴビナ、ジョージア、コソボ、モルドバ、モンテネグロ、北マケドニア、ロシア、セルビア、トルコ、ウクライナ</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">北米</td>
-                        <td class="px-5 py-4 leading-relaxed">アメリカ合衆国（グアム、北マリアナ諸島、プエルトリコ、米領バージン諸島含む）、カナダ。</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">北米<br><span class="text-[11px] font-normal text-slate-500">（2カ国）</span></td>
+                        <td class="px-5 py-4 leading-relaxed">アメリカ合衆国（グアム、北マリアナ諸島、プエルトリコ含む）、カナダ</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">中南米</td>
-                        <td class="px-5 py-4 leading-relaxed">ブラジル、アルゼンチン、チリ、メキシコ、コロンビア、ペルー、パナマ、コスタリカ、エクアドル、ウルグアイ、ベネズエラ、ドミニカ共和国、ジャマイカ等。</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">中南米・カリブ海<br><span class="text-[11px] font-normal text-slate-500">（31カ国）</span></td>
+                        <td class="px-5 py-4 leading-relaxed">ブラジル、アルゼンチン、チリ、メキシコ、コロンビア、ペルー、パナマ、コスタリカ、エクアドル、ウルグアイ、ベネズエラ、パラグアイ、ボリビア、グアテマラ、ホンジュラス、エルサルバドル、ニカラグア、ベリーズ、ガイアナ、スリナム、バハマ、バルバドス、アンティグア・バーブーダ、ドミニカ国、ドミニカ共和国、グレナダ、ジャマイカ、セントクリストファー・ネイビス、セントルシア、セントビンセント・グレナディーン、トリニダード・トバゴ</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">アフリカ</td>
-                        <td class="px-5 py-4 leading-relaxed">南アフリカ、モロッコ、チュニジア、ナミビア、セネガル、ボツワナ、モーリシャス、セイシェル、ルワンダ等。</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">アフリカ<br><span class="text-[11px] font-normal text-slate-500">（17カ国）</span></td>
+                        <td class="px-5 py-4 leading-relaxed">南アフリカ、モロッコ、チュニジア、アルジェリア、ナミビア、セネガル、ボツワナ、モーリシャス、セーシェル、ルワンダ、ブルンジ、カーボベルデ、エスワティニ、レソト、リベリア、マラウイ、サントメ・プリンシペ</td>
                     </tr>
                 </tbody>
             </table>
@@ -542,7 +539,7 @@
     <section class="max-w-5xl mx-auto px-6 pb-16">
         <div class="bg-slate-50/80 rounded-xl p-8 text-center border border-slate-200">
             <h4 class="text-lg md:text-xl font-bold text-slate-900 mb-1">公認翻訳・アポスティーユの専門家相談を予約する</h4>
-            <p class="text-sm text-slate-500 mb-6">公式な公認翻訳と法定涉外認証により、国内外の提出機関における書類不受理リスクを確実に排除します。</p>
+            <p class="text-sm text-slate-500 mb-6">公式な公認翻訳と法定渉外認証により、国内外の提出機関における書類不受理リスクを確実に排除します。</p>
             <a href="inquiry.html" class="inline-block bg-brand hover:bg-brand-hover text-white font-bold px-8 py-3.5 rounded-lg text-sm shadow-md transition">
                 個別相談を申し込む
             </a>
@@ -577,7 +574,7 @@
         </div>
     </section>
 
-    <!-- 🟢 Google Blogger 連動 JS (公認翻訳・アポスティーユ専用・他サービス混入防止フィルター適用) -->
+    <!-- Google Blogger 連動 JS (公認翻訳・アポスティーユ専用・他サービス混入防止フィルター適用) -->
     <script>
     function loadServiceCases(data) {
         const container = document.getElementById("service-cases-container");
@@ -590,7 +587,6 @@
             }
 
             const entries = data.feed.entry;
-            // 公認翻訳 / 公証 / アポスティーユ / 領事認証関連キーワード
             const keywords = ['service 4', 'certified translation', 'アポスティーユ', '公証', '翻訳', 'apostille', 'translation', 'notary'];
             const matched = [];
 
@@ -600,10 +596,8 @@
                 const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
                 const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
 
-                // 外資系法人設立(Service 1)、ビザ(Service 2)、許認可(Service 3)の記事にアポスティーユ単語が含まれていても除外
                 const isExcluded = entryLabels.some(l => l.includes('service 1') || l.includes('service 2') || l.includes('service 3'));
 
-                // ラベルまたはタイトルに翻訳・公証・アポスティーユキーワードが含まれているか判定
                 const isMatch = !isExcluded && (
                     entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
                     keywords.some(kw => titleText.includes(kw))
@@ -690,6 +684,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- ページ共有リンクコピースクリプト -->
+    <script>
+      function copyPageLink(btn) {
+        const url = window.location.href;
+        const label = btn.querySelector('.share-label');
+        const onCopied = () => {
+          if (label) label.textContent = 'コピー完了!';
+          setTimeout(() => { if (label) label.textContent = '共有'; }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(onCopied);
+        } else {
+          const input = document.createElement('input');
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          document.body.removeChild(input);
+          onCopied();
+        }
+      }
+    </script>
 
     <!-- ChannelIO (チャネルトーク) 連携スクリプト -->
     <script>

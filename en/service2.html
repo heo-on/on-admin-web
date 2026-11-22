@@ -16,13 +16,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
-  <title>Korea Visa, Immigration & Nationality | F-1-D Nomad, E-7 & Citizenship | Office ON:ON</title>
-  <meta name="description" content="Immigration agency in Seoul for F-1-D digital nomad visas, E-7 professional work visas, F-5 permanent residency, Korean nationality recovery, and alien registration.">
-  <meta property="og:title" content="Korea Visa, Immigration & Nationality Services | Office ON:ON">
-  <meta property="og:description" content="Expert legal support for F-1-D nomad visas, E-7 work permits, dual citizenship recovery, and alien registration.">
-  <meta property="og:image" content="https://on-admin.com/logo.png">
-  <meta property="og:url" content="https://on-admin.com/en/service2.html">
+    <meta name="robots" content="index, follow">
+    <title>Korea Visa, Immigration & Nationality | Certified Public Translation & Administrative Attorneys Office ON:ON</title>
+    <meta name="description" content="Immigration agency in Seoul for F-1-D digital nomad visas, E-7 professional work visas, F-5 permanent residency, Korean nationality recovery, and alien registration.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Office ON:ON | Korea Visa, Immigration & Nationality Services">
+    <meta property="og:description" content="Giving our 'ON' (all) for your successful global business. Expert legal support for F-1-D nomad visas, E-7 work permits, dual citizenship recovery, and alien registration.">
+    <meta property="og:image" content="https://on-admin.com/og-image.png">
+    <meta property="og:url" content="https://on-admin.com/en/service2.html">
     
     <!-- 파비콘(로고) 설정 -->
     <link rel="icon" type="image/png" href="/logo.png">
@@ -71,7 +72,7 @@
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
                 if (langCode === 'ko') {
-                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                    mainTitleElement.innerHTML = '공인번역&일반 행정사사무소 온:ON';
                 } else if (langCode === 'zh-CN') {
                     mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
                 } else if (langCode === 'ja') {
@@ -83,7 +84,7 @@
         }
 
         function changeLanguage(langCode) {
-            const baseLang = document.documentElement.getAttribute('lang') || 'ko';
+            const baseLang = document.documentElement.getAttribute('lang') || 'en';
 
             if (langCode === baseLang) {
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -154,8 +155,13 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
                     <a href="inquiry.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Inquiry
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="notranslate">Inquiry</span>
                     </a>
+                    <button onclick="copyPageLink(this)" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-bold px-2.5 py-1.5 md:px-3.5 rounded-lg border border-slate-200 transition flex items-center gap-1 whitespace-nowrap cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        <span class="share-label notranslate">Share</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -375,7 +381,6 @@
             }
 
             const entries = data.feed.entry;
-            // 비자/출입국/국적 전용 키워드
             const keywords = ['visa', 'immigration', 'nationality', 'k-eta', 'eta', 'f-4', 'f4', 'f-5', 'f5', 'f-1-d', 'e-7', 'e7', 'citizenship', 'alien registration'];
             const matched = [];
 
@@ -385,7 +390,6 @@
                 const entryLabels = entry.category ? entry.category.map(c => c.term ? c.term.toLowerCase() : "") : [];
                 const titleText = entry.title ? entry.title.$t.toLowerCase() : "";
 
-                // 타 서비스 전용 글(Service 1 법인설립, Service 3 인허가, Service 4 번역/공증) 배제
                 const isExcluded = entryLabels.some(l => 
                     l.includes('service 1') || 
                     l.includes('service 3') || 
@@ -394,7 +398,6 @@
                     l.includes('haccp')
                 );
 
-                // 라벨 또는 제목에 비자/국적/출입국 키워드가 포함되어 있는지 확인
                 const isMatch = !isExcluded && (
                     entryLabels.some(label => keywords.some(kw => label.includes(kw))) ||
                     keywords.some(kw => titleText.includes(kw))
@@ -485,6 +488,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- 페이지 공유 링크 복사 스크립트 -->
+    <script>
+      function copyPageLink(btn) {
+        const url = window.location.href;
+        const label = btn.querySelector('.share-label');
+        const onCopied = () => {
+          if (label) label.textContent = 'Copied!';
+          setTimeout(() => { if (label) label.textContent = 'Share'; }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(onCopied);
+        } else {
+          const input = document.createElement('input');
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          document.body.removeChild(input);
+          onCopied();
+        }
+      }
+    </script>
 
     <!-- 채널톡 플러그인 연동 스크립트 -->
     <script>

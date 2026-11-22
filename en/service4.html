@@ -17,11 +17,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Certified Translation & Legal Apostille in Seoul | Legal POA & Certificates | Office ON:ON</title>
+    <title>Certified Translation & Legal Apostille in Seoul | Certified Public Translation & Administrative Attorneys Office ON:ON</title>
     <meta name="description" content="Issuance of Certificate of Translation, consular legalization, and Apostille in Seoul. Legal translation of POA, CPA reports, corporate contracts, and academic records.">
-    <meta property="og:title" content="Certified Translation & Legal Apostille in Korea | Office ON:ON">
-    <meta property="og:description" content="Official translation confirmation certificates, POA notarization, graduation certificates, and Hague Apostille agency.">
-    <meta property="og:image" content="https://on-admin.com/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Office ON:ON | Certified Translation & Legal Apostille in Korea">
+    <meta property="og:description" content="Giving our 'ON' (all) for your successful global business. Official translation confirmation certificates, POA notarization, graduation certificates, and Hague Apostille agency.">
+    <meta property="og:image" content="https://on-admin.com/og-image.png">
     <meta property="og:url" content="https://on-admin.com/en/service4.html">
 
     <!-- Favicon -->
@@ -62,7 +63,7 @@
             const mainTitleElement = document.getElementById('dynamic-main-title');
             if (mainTitleElement) {
                 if (langCode === 'ko') {
-                    mainTitleElement.innerHTML = '공인번역일반행정사사무소 온행';
+                    mainTitleElement.innerHTML = '공인번역&일반 행정사사무소 온:ON';
                 } else if (langCode === 'zh-CN') {
                     mainTitleElement.innerHTML = '公认翻译及行政律师事务所 ON:ON';
                 } else if (langCode === 'ja') {
@@ -134,7 +135,7 @@
             <a href="index.html" class="flex items-center gap-3.5 w-full md:w-auto hover:opacity-80 transition cursor-pointer">
                 <img src="/logo.png" alt="Office ON:ON Logo" class="h-10 w-auto rounded shadow-sm object-contain border border-slate-100">
                 <div class="flex flex-col">
-                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
+                    <span id="dynamic-main-title" class="notranslate text-xs sm:text-sm md:text-base font-bold text-slate-900 leading-tight">Certified Public Translation &<br>Administrative Attorneys Office ON:ON</span>
                     <span class="notranslate text-[10px] sm:text-[11px] text-slate-500 font-medium tracking-tight mt-1 leading-none block">Certified Public Translation & Administrative Attorneys Office ON:ON</span>
                 </div>
             </a>
@@ -153,8 +154,13 @@
                         <button onclick="changeLanguage('ja')" data-lang="ja" class="lang-btn text-slate-500 hover:text-slate-900 px-2 py-1 transition font-medium">JP</button>
                     </div>
                     <a href="inquiry.html" class="bg-brand text-white text-xs md:text-sm font-bold px-3.5 py-1.5 md:px-4 md:py-1.5 rounded-lg shadow-sm hover:bg-brand-hover transition flex items-center gap-1.5 whitespace-nowrap">
-                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Inquiry
+                        <svg class="w-3.5 h-3.5 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="notranslate">Inquiry</span>
                     </a>
+                    <button onclick="copyPageLink(this)" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs md:text-sm font-bold px-2.5 py-1.5 md:px-3.5 rounded-lg border border-slate-200 transition flex items-center gap-1 whitespace-nowrap cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                        <span class="share-label notranslate">Share</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -174,7 +180,7 @@
         </div>
     </div>
 
-    <!-- 3. Service Hero Banner (깔끔한 2단 줄바꿈 적용) -->
+    <!-- 3. Service Hero Banner -->
     <section class="bg-brand py-14 px-6 border-b border-slate-200" style="background-image: url('/stamp.png'); background-size: cover; background-position: center; background-blend-mode: overlay; background-color: rgba(0, 32, 160, 0.85);">
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-widest">SERVICES 04</span>
@@ -404,7 +410,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <a href="inquiry.html" onclick="trackContactClick('Email Form Page')" class="channel-card flex flex-col items-center justify-center p-4 min-h-[130px] bg-white border border-slate-200 hover:border-brand rounded-xl shadow-sm hover:shadow-md transition group text-center cursor-pointer">
                     <div class="w-11 h-11 bg-slate-100 text-brand rounded-full flex items-center justify-center mb-3 group-hover:bg-brand group-hover:text-white transition flex-shrink-0">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                     <span class="text-xs sm:text-sm font-bold text-slate-700 leading-tight text-center block w-full">Online Inquiry Form</span>
                 </a>
@@ -418,7 +424,7 @@
         </div>
     </section>
 
-    <!-- 8. Case Studies (정확한 영문 블로그 주소 적용) -->
+    <!-- 8. Case Studies -->
     <section id="cases" class="py-12 px-6 max-w-5xl mx-auto border-t border-slate-200">
         <div class="flex justify-between items-end mb-8">
             <div>
@@ -502,31 +508,31 @@
         </div>
 
         <div class="flex justify-between items-end mb-3 px-2">
-            <h4 class="font-bold text-slate-800">Major Hague Apostille Member States</h4>
-            <span class="text-xs font-bold text-brand bg-brand-light px-2 py-1 rounded">As of 2026 (130+ Contracting Nations)</span>
+            <h4 class="font-bold text-slate-800">Complete List of Hague Apostille Member States by Region</h4>
+            <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded">As of July 2026 (131 States/Territories)</span>
         </div>
         <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-slate-200">
             <table class="w-full text-left text-xs md:text-sm text-slate-600 min-w-[700px]">
                 <tbody class="divide-y divide-slate-100">
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 w-[18%] bg-slate-50">Asia / Oceania</td>
-                        <td class="px-5 py-4 leading-relaxed">South Korea, China (incl. Hong Kong, Macau), Japan, Singapore, Australia, New Zealand, India, Indonesia, Philippines, Saudi Arabia, Bahrain, Brunei, Fiji, Israel, Kazakhstan, Kyrgyzstan, Mongolia, Oman, Pakistan, Samoa, Tajikistan, Uzbekistan, Vietnam, Vanuatu, etc.</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 w-[18%] bg-slate-50 align-top">Asia / Oceania<br><span class="text-[11px] font-normal text-slate-500">(32 States/Territories)</span></td>
+                        <td class="px-5 py-4 leading-relaxed">Australia, Bahrain, Bangladesh, Brunei, China, Cook Islands, Fiji, Hong Kong, India, Indonesia, Israel, Japan, Kazakhstan, Kyrgyzstan, Macau, Marshall Islands, Mongolia, New Zealand, Niue, Oman, Pakistan, Palau, Philippines, Republic of Korea (South Korea), Samoa, Saudi Arabia, Singapore, Tajikistan, Tonga, Uzbekistan, Vanuatu, Vietnam</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">Europe</td>
-                        <td class="px-5 py-4 leading-relaxed">United Kingdom, Germany, France, Italy, Spain, Netherlands, Switzerland, Sweden, Austria, Belgium, Poland, Portugal, Ireland, Denmark, Finland, Norway, Greece, Czech Republic, Hungary, Romania, Turkey, Russia, Ukraine, and all European Union member states.</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">Europe<br><span class="text-[11px] font-normal text-slate-500">(49 States)</span></td>
+                        <td class="px-5 py-4 leading-relaxed">Albania, Andorra, Armenia, Austria, Azerbaijan, Belarus, Belgium, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Georgia, Germany, Greece, Hungary, Iceland, Ireland, Italy, Kosovo, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Moldova, Monaco, Montenegro, Netherlands (incl. Aruba), North Macedonia, Norway, Poland, Portugal, Romania, Russia, San Marino, Serbia, Slovakia, Slovenia, Spain, Sweden, Switzerland, Türkiye, Ukraine, United Kingdom</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">North America</td>
-                        <td class="px-5 py-4 leading-relaxed">United States of America (including Guam, Northern Mariana Islands, Puerto Rico, US Virgin Islands), Canada.</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">North America<br><span class="text-[11px] font-normal text-slate-500">(2 States)</span></td>
+                        <td class="px-5 py-4 leading-relaxed">Canada, United States of America (incl. Guam, Northern Mariana Islands, Puerto Rico)</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">Latin America</td>
-                        <td class="px-5 py-4 leading-relaxed">Brazil, Argentina, Chile, Mexico, Colombia, Peru, Panama, Costa Rica, Ecuador, Uruguay, Venezuela, Dominican Republic, Jamaica, etc.</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">Latin America & Caribbean<br><span class="text-[11px] font-normal text-slate-500">(31 States)</span></td>
+                        <td class="px-5 py-4 leading-relaxed">Antigua and Barbuda, Argentina, Bahamas, Barbados, Belize, Bolivia, Brazil, Chile, Colombia, Costa Rica, Dominica, Dominican Republic, Ecuador, El Salvador, Grenada, Guatemala, Guyana, Honduras, Jamaica, Mexico, Nicaragua, Panama, Paraguay, Peru, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Suriname, Trinidad and Tobago, Uruguay, Venezuela</td>
                     </tr>
                     <tr class="hover:bg-slate-50/50 transition">
-                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50">Africa</td>
-                        <td class="px-5 py-4 leading-relaxed">South Africa, Morocco, Tunisia, Namibia, Senegal, Botswana, Mauritius, Seychelles, Rwanda, etc.</td>
+                        <td class="px-5 py-4 font-bold text-slate-800 bg-slate-50 align-top">Africa<br><span class="text-[11px] font-normal text-slate-500">(17 States)</span></td>
+                        <td class="px-5 py-4 leading-relaxed">Algeria, Botswana, Burundi, Cabo Verde, Eswatini (Swaziland), Lesotho, Liberia, Malawi, Mauritius, Morocco, Namibia, Rwanda, São Tomé and Príncipe, Senegal, Seychelles, South Africa, Tunisia</td>
                     </tr>
                 </tbody>
             </table>
@@ -678,6 +684,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- 페이지 공유 링크 복사 스크립트 -->
+    <script>
+      function copyPageLink(btn) {
+        const url = window.location.href;
+        const label = btn.querySelector('.share-label');
+        const onCopied = () => {
+          if (label) label.textContent = 'Copied!';
+          setTimeout(() => { if (label) label.textContent = 'Share'; }, 2000);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(onCopied);
+        } else {
+          const input = document.createElement('input');
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          document.body.removeChild(input);
+          onCopied();
+        }
+      }
+    </script>
 
     <!-- ChannelIO Script -->
     <script>
